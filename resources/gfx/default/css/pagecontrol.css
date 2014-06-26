@@ -1,0 +1,27 @@
+a.pageactive
+{
+	color:#dd4444;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a.pageactive:hover
+{
+	color:#ff8888;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a.pagenormal
+{
+	color:#4444dd;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+a.pagenormal:hover
+{
+	color:#8888ff;
+	font-weight:bold;
+	text-decoration:none;
+}

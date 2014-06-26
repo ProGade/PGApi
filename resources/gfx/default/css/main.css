@@ -1,0 +1,57 @@
+* {font-family: Arial, Verdana, Trebuchet MS;}
+html {width:100%; height:100%;}
+body {margin:0px; width:100%; height:100%; background:#969696; font-size:12px;}
+
+a {text-decoration:none; font-weight:bold; color:#D0D0D0;}
+a:hover {text-decoration:none; font-weight:bold; color:#ffffff;}
+
+h1 {font-size:20px; font-weight:bold; margin-bottom:20px;}
+h2 {font-size:15px; font-weight:bold; margin-bottom:15px;}
+h3 {font-size:12px; font-weight:bold; margin-bottom:5px;}
+
+.success
+{
+	display:block;
+	padding:2px;
+	background-color:#FFFFFF;
+	border-style:solid;
+	border-width:1px;
+	border-color:#2979D3;
+	color:#2979D3;
+}
+
+.failure
+{
+	display:block;
+	padding:2px;
+	background-color:#FFFFFF;
+	border-style:solid;
+	border-width:1px;
+	border-color:#FF0000;
+	color:#FF0000;
+}
+
+.warning
+{
+	display:block;
+	padding:2px; 
+	background-color:#FFFFFF;
+	border-style:solid;
+	border-width:1px;
+	border-color:#FF8800;
+	color:#FF8800;
+}
+
+.menu {font-size:12px;}
+.menu ul {list-style-type:none; list-style-position:outside; padding:0px; margin:0px; margin-left:20px;}
+.menu li {list-style-type:none; padding:0px; margin:0px;}
+
+.row_highlight1 {background-color:#FFFFFF;}
+.row_highlight1:hover {background-color:#DDDDDD;}
+.row_highlight1 td {border:solid 1px #DDDDDD;}
+.row_highlight1 td:hover {border:solid 1px #888888;}
+
+.row_highlight2 {background-color:#CCCCCC;}
+.row_highlight2:hover {background-color:#AAAAAA;}
+.row_highlight2 td {border:solid 1px #AAAAAA;}
+.row_highlight2 td:hover {border:solid 1px #555555;}

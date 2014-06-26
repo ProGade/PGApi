@@ -1,0 +1,90 @@
+/* object types */
+.pg_debug_object_type_string {color:#CC0000;}
+.pg_debug_object_type_boolean {color:#006600;}
+.pg_debug_object_type_number {color:#FF0000;}
+.pg_debug_object_type_object {color:#0000FF;}
+.pg_debug_object_type_array {color:#0055FF;}
+.pg_debug_object_type_variable {color:#000000;}
+.pg_debug_object_type_function {color:#006600;}
+.pg_debug_object_type_undefined {color:#CE2FCA;}
+.pg_debug_object_type_operators {color:#0000FF;}
+
+/* message */
+.pg_debug_message_container_table
+{
+	background-color:#DDDDFF;
+	color:#000000;
+}
+
+/* message */
+.pg_debug_message_div
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	background-color:#EEEEEE;
+	border-style:solid;
+	border-width:1px;
+	border-color:#666666;
+	padding:2px;
+	margin:2px;
+}
+
+.pg_debug_message_string
+{
+	color:#999999;
+}
+
+.pg_debug_message_time
+{
+	background-color:#FFCC99;
+	color:#AA5500;
+}
+
+.pg_debug_message_object
+{
+	background-color:#CCCCFF;
+	color:#003355;
+}
+
+/* error */
+.pg_debug_error_div
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	background-color:#FFEEEE;
+	border-style:solid;
+	border-width:1px;
+	border-color:#FF6666;
+	padding:2px;
+	margin:2px;
+}
+
+.pg_debug_error_string
+{
+	background-color:#FFCCCC;
+	color:#770000;
+}
+
+.pg_debug_error_time
+{
+	background-color:#FFCC99;
+	color:#AA5500;
+}
+
+.pg_debug_error_row_number
+{
+	background-color:#CCCCFF;
+	color:#003355;
+}
+
+.pg_debug_error_file_path
+{
+	background-color:#CCFFCC;
+	color:#005500;
+}
+
+.pg_debug_error_error_message
+{
+	color:#666666;
+}
+

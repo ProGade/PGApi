@@ -1,0 +1,43 @@
+.calendarsheet {display:inline-block; background-color:#ffffff; padding:10px;}
+
+.calendarsheet .table_sheet {}
+.calendarsheet .table_controls {}
+.calendarsheet .table_controls_link {color:#5555BB; font-weight:bold;}
+
+.calendarsheet .cells_weeks {background-color:#888888; font-weight:bold; color:#222222; text-align:center;}
+.calendarsheet .cells_weeks_link_normal {color:#EEEEEE;}
+.calendarsheet .cells_weeks_link_pressed {color:#000000;}
+
+.calendarsheet .cells_days {background-color:#AAAAAA; font-weight:bold; color:#FFFFFF; text-align:center;}
+
+.calendarsheet .cells1 {background-color:#F5F5F5; text-align:center;}
+.calendarsheet .cells1_link_normal {color:#5555BB;}
+.calendarsheet .cells1_link_pressed {color:#000000;}
+
+.calendarsheet .cells2 {background-color:#E5E5E5; text-align:center;}
+.calendarsheet .cells2_link_normal {color:#222288;}
+.calendarsheet .cells2_link_pressed {color:#000000;}
+
+.calendarsheet .cells1_today {background-color:#FFBBBB; text-align:center;}
+.calendarsheet .cells1_today_link_normal {color:#FF0000;}
+.calendarsheet .cells1_today_link_pressed {color:#990000;}
+
+.calendarsheet .cells2_today {background-color:#FF9999; text-align:center;}
+.calendarsheet .cells2_today_link_normal {color:#FF0000;}
+.calendarsheet .cells2_today_link_pressed {color:#990000;}
+
+.calendarsheet .cells_saturday {background-color:#CCCCCC; text-align:center;}
+.calendarsheet .cells_saturday_link_normal {color:#000088;}
+.calendarsheet .cells_saturday_link_pressed {color:#000000;}
+
+.calendarsheet .cells_saturday_today {background-color:#FF5555; text-align:center;}
+.calendarsheet .cells_saturday_today_link_normal {color:#FF0000;}
+.calendarsheet .cells_saturday_today_link_pressed {color:#990000;}
+
+.calendarsheet .cells_sunday {background-color:#CCCCCC; text-align:center;}
+.calendarsheet .cells_sunday_link_normal {color:#000088;}
+.calendarsheet .cells_sunday_link_pressed {color:#000000;}
+
+.calendarsheet .cells_sunday_today {background-color:#FF5555; text-align:center;}
+.calendarsheet .cells_sunday_today_link_normal {color:#FF0000;}
+.calendarsheet .cells_sunday_today_link_pressed {color:#990000;}

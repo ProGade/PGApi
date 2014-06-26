@@ -1,0 +1,47 @@
+###################################################
+#
+# English version of the License.
+# This is the original text of the license!
+#
+###################################################
+
+Copyright (c) 2012 Hans-Peter Wandura (ProGade)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ 
+1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+2. The software may not be used to inflict deliberate harm of any kind.
+
+3. The software may not be directly available for download on sites that were not authorized by the copyright owner. A permit requires explicit permission from the copyright owner.
+
+4. The software may either in its original form or modified / altered form be represented as completely own product. It must be always apparent that it is the software of the copyright holder and, where appropriate, modified parts of the software are pointed out. When using the software in their own product / software could, for example, an "About" of the final product / software, a reference to the copyright owner in the context of software as a library or as part of the product / Sortware with a link pointing to the related web page.
+
+5. For questions regarding the license is directed directly to the copyright holder.
+ 
+6. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+###################################################
+#
+# Deutsche Übersetzung der Lizenz.
+# Diese Version der Lizenz ist nur eine Übersetzung 
+# und rechtlich gilt die englische Version!
+#
+###################################################
+
+Copyright (c) 2012 Hans-Peter Wandura (ProGade)
+
+Hiermit wird unentgeltlich, jeder Person, die eine Kopie der Software und der zugehörigen Dokumentationen (die "Software") erhält, die Erlaubnis erteilt, sie uneingeschränkt zu benutzen, inklusive und ohne Ausnahme, dem Recht, sie zu verwenden, kopieren, ändern, fusionieren, verlegen, verbreiten, unterlizenzieren und/oder zu verkaufen, und Personen, die diese Software erhalten, diese Rechte zu geben, unter den folgenden Bedingungen:
+ 
+1. Der obige Urheberrechtsvermerk und dieser Erlaubnisvermerk sind in allen Kopien oder Teilkopien der Software beizulegen.
+
+2. Die Software darf nicht verwendet werden um absichtlich Schaden jeglicher Art anzurichten.
+
+3. Die Software darf nicht direkt als Download auf Webseiten angeboten werden, die nicht vom Copyright Inhaber genemigt wurden. Eine Genehmigung benötigt eine ausdrückliche Erlaubnis vom Copyright Inhaber.
+
+4. Die Software darf weder in Originalform noch in modifizierter / veränderter Form als komplett eigenes Produkt dargestellt werden. Es muss immer erkenntlich werden, dass es sich um die Software vom Copyright Inhaber handelt und gegebenenfalls auf veränderte Teile der Software hingewiesen wird. Bei Verwendung der Software in einem eigenen Produkt/Software könnte zum Beispiel unter einem "About" des endgültigen Produkts/Software ein Hinweis auf den Copyright Inhaber im Zusammenhang mit der Software als Library oder als Teil des Produktes/der Sortware mit Link auf die dazugehörige Webseite hingewisen werden.
+
+5. Bei Fragen zur Lizenz richten Sie sich bitte direkt an den Copyright Inhaber.
+
+6. DIE SOFTWARE WIRD OHNE JEDE AUSDRÜCKLICHE ODER IMPLIZIERTE GARANTIE BEREITGESTELLT, EINSCHLIESSLICH DER GARANTIE ZUR BENUTZUNG FÜR DEN VORGESEHENEN ODER EINEM BESTIMMTEN ZWECK SOWIE JEGLICHER RECHTSVERLETZUNG, JEDOCH NICHT DARAUF BESCHRÄNKT. IN KEINEM FALL SIND DIE AUTOREN ODER COPYRIGHTINHABER FÜR JEGLICHEN SCHADEN ODER SONSTIGE ANSPRÜCHE HAFTBAR ZU MACHEN, OB INFOLGE DER ERFÜLLUNG EINES VERTRAGES, EINES DELIKTES ODER ANDERS IM ZUSAMMENHANG MIT DER SOFTWARE ODER SONSTIGER VERWENDUNG DER SOFTWARE ENTSTANDEN.

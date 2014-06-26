@@ -1,0 +1,183 @@
+.pg_button_normal
+{
+	background-color:#AAAAAA;
+	
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#888888');
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#888888));
+	background-image:-webkit-linear-gradient(top, #eeeeee 0, #AAAAAA 50%, #888888 50%, #AAAAAA 100%);
+	background-image:-moz-linear-gradient(top, #eeeeee 0, #AAAAAA 50%, #888888 50%, #AAAAAA 100%);
+	background-image:-ms-linear-gradient(top, #eeeeee 0, #AAAAAA 50%, #888888 50%, #AAAAAA 100%);
+	background-image:-o-linear-gradient(top, #eeeeee 0, #AAAAAA 50%, #888888 50%, #AAAAAA 100%);
+	background-image:linear-gradient(to bottom, #eeeeee 0, #AAAAAA 50%, #888888 50%, #AAAAAA 100%);
+	
+	-moz-box-shadow:0px 1px 3px rgba(0,0,0,0.5), inset 0px 0px 3px rgba(255,255,255,1);
+	-webkit-box-shadow:0px 1px 3px rgba(0,0,0,0.5), inset 0px 0px 3px rgba(255,255,255,1);
+	box-shadow:0px 1px 3px rgba(0,0,0,0.5), inset 0px 0px 3px rgba(255,255,255,1);
+	
+	border-radius:5px;
+	border:solid 1px #000000;
+	text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+	text-align:center;
+	vertical-align:middle;
+	cursor:default;
+}
+
+.pg_button_normal:hover
+{
+	background-color:#AAAAAA;
+	
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#888888');
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#888888));
+	background-image:-webkit-linear-gradient(top, #eeeeee 0, #AAAAAA 50%, #888888 50%, #AAAAAA 100%);
+	background-image:-moz-linear-gradient(top, #eeeeee 0, #AAAAAA 50%, #888888 50%, #AAAAAA 100%);
+	background-image:-ms-linear-gradient(top, #eeeeee 0, #AAAAAA 50%, #888888 50%, #AAAAAA 100%);
+	background-image:-o-linear-gradient(top, #eeeeee 0, #AAAAAA 50%, #888888 50%, #AAAAAA 100%);
+	background-image:linear-gradient(to bottom, #eeeeee 0, #AAAAAA 50%, #888888 50%, #AAAAAA 100%);
+	
+	-moz-box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 3px rgba(255,255,255,1);
+	-webkit-box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 3px rgba(255,255,255,1);
+	box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 3px rgba(255,255,255,1);
+	
+	border-radius:5px;
+	border:solid 1px #000000;
+	text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+	text-align:center;
+	vertical-align:middle;
+	cursor:default;
+}
+
+.pg_button_down
+{
+	background-color:#888888;
+	
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#666666');
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#666666));
+	background-image:-webkit-linear-gradient(top, #cccccc 0, #888888 50%, #666666 50%, #888888 100%);
+	background-image:-moz-linear-gradient(top, #cccccc 0, #888888 50%, #666666 50%, #888888 100%);
+	background-image:-ms-linear-gradient(top, #cccccc 0, #888888 50%, #666666 50%, #888888 100%);
+	background-image:-o-linear-gradient(top, #cccccc 0, #888888 50%, #666666 50%, #888888 100%);
+	background-image:linear-gradient(to bottom, #cccccc 0, #888888 50%, #666666 50%, #888888 100%);
+	
+	-moz-box-shadow:inset 0px 0px 4px rgba(0,0,0,1);
+	-webkit-box-shadow:inset 0px 0px 4px rgba(0,0,0,1);
+	box-shadow:inset 0px 0px 4px rgba(0,0,0,1);
+	
+	border-radius:5px;
+	border:solid 1px #000000;
+	text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+	text-align:center;
+	vertical-align:middle;
+	cursor:default;
+}
+
+.pg_button_down:hover
+{
+	background-color:#888888;
+	
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#666666');
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#666666));
+	background-image:-webkit-linear-gradient(top, #cccccc 0, #888888);
+	background-image:-moz-linear-gradient(top, #cccccc 0, #888888 50%, #666666 50%, #888888 100%);
+	background-image:-ms-linear-gradient(top, #cccccc 0, #888888 50%, #666666 50%, #888888 100%);
+	background-image:-o-linear-gradient(top, #cccccc 0, #888888 50%, #666666 50%, #888888 100%);
+	background-image:linear-gradient(to bottom, #cccccc 0, #888888 50%, #666666 50%, #888888 100%);
+	
+	-moz-box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 4px rgba(0,0,0,1);
+	-webkit-box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 4px rgba(0,0,0,1);
+	box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 4px rgba(0,0,0,1);
+	
+	border-radius:5px;
+	border:solid 1px #000000;
+	text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+	text-align:center;
+	vertical-align:middle;
+	cursor:default;
+}
+
+.pg_button_rounded_normal
+{
+	background-color:#AAAAAA;
+	
+	background-image:-webkit-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,1.0) 0, rgba(255,255,255,0.5) 70%, rgba(0,0,0,0) 70%), -webkit-radial-gradient(50% 90%, circle cover, #eeeeee, #888888);
+	background-image:-moz-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,1.0) 0, rgba(255,255,255,0.5) 70%, rgba(0,0,0,0) 70%), -moz-radial-gradient(50% 90%, circle cover, #eeeeee, #888888);
+	background-image:-ms-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,1.0) 0, rgba(255,255,255,0.5) 70%, rgba(0,0,0,0) 70%), -ms-radial-gradient(50% 90%, circle cover, #eeeeee, #888888);
+	background-image:-o-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,1.0) 0, rgba(255,255,255,0.5) 70%, rgba(0,0,0,0) 70%), -o-radial-gradient(50% 90%, circle cover, #eeeeee, #888888);
+	background-image:radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,1.0) 0, rgba(255,255,255,0.5) 70%, rgba(0,0,0,0) 70%), radial-gradient(50% 90%, circle cover, #eeeeee, #888888);
+	
+	-moz-box-shadow:0px 1px 3px rgba(0,0,0,0.5), inset 0px 0px 3px rgba(0,0,0,1);
+	-webkit-box-shadow:0px 1px 3px rgba(0,0,0,0.5), inset 0px 0px 3px rgba(0,0,0,1);
+	box-shadow:0px 1px 3px rgba(0,0,0,0.5), inset 0px 0px 3px rgba(0,0,0,1);
+	
+	border-radius:50%;
+	border:solid 1px #000000;
+	text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+	text-align:center;
+	vertical-align:middle;
+	cursor:default;
+}
+
+.pg_button_rounded_normal:hover
+{
+	background-color:#AAAAAA;
+	
+	background-image:-webkit-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,1.0) 0, rgba(255,255,255,0.5) 70%, rgba(0,0,0,0) 70%), -webkit-radial-gradient(50% 90%, circle cover, #eeeeee, #888888);
+	background-image:-moz-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,1.0) 0, rgba(255,255,255,0.5) 70%, rgba(0,0,0,0) 70%), -moz-radial-gradient(50% 90%, circle cover, #eeeeee, #888888);
+	background-image:-ms-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,1.0) 0, rgba(255,255,255,0.5) 70%, rgba(0,0,0,0) 70%), -ms-radial-gradient(50% 90%, circle cover, #eeeeee, #888888);
+	background-image:-o-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,1.0) 0, rgba(255,255,255,0.5) 70%, rgba(0,0,0,0) 70%), -o-radial-gradient(50% 90%, circle cover, #eeeeee, #888888);
+	background-image:radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,1.0) 0, rgba(255,255,255,0.5) 70%, rgba(0,0,0,0) 70%), radial-gradient(50% 90%, circle cover, #eeeeee, #888888);
+	
+	-moz-box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 4px rgba(0,0,0,1);
+	-webkit-box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 4px rgba(0,0,0,1);
+	box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 4px rgba(0,0,0,1);
+	
+	border-radius:50%;
+	border:solid 1px #000000;
+	text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+	text-align:center;
+	vertical-align:middle;
+	cursor:default;
+}
+
+.pg_button_rounded_down
+{
+	background-color:#888888;
+	
+	background-image:-webkit-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0) 70%), -webkit-radial-gradient(50% 90%, circle cover, #cccccc, #666666);
+	background-image:-moz-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0) 70%), -moz-radial-gradient(50% 90%, circle cover, #cccccc, #666666);
+	background-image:-ms-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0) 70%), -ms-radial-gradient(50% 90%, circle cover, #cccccc, #666666);
+	background-image:-o-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0) 70%), -o-radial-gradient(50% 90%, circle cover, #cccccc, #666666);
+	background-image:radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0) 70%), radial-gradient(50% 90%, circle cover, #cccccc, #666666);
+	
+	-moz-box-shadow:inset 0px 0px 4px rgba(0,0,0,1), inset 0px 0px 4px rgba(0,0,0,1);
+	-webkit-box-shadow:inset 0px 0px 4px rgba(0,0,0,1), inset 0px 0px 4px rgba(0,0,0,1);
+	box-shadow:inset 0px 0px 4px rgba(0,0,0,1), inset 0px 0px 4px rgba(0,0,0,1);
+	
+	border-radius:50%;
+	border:solid 1px #000000;
+	text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+	text-align:center;
+	vertical-align:middle;
+	cursor:default;
+}
+
+.pg_button_rounded_down:hover
+{
+	background-color:#888888;
+	
+	background-image:-webkit-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0) 70%), -webkit-radial-gradient(50% 90%, circle cover, #cccccc, #666666);
+	background-image:-moz-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0) 70%), -moz-radial-gradient(50% 90%, circle cover, #cccccc, #666666);
+	background-image:-ms-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0) 70%), -ms-radial-gradient(50% 90%, circle cover, #cccccc, #666666);
+	background-image:-o-radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0) 70%), -o-radial-gradient(50% 90%, circle cover, #cccccc, #666666);
+	background-image:radial-gradient(50% 25%, ellipse contain, rgba(255,255,255,0.6) 0, rgba(255,255,255,0.3) 70%, rgba(0,0,0,0) 70%), radial-gradient(50% 90%, circle cover, #cccccc, #666666);
+	
+	-moz-box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 4px rgba(0,0,0,1), inset 0px 0px 4px rgba(0,0,0,1);
+	-webkit-box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 4px rgba(0,0,0,1), inset 0px 0px 4px rgba(0,0,0,1);
+	box-shadow:0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,1), inset 0px 0px 4px rgba(0,0,0,1), inset 0px 0px 4px rgba(0,0,0,1);
+	
+	border-radius:50%;
+	border:solid 1px #000000;
+	text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+	text-align:center;
+	vertical-align:middle;
+	cursor:default;
+} 

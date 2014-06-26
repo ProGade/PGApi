@@ -1,0 +1,2 @@
+User-agent: *		# Alle Robots ausschließen
+Disallow: /			# alles verbieten!
