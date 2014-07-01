@@ -5,7 +5,7 @@ date_default_timezone_set('Europe/Berlin');
 session_start();
 
 define('PG_API_PATH_PHP', './');
-define('PG_API_PATH_JS', 'https://localhost/hp/api.progade.de/api/');
+define('PG_API_PATH_JS', 'http://testserver.local:8080/hp/PGApi/');
 
 include(PG_API_PATH_PHP.'system/classbasics.php');
 include(PG_API_PATH_PHP.'javascript/jsloader.php');

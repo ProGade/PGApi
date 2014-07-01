@@ -1,12 +1,8 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 06 2012
+* Copyright 2014, Hans-Peter Wandura
+* Last changes of this file: Jul 01 2014
 */
 define('PG_WEBSITE_DOCTYPE_HTML5', '<!DOCTYPE html>');
 define('PG_WEBSITE_DOCTYPE_HTML4_STRICT', '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">');
@@ -24,7 +20,7 @@ define('PG_WEBSITE_XMLNS_FBML', 'xmlns:fb="http://www.facebook.com/2008/fbml"');
 
 @description
 [en]This class has methods for build complete websites.[/en]
-[de]Diese Klasse verfügt über Methoden zum Erstellen von kompletten Webseiten.[/de]
+[de]Diese Klasse verfï¿½gt ï¿½ber Methoden zum Erstellen von kompletten Webseiten.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -34,6 +30,7 @@ class classPG_Website extends classPG_ClassBasics
 	private $sDoctype = PG_WEBSITE_DOCTYPE_HTML5;
 	
 	private $sTitle = '';
+    private $sHeadContent = '';
 	
 	private $asCssFiles = array();
 	// private $asCssFeaturesRequest = array();
@@ -69,7 +66,7 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Set the DOCTYPE for the website.[/en]
-	[de]Setzt den DOCTYPE für die Webseite.[/de]
+	[de]Setzt den DOCTYPE fï¿½r die Webseite.[/de]
 	
 	@param sDoctype [needed][type]string[/type]
 	[en]
@@ -107,11 +104,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the DOCTYPE.[/en]
-	[de]Gibt den DOCTYPE zurück.[/de]
+	[de]Gibt den DOCTYPE zurï¿½ck.[/de]
 	
 	@return sDoctype [type]string[/type]
 	[en]Returns the DOCTYPE as a string.[/en]
-	[de]Gibt den DOCTYPE als String zurück.[/de]
+	[de]Gibt den DOCTYPE als String zurï¿½ck.[/de]
 	*/
 	public function getDoctype() {return $this->sDoctype;}
 	/* @end method */
@@ -143,15 +140,33 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the title of the website.[/en]
-	[de]Gibt den Titel der Webseite zurück.[/de]
+	[de]Gibt den Titel der Webseite zurï¿½ck.[/de]
 	
 	@return sTitle [type]string[/type]
 	[en]Returns the title of the website as a string.[/en]
-	[de]Gibt den Titel der Webseite als String zurück.[/de]
+	[de]Gibt den Titel der Webseite als String zurï¿½ck.[/de]
 	*/
 	public function getTitle() {return $this->sTitle;}
 	/* @end method */
-	
+
+    /*
+    @start method
+
+    @group Setup
+
+    @description
+    [en]...[/en]
+
+    @return sContent [type]string[/type]
+    [en]...[/en]
+    */
+    public function setHeadContent($_sContent)
+    {
+        $_sContent = $this->getRealParameter(array('oParameters' => $_sContent, 'sName' => 'sContent', 'xParameter' => $_sContent));
+        $this->sHeadContent = $_sContent;
+    }
+    /* @end method */
+
 	/*
 	@start method
 	
@@ -159,7 +174,7 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the JavaScript code that is executed or used in the header of the website.[/en]
-	[de]Setzt JavaScript-Code der im Kopf der Webseite ausgeführt bzw. gesetzt werden soll.[/de]
+	[de]Setzt JavaScript-Code der im Kopf der Webseite ausgefï¿½hrt bzw. gesetzt werden soll.[/de]
 	
 	@param sCode [needed][type]string[/type]
 	[en]The JavaScript code as a string.[/en]
@@ -179,11 +194,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the JavaScript code.[/en]
-	[de]Gibt den JavaScript-Code zurück.[/de]
+	[de]Gibt den JavaScript-Code zurï¿½ck.[/de]
 	
 	@return sJavaScriptCode [type]string[/type]
 	[en]Returns the JavaScript code as a string.[/en]
-	[de]Gibt den JavaScript-Code als String zurück.[/de]
+	[de]Gibt den JavaScript-Code als String zurï¿½ck.[/de]
 	*/
 	public function getJavaScriptCode() {return $this->sJavaScriptCode;}
 	/* @end method */
@@ -215,11 +230,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the base path to JavaScript files.[/en]
-	[de]Gibt den Basis-Pfad zu JavaScript Dateien zurück.[/de]
+	[de]Gibt den Basis-Pfad zu JavaScript Dateien zurï¿½ck.[/de]
 	
 	@return sJavaScriptPath [type]string[/type]
 	[en]Returns the base path to JavaScript files as a string.[/en]
-	[de]Gibt den Basis-Pfad zu JavaScript Dateien als String zurück.[/de]
+	[de]Gibt den Basis-Pfad zu JavaScript Dateien als String zurï¿½ck.[/de]
 	*/
 	public function getJavaScriptPath() {return $this->sJavaScriptPath;}
 	/* @end method */
@@ -251,11 +266,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the base path to JavaScript files of the API.[/en]
-	[de]Gibt den Basis-Pfad zu JavaScript Dateien der API zurück.[/de]
+	[de]Gibt den Basis-Pfad zu JavaScript Dateien der API zurï¿½ck.[/de]
 	
 	@return sApiJavaScriptPath [type]string[/type]
 	[en]Returns the base path to JavaScript files of the API as a string.[/en]
-	[de]Gibt den Basis-Pfad zu JavaScript Dateien der API als String zurück.[/de]
+	[de]Gibt den Basis-Pfad zu JavaScript Dateien der API als String zurï¿½ck.[/de]
 	*/
 	public function getApiJavaScriptPath() {return $this->sApiJavaScriptPath;}
 	/* @end method */
@@ -287,7 +302,7 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a CSS file that should be loaded.[/en]
-	[de]Fügt eine CSS Datei, die geladen werden soll, hinzu.[/de]
+	[de]Fï¿½gt eine CSS Datei, die geladen werden soll, hinzu.[/de]
 	
 	@param sFile [needed][type]string[/type]
 	[en]The file name as a string.[/en]
@@ -309,11 +324,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the CSS files to be loaded.[/en]
-	[de]Gibt die CSS Dateien die zu laden sind zurück.[/de]
+	[de]Gibt die CSS Dateien die zu laden sind zurï¿½ck.[/de]
 	
 	@return asCssFiles [type]string[][/type]
 	[en]Returns the CSS files to be loaded as a string array.[/en]
-	[de]Gibt die CSS Dateien die zu laden sind als String-Array zurück.[/de]
+	[de]Gibt die CSS Dateien die zu laden sind als String-Array zurï¿½ck.[/de]
 	*/
 	public function getCssFiles() {return $this->asCssFiles;}
 	/* @end method */
@@ -345,7 +360,7 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a JavaScript file that should be loaded.[/en]
-	[de]Fügt eine JavaScript Datei, die geladen werden soll, hinzu.[/de]
+	[de]Fï¿½gt eine JavaScript Datei, die geladen werden soll, hinzu.[/de]
 	
 	@param sFile [needed][type]string[/type]
 	[en]The file name as a string.[/en]
@@ -365,11 +380,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the JavaScript files to be loaded.[/en]
-	[de]Gibt die JavaScript Dateien die zu laden sind zurück.[/de]
+	[de]Gibt die JavaScript Dateien die zu laden sind zurï¿½ck.[/de]
 	
 	@return asJavaScriptFiles [type]string[][/type]
 	[en]Returns the JavaScript files to be loaded as a string array.[/en]
-	[de]Gibt die JavaScript Dateien die zu laden sind als String-Array zurück.[/de]
+	[de]Gibt die JavaScript Dateien die zu laden sind als String-Array zurï¿½ck.[/de]
 	*/
 	public function getJavaScriptFiles() {return $this->asJavaScriptFiles;}
 	/* @end method */
@@ -401,7 +416,7 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a JavaScript API file that should be loaded.[/en]
-	[de]Fügt eine JavaScript API Datei, die geladen werden soll, hinzu.[/de]
+	[de]Fï¿½gt eine JavaScript API Datei, die geladen werden soll, hinzu.[/de]
 	
 	@param sFile [needed][type]string[/string]
 	[en]The file name as a string.[/en]
@@ -421,11 +436,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the JavaScript API files to be loaded.[/en]
-	[de]Gibt die JavaScript API Dateien die zu laden sind zurück.[/de]
+	[de]Gibt die JavaScript API Dateien die zu laden sind zurï¿½ck.[/de]
 	
 	@return asApiJavaScriptFiles [type]string[][/type]
 	[en]Returns the JavaScript API files to be loaded as a string array.[/en]
-	[de]Gibt die JavaScript API Dateien die zu laden sind als String-Array zurück.[/de]
+	[de]Gibt die JavaScript API Dateien die zu laden sind als String-Array zurï¿½ck.[/de]
 	*/
 	public function getApiJavaScriptFiles() {return $this->asApiJavaScriptFiles;}
 	/* @end method */
@@ -457,11 +472,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the JavaScript loader object.[/en]
-	[de]Gibt das JavaScript-Loader-Objekt zurück.[/de]
+	[de]Gibt das JavaScript-Loader-Objekt zurï¿½ck.[/de]
 	
 	@return oJsLoader [type]object[/type]
 	[en]Returns the JavaScript loader object.[/en]
-	[de]Gibt das JavaScript-Loader-Objekt zurück.[/de]
+	[de]Gibt das JavaScript-Loader-Objekt zurï¿½ck.[/de]
 	*/
 	public function getJsLoader() {return $this->oJsLoader;}
 	/* @end method */
@@ -493,11 +508,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the CSS loader object.[/en]
-	[de]Gibt das CSS-Loader-Objekt zurück.[/de]
+	[de]Gibt das CSS-Loader-Objekt zurï¿½ck.[/de]
 	
 	@return oCssLoader [type]object[/type]
 	[en]Returns the CSS loader object.[/en]
-	[de]Gibt das CSS-Loader-Objekt zurück.[/de]
+	[de]Gibt das CSS-Loader-Objekt zurï¿½ck.[/de]
 	*/
 	public function getCssLoader() {return $this->oCssLoader;}
 	/* @end method */
@@ -509,7 +524,7 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the Meta object for the Website.[/en]
-	[de]Setzt das Meta Objekt für die Webseite.[/de]
+	[de]Setzt das Meta Objekt fï¿½r die Webseite.[/de]
 	
 	@param oMeta [needed][type]object[/type]
 	[en]Specifies the Meta object.[/en]
@@ -529,11 +544,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the Meta object, where one has been specified.[/en]
-	[de]Gibt das Meta Objekt zurück, soweit eins angegeben wurde.[/de]
+	[de]Gibt das Meta Objekt zurï¿½ck, soweit eins angegeben wurde.[/de]
 	
 	@return oMeta [type]object[/type]
 	[en]Returns the Meta object, where one has been specified.[/en]
-	[de]Gibt das Meta Objekt zurück, soweit eins angegeben wurde.[/de]
+	[de]Gibt das Meta Objekt zurï¿½ck, soweit eins angegeben wurde.[/de]
 	*/
 	public function getMeta() {return $this->oMeta;}
 	/* @end method */
@@ -545,7 +560,7 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the Open-Graph object for the Website.[/en]
-	[de]Setzt das Open-Graph Objekt für die Webseite.[/de]
+	[de]Setzt das Open-Graph Objekt fï¿½r die Webseite.[/de]
 	
 	@param oOpenGraph [needed][type]object[/type]
 	[en]Specifies the Open-Graph object.[/en]
@@ -565,11 +580,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the Open-Graph object, where one has been specified.[/en]
-	[de]Gibt das Open-Graph Objekt zurück, soweit eins angegeben wurde.[/de]
+	[de]Gibt das Open-Graph Objekt zurï¿½ck, soweit eins angegeben wurde.[/de]
 	
 	@return oOpenGraph [type]object[/type]
 	[en]Returns the Open-Graph object, where one has been specified.[/en]
-	[de]Gibt das Open-Graph Objekt zurück, soweit eins angegeben wurde.[/de]
+	[de]Gibt das Open-Graph Objekt zurï¿½ck, soweit eins angegeben wurde.[/de]
 	*/
 	public function getOpenGraph() {return $this->oOpenGraph;}
 	/* @end method */
@@ -581,7 +596,7 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the Facebook meta object for the Website.[/en]
-	[de]Setzt das Facebook-Meta Objekt für die Webseite.[/de]
+	[de]Setzt das Facebook-Meta Objekt fï¿½r die Webseite.[/de]
 	
 	@param oFacebookMeta [needed][type]object[/type]
 	[en]Specifies the Facebook meta object.[/en]
@@ -601,11 +616,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the Facebook meta object, where one has been specified.[/en]
-	[de]Gibt das Facebook-Meta Objekt zurück, soweit eins angegeben wurde.[/de]
+	[de]Gibt das Facebook-Meta Objekt zurï¿½ck, soweit eins angegeben wurde.[/de]
 	
 	@return oFacebookMeta [type]object[/type]
 	[en]Returns the Facebook meta object, where one has been specified.[/en]
-	[de]Gibt das Facebook-Meta Objekt zurück, soweit eins angegeben wurde.[/de]
+	[de]Gibt das Facebook-Meta Objekt zurï¿½ck, soweit eins angegeben wurde.[/de]
 	*/
 	public function getFacebookMeta() {return $this->oFacebookMeta;}
 	/* @end method */
@@ -637,11 +652,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether Open-Graph is used.[/en]
-	[de]Gibt zurück ob Open-Graph verwendet wird.[/de]
+	[de]Gibt zurï¿½ck ob Open-Graph verwendet wird.[/de]
 	
 	@return bOpenGraph [type]bool[/type]
 	[en]Returns whether Open-Graph is used.[/en]
-	[de]Gibt zurück ob Open-Graph verwendet wird.[/de]
+	[de]Gibt zurï¿½ck ob Open-Graph verwendet wird.[/de]
 	*/
 	public function isOpenGraph() {return $this->bOpenGraph;}
 	/* @end method */
@@ -673,11 +688,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether FBML (Facebook) is used.[/en]
-	[de]Gibt zurück ob FBML (Facebook) verwendet wird.[/de]
+	[de]Gibt zurï¿½ck ob FBML (Facebook) verwendet wird.[/de]
 	
 	@return bFacebookML [type]bool[/type]
 	[en]Returns whether FBML (Facebook) is used.[/en]
-	[de]Gibt zurück ob FBML (Facebook) verwendet wird.[/de]
+	[de]Gibt zurï¿½ck ob FBML (Facebook) verwendet wird.[/de]
 	*/
 	public function isFacebookML() {return $this->bFacebookML;}
 	/* @end method */
@@ -689,11 +704,11 @@ class classPG_Website extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the entire website and returns it as a string.[/en]
-	[de]Erstellt die komplette Webseite und gibt sie als String zurück.[/de]
+	[de]Erstellt die komplette Webseite und gibt sie als String zurï¿½ck.[/de]
 	
 	@return sHtml [type]string[/type]
 	[en]Returns the website as a string.[/en]
-	[de]Gibt die Webseite als String zurück.[/de]
+	[de]Gibt die Webseite als String zurï¿½ck.[/de]
 	
 	@param xTemplate [type]mixed[/type]
 	[en]The template that will be used. You can specify a path to a file or the source code of the template.[/en]
@@ -702,6 +717,9 @@ class classPG_Website extends classPG_ClassBasics
 	@param bTemplateIsCompleteSite [type]bool[/type]
 	[en]Specifies whether the template contains a complete HTML file, or just the contents of the body tag.[/en]
 	[de]Gibt an ob das Template eine komplette HTML Datei oder nur den Inhalt vom Body-Tag beinhaltet.[/de]
+
+	@param sHeadContent [type]string[/type]
+	[en]...[/en]
 	
 	@param bReplaceUrlProtocols [type]bool[/type]
 	[en]Specifies whether the url protocol of absolute links is to be replaced automatically. E.g. from http://www.progade.de to https://www.progade.de.[/en]
@@ -721,7 +739,8 @@ class classPG_Website extends classPG_ClassBasics
 	*/
 	public function build(
 		$_xTemplate = NULL, 
-		$_bTemplateIsCompleteSite = NULL, 
+		$_bTemplateIsCompleteSite = NULL,
+        $_sHeadContent = NULL,
 		$_bReplaceUrlProtocols = NULL, 
 		$_bReplaceBBCode = NULL, 
 		$_bReplaceDates = NULL, 
@@ -737,6 +756,7 @@ class classPG_Website extends classPG_ClassBasics
 		if (($this->oFacebookMeta == null) && (isset($oPGFacebookMeta))) {$this->oFacebookMeta = $oPGFacebookMeta;}
 
 		$_bTemplateIsCompleteSite = $this->getRealParameter(array('oParameters' => $_xTemplate, 'sName' => 'bTemplateIsCompleteSite', 'xParameter' => $_bTemplateIsCompleteSite));
+        $_sHeadContent = $this->getRealParameter(array('oParameters' => $_xTemplate, 'sName' => 'sHeadContent', 'xParameter' => $_sHeadContent));
 		$_bReplaceUrlProtocols = $this->getRealParameter(array('oParameters' => $_xTemplate, 'sName' => 'bReplaceUrlProtocols', 'xParameter' => $_bReplaceUrlProtocols));
 		$_bReplaceBBCode = $this->getRealParameter(array('oParameters' => $_xTemplate, 'sName' => 'bReplaceBBCode', 'xParameter' => $_bReplaceBBCode));
 		$_bReplaceDates = $this->getRealParameter(array('oParameters' => $_xTemplate, 'sName' => 'bReplaceDates', 'xParameter' => $_bReplaceDates));
@@ -745,6 +765,7 @@ class classPG_Website extends classPG_ClassBasics
 		
 		if ($_xTemplate === NULL) {$_xTemplate = '';}
 		if ($_bTemplateIsCompleteSite === NULL) {$_bTemplateIsCompleteSite = false;}
+        if ($_sHeadContent === NULL) {$_sHeadContent = $this->sHeadContent;}
 		
 		$_sLineBreak = '';
 		if ($this->isLineBreak() == true) {$_sLineBreak = $this->getLineBreak();}
@@ -833,6 +854,8 @@ class classPG_Website extends classPG_ClassBasics
 						$this->oJsLoader->setFiles(array('asFiles' => $this->asJavaScriptFiles));
 						$_sHtml .= $this->oJsLoader->build();
 					}
+
+                    if (!empty($_sHeadContent)) {$_sHtml .= $_sHeadContent;}
 				
 				$_sHtml .= '</head>'.$_sLineBreak;
 				$_sHtml .= '<body>'.$_sLineBreak;

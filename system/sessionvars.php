@@ -197,8 +197,8 @@ class classPG_SessionVars extends classPG_ClassBasics
 	*/
 	public function open()
 	{
-        ini_set('session.use_only_cookies', '1');
-        ini_set('session.use_trans_id', '0');
+        // ini_set('session.use_only_cookies', '1');
+        // ini_set('session.use_trans_id', '0');
 		if ($this->sPath == '') {$this->sPath = '/';}
         if ($this->sDomain != '') {session_set_cookie_params($this->iLifeTime, $this->sPath, $this->sDomain, $this->bUseSecure, $this->bUseHttpOnly);}
 		if ($this->sName != '') {session_name($this->sName);}

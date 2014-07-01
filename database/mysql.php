@@ -1,12 +1,8 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Sep 18 2012
+* Copyright (c) 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Jun 27 2014
 */
 /*
 @start class
@@ -1230,7 +1226,8 @@ class classPG_MySql extends classPG_ClassBasics
 		$_sIDColumn = NULL, 
 		$_xIDValue = NULL, 
 		$_xWhere = NULL,
-		$_bAllowAnonymDelete = NULL)
+		$_bAllowAnonymDelete = NULL
+    )
 	{
 		$_sIDColumn = $this->getRealParameter(array('oParameters' => $_sTable, 'sName' => 'sIDColumn', 'xParameter' => $_sIDColumn));
 		$_xIDValue = $this->getRealParameter(array('oParameters' => $_sTable, 'sName' => 'xIDValue', 'xParameter' => $_xIDValue));
@@ -1268,7 +1265,10 @@ class classPG_MySql extends classPG_ClassBasics
 	@param axColumn [needed][type]mixed[][/type]
 	[en]...[/en]
 	*/
-	public function changeColumn($_sTable, $_axColumn = NULL)
+	public function changeColumn(
+        $_sTable,
+        $_axColumn = NULL
+    )
 	{
 		$_axColumn = $this->getRealParameter(array('oParameters' => $_sTable, 'sName' => 'axColumn', 'xParameter' => $_axColumn));
 		$_sTable = $this->getRealParameter(array('oParameters' => $_sTable, 'sName' => 'sTable', 'xParameter' => $_sTable));

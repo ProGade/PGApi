@@ -1,8 +1,8 @@
 <?php
 /*
 * ProGade API
-* Copyright (c) 2012 Hans-Peter Wandura (ProGade)
-* Last changes of this file: May 19 2014
+* Copyright (c) 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Jun 27 2014
 */
 mt_srand((double)microtime()*1000000);
 
@@ -319,9 +319,12 @@ class classPG_Login extends classPG_ClassBasics
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'UserID', 'sType' => 'INT', 'iSize' => 11, 'xDefault' => NULL, 'sOptions' => 'AUTO_INCREMENT PRIMARY KEY'));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'SimulateUserID', 'sType' => 'INT', 'iSize' => 11, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'UserType', 'sType' => 'INT', 'iSize' => 2, 'xDefault' => PG_LOGIN_USERTYPE_USER, 'sOptions' => 'NOT NULL'));
-		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Gender', 'sType' => 'VARCHAR', 'iSize' => 32, 'xDefault' => 'male', 'sOptions' => NULL));
+		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Title', 'sType' => 'VARCHAR', 'iSize' => 32, 'xDefault' => '', 'sOptions' => NULL));
+        $_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Gender', 'sType' => 'VARCHAR', 'iSize' => 32, 'xDefault' => 'male', 'sOptions' => NULL));
+        $_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'BirthDate', 'sType' => 'INT', 'iSize' => 11, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'FirstName', 'sType' => 'VARCHAR', 'iSize' => 128, 'xDefault' => '', 'sOptions' => NULL));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'LastName', 'sType' => 'VARCHAR', 'iSize' => 128, 'xDefault' => '', 'sOptions' => NULL));
+        $_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Company', 'sType' => 'VARCHAR', 'iSize' => 255, 'xDefault' => '', 'sOptions' => NULL));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Street', 'sType' => 'VARCHAR', 'iSize' => 255, 'xDefault' => '', 'sOptions' => NULL));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'ZipCode', 'sType' => 'VARCHAR', 'iSize' => 8, 'xDefault' => '', 'sOptions' => NULL));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Locale', 'sType' => 'VARCHAR', 'iSize' => 255, 'xDefault' => '', 'sOptions' => NULL));
@@ -335,6 +338,7 @@ class classPG_Login extends classPG_ClassBasics
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Language', 'sType' => 'CHAR', 'iSize' => 2, 'xDefault' => 'EN', 'sOptions' => NULL));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Accepted', 'sType' => 'INT', 'iSize' => 1, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Banned', 'sType' => 'INT', 'iSize' => 1, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
+        $_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'IsCompany', 'sType' => 'INT', 'iSize' => 1, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'LoginTimeStamp', 'sType' => 'INT', 'iSize' => 11, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'ChangeTimeStamp', 'sType' => 'INT', 'iSize' => 11, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'CreateTimeStamp', 'sType' => 'INT', 'iSize' => 11, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
@@ -371,6 +375,7 @@ class classPG_Login extends classPG_ClassBasics
 		$_axAddColumnStructures = array();
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'AdressID', 'sType' => 'INT', 'iSize' => 11, 'xDefault' => NULL, 'sOptions' => 'AUTO_INCREMENT PRIMARY KEY'));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'UserID', 'sType' => 'INT', 'iSize' => 11, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
+        $_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Company', 'sType' => 'VARCHAR', 'iSize' => 255, 'xDefault' => '', 'sOptions' => NULL));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Street', 'sType' => 'VARCHAR', 'iSize' => 255, 'xDefault' => '', 'sOptions' => NULL));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'ZipCode', 'sType' => 'VARCHAR', 'iSize' => 8, 'xDefault' => '', 'sOptions' => NULL));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Location', 'sType' => 'VARCHAR', 'iSize' => 255, 'xDefault' => '', 'sOptions' => NULL));
@@ -378,7 +383,8 @@ class classPG_Login extends classPG_ClassBasics
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Phone', 'sType' => 'VARCHAR', 'iSize' => 32, 'xDefault' => '', 'sOptions' => NULL));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'MobilePhone', 'sType' => 'VARCHAR', 'iSize' => 32, 'xDefault' => '', 'sOptions' => NULL));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Fax', 'sType' => 'VARCHAR', 'iSize' => 32, 'xDefault' => '', 'sOptions' => NULL));
-		
+        $_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'IsCompany', 'sType' => 'INT', 'iSize' => 1, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
+
 		$_axTablesStructure = $_oDatabaseUpdate->buildTableStructure(array('sTable' => $this->getDatabaseTablePrefix().'user_adresses', 'axTableStructure' => $_axTablesStructure, 'axAddColumnStructures' => $_axAddColumnStructures, 'axChangeColumnStructures' => NULL, 'asRemoveColumns' => NULL, 'asPrimaryKeyColumns' => NULL));
 		
 		return $_oDatabaseUpdate->buildDBChunkStructure(array('sDBChunk' => 'User', 'axDBChunkStructures' => $_axDBChunkStructures, 'axTablesStructure' => $_axTablesStructure));
