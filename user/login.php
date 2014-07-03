@@ -371,7 +371,7 @@ class classPG_Login extends classPG_ClassBasics
 		
 		$_axTablesStructure = $_oDatabaseUpdate->buildTableStructure(array('sTable' => $this->getDatabaseTablePrefix().'user_actionlog', 'axTableStructure' => $_axTablesStructure, 'axAddColumnStructures' => $_axAddColumnStructures, 'axChangeColumnStructures' => NULL, 'asRemoveColumns' => NULL, 'asPrimaryKeyColumns' => NULL));
 		
-		// user_adresses...
+		// user_addresses...
 		$_axAddColumnStructures = array();
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'AdressID', 'sType' => 'INT', 'iSize' => 11, 'xDefault' => NULL, 'sOptions' => 'AUTO_INCREMENT PRIMARY KEY'));
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'UserID', 'sType' => 'INT', 'iSize' => 11, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
@@ -385,7 +385,7 @@ class classPG_Login extends classPG_ClassBasics
 		$_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'Fax', 'sType' => 'VARCHAR', 'iSize' => 32, 'xDefault' => '', 'sOptions' => NULL));
         $_axAddColumnStructures[] = $_oDatabaseUpdate->buildAddColumnStructure(array('sName' => 'IsCompany', 'sType' => 'INT', 'iSize' => 1, 'xDefault' => 0, 'sOptions' => 'NOT NULL'));
 
-		$_axTablesStructure = $_oDatabaseUpdate->buildTableStructure(array('sTable' => $this->getDatabaseTablePrefix().'user_adresses', 'axTableStructure' => $_axTablesStructure, 'axAddColumnStructures' => $_axAddColumnStructures, 'axChangeColumnStructures' => NULL, 'asRemoveColumns' => NULL, 'asPrimaryKeyColumns' => NULL));
+		$_axTablesStructure = $_oDatabaseUpdate->buildTableStructure(array('sTable' => $this->getDatabaseTablePrefix().'user_addresses', 'axTableStructure' => $_axTablesStructure, 'axAddColumnStructures' => $_axAddColumnStructures, 'axChangeColumnStructures' => NULL, 'asRemoveColumns' => NULL, 'asPrimaryKeyColumns' => NULL));
 		
 		return $_oDatabaseUpdate->buildDBChunkStructure(array('sDBChunk' => 'User', 'axDBChunkStructures' => $_axDBChunkStructures, 'axTablesStructure' => $_axTablesStructure));
 	}
