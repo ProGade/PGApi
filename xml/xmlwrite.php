@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
+* Copyright 2014, Hans-Peter Wandura
 * Last changes of this file: Aug 06 2012
 */
 define('PG_XML_TYPE',	'PG_XML');
@@ -15,7 +11,7 @@ define('PG_XML_TYPE',	'PG_XML');
 
 @description
 [en]This class has methods to create XML structures.[/en]
-[de]Diese Klasse verfügt über Methoden zur Erstellung von XML Strukturen.[/de]
+[de]Diese Klasse verfÃ¼gt Ã¼ber Methoden zur Erstellung von XML Strukturen.[/de]
 
 @param extends classPG_ClassBasics
 
@@ -61,7 +57,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Opens respectively initializes the XML document[/en]
-	[de]Öffnet bzw. initialisiert das XML Dokument[/de]
+	[de]Ã¶ffnet bzw. initialisiert das XML Dokument[/de]
 	
 	@param sRequestType [type]string[/type]
 	[en]Type of a request such as Ajax requests[/en]
@@ -69,7 +65,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@param sRequestObjectID [type]string[/type]
 	[en]Object ID of a request. Could e.g. be the object that sent the request.[/en]
-	[de]Objekt ID eines Requests. Könnte z.B. das Objekt sein, welches die Anfrage gesendet hat.[/de]
+	[de]Objekt ID eines Requests. KÃ¶nnte z.B. das Objekt sein, welches die Anfrage gesendet hat.[/de]
 	
 	@param iUserID [type]int[/type]
 	[en]ID of user who sent the request.[/en]
@@ -102,7 +98,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Closes respectively terminates the XML document.[/en]
-	[de]Schließt bzw. beendet das XML Dokument.[/de]
+	[de]SchlieÃŸt bzw. beendet das XML Dokument.[/de]
 	*/
 	public function close() {$this->sXML .= '</PG_XML>';}
 	/* @end method */
@@ -114,11 +110,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the source of the XML document.[/en]
-	[de]Gibt den Quelltext des XML-Dokuments zurück.[/de]
+	[de]Gibt den Quelltext des XML-Dokuments zurÃ¼ck.[/de]
 	
 	@return sXML [type]string[/type]
 	[en]Returns a string with the source of the XML document.[/en]
-	[de]Gibt einen String mit dem Quelltext des XML-Dokuments zurück.[/de]
+	[de]Gibt einen String mit dem Quelltext des XML-Dokuments zurÃ¼ck.[/de]
 	*/
 	public function getXml() {return $this->sXML;}
 	/* @end method */
@@ -150,7 +146,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@return sAttributes [type]string[/type]
 	[en]Returns the attributes of an XML tag as a string.[/en]
-	[de]Gibt die Attribute eines XML-Tags als String zurück.[/de]
+	[de]Gibt die Attribute eines XML-Tags als String zurÃ¼ck.[/de]
 	
 	@description
 	[en]Converts attributes to a string.[/en]
@@ -215,7 +211,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a tag of type CData to the XMLWrite object.[/en]
-	[de]Fügt einen Tag vom Typ CData dem XmlWrite Objekt hinzu.[/de]
+	[de]FÃ¼gt einen Tag vom Typ CData dem XmlWrite Objekt hinzu.[/de]
 
 	@param sTag [needed][type]string[/type]
 	%sTagOfTags%
@@ -242,11 +238,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Builds a tag of type CData and returns it as a string.[/en]
-	[de]Erstellt einen Tag vom Typ CData und gibt es als String zurück.[/de]
+	[de]Erstellt einen Tag vom Typ CData und gibt es als String zurÃ¼ck.[/de]
 	
 	@return sTag [type]string[/type]
 	[en]Returns a tag of type CData as a string.[/en]
-	[de]Gibt einen Tag vom Typ CData als String zurück.[/de]
+	[de]Gibt einen Tag vom Typ CData als String zurÃ¼ck.[/de]
 
 	@param sTag [needed][type]string[/type]
 	%sTagOfTags%
@@ -300,7 +296,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 
 	@description
 	[en]Adds a tag of type text to the XMLWrite object.[/en]
-	[de]Fügt einen Tag vom Typ Text dem XmlWrite Objekt hinzu.[/de]
+	[de]FÃ¼gt einen Tag vom Typ Text dem XmlWrite Objekt hinzu.[/de]
 
 	@param sTag [needed][type]string[/type]
 	%sTagOfTags%
@@ -327,11 +323,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Builds a tag of type text and returns it as a string.[/en]
-	[de]Erstellt einen Tag vom Typ Text und gibt es als String zurück.[/de]
+	[de]Erstellt einen Tag vom Typ Text und gibt es als String zurÃ¼ck.[/de]
 	
 	@return sTag [type]string[/type]
 	[en]Returns a tag of type text as a string.[/en]
-	[de]Gibt einen Tag vom Typ Text als String zurück.[/de]
+	[de]Gibt einen Tag vom Typ Text als String zurÃ¼ck.[/de]
 
 	@param sTag [needed][type]string[/type]
 	%sTagOfTags%
@@ -385,7 +381,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a tag of type number to the XMLWrite object.[/en]
-	[de]Fügt einen Tag vom Typ Number dem XmlWrite Objekt hinzu.[/de]
+	[de]FÃ¼gt einen Tag vom Typ Number dem XmlWrite Objekt hinzu.[/de]
 
 	@param sTag [needed][type]string[/type]
 	%sTagOfTags%
@@ -412,11 +408,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Builds a tag of type number and returns it as a string.[/en]
-	[de]Erstellt einen Tag vom Typ Number und gibt es als String zurück.[/de]
+	[de]Erstellt einen Tag vom Typ Number und gibt es als String zurÃ¼ck.[/de]
 	
 	@return sTag [type]string[/type]
 	[en]Returns a tag of type number as a string.[/en]
-	[de]Gibt einen Tag vom Typ Number als String zurück.[/de]
+	[de]Gibt einen Tag vom Typ Number als String zurÃ¼ck.[/de]
 
 	@param sTag [needed][type]string[/type]
 	%sTagOfTags%
@@ -489,7 +485,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 
 	@description
 	[en]Adds an open tag to the XMLWrite object.[/en]
-	[de]Fügt einen offenen Tag dem XmlWrite Objekt hinzu.[/de]
+	[de]FÃ¼gt einen offenen Tag dem XmlWrite Objekt hinzu.[/de]
 
 	@param sTag [needed][type]string[/type]
 	%sTagOfTags%
@@ -512,11 +508,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Builds an open tag and returns it as a string.[/en]
-	[de]Erstellt einen offenen Tag und gibt es als String zurück.[/de]
+	[de]Erstellt einen offenen Tag und gibt es als String zurÃ¼ck.[/de]
 	
 	@return sTag [type]string[/type]
 	[en]Returns an open tag as a String.[/en]
-	[de]Gibt einen offenen Tag als String zurück.[/de]
+	[de]Gibt einen offenen Tag als String zurÃ¼ck.[/de]
 
 	@param sTag [needed][type]string[/type]
 	%sTagOfTags%
@@ -578,7 +574,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 
 	@description
 	[en]Adds an closed tag to the XMLWrite object.[/en]
-	[de]Fügt einen geschlossenen Tag dem XmlWrite Objekt hinzu.[/de]
+	[de]FÃ¼gt einen geschlossenen Tag dem XmlWrite Objekt hinzu.[/de]
 	
 	@param sTag [type]string[/type]
 	%sTagOfTags%
@@ -597,11 +593,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Builds an closed tag and returns it as a string.[/en]
-	[de]Erstellt einen geschlossenen Tag und gibt es als String zurück.[/de]
+	[de]Erstellt einen geschlossenen Tag und gibt es als String zurÃ¼ck.[/de]
 	
 	@return sTag [type]string[/type]
 	[en]Returns an closed tag as a String.[/en]
-	[de]Gibt einen geschlossenen Tag als String zurück.[/de]
+	[de]Gibt einen geschlossenen Tag als String zurÃ¼ck.[/de]
 
 	@param sTag [type]string[/type]
 	%sTagOfTags%
@@ -624,7 +620,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Sets a closed tag for the last open tag directly into the source of the XML document.[/en]
-	[de]Setzt einen geschlossenen Tag zum zuletzt geöffneten Tag direkt in den Quelltext des XML-Dokuments.[/de]
+	[de]Setzt einen geschlossenen Tag zum zuletzt geÃ¶ffneten Tag direkt in den Quelltext des XML-Dokuments.[/de]
 	*/
 	public function closeLastTag() {$this->sXML .= $this->buildCloseLastTag();}
 	/* @end method */
@@ -636,7 +632,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Sets a closed tag for the last open tag directly into the source of the XML document.[/en]
-	[de]Setzt einen geschlossenen Tag zum zuletzt geöffneten Tag direkt in den Quelltext des XML-Dokuments.[/de]
+	[de]Setzt einen geschlossenen Tag zum zuletzt geÃ¶ffneten Tag direkt in den Quelltext des XML-Dokuments.[/de]
 	*/
 	public function setCloseLastTag() {$this->sXML .= $this->buildCloseLastTag();}
 	/* @end method */
@@ -648,7 +644,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 
 	@description
 	[en]Adds an closed tag for the last open tag to the XMLWrite object.[/en]
-	[de]Fügt einen geschlossenen Tag zum zuletzt geöffneten Tag dem XmlWrite Objekt hinzu.[/de]
+	[de]FÃ¼gt einen geschlossenen Tag zum zuletzt geÃ¶ffneten Tag dem XmlWrite Objekt hinzu.[/de]
 	*/
 	public function addCloseLastTag() {$this->asTags[] = $this->buildCloseLastTag();}
 	/* @end method */
@@ -660,11 +656,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Builds an closed tag and returns it as a string.[/en]
-	[de]Erstellt einen geschlossenen Tag und gibt es als String zurück.[/de]
+	[de]Erstellt einen geschlossenen Tag und gibt es als String zurÃ¼ck.[/de]
 	
 	@return sTag [type]string[/type]
 	[en]Returns an closed tag as a String.[/en]
-	[de]Gibt einen geschlossenen Tag als String zurück.[/de]
+	[de]Gibt einen geschlossenen Tag als String zurÃ¼ck.[/de]
 	*/
 	public function buildCloseLastTag() {return '</'.$this->sLastTag.'>';}
 	/* @end method */
@@ -696,7 +692,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 
 	@description
 	[en]Adds data of type CData to the XMLWrite object.[/en]
-	[de]Fügt Daten vom Typ CData dem XmlWrite Objekt hinzu.[/de]
+	[de]FÃ¼gt Daten vom Typ CData dem XmlWrite Objekt hinzu.[/de]
 	
 	@param sText [needed][type]string[/type]
 	[en]The text to be formatted to data of type CData.[/en]
@@ -716,11 +712,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Builds data of type CData and returns it as a string.[/en]
-	[de]Erstellt Daten vom Typ CData und gibt es als String zurück.[/de]
+	[de]Erstellt Daten vom Typ CData und gibt es als String zurÃ¼ck.[/de]
 
 	@return sCData [type]string[/type]
 	[en]Returns data of type CData as a string.[/en]
-	[de]Gibt Daten vom Typ CData als String zurück.[/de]
+	[de]Gibt Daten vom Typ CData als String zurÃ¼ck.[/de]
 
 	@param sText [needed][type]string[/type]
 	[en]The text to be formatted to data of type CData.[/en]
@@ -760,7 +756,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 
 	@description
 	[en]Adds text to the XMLWrite object.[/en]
-	[de]Fügt Text dem XmlWrite Objekt hinzu.[/de]
+	[de]FÃ¼gt Text dem XmlWrite Objekt hinzu.[/de]
 	
 	@param sText [needed][type]string[/type]
 	[en]The text that will be used.[/en]
@@ -780,11 +776,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Builds formatted text and returns it as a string.[/en]
-	[de]Erstellt formatierten Text und gibt es als String zurück.[/de]
+	[de]Erstellt formatierten Text und gibt es als String zurÃ¼ck.[/de]
 	
 	@return sText [type]string[/type]
 	[en]Returns formatted text as a string.[/en]
-	[de]Gibt formatierten Text als String zurück.[/de]
+	[de]Gibt formatierten Text als String zurÃ¼ck.[/de]
 
 	@param sText [needed][type]string[/type]
 	[en]The text that will be used.[/en]
@@ -824,7 +820,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 
 	@description
 	[en]Adds a string to the XMLWrite object.[/en]
-	[de]Fügt einen String dem XmlWrite Objekt hinzu.[/de]
+	[de]FÃ¼gt einen String dem XmlWrite Objekt hinzu.[/de]
 	
 	@param sString [needed][type]string[/type]
 	[en]The string that will be used.[/en]
@@ -844,11 +840,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	
 	@description
 	[en]Builds a string and returns it as a string.[/en]
-	[de]Erstellt einen String und gibt es als String zurück.[/de]
+	[de]Erstellt einen String und gibt es als String zurÃ¼ck.[/de]
 
 	@return sString [type]string[/type]
 	[en]Returns a string as a string.[/en]
-	[de]Gibt einen String als String zurück.[/de]
+	[de]Gibt einen String als String zurÃ¼ck.[/de]
 	
 	@param sString [needed][type]string[/type]
 	[en]The string that will be used.[/en]
@@ -868,11 +864,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 
 	@description
 	[en]Builds the XML document and returns it as a string.[/en]
-	[de]Erstellt das XML-Dokument und gibt es als String zurück.[/de]
+	[de]Erstellt das XML-Dokument und gibt es als String zurÃ¼ck.[/de]
 
 	@return sXml [type]string[/type]
 	[en]Returns the XML document as a string.[/en
-	[de]Gibt das XML-Dokument als String zurück.[/de]
+	[de]Gibt das XML-Dokument als String zurÃ¼ck.[/de]
 	
 	@param sRequestType [type]string[/type]
 	[en]The request type of a request from the web page, if there is one.[/en]
@@ -880,11 +876,11 @@ class classPG_XmlWrite extends classPG_ClassBasics
 
 	@param sRequestObjectID [type]string[/type]
 	[en]The object that initiated the request, if there is one.[/en]
-	[de]Das Objekt, welches die Anfrage ausgelöst hat, soweit es eines gibt.[/de]
+	[de]Das Objekt, welches die Anfrage ausgelï¿½st hat, soweit es eines gibt.[/de]
 
 	@param iUserID [type]int[/type]
 	[en]The user that triggered the request, if there is one.[/en]
-	[de]Der Benutzer, der die Anfrage ausgelöst hat, soweit es einen gibt.[/de]
+	[de]Der Benutzer, der die Anfrage ausgelÃ¶st hat, soweit es einen gibt.[/de]
 	*/
 	public function build($_sRequestType = NULL, $_sRequestObjectID = NULL, $_iUserID = NULL)
 	{

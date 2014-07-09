@@ -1,15 +1,11 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
+* Copyright 2014, Hans-Peter Wandura
 * Last changes of this file: Aug 06 2012
 */
 /*
-Beschreibung der Code-Tags für Allgemeine Rss Infos
+Beschreibung der Code-Tags fÃ¼r Allgemeine Rss Infos
 [image]				= Bild des Rss Feeds
 [title]				= Titel des Rss Feeds
 [description]		= Beschreibung des Rss Feeds
@@ -18,16 +14,16 @@ Beschreibung der Code-Tags für Allgemeine Rss Infos
 [copyright]			= Kopierrechte des Rss Feeds
 [build_date]		= Datum an dem das Rss Feed erstellt wurde
 [build_time]		= Uhrzeit an dem das Rss Feed erstellt wurde
-[pub_date]			= Datum an dem der Inhalt des Rss Feeds veröffentlicht wurde (z.B. veröffentlichung einer Zeitung vor dem [build_date])
-[pub_time]			= Uhrzeit an dem der Inhalt des Rss Feeds veröffentlicht wurde
+[pub_date]			= Datum an dem der Inhalt des Rss Feeds verÃ¶ffentlicht wurde (z.B. verÃ¶ffentlichung einer Zeitung vor dem [build_date])
+[pub_time]			= Uhrzeit an dem der Inhalt des Rss Feeds verÃ¶ffentlicht wurde
 
-Beschreibung der Code-Tags für Einträge der Rss
+Beschreibung der Code-Tags fÃ¼r EintrÃ¤ge der Rss
 [title]				= Titel des Rss Feed Eintrags
 [description]		= Beschreibung des Rss Feed Eintrags
 [author]			= Verfasser (Autor) des Rss Feed Eintrags
-[comments]			= Link zu einer Seite auf der über den Rss Feed Eintrag Diskutiert werden kann
-[pub_date]			= Datum an dem der Rss Feed Eintrag veröffentlicht wurde
-[pub_time]			= Uhrzeit an dem der Rss Feed Eintrag veröffentlicht wurde
+[comments]			= Link zu einer Seite auf der Ã¼ber den Rss Feed Eintrag Diskutiert werden kann
+[pub_date]			= Datum an dem der Rss Feed Eintrag verÃ¶ffentlicht wurde
+[pub_time]			= Uhrzeit an dem der Rss Feed Eintrag verÃ¶ffentlicht wurde
 */
 
 define('PG_RSS_VERSION_1', '0.91');
@@ -49,7 +45,7 @@ define('PG_RSS_LANGUAGE_JAPANESE', 'ja');
 
 @description
 [en]This class has methods to read and write RSS feeds and Google Sitemaps.[/en]
-[de]Diese Klasse verfügt über Methoden zum Lesen und schreiben von RSS-Feeds und Google Sitemaps.[/de]
+[de]Diese Klasse verfÃ¼gt Ã¼ber Methoden zum Lesen und schreiben von RSS-Feeds und Google Sitemaps.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -74,7 +70,7 @@ class classPG_Rss extends classPG_ClassBasics
 	
 	@description
 	[en]Reads an RSS feed and returns it as an array or in a template.[/en]
-	[de]Liest einen RSS-Feed aus und gibt ihn als Array oder in einem Template zurück.[/de]
+	[de]Liest einen RSS-Feed aus und gibt ihn als Array oder in einem Template zurÃ¼ck.[/de]
 	
 	@var ReadFeedReturnArray
 	<div class="pg_docu_code">
@@ -84,7 +80,7 @@ class classPG_Rss extends classPG_ClassBasics
 
 	@return axContent [type]mixed[][/type]
 	[en]The method returns a template as a string if sRssTemplate and sItemTemplate are passed, or an array if the parameters were not set: %ReadFeedReturnArray%[/en]
-	[de]Wenn sRssTemplate und sItemTemplate übergeben wurden gibt die Methode ein Template als String zurück, oder einen Array wenn die Parameter nicht gesetzt wurden: %ReadFeedReturnArray%[/de]
+	[de]Wenn sRssTemplate und sItemTemplate ï¿½bergeben wurden gibt die Methode ein Template als String zurï¿½ck, oder einen Array wenn die Parameter nicht gesetzt wurden: %ReadFeedReturnArray%[/de]
 	
 	@param sRssFile [needed][type]string[/type]
 	[en]The RSS file to be read. Can also be a complete URL.[/en]
@@ -92,11 +88,11 @@ class classPG_Rss extends classPG_ClassBasics
 	
 	@param sRssTemplate [type]string[/type]
 	[en]A template for the entire RSS.[/en]
-	[de]Ein Template für das gesamte RSS.[/de]
+	[de]Ein Template fÃ¼r das gesamte RSS.[/de]
 	
 	@param sItemTemplate [type]string[/type]
 	[en]A template for each item of the RSS.[/en]
-	[de]Ein Template für jedes Items des RSS.[/de]
+	[de]Ein Template fÃ¼r jedes Items des RSS.[/de]
 	*/
 	public function readFeed($_sRssFile, $_sRssTemplate = NULL, $_sItemTemplate = NULL)
 	{
@@ -111,7 +107,7 @@ class classPG_Rss extends classPG_ClassBasics
 			$_axReturn = array();
 
 			// Allgemeine Daten des Rss Feeds...
-			if ((string)$oXml->channel->title != '')
+			if ((string)$_oXml->channel->title != '')
 			{
 				$_axReturn['Title'] = trim(utf8_decode((string)$_oXml->channel->title));
 				$_axReturn['Description'] = trim(utf8_decode((string)$_oXml->channel->description));
@@ -130,7 +126,7 @@ class classPG_Rss extends classPG_ClassBasics
 				$_axReturn['Webmaster'] = trim(utf8_decode((string)$_oXml->author->email));
 				if ($_axReturn['Webmaster'] != '') {$_axReturn['Webmaster'] .= ' ';}
 				$aReturn['Webmaster'] = trim(utf8_decode((string)$_oXml->author->name));
-				foreach ($oXml->children() as $a => $b)
+				foreach ($_oXml->children() as $a => $b)
 				{
 					if (trim(utf8_decode((string)$a)) == 'link') {$_axReturn['Website'] = trim(utf8_decode((string)$b['href']));}
 				}
@@ -166,7 +162,7 @@ class classPG_Rss extends classPG_ClassBasics
 				else
 				{
 					$_axItemWerte[$i]['Title'] = utf8_decode((string)$_axItems[$i]->title);
-					foreach ($aItems[$i]->children() as $a => $b)
+					foreach ($_axItems[$i]->children() as $a => $b)
 					{
 						if (trim(utf8_decode((string)$a)) == 'link') {$_axItemWerte[$i]['Link'] = trim(utf8_decode((string)$b['href']));}
 					}
@@ -202,7 +198,9 @@ class classPG_Rss extends classPG_ClassBasics
 			$_sRssTemplate = str_replace("[pub_time]", date("H:i", strtotime($_axReturn['PubDate'])), $_sRssTemplate);
 			$_sRssTemplate = str_replace("[image]", $_axReturn['Image'], $_sRssTemplate);
 			$_sRssTemplate = str_replace("[cells]", 'cells', $_sRssTemplate);
-			
+
+            $_sItems = '';
+            $_sCurrentCells = 'cells2';
 			for ($i=0; $i<count($_axItemWerte); $i++)
 			{
 				if ($_sCurrentCells == 'cells2') {$_sCurrentCells = 'cells';} else {$_sCurrentCells = 'cells2';}
@@ -213,7 +211,7 @@ class classPG_Rss extends classPG_ClassBasics
 				if ($_axItemWerte[$i]['Link'] != '') {$_sTitle .= '</a>';}
 				
 				$_sTempItemAufbau = $_sItemTemplate;
-				$_sTempItemAufbau = str_replace("[title]", $sTitle, $_sTempItemAufbau);
+				$_sTempItemAufbau = str_replace("[title]", $_sTitle, $_sTempItemAufbau);
 				$_sTempItemAufbau = str_replace("[description]", $_axItemWerte[$i]['Description'], $_sTempItemAufbau);
 				$_sTempItemAufbau = str_replace("[author]", $_axItemWerte[$i]['Author'], $_sTempItemAufbau);
 				$_sTempItemAufbau = str_replace("[comments]", $_axItemWerte[$i]['Comments'], $_sTempItemAufbau);
@@ -236,11 +234,11 @@ class classPG_Rss extends classPG_ClassBasics
 	
 	@description
 	[en]Builds an RSS feed and returns it as a string.[/en]
-	[de]Erstellt einen RSS-Feed und gibt ihn als String zurück.[/de]
+	[de]Erstellt einen RSS-Feed und gibt ihn als String zurÃ¼ck.[/de]
 	
 	@return sContent [type]string[/type]
 	[en]Returns the finished RSS feed as a string.[/en]
-	[de]Gibt den fertigen RSS-Feed als String zurück.[/de]
+	[de]Gibt den fertigen RSS-Feed als String zurÃ¼ck.[/de]
 	
 	@param sRssVersion [type]string[/type]
 	[en]
@@ -253,7 +251,7 @@ class classPG_Rss extends classPG_ClassBasics
 	[/en]
 	[de]
 		Die zu verwendende RSS-Feed Version.
-		Folgende Defines können verwendet werden:
+		Folgende Defines kÃ¶nnen verwendet werden:
 		PG_RSS_VERSION_1
 		PG_RSS_VERSION_2
 		PG_RSS_VERSION_ATOM
@@ -284,7 +282,7 @@ class classPG_Rss extends classPG_ClassBasics
 	[/en]
 	[de]
 		Die Sprache des RSS-Feeds. wie z.B. 'en-us' oder 'de'.
-		Es können auch folgende Defines verwendet werden:
+		Es kÃ¶nnen auch folgende Defines verwendet werden:
 		PG_RSS_LANGUAGE_ENGLISH
 		PG_RSS_LANGUAGE_US
 		PG_RSS_LANGUAGE_GERMAN
@@ -386,7 +384,7 @@ class classPG_Rss extends classPG_ClassBasics
 					$_sRssHeader .= '<image>';
 						$_sRssHeader .= '<url>URL einer einzubindenden Grafik</url>';
 						$_sRssHeader .= '<title>Bildtitel</title>';
-						$_sRssHeader .= '<link>URL, mit der das Bild verknüpft ist</link>';
+						$_sRssHeader .= '<link>URL, mit der das Bild verknÃ¼pft ist</link>';
 					$_sRssHeader .= '</image>';
 					*/
 					
@@ -421,18 +419,18 @@ class classPG_Rss extends classPG_ClassBasics
 	
 	@description
 	[en]Deletes all items of the RSS feeds.[/en]
-	[de]Löscht alle Items des RSS-Feeds.[/de]
+	[de]LÃ¶scht alle Items des RSS-Feeds.[/de]
 	*/
 	public function clearFeedContent()
 	{
 		$this->aiItemID = array();
-		$this->asCategory = array();
-		$this->asTitle = array();
-		$this->asText = array();
-		$this->asLink = array();
-		$this->asComments = array();
-		$this->asAuthor = array();
-		$this->aiTimeStamp = array();
+		$this->asItemCategory = array();
+		$this->asItemTitle = array();
+		$this->asItemText = array();
+		$this->asItemLink = array();
+		$this->asItemComments = array();
+		$this->asItemAuthor = array();
+		$this->aiItemTimeStamp = array();
 	}
 	/* @end method */
 	
@@ -441,11 +439,11 @@ class classPG_Rss extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a new content item to the RSS Feed.[/en]
-	[de]Fügt dem RSS-Feed ein neues Inhalts-Item hinzu.[/de]
+	[de]FÃ¼gt dem RSS-Feed ein neues Inhalts-Item hinzu.[/de]
 	
 	@param iItemID [type]int[/type]
 	[en]A unique ID for the item.[/en]
-	[de]Eine eindeutige ID für das Item.[/de]
+	[de]Eine eindeutige ID fÃ¼r das Item.[/de]
 	
 	@param sCategory [type]string[/type]
 	[en]One category of the item to be assigned.[/en]
@@ -503,13 +501,13 @@ class classPG_Rss extends classPG_ClassBasics
 		if ($_iTimeStamp === NULL) {$_iTimeStamp = time();}
 		
 		$this->aiItemID[] = $_iItemID;
-		$this->asCategory[] = $_sCategory;
-		$this->asTitle[] = $_sTitle;
-		$this->asText[] = $_sText;
-		$this->asLink[] = $_sLink;
-		$this->asComments[] = $_sComments;
-		$this->asAuthor[] = $_sAuthor;
-		$this->aiTimeStamp[] = $_iTimeStamp;
+		$this->asItemCategory[] = $_sCategory;
+		$this->asItemTitle[] = $_sTitle;
+		$this->asItemText[] = $_sText;
+		$this->asItemLink[] = $_sLink;
+		$this->asItemComments[] = $_sComments;
+		$this->asItemAuthor[] = $_sAuthor;
+		$this->aiItemTimeStamp[] = $_iTimeStamp;
 	}
 	/* @end method */
 	
@@ -518,11 +516,11 @@ class classPG_Rss extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the RSS feed content and returns it as a string.[/en]
-	[de]Erstellt den RSS-Feed Inhalt und gibt ihn als String zurück.[/de]
+	[de]Erstellt den RSS-Feed Inhalt und gibt ihn als String zurÃ¼ck.[/de]
 
 	@return sRssBody [type]string[/type]
 	[en]Returns the RSS feed content as a string.[/en]
-	[de]Gibt den RSS-Feed Inhalt als String zurück.[/de]
+	[de]Gibt den RSS-Feed Inhalt als String zurÃ¼ck.[/de]
 	
 	@param sRssVersion [type]string[/type]
 	[en]
@@ -535,7 +533,7 @@ class classPG_Rss extends classPG_ClassBasics
 	[/en]
 	[de]
 		Die zu verwendende RSS-Feed Version.
-		Folgende Defines können verwendet werden:
+		Folgende Defines kÃ¶nnen verwendet werden:
 		PG_RSS_VERSION_1
 		PG_RSS_VERSION_2
 		PG_RSS_VERSION_ATOM
@@ -549,32 +547,32 @@ class classPG_Rss extends classPG_ClassBasics
 		if ($_sRssVersion === NULL) {$_sRssVersion = PG_RSS_VERSION_2;}
 		
 		$_sRssBody = '';
-		for ($i=0; $i<count($this->asTitle); $i++)
+		for ($i=0; $i<count($this->asItemTitle); $i++)
 		{
 			if ($_sRssVersion == PG_RSS_VERSION_1)
 			{
-				$this->asTitle[$i] = substr($this->asTitle[$i], 0, 100);
-				$this->asText[$i] = substr($this->asText[$i], 0, 500);
-				$this->asLink[$i] = substr($this->asLink[$i], 0, 500);
+				$this->asItemTitle[$i] = substr($this->asItemTitle[$i], 0, 100);
+				$this->asItemText[$i] = substr($this->asItemText[$i], 0, 500);
+				$this->asItemLink[$i] = substr($this->asItemLink[$i], 0, 500);
 			}
 
-			$this->asCategory[$i] = htmlspecialchars(trim($this->asCategory[$i])); // htmlspecialchars(utf8_encode(trim($this->asCategory[$i])));
-			$this->asTitle[$i] = htmlspecialchars(trim($this->asTitle[$i]));
-			$this->asText[$i] = htmlspecialchars(trim($this->asText[$i]));
-			$this->asLink[$i] = htmlspecialchars(trim($this->asLink[$i]));
-			$this->asComments[$i] = htmlspecialchars(trim($this->asComments[$i]));
-			$this->asAuthor[$i] = htmlspecialchars(trim($this->asAuthor[$i]));
+			$this->asItemCategory[$i] = htmlspecialchars(trim($this->asItemCategory[$i])); // htmlspecialchars(utf8_encode(trim($this->asCategory[$i])));
+			$this->asItemTitle[$i] = htmlspecialchars(trim($this->asItemTitle[$i]));
+			$this->asItemText[$i] = htmlspecialchars(trim($this->asItemText[$i]));
+			$this->asItemLink[$i] = htmlspecialchars(trim($this->asItemLink[$i]));
+			$this->asItemComments[$i] = htmlspecialchars(trim($this->asItemComments[$i]));
+			$this->asItemAuthor[$i] = htmlspecialchars(trim($this->asItemAuthor[$i]));
 			
 			if ($_sRssVersion == PG_RSS_VERSION_ATOM)
 			{
 				$_sRssBody .= '<entry>';
-					$_sRssBody .= '<title>'.$this->asTitle[$i].'</title>';
-					if ($this->asCategory[$i] != '') {$_sRssBody .= '<category term="'.$this->asCategory[$i].'" />';}
-					if ($this->asLink[$i] != '') {$_sRssBody .= '<link href="'.$this->asLink[$i].'" />';}
+					$_sRssBody .= '<title>'.$this->asItemTitle[$i].'</title>';
+					if ($this->asItemCategory[$i] != '') {$_sRssBody .= '<category term="'.$this->asItemCategory[$i].'" />';}
+					if ($this->asItemLink[$i] != '') {$_sRssBody .= '<link href="'.$this->asItemLink[$i].'" />';}
 					$_sRssBody .= '<id>urn:uuid:'.preg_replace("!(.{8})(.{4})(.{4})(.{4})(.+)!is", "\\1-\\2-\\3-\\4-\\5", htmlspecialchars(md5(PG_RSS_GENERATOR_NAME.'_'.$this->aiItemID[$i]))).'</id>';
-					$_sRssBody .= '<updated>'.date("c", $this->aiTimeStamp[$i]).'</updated>'; // ISO 8601 Datum
-					if ($this->asAuthor[$i] != '') {$_sRssBody .= '<author><name>'.$this->asAuthor[$i].'</name></author>';}
-					if ($this->asText[$i] != '') {$_sRssBody .= '<summary type="html">'.$this->asText[$i].'</summary>';}
+					$_sRssBody .= '<updated>'.date("c", $this->aiItemTimeStamp[$i]).'</updated>'; // ISO 8601 Datum
+					if ($this->asItemAuthor[$i] != '') {$_sRssBody .= '<author><name>'.$this->asItemAuthor[$i].'</name></author>';}
+					if ($this->asItemText[$i] != '') {$_sRssBody .= '<summary type="html">'.$this->asItemText[$i].'</summary>';}
 				$_sRssBody .= '</entry>';
 			}
 			else if ($_sRssVersion == PG_RSS_GOOGLE_SITEMAP)
@@ -592,8 +590,8 @@ class classPG_Rss extends classPG_ClassBasics
 				*/
 
 				$_sRssBody .= '<url>';
-					$_sRssBody .= '<loc>'.$this->asLink[$i].'</loc>';
-					$_sRssBody .= '<lastmod>'.date("c", $this->aiTimeStamp[$i]).'</lastmod>'; // 2005-01-01
+					$_sRssBody .= '<loc>'.$this->asItemLink[$i].'</loc>';
+					$_sRssBody .= '<lastmod>'.date("c", $this->aiItemTimeStamp[$i]).'</lastmod>'; // 2005-01-01
 					$_sRssBody .= '<changefreq>monthly</changefreq>';
 					$_sRssBody .= '<priority>0.5</priority>';
 				$_sRssBody .= '</url>';
@@ -601,17 +599,17 @@ class classPG_Rss extends classPG_ClassBasics
 			else
 			{
 				$_sRssBody .= '<item>';
-					$_sRssBody .= '<title>'.$this->asTitle[$i].'</title>';
-					if ($this->asCategory[$i] != '') {$_sRssBody .= '<category>'.$this->asCategory[$i].'</category>';}
-					if ($this->asLink[$i] != '') {$_sRssBody .= '<link>'.$this->asLink[$i].'</link>';}
-					if ($sRssVersion == PG_RSS_VERSION_2)
+					$_sRssBody .= '<title>'.$this->asItemTitle[$i].'</title>';
+					if ($this->asItemCategory[$i] != '') {$_sRssBody .= '<category>'.$this->asItemCategory[$i].'</category>';}
+					if ($this->asItemLink[$i] != '') {$_sRssBody .= '<link>'.$this->asItemLink[$i].'</link>';}
+					if ($_sRssVersion == PG_RSS_VERSION_2)
 					{
 						$_sRssBody .= '<guid isPermaLink="false">'.htmlspecialchars(md5(PG_RSS_GENERATOR_NAME.'_'.$this->aiItemID[$i])).'</guid>';
-						$_sRssBody .= '<pubDate>'.date("D, j M Y G:i:s T", $this->aiTimeStamp[$i]).'</pubDate>';
+						$_sRssBody .= '<pubDate>'.date("D, j M Y G:i:s T", $this->aiItemTimeStamp[$i]).'</pubDate>';
 					}
-					if ($this->asComments[$i] != '') {$_sRssBody .= '<comments>'.$this->asComments[$i].'</comments>';}
-					if ($this->asAuthor[$i] != '') {$_sRssBody .= '<author>'.$this->asAuthor[$i].'</author>';}
-					if ($this->asText[$i] != '') {$_sRssBody .= '<description>'.$this->asText[$i].'</description>';}
+					if ($this->asItemComments[$i] != '') {$_sRssBody .= '<comments>'.$this->asItemComments[$i].'</comments>';}
+					if ($this->asItemAuthor[$i] != '') {$_sRssBody .= '<author>'.$this->asItemAuthor[$i].'</author>';}
+					if ($this->asItemText[$i] != '') {$_sRssBody .= '<description>'.$this->asItemText[$i].'</description>';}
 				$_sRssBody .= '</item>';
 			}
 		}

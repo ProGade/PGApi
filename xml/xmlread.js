@@ -1,10 +1,6 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
+* Copyright 2014, Hans-Peter Wandura
 * Last changes of this file: Aug 21 2012
 */
 /*
@@ -12,7 +8,7 @@
 
 @description
 [en]This class has methods for reading XML structures.[/en]
-[de]Diese Klasse verfügt über Methoden zum Lesen von XML Strukturen.[/de]
+[de]Diese Klasse verfÃ¼gt Ã¼ber Methoden zum Lesen von XML Strukturen.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -29,7 +25,7 @@ function classPG_XmlRead()
 	
 	@description
 	[en]Opens an XML object for reading.[/en]
-	[de]Öffnet ein XML-Objekt zum Lesen.[/de]
+	[de]Ã¶ffnet ein XML-Objekt zum Lesen.[/de]
 	
 	@param oXml [needed][type]string[/type]
 	[en]The XML object to be read.[/en]
@@ -47,7 +43,7 @@ function classPG_XmlRead()
 	
 	@description
 	[en]Opens an XML object based on a request object for reading.[/en]
-	[de]Öffnet ein XML-Objekt, anhand eines Anfrage-Objekts, zum Lesen.[/de]
+	[de]Ã¶ffnet ein XML-Objekt, anhand eines Anfrage-Objekts, zum Lesen.[/de]
 	
 	@param oAjaxRequest [needed][type]object[/type]
 	[en]The request object to be read.[/en]
@@ -66,11 +62,11 @@ function classPG_XmlRead()
 	
 	@description
 	[en]Gets the content of a given tag of the XML source code with regard to the path structure.[/en]
-	[de]Holt den Inhalt von einem bestimmten Tag, mit Berücksichtigung der Pfadstruktur, aus dem XML Quellcode.[/de]
+	[de]Holt den Inhalt von einem bestimmten Tag, mit BerÃ¼cksichtigung der Pfadstruktur, aus dem XML Quellcode.[/de]
 	
 	@return xContent [type]mixed[/type]
 	[en]Returns the content of the specified tag.[/en]
-	[de]Gibt den Inhalt des angegebenen Tags zurück.[/de]
+	[de]Gibt den Inhalt des angegebenen Tags zurÃ¼ck.[/de]
 	
 	@param oXml [type]object[/type]
 	[en]The XML object from which the content is to be read.[/en]
@@ -78,7 +74,7 @@ function classPG_XmlRead()
 	
 	@param asTags [needed][type]string[][/type]
 	[en]The path structure to the tag. Each tag in the structure is given as an array element.[/en]
-	[de]Die Pfadstruktur zum gewünschten Tag. Jedes Tag in der Struktur wird als Array-Element angegeben.[/de]
+	[de]Die Pfadstruktur zum gewÃ¼nschten Tag. Jedes Tag in der Struktur wird als Array-Element angegeben.[/de]
 	*/
 	this.getTagPathContent = function(_oXml, _asTags)
 	{

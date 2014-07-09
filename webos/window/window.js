@@ -1,10 +1,6 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
+* Copyright 2014, Hans-Peter Wandura (ProGade)
 * Last changes of this file: Jun 07 2013
 */
 var PG_WINDOW_MODE_RESIZEABLE = 1;

@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
+* Copyright 2014, Hans-Peter Wandura
 * Last changes of this file: Aug 06 2012
 */
 define('PG_META_GOOGLEBOT_NOARCHIVE', 'noarchive');

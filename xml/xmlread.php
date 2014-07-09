@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
+* Copyright 2014, Hans-Peter Wandura
 * Last changes of this file: Aug 06 2012
 */
 /*
@@ -13,7 +9,7 @@
 
 @description
 [en]This class has methods for reading XML structures.[/en]
-[de]Diese Klasse verfügt über Methoden zum Lesen von XML Strukturen.[/de]
+[de]Diese Klasse verfÃ¼gt Ã¼ber Methoden zum Lesen von XML Strukturen.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -31,7 +27,7 @@ class classPG_XmlRead extends classPG_ClassBasics
 	
 	@description
 	[en]Opens an XML file for reading.[/en]
-	[de]Öffnet ein XML-Datei zum Lesen.[/de]
+	[de]Ã¶ffnet ein XML-Datei zum Lesen.[/de]
 	
 	@param sFile [needed][type]string[/type]
 	[en]The XML file to be read.[/en]
@@ -49,15 +45,15 @@ class classPG_XmlRead extends classPG_ClassBasics
 	
 	@description
 	[en]Gets the content of a given tag of the XML source code with regard to the path structure.[/en]
-	[de]Holt den Inhalt von einem bestimmten Tag, mit Berücksichtigung der Pfadstruktur, aus dem XML Quellcode.[/de]
+	[de]Holt den Inhalt von einem bestimmten Tag, mit BerÃ¼cksichtigung der Pfadstruktur, aus dem XML Quellcode.[/de]
 	
 	@return xContent [type]mixed[/type]
 	[en]Returns the content of the specified tag.[/en]
-	[de]Gibt den Inhalt des angegebenen Tags zurück.[/de]
+	[de]Gibt den Inhalt des angegebenen Tags zurÃ¼ck.[/de]
 	
 	@param asTags [needed][type]string[][/type]
 	[en]The path structure to the tag. Each tag in the structure is given as an array element.[/en]
-	[de]Die Pfadstruktur zum gewünschten Tag. Jedes Tag in der Struktur wird als Array-Element angegeben.[/de]
+	[de]Die Pfadstruktur zum gewÃ¼nschten Tag. Jedes Tag in der Struktur wird als Array-Element angegeben.[/de]
 	*/
 	public function getTagPathContent($_asTags)
 	{
