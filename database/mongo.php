@@ -196,7 +196,6 @@ class classPG_Mongo extends classPG_ClassBasics
     */
     public function disconnect()
     {
-        $_bSuccess = false;
         $_bSuccess = $this->oClient->close($this->oConnection);
         $this->oConnection = NULL;
         return $_bSuccess;
@@ -1200,5 +1199,11 @@ class classPG_Mongo extends classPG_ClassBasics
 /* @end class */
 
 $oPGMongo = new classPG_Mongo();
+
+if (defined('PG_MONGO_DATA_HOST')) {$oPGMongo->setHost(array('sHost' => PG_MONGO_DATA_HOST));}
+if (defined('PG_MONGO_DATA_USER')) {$oPGMongo->setUser(array('sUser' => PG_MONGO_DATA_USER));}
+if (defined('PG_MONGO_DATA_PASSWORD')) {$oPGMongo->setPassword(array('sPassword' => PG_MONGO_DATA_PASSWORD));}
+if (defined('PG_MONGO_DATA_DATABASE')) {$oPGMongo->setDatabaseName(array('sDatabase' => PG_MONGO_DATA_DATABASE));}
+
 if (isset($oPGApi)) {$oPGApi->register(array('sName' => 'oPGMongo', 'xValue' => $oPGMongo));}
 ?>
