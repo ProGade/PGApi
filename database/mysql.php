@@ -1238,8 +1238,13 @@ class classPG_MySql extends classPG_ClassBasics
 		if ($_bAllowAnonymDelete === NULL) {$_bAllowAnonymDelete = false;}
 
 		$_sSql = 'DELETE FROM '.$_sTable.' WHERE';
-		if (($_sIDColumn != '') && ($_xIDValue !== NULL)) {$_sSql .= ' '.$_sIDColumn.' = "'.$_xIDValue.'"';}
-		if (!empty($_xWhere)) {$_sSql .= ' AND ('.$this->buildWhere(array('xWhere' => $_xWhere)).')';}
+		if (($_sIDColumn != '') && (!empty($_xIDValue))) {$_sSql .= ' '.$_sIDColumn.' = "'.$_xIDValue.'"';}
+		if (!empty($_xWhere))
+        {
+            if (($_sIDColumn != '') && (!empty($_xIDValue))) {$_sSql .= ' AND (';} else {$_sSql .= ' ';}
+            $_sSql .= $this->buildWhere(array('xWhere' => $_xWhere));
+            if (($_sIDColumn != '') && (!empty($_xIDValue))) {$_sSql .= ')';}
+        }
 		if ($this->sendSql(array('sStatement' => $_sSql, 'bAllowAnonymDelete' => $_bAllowAnonymDelete))) {return true;}
 		return false;
 	}
