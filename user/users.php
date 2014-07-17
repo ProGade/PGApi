@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright (c) 2012 Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: "http://api.progade.de/api_terms.php" or "./license.txt"
-*
 * Last changes of this file: Dez 05 2012
 */
 /*
@@ -65,11 +61,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the column name to sort the order of the users.[/en]
-	[de]Gibt den Spaltennamen zur Sortierung der Benutzer zur�ck.[/de]
+	[de]Gibt den Spaltennamen zur Sortierung der Benutzer zurück.[/de]
 	
 	@return sOrderBy [type]string[/type]
 	[en]Returns the column name to sort the order of the users as a string.[/en]
-	[de]Gibt den Spaltennamen zur Sortierung der Benutzer als String zur�ck.[/de]
+	[de]Gibt den Spaltennamen zur Sortierung der Benutzer als String zurück.[/de]
 	*/
 	public function getOrderBy() {return $this->sOrderBy;}
 	/* @end method */
@@ -101,11 +97,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether the sort of user is reversed.[/en]
-	[de]Gibt zur�ck, ob die Sortierung der Benutzer umgedreht ist.[/de]
+	[de]Gibt zurück, ob die Sortierung der Benutzer umgedreht ist.[/de]
 	
 	@return bOrderReverse [type]bool[/type]
 	[en]Returns an boolean whether the sort of user is reversed.[/en]
-	[de]Gibt einen Boolean zur�ck, ob die Sortierung der Benutzer umgedreht ist.[/de]
+	[de]Gibt einen Boolean zurück, ob die Sortierung der Benutzer umgedreht ist.[/de]
 	*/
 	public function isReverseSortOrder() {return $this->bOrderReverse;}
 	/* @end method */
@@ -117,11 +113,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Specifies whether users who have not yet confirmed their user account should be ignored.[/en]
-	[de]Gibt an ob Benutzer, die ihren Benutzeraccount noch nicht best�tigt haben, ignoriert werden sollen.[/de]
+	[de]Gibt an ob Benutzer, die ihren Benutzeraccount noch nicht bestätigt haben, ignoriert werden sollen.[/de]
 	
 	@param bIgnore [needed][type]bool[/type]
 	[en]Specifies whether users who have not yet confirmed their user account should be ignored.[/en]
-	[de]Gibt an ob Benutzer, die ihren Benutzeraccount noch nicht best�tigt haben, ignoriert werden sollen.[/de]
+	[de]Gibt an ob Benutzer, die ihren Benutzeraccount noch nicht bestätigt haben, ignoriert werden sollen.[/de]
 	*/
 	public function ignoreNotAccepted($_bIgnore)
 	{
@@ -137,11 +133,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Specifies whether users who have confirmed their user account should be ignored.[/en]
-	[de]Gibt an ob Benutzer, die ihren Benutzeraccount best�tigt haben, ignoriert werden sollen.[/de]
+	[de]Gibt an ob Benutzer, die ihren Benutzeraccount bestätigt haben, ignoriert werden sollen.[/de]
 	
 	@param bIgnore [needed][type]bool[/type]
 	[en]Specifies whether users who have confirmed their user account should be ignored.[/en]
-	[de]Gibt an ob Benutzer, die ihren Benutzeraccount best�tigt haben, ignoriert werden sollen.[/de]
+	[de]Gibt an ob Benutzer, die ihren Benutzeraccount bestätigt haben, ignoriert werden sollen.[/de]
 	*/
 	public function ignoreAccepted($_bIgnore)
 	{
@@ -197,11 +193,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Sets more column names to be selected from the users table.[/en]
-	[de]Setzt weitere Spaltennamen, die zus�tzlich aus der Benutzer-Tabelle geholt werden sollen.[/de]
+	[de]Setzt weitere Spaltennamen, die zusätzlich aus der Benutzer-Tabelle geholt werden sollen.[/de]
 	
 	@param asColumns [needed][type]string[][/type]
 	[en]The column names for which data should be read in addition to the default columns.[/en]
-	[de]Die Spaltennamen deren Daten zus�tzlich zu den Standard-Spalten ausgelesen werden sollen.[/de]
+	[de]Die Spaltennamen deren Daten zusätzlich zu den Standard-Spalten ausgelesen werden sollen.[/de]
 	*/
 	public function setAdditionalSelectColumns($_asColumns)
 	{
@@ -218,11 +214,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Adds more column names to be selected from the users table.[/en]
-	[de]F�gt weitere Spaltennamen hinzu, die zus�tzlich aus der Benutzer-Tabelle geholt werden sollen.[/de]
+	[de]Fügt weitere Spaltennamen hinzu, die zusätzlich aus der Benutzer-Tabelle geholt werden sollen.[/de]
 	
 	@param asColumns [needed][type]string[][/type]
 	[en]The column names for which data should be read in addition to the default columns.[/en]
-	[de]Die Spaltennamen deren Daten zus�tzlich zu den Standard-Spalten ausgelesen werden sollen.[/de]
+	[de]Die Spaltennamen deren Daten zusätzlich zu den Standard-Spalten ausgelesen werden sollen.[/de]
 	*/
 	public function addAdditionalSelectColumns($_asColumns)
 	{
@@ -239,11 +235,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Adds one more column name to be selected from the users table.[/en]
-	[de]F�gt einen weiteren Spaltennamen hinzu, der zus�tzlich aus der Benutzer-Tabelle geholt werden soll.[/de]
+	[de]Fügt einen weiteren Spaltennamen hinzu, der zusätzlich aus der Benutzer-Tabelle geholt werden soll.[/de]
 	
 	@param sColumn [needed][type]string[/type]
 	[en]The column name for which data should be read in addition to the default columns.[/en]
-	[de]Der Spaltennamen von dem Daten zus�tzlich zu den Standard-Spalten ausgelesen werden sollen.[/de]
+	[de]Der Spaltennamen von dem Daten zusätzlich zu den Standard-Spalten ausgelesen werden sollen.[/de]
 	*/
 	public function addAdditionalSelectColumn($_sColumn)
 	{
@@ -260,11 +256,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the names of the columns that are read in addition to the default columns.[/en]
-	[de]Gibt die Spaltennamen zur�ck, die zus�tzlich zu den Standard-Spalten ausgelesen werden.[/de]
+	[de]Gibt die Spaltennamen zur�ck, die zusätzlich zu den Standard-Spalten ausgelesen werden.[/de]
 	
 	@return asSelect [type]string[][/type]
 	[en]Returns the names of the columns that are read in addition to the default columns as an string array.[/en]
-	[de]Gibt die Spaltennamen als String-Array zur�ck, die zus�tzlich zu den Standard-Spalten ausgelesen werden.[/de]
+	[de]Gibt die Spaltennamen als String-Array zur�ck, die zusätzlich zu den Standard-Spalten ausgelesen werden.[/de]
 	*/
 	public function getAdditionalSelectColumns() {return $this->asAdditionalSelect;}
 	/* @end method */
@@ -276,11 +272,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]loads a user ID from the database.[/en]
-	[de]L�dt eine Benutzer ID aus der Datenbank.[/de]
+	[de]Lädt eine Benutzer ID aus der Datenbank.[/de]
 	
 	@return iUserID [type]int[/type]
 	[en]Returns the user ID as an integer.[/en]
-	[de]Gibt die Benutzer ID als Integer zur�ck.[/de]
+	[de]Gibt die Benutzer ID als Integer zurück.[/de]
 	
 	@param xUser [needed][type]mixed[/type]
 	[en]The user as user ID (integer) or user name (String), which user ID should be read.[/en]
@@ -334,11 +330,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]loads usergroup IDs of a user from the database.[/en]
-	[de]L�dt Benutzergruppen IDs von einem Benutzer aus der Datenbank.[/de]
+	[de]Lädt Benutzergruppen IDs von einem Benutzer aus der Datenbank.[/de]
 	
 	@return axUsergroupIDs [type]mixed[][/type]
 	[en]Returns usergroup IDs as an integer array.[/en]
-	[de]Gibt die Benutzergruppen IDs als Integer-Array zur�ck.[/de]
+	[de]Gibt die Benutzergruppen IDs als Integer-Array zurück.[/de]
 	
 	@param xUser [needed][type]mixed[/type]
 	[en]The user as user ID (integer) or user name (String), which usergroup IDs should be read.[/en]
@@ -386,11 +382,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]loads a user from the database.[/en]
-	[de]L�dt einen Benutzer aus der Datenbank.[/de]
+	[de]Lädt einen Benutzer aus der Datenbank.[/de]
 	
 	@return axUser [type]mixed[][/type]
 	[en]Returns the user as an mixed array.[/en]
-	[de]Gibt den Benutzer als mixed Array zur�ck.[/de]
+	[de]Gibt den Benutzer als mixed Array zurück.[/de]
 	
 	@param iUserID [needed][type]int[/type]
 	[en]The user ID of the user, which data should be read.[/en]
@@ -489,11 +485,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Loads users from the database and keeps them in memory.[/en]
-	[de]L�dt Benutzer aus der Datenbank und merkt sie sich.[/de]
+	[de]Lädt Benutzer aus der Datenbank und merkt sie sich.[/de]
 	
 	@return axUsers [type]mixed[][/type]
 	[en]Returns the users as an mixed array.[/en]
-	[de]Gibt die Benutzer als mixed Array zur�ck.[/de]
+	[de]Gibt die Benutzer als mixed Array zurück.[/de]
 	
 	@param xWhere [type]mixed[/type]
 	[en]A condition under which the users are to load.[/en]
@@ -627,7 +623,7 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Removes the registered users from the temporary cache.[/en]
-	[de]Entfernt die gemerkten Benutzer wieder aus dem Tempor�ren Zwischenspeicher.[/de]
+	[de]Entfernt die gemerkten Benutzer wieder aus dem Temporären Zwischenspeicher.[/de]
 	*/
 	public function clearUsers() {$this->axUserData = array();}
 	/* @end method */
@@ -639,11 +635,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the users.[/en]
-	[de]Gibt die Benutzer zur�ck.[/de]
+	[de]Gibt die Benutzer zurück.[/de]
 	
 	@return axUsers [type]mixed[][/type]
 	[en]Returns the users as an mixed array.[/en]
-	[de]Gibt die Benutzer als mixed Array zur�ck.[/de]
+	[de]Gibt die Benutzer als mixed Array zurück.[/de]
 	*/
 	public function getUsers() {return $this->axUserData;}
 	/* @end method */
@@ -655,11 +651,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the user from the memory.[/en]
-	[de]Gibt einen Benutzer aus dem Zwischenspeicher zur�ck.[/de]
+	[de]Gibt einen Benutzer aus dem Zwischenspeicher zurück.[/de]
 	
 	@return axUser [type]mixed[][/type]
 	[en]Returns the user as an mixed array.[/en]
-	[de]Gibt einen Benutzer als mixed Array zur�ck.[/de]
+	[de]Gibt einen Benutzer als mixed Array zurück.[/de]
 	
 	@param iIndex [needed][type]int[/type]
 	[en]The index or the position from which a user should be get.[/en]
@@ -679,11 +675,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the user from the memory.[/en]
-	[de]Gibt einen Benutzer aus dem Zwischenspeicher zur�ck.[/de]
+	[de]Gibt einen Benutzer aus dem Zwischenspeicher zurück.[/de]
 
 	@return axUser [type]mixed[][/type]
 	[en]Returns the user as an mixed array.[/en]
-	[de]Gibt einen Benutzer als mixed Array zur�ck.[/de]
+	[de]Gibt einen Benutzer als mixed Array zurück.[/de]
 	
 	@param iUserID [needed][type]int[/type]
 	[en]The ID of the user.[/en]
@@ -707,11 +703,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the user from the memory.[/en]
-	[de]Gibt einen Benutzer aus dem Zwischenspeicher zur�ck.[/de]
+	[de]Gibt einen Benutzer aus dem Zwischenspeicher zurück.[/de]
 	
 	@return axUser [type]mixed[][/type]
 	[en]Returns the user as an mixed array.[/en]
-	[de]Gibt einen Benutzer als mixed Array zur�ck.[/de]
+	[de]Gibt einen Benutzer als mixed Array zurück.[/de]
 	
 	@param sUsername [needed][type]string[/type]
 	[en]The username of the user.[/en]
@@ -735,11 +731,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the user from the memory.[/en]
-	[de]Gibt einen Benutzer aus dem Zwischenspeicher zur�ck.[/de]
+	[de]Gibt einen Benutzer aus dem Zwischenspeicher zurück.[/de]
 	
 	@return axUser [type]mixed[][/type]
 	[en]Returns the user as an mixed array.[/en]
-	[de]Gibt einen Benutzer als mixed Array zur�ck.[/de]
+	[de]Gibt einen Benutzer als mixed Array zurück.[/de]
 	
 	@param sEmail [needed][type]string[/type]
 	[en]the email adress of the user.[/en]
@@ -763,11 +759,11 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the users from the memory.[/en]
-	[de]Gibt die Benutzer aus dem Zwischenspeicher zur�ck.[/de]
+	[de]Gibt die Benutzer aus dem Zwischenspeicher zurück.[/de]
 	
 	@return axUsers [type]mixed[][/type]
 	[en]Returns the users as an mixed array.[/en]
-	[de]Gibt die Benutzer als mixed Array zur�ck.[/de]
+	[de]Gibt die Benutzer als mixed Array zurück.[/de]
 	
 	@param sGender [needed][type]string[/type]
 	[en]The gender of the users.[/en]
@@ -792,15 +788,15 @@ class classPG_Users extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the users from the memory.[/en]
-	[de]Gibt die Benutzer aus dem Zwischenspeicher zur�ck.[/de]
+	[de]Gibt die Benutzer aus dem Zwischenspeicher zurück.[/de]
 	
 	@return axUsers [type]mixed[][/type]
 	[en]Returns the users as an mixed array.[/en]
-	[de]Gibt die Benutzer als mixed Array zur�ck.[/de]
+	[de]Gibt die Benutzer als mixed Array zurück.[/de]
 	
 	@param bAccepted [needed][type]bool[/type]
 	[en]Specifies whether users who have accepted their account (true) or have not yet accepted (false) should be returned.[/en]
-	[de]Gibt an ob Benutzer die ihren Account akzeptiert haben (true) oder noch nicht akzeptiert haben (false) zur�ckgegeben werden sollen.[/de]
+	[de]Gibt an ob Benutzer die ihren Account akzeptiert haben (true) oder noch nicht akzeptiert haben (false) zurückgegeben werden sollen.[/de]
 	*/
 	public function getUsersByAccepted($_bAccepted)
 	{

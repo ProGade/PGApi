@@ -1,12 +1,8 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 13 2012
+* Copyright 2014, Hans-Peter Wandura
+* Last changes of this file: Jul 17 2014
 */
 /*
 @start class
@@ -38,9 +34,9 @@ class classPG_CheckJS extends classPG_ClassBasics
 		if ($_sID === NULL) {$_sID = $this->getNextID();}
 		
 		$_sHtml = '';
-		$_sHtml .= '<div id="'.$this->sID.'">'.$this->asText['NoJavaScript'].'</div>';
+		$_sHtml .= '<div id="'.$_sID.'">'.$this->getText(array('sType' => 'NoJavaScript')).'</div>';
 		$_sHtml .= '<script language="JavaScript" type="text/javascript">';
-		$_sHtml .= 'var _oCheckJSDiv = document.getElementById(\''.$this->sID.'\'); ';
+		$_sHtml .= 'var _oCheckJSDiv = document.getElementById(\''.$_sID.'\'); ';
 		$_sHtml .= 'if (_oCheckJSDiv) ';
 		$_sHtml .= '{';
 			$_sHtml .= 'if (typeof(_oCheckJSDiv.outerHTML) != \'undefined\') {_oCheckJSDiv.outerHTML = \'\';} ';

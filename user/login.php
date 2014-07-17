@@ -71,7 +71,7 @@ PG_LOGIN_COOKIE_SECURE
 	%LoginDataDefines%
 [/en]
 [de]
-	Diese Klasse verf�gt �ber Methoden zur Authentifizierung von Benutzern und dessen allgemeiner Benutzerstatus.
+	Diese Klasse verfügt über Methoden zur Authentifizierung von Benutzern und dessen allgemeiner Benutzerstatus.
 	Wenn eines der folgenden Defines gesetzt wurden, verwendet diese Klasse die Daten automatisch:
 	%LoginDataDefines%
 [/de]
@@ -301,7 +301,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@return axDBChunkStructure [type]mixed[][/type]
 	[en]Returns the update structure as a mixed array.[/en]
-	[de]Gibt die Updatestruktur als Mixed-Array zur�ck.[/de]
+	[de]Gibt die Updatestruktur als Mixed-Array zurück.[/de]
 	
 	@param oDatabaseUpdate [needed][type]object[/type]
 	[en]The database update object, the update structure is to be expanded.[/en]
@@ -398,11 +398,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the update and installation for the tables in the database and returns the update object.[/en]
-	[de]Erstellt das Update und Installation f�r die Tabellen der Datenbank und gibt das Update-Objekt zur�ck.[/de]
+	[de]Erstellt das Update und Installation für die Tabellen der Datenbank und gibt das Update-Objekt zurück.[/de]
 	
 	@return oUpdate [type]object[/type]
 	[en]Returns the updated object, which was expanded by the tables of the login.[/en]
-	[de]Gibt das Update-Objekt zur�ck, welches um die Tabellen des Logins erweitert wurde.[/de]
+	[de]Gibt das Update-Objekt zurück, welches um die Tabellen des Logins erweitert wurde.[/de]
 	
 	@param oUpdate [needed][type]object[/type]
 	[en]Update object, which should be expanded.[/en]
@@ -632,11 +632,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether a session was used for the login.[/en]
-	[de]Gibt zur�ck, ob eine Session f�r den Login verwendet wurde.[/de]
+	[de]Gibt zurück, ob eine Session für den Login verwendet wurde.[/de]
 	
 	@return bSessionUsed [type]bool[/type]
 	[en]Returns a boolean whether a session was used for the login.[/en]
-	[de]Gibt einen Boolean zur�ck, ob eine Session f�r den Login verwendet wurde.[/de]
+	[de]Gibt einen Boolean zurück, ob eine Session für den Login verwendet wurde.[/de]
 	*/
 	public function wasSessionUsed() {return $this->bWasSessionUsed;}
 	/* @end method */
@@ -648,11 +648,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the first secret key.[/en]
-	[de]Setzt den ersten Geheimschl�ssel.[/de]
+	[de]Setzt den ersten Geheimschlüssel.[/de]
 	
 	@param sKey [needed][type]string[/type]
 	[en]The secret key as a string.[/en]
-	[de]Der Geheimschl�ssel als String.[/de]
+	[de]Der Geheimschlüssel als String.[/de]
 	*/
 	public function setSecretKey1($_sKey)
 	{
@@ -668,11 +668,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the second secret key.[/en]
-	[de]Setzt den zweite Geheimschl�ssel.[/de]
+	[de]Setzt den zweite Geheimschlüssel.[/de]
 	
 	@param sKey [needed][type]string[/type]
 	[en]The secret key as a string.[/en]
-	[de]Der Geheimschl�ssel als String.[/de]
+	[de]Der Geheimschlüssel als String.[/de]
 	*/
 	public function setSecretKey2($_sKey)
 	{
@@ -688,11 +688,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the third secret key.[/en]
-	[de]Setzt den dritte Geheimschl�ssel.[/de]
+	[de]Setzt den dritte Geheimschlüssel.[/de]
 	
 	@param sKey [needed][type]string[/type]
 	[en]The secret key as a string.[/en]
-	[de]Der Geheimschl�ssel als String.[/de]
+	[de]Der Geheimschlüssel als String.[/de]
 	*/
 	public function setSecretKey3($_sKey)
 	{
@@ -708,11 +708,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the fourth secret key.[/en]
-	[de]Setzt den vierte Geheimschl�ssel.[/de]
+	[de]Setzt den vierte Geheimschlüssel.[/de]
 	
 	@param sKey [needed][type]string[/type]
 	[en]The secret key as a string.[/en]
-	[de]Der Geheimschl�ssel als String.[/de]
+	[de]Der Geheimschlüssel als String.[/de]
 	*/
 	public function setSecretKey4($_sKey)
 	{
@@ -728,11 +728,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the fifth secret key.[/en]
-	[de]Setzt den f�nfte Geheimschl�ssel.[/de]
+	[de]Setzt den fünfte Geheimschlüssel.[/de]
 	
 	@param sKey [needed][type]string[/type]
 	[en]The secret key as a string.[/en]
-	[de]Der Geheimschl�ssel als String.[/de]
+	[de]Der Geheimschlüssel als String.[/de]
 	*/
 	public function setSecretKey5($_sKey)
 	{
@@ -748,7 +748,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the name for the cookie that should be created.[/en]
-	[de]Setzt den Namen f�r das Cookie, das angelegt werden soll.[/de]
+	[de]Setzt den Namen für das Cookie, das angelegt werden soll.[/de]
 	
 	@param sName [needed][type]string[/type]
 	[en]The name of the cookie as a string.[/en]
@@ -768,11 +768,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the name of the cookie.[/en]
-	[de]Gibt den Namen des Cookies zur�ck.[/de]
+	[de]Gibt den Namen des Cookies zurück.[/de]
 	
 	@return sCookieName [type]string[/type]
 	[en]Returns the name of the cookie as a string.[/en]
-	[de]Gibt den Namen des Cookies als String zur�ck.[/de]
+	[de]Gibt den Namen des Cookies als String zurück.[/de]
 	*/
 	public function getCookieName() {return $this->sCookieName;}
 	/* @end method */
@@ -784,7 +784,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets a UNIX timestamp for the lifetime of the cookie.[/en]
-	[de]Setzt einen Unix-Zeitstempel f�r die Lebensdauer des Cookies.[/de]
+	[de]Setzt einen Unix-Zeitstempel für die Lebensdauer des Cookies.[/de]
 	
 	@param iTimeStamp [needed][type]int[/type]
 	[en]The timestamp as an integer.[/en]
@@ -804,11 +804,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the UNIX timestamp for the lifetime of the cookie.[/en]
-	[de]Gibt den Unix-Zeitstempel f�r die Lebensdauer des Cookies zur�ck.[/de]
+	[de]Gibt den Unix-Zeitstempel für die Lebensdauer des Cookies zurück.[/de]
 	
 	@return iCookieTime [type]int[/type]
 	[en]Returns the UNIX timestamp for the lifetime of the cookie as an integer.[/en]
-	[de]Gibt den Unix-Zeitstempel f�r die Lebensdauer des Cookies als Integer zur�ck.[/de]
+	[de]Gibt den Unix-Zeitstempel für die Lebensdauer des Cookies als Integer zurück.[/de]
 	*/
 	public function getCookieTime() {return $this->iCookieTime;}
 	/* @end method */
@@ -820,7 +820,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the path for any subfolder from which the cookie should work only.[/en]
-	[de]Setzt den Pfad f�r eventuelle Unterordner ab denen das Cookie erst wirken soll.[/de]
+	[de]Setzt den Pfad für eventuelle Unterordner ab denen das Cookie erst wirken soll.[/de]
 	
 	@param sPath [needed][type]string[/type]
 	[en]The path as a string.[/en]
@@ -840,11 +840,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the path from which the cookie should work.[/en]
-	[de]Gibt den Pfad zur�ck, ab dem das Cookie wirken soll.[/de]
+	[de]Gibt den Pfad zurück, ab dem das Cookie wirken soll.[/de]
 	
 	@return sCookiePath [type]string[/type]
 	[en]Returns the path as a string.[/en]
-	[de]Gibt den Pfad als String zur�ck.[/de]
+	[de]Gibt den Pfad als String zurück.[/de]
 	*/
 	public function getCookiePath() {return $this->sCookiePath;}
 	/* @end method */
@@ -856,11 +856,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the domain to which the cookie applies.[/en]
-	[de]Setzt die Domain f�r die das Cookie gelten soll.[/de]
+	[de]Setzt die Domain für die das Cookie gelten soll.[/de]
 	
 	@param sDomain [needed][type]string[/type]
 	[en]The domain of the cookie. To get all subdomains working, the domain should be given without the subdomain, such as ".example.de".[/en]
-	[de]Die Domain f�r das Cookie. Sollen alle Subdomains funktionieren, sollte die Domain ohne Subdomain angegeben werden, wie z.B. ".example.de".[/de]
+	[de]Die Domain für das Cookie. Sollen alle Subdomains funktionieren, sollte die Domain ohne Subdomain angegeben werden, wie z.B. ".example.de".[/de]
 	*/
 	public function setCookieDomain($_sDomain)
 	{
@@ -876,11 +876,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the domain to which the cookie applies.[/en]
-	[de]Gibt die Domain zur�ck f�r die das Cookie gelten soll.[/de]
+	[de]Gibt die Domain zurück für die das Cookie gelten soll.[/de]
 	
 	@return sCookieDomain [type]string[/type]
 	[en]Returns the domain as a string to which the cookie applies.[/en]
-	[de]Gibt die Domain als String zur�ck f�r die das Cookie gelten soll.[/de]
+	[de]Gibt die Domain als String zurück für die das Cookie gelten soll.[/de]
 	*/
 	public function getCookieDomain() {return $this->sCookieDomain;}
 	/* @end method */
@@ -912,11 +912,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether the cookie should only be set on secure connections.[/en]
-	[de]Gibt zur�ck, ob das Cookie nur bei sicheren Verbindungen gesetzt werden soll.[/de]
+	[de]Gibt zurück, ob das Cookie nur bei sicheren Verbindungen gesetzt werden soll.[/de]
 	
 	@return bCookieSecure [type]bool[/type]
 	[en]Returns an integer whether the cookie should only be set on secure connections.[/en]
-	[de]Gibt einen Integer zur�ck, ob das Cookie nur bei sicheren Verbindungen gesetzt werden soll.[/de]
+	[de]Gibt einen Integer zurück, ob das Cookie nur bei sicheren Verbindungen gesetzt werden soll.[/de]
 	*/
 	public function isCookieSecure() {return $this->bCookieSecure;}
 	/* @end method */
@@ -941,7 +941,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets data for the cookie.[/en]
-	[de]Setzt Daten f�r das Cookie.[/de]
+	[de]Setzt Daten für das Cookie.[/de]
 	
 	@param sName [type]string[/type]
 	[en]The name of the cookie.[/en]
@@ -957,7 +957,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@param sDomain [type]string[/type]
 	[en]The domain of the cookie. To get all subdomains working, the domain should be given without the subdomain, such as ".example.de".[/en]
-	[de]Die Domain f�r das Cookie. Sollen alle Subdomains funktionieren, sollte die Domain ohne Subdomain angegeben werden, wie z.B. ".example.de".[/de]
+	[de]Die Domain für das Cookie. Sollen alle Subdomains funktionieren, sollte die Domain ohne Subdomain angegeben werden, wie z.B. ".example.de".[/de]
 	
 	@param iSecure [type]int[/type]
 	[en]Specifies whether the cookie should only be set for secure connections (1) or for all connections (2).[/en]
@@ -1030,11 +1030,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether captcha code input will be used for registration.[/en]
-	[de]Gibt zur�ck ob Captcha-Codeeingabe bei der Registrierung verwendet werden soll.[/de]
+	[de]Gibt zurück ob Captcha-Codeeingabe bei der Registrierung verwendet werden soll.[/de]
 	
 	@return bWithCaptcha [type]bool[/type]
 	[en]Returns a boolean whether captcha code input will be used for registration.[/en]
-	[de]Gibt einen Boolean zur�ck, ob Captcha-Codeeingabe bei der Registrierung verwendet werden soll.[/de]
+	[de]Gibt einen Boolean zurück, ob Captcha-Codeeingabe bei der Registrierung verwendet werden soll.[/de]
 	*/
 	public function isRegisterWithCaptcha() {return $this->bRegisterWithCaptcha;}
 	/* @end method */
@@ -1090,11 +1090,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether captcha code input will be used for login.[/en]
-	[de]Gibt zur�ck ob Captcha-Codeeingabe beim Login verwendet werden soll.[/de]
+	[de]Gibt zurück ob Captcha-Codeeingabe beim Login verwendet werden soll.[/de]
 	
 	@return bWithCaptcha [type]bool[/type]
 	[en]Returns a boolean whether captcha code input will be used for login.[/en]
-	[de]Gibt einen Boolean zur�ck, ob Captcha-Codeeingabe beim Login verwendet werden soll.[/de]
+	[de]Gibt einen Boolean zurück, ob Captcha-Codeeingabe beim Login verwendet werden soll.[/de]
 	*/
 	public function isLoginWithCaptcha() {return $this->bLoginWithCaptcha;}
 	/* @end method */
@@ -1150,11 +1150,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether logging of actions will be used for login.[/en]
-	[de]Gibt zur�ck ob loggen der Aktionen beim Login verwendet werden soll.[/de]
+	[de]Gibt zurück ob loggen der Aktionen beim Login verwendet werden soll.[/de]
 	
 	@return bActionLog [type]bool[/type]
 	[en]Returns a boolean whether logging of actions will be used for login.[/en]
-	[de]Gibt einen Boolean zur�ck, ob loggen der Aktionen beim Login verwendet werden soll.[/de]
+	[de]Gibt einen Boolean zurück, ob loggen der Aktionen beim Login verwendet werden soll.[/de]
 	*/
 	public function isActionLog() {return $this->bActionLog;}
 	/* @end method */
@@ -1190,11 +1190,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Specifies whether website visitors can register themselves.[/en]
-	[de]Gibt an ob Webseitenbesucher sich selbst registrieren d�rfen.[/de]
+	[de]Gibt an ob Webseitenbesucher sich selbst registrieren dürfen.[/de]
 	
 	@param bUse [needed][type]bool[/type]
 	[en]Specifies whether website visitors can register themselves.[/en]
-	[de]Gibt an ob Webseitenbesucher sich selbst registrieren d�rfen.[/de]
+	[de]Gibt an ob Webseitenbesucher sich selbst registrieren dürfen.[/de]
 	*/
 	public function useAllowRegister($_bUse)
 	{
@@ -1210,11 +1210,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether website visitors can register themselves.[/en]
-	[de]Gibt zur�ck ob Webseitenbesucher sich selbst registrieren d�rfen.[/de]
+	[de]Gibt zurück ob Webseitenbesucher sich selbst registrieren dürfen.[/de]
 	
 	@return bAllowRegister [type]bool[/type]
 	[en]Returns a boolean whether website visitors can register themselves.[/en]
-	[de]Gibt einen Boolean zur�ck, ob Webseitenbesucher sich selbst registrieren d�rfen.[/de]
+	[de]Gibt einen Boolean zurück, ob Webseitenbesucher sich selbst registrieren dürfen.[/de]
 	*/
 	public function isAllowRegister() {return $this->bAllowRegister;}
 	/* @end method */
@@ -1226,7 +1226,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Allows users to reset their passwords.[/en]
-	[de]Erlaubt den Benutzern das Zur�cksetzen ihrer Passw�rter.[/de]
+	[de]Erlaubt den Benutzern das Zurücksetzen ihrer Passwörter.[/de]
 	*/
 	public function allowPasswordReset() {$this->bAllowPasswordReset = true;}
 	/* @end method */
@@ -1238,7 +1238,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Disallows users to reset their passwords.[/en]
-	[de]Verbietet den Benutzern das Zur�cksetzen ihrer Passw�rter.[/de]
+	[de]Verbietet den Benutzern das Zurücksetzen ihrer Passwörter.[/de]
 	*/
 	public function disallowPasswordReset() {$this->bAllowPasswordReset = false;}
 	/* @end method */
@@ -1250,11 +1250,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Specifies whether users can reset their password.[/en]
-	[de]Gibt an ob Benutzer ihr Passwort zur�cksetzen d�rfen.[/de]
+	[de]Gibt an ob Benutzer ihr Passwort zurücksetzen dürfen.[/de]
 	
 	@param bUse [needed][type]bool[/type]
 	[en]Specifies whether users can reset their password.[/en]
-	[de]Gibt an ob Benutzer ihr Passwort zur�cksetzen d�rfen.[/de]
+	[de]Gibt an ob Benutzer ihr Passwort zurücksetzen dürfen.[/de]
 	*/
 	public function useAllowPasswordReset($_bUse)
 	{
@@ -1270,11 +1270,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether users are allowed to reset their password.[/en]
-	[de]Gibt zur�ck, ob Benutzern erlaubt ist ihr Passwort zur�ck zu setzen.[/de]
+	[de]Gibt zurück, ob Benutzern erlaubt ist ihr Passwort zurück zu setzen.[/de]
 	
 	@return bAllowPasswordReset [type]bool[/type]
 	[en]Returns a boolean whether users are allowed to reset their password.[/en]
-	[de]Gibt einen Boolean zur�ck, ob Benutzern erlaubt ist ihr Passwort zur�ck zu setzen.[/de]
+	[de]Gibt einen Boolean zurück, ob Benutzern erlaubt ist ihr Passwort zurück zu setzen.[/de]
 	*/
 	public function isAllowPasswordReset() {return $this->bAllowPasswordReset;}
 	/* @end method */
@@ -1286,7 +1286,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Allows users to change their username.[/en]
-	[de]Erlaubt den Benutzern das �ndern ihrer Benutzernamen.[/de]
+	[de]Erlaubt den Benutzern das Ändern ihrer Benutzernamen.[/de]
 	*/
 	public function allowChangeUsername() {$this->bAllowChangeUsername = true;}
 	/* @end method */
@@ -1298,7 +1298,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Disallows users to change their username.[/en]
-	[de]Verbietet den Benutzern das �ndern ihrer Benutzernamen.[/de]
+	[de]Verbietet den Benutzern das Ändern ihrer Benutzernamen.[/de]
 	*/
 	public function disallowChangeUsername() {$this->bAllowChangeUsername = false;}
 	/* @end method */
@@ -1310,11 +1310,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Specifies whether users can change their username.[/en]
-	[de]Gibt an ob Benutzer ihre Benutzernamen �ndern d�rfen.[/de]
+	[de]Gibt an ob Benutzer ihre Benutzernamen ändern dürfen.[/de]
 	
 	@param bUse [needed][type]bool[/type]
 	[en]Specifies whether users can change their username.[/en]
-	[de]Gibt an ob Benutzer ihre Benutzernamen �ndern d�rfen.[/de]
+	[de]Gibt an ob Benutzer ihre Benutzernamen ändern dürfen.[/de]
 	*/
 	public function useAllowChangeUsername($_bUse)
 	{
@@ -1330,11 +1330,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether users are allowed to change their username.[/en]
-	[de]Gibt zur�ck, ob Benutzern erlaubt ist ihren Benutzernamen zu �ndern.[/de]
+	[de]Gibt zurück, ob Benutzern erlaubt ist ihren Benutzernamen zu ändern.[/de]
 	
 	@return bAllowChangeUsername [type]bool[/type]
 	[en]Returns a boolean whether users are allowed to change their username.[/en]
-	[de]Gibt einen Boolean zur�ck, ob Benutzern erlaubt ist ihren Benutzernamen zu �ndern.[/de]
+	[de]Gibt einen Boolean zurück, ob Benutzern erlaubt ist ihren Benutzernamen zu ändern.[/de]
 	*/
 	public function isAllowChangeUsername() {return $this->bAllowChangeUsername;}
 	/* @end method */
@@ -1346,7 +1346,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Allows users to change their email adress.[/en]
-	[de]Erlaubt den Benutzern das �ndern ihrer E-Mail-Adresse.[/de]
+	[de]Erlaubt den Benutzern das Ändern ihrer E-Mail-Adresse.[/de]
 	*/
 	public function allowChangeEmail() {$this->bAllowChangeEmail = true;}
 	/* @end method */
@@ -1358,7 +1358,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Disallows users to change their email adress.[/en]
-	[de]Verbietet den Benutzern das �ndern ihrer E-Mail-Adresse.[/de]
+	[de]Verbietet den Benutzern das Ändern ihrer E-Mail-Adresse.[/de]
 	*/
 	public function disallowChangeEmail() {$this->bAllowChangeEmail = false;}
 	/* @end method */
@@ -1370,11 +1370,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Specifies whether users can change their email adress.[/en]
-	[de]Gibt an ob Benutzer ihre E-Mail-Adresse �ndern d�rfen.[/de]
+	[de]Gibt an ob Benutzer ihre E-Mail-Adresse ändern dürfen.[/de]
 	
 	@param bUse [needed][type]bool[/type]
 	[en]Specifies whether users can change their email adress.[/en]
-	[de]Gibt an ob Benutzer ihre E-Mail-Adresse �ndern d�rfen.[/de]
+	[de]Gibt an ob Benutzer ihre E-Mail-Adresse ändern dürfen.[/de]
 	*/
 	public function useAllowChangeEmail($_bUse)
 	{
@@ -1390,11 +1390,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether users are allowed to change their email adress.[/en]
-	[de]Gibt zur�ck, ob Benutzern erlaubt ist ihre E-Mail-Adresse zu �ndern.[/de]
+	[de]Gibt zurück, ob Benutzern erlaubt ist ihre E-Mail-Adresse zu ändern.[/de]
 	
 	@return bAllowChangeEmail [type]bool[/type]
 	[en]Returns a boolean whether users are allowed to change their email adress.[/en]
-	[de]Gibt einen Boolean zur�ck, ob Benutzern erlaubt ist ihre E-Mail-Adresse zu �ndern.[/de]
+	[de]Gibt einen Boolean zurück, ob Benutzern erlaubt ist ihre E-Mail-Adresse zu ändern.[/de]
 	*/
 	public function isAllowChangeEmail() {return $this->bAllowChangeEmail;}
 	/* @end method */
@@ -1406,7 +1406,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Allows the simultaneous, multiple login of a user without that someone is automatically logged out.[/en]
-	[de]Erlaubt das gleichzeitige, mehrfache Einloggen �ber einen Benutzer ohne dass jemand automatisch ausgeloggt wird.[/de]
+	[de]Erlaubt das gleichzeitige, mehrfache Einloggen über einen Benutzer ohne dass jemand automatisch ausgeloggt wird.[/de]
 	*/
 	public function enableMultiLogin() {$this->bMultiLogin = true;}
 	/* @end method */
@@ -1418,7 +1418,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Disallows the simultaneous, multiple login of a user without that someone is automatically logged out.[/en]
-	[de]Verbietet das gleichzeitige, mehrfache Einloggen �ber einen Benutzer ohne dass jemand automatisch ausgeloggt wird.[/de]
+	[de]Verbietet das gleichzeitige, mehrfache Einloggen über einen Benutzer ohne dass jemand automatisch ausgeloggt wird.[/de]
 	*/
 	public function disableMultiLogin() {$this->bMultiLogin = false;}
 	/* @end method */
@@ -1430,11 +1430,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Specifies whether it is allowed that you can log in simultaneously on a user repeatedly without anyone getting logged out automatically.[/en]
-	[de]Gibt an ob es erlaubt ist, dass man sich �ber einen Benutzer gleichzeitig, mehrfach einloggen kann ohne dass jemand automatisch ausgeloggt wird.[/de]
+	[de]Gibt an ob es erlaubt ist, dass man sich über einen Benutzer gleichzeitig, mehrfach einloggen kann ohne dass jemand automatisch ausgeloggt wird.[/de]
 	
 	@param bUse [needed][type]bool[/type]
 	[en]Specifies whether it is allowed that you can log in simultaneously on a user repeatedly without anyone getting logged out automatically.[/en]
-	[de]Gibt an ob es erlaubt ist, dass man sich �ber einen Benutzer gleichzeitig, mehrfach einloggen kann ohne dass jemand automatisch ausgeloggt wird.[/de]
+	[de]Gibt an ob es erlaubt ist, dass man sich über einen Benutzer gleichzeitig, mehrfach einloggen kann ohne dass jemand automatisch ausgeloggt wird.[/de]
 	*/
 	public function useMultiLogin($_bUse)
 	{
@@ -1450,11 +1450,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether it is allowed that you can log in simultaneously on a user repeatedly without anyone getting logged out automatically.[/en]
-	[de]Gibt zur�ck ob es erlaubt ist, dass man sich �ber einen Benutzer gleichzeitig, mehrfach einloggen kann ohne dass jemand automatisch ausgeloggt wird.[/de]
+	[de]Gibt zurück ob es erlaubt ist, dass man sich über einen Benutzer gleichzeitig, mehrfach einloggen kann ohne dass jemand automatisch ausgeloggt wird.[/de]
 	
 	@return bMultiLogin [type]bool[/type]
 	[en]Returns a boolean whether it is allowed that you can log in simultaneously on a user repeatedly without anyone getting logged out automatically.[/en]
-	[de]Gibt einen Boolean zur�ck ob es erlaubt ist, dass man sich �ber einen Benutzer gleichzeitig, mehrfach einloggen kann ohne dass jemand automatisch ausgeloggt wird.[/de]
+	[de]Gibt einen Boolean zurück ob es erlaubt ist, dass man sich über einen Benutzer gleichzeitig, mehrfach einloggen kann ohne dass jemand automatisch ausgeloggt wird.[/de]
 	*/
 	public function isMultiLogin() {return $this->bMultiLogin;}
 	/* @end method */
@@ -1521,11 +1521,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the minimum number of characters that requires a username.[/en]
-	[de]Setzt die Mindestanzahl an Zeichen die ein Benutzername ben�tigt.[/de]
+	[de]Setzt die Mindestanzahl an Zeichen die ein Benutzername benötigt.[/de]
 	
 	@param iCount [needed][type]int[/type]
 	[en]The number of required characters as an integer.[/en]
-	[de]Die Anzahl an Zeichen die ben�tigt wird als Integer.[/de]
+	[de]Die Anzahl an Zeichen die benötigt wird als Integer.[/de]
 	*/
 	public function setMinCharCountUsername($_iCount)
 	{
@@ -1541,11 +1541,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the number of characters required for usernames.[/en]
-	[de]Gibt die Anzahl der ben�tigten Zeichen f�r Benutzernamen zur�ck.[/de]
+	[de]Gibt die Anzahl der benötigten Zeichen für Benutzernamen zurück.[/de]
 	
 	@return iMinCharCount [type]int[/type]
 	[en]Returns the number of characters required for usernames as an integer.[/en]
-	[de]Gibt die Anzahl der ben�tigten Zeichen f�r Benutzernamen als Integer zur�ck.[/de]
+	[de]Gibt die Anzahl der benötigten Zeichen für Benutzernamen als Integer zurück.[/de]
 	*/
 	public function getMinCharCountUsername() {return $this->iMinCharCountUsername;}
 	/* @end method */
@@ -1557,11 +1557,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the minimum number of characters that requires a password.[/en]
-	[de]Setzt die Mindestanzahl an Zeichen die ein Passwort ben�tigt.[/de]
+	[de]Setzt die Mindestanzahl an Zeichen die ein Passwort benötigt.[/de]
 	
 	@param iCount [needed][type]int[/type]
 	[en]The number of required characters as an integer.[/en]
-	[de]Die Anzahl an Zeichen die ben�tigt wird als Integer.[/de]
+	[de]Die Anzahl an Zeichen die benötigt wird als Integer.[/de]
 	*/
 	public function setMinCharCountPassword($_iCount)
 	{
@@ -1577,11 +1577,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the number of characters required for passwords.[/en]
-	[de]Gibt die Anzahl der ben�tigten Zeichen f�r Passw�rter zur�ck.[/de]
+	[de]Gibt die Anzahl der benötigten Zeichen für Passwörter zurück.[/de]
 	
 	@return iMinCharCount [type]int[/type]
 	[en]The number of required characters as an integer.[/en]
-	[de]Die Anzahl an Zeichen die ben�tigt wird als Integer.[/de]
+	[de]Die Anzahl an Zeichen die benötigt wird als Integer.[/de]
 	*/
 	public function getMinCharCountPassword() {return $this->iMinCharCountPassword;}
 	/* @end method */
@@ -1603,7 +1603,7 @@ class classPG_Login extends classPG_ClassBasics
 	[/en]
 	[de]
 		Der Typ des Benutzers als Integer.
-		Folgende Typen sind m�glich:
+		Folgende Typen sind möglich:
 		%LoginUserTypes%
 	[/de]
 	*/
@@ -1631,7 +1631,7 @@ class classPG_Login extends classPG_ClassBasics
 	[/en]
 	[de]
 		Der Typ des Benutzers als Integer.
-		Folgende Typen sind m�glich:
+		Folgende Typen sind möglich:
 		%LoginUserTypes%
 	[/de]
 	*/
@@ -1659,7 +1659,7 @@ class classPG_Login extends classPG_ClassBasics
 	[/en]
 	[de]
 		Der Typ des Benutzers als Integer.
-		Folgende Typen sind m�glich:
+		Folgende Typen sind möglich:
 		%LoginUserTypes%
 	[/de]
 	*/
@@ -1677,7 +1677,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the type of the user.[/en]
-	[de]Gibt den Typ des Benutzers zur�ck.[/de]
+	[de]Gibt den Typ des Benutzers zurück.[/de]
 	
 	@return iUserType [type]int[/type]
 	[en]
@@ -1686,8 +1686,8 @@ class classPG_Login extends classPG_ClassBasics
 		%LoginUserTypes%
 	[/en]
 	[de]
-		Gibt den Typ des Benutzers als Integer zur�ck.
-		Folgende Typen sind m�glich:
+		Gibt den Typ des Benutzers als Integer zurück.
+		Folgende Typen sind möglich:
 		%LoginUserTypes%
 	[/de]
 	*/
@@ -1701,11 +1701,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether the type of the logged in user is a specific type of user.[/en]
-	[de]Gibt zur�ck, ob der Typ des eingeloggte Benutzer von einem bestimmten Benutzertyp ist.[/de]
+	[de]Gibt zurück, ob der Typ des eingeloggte Benutzer von einem bestimmten Benutzertyp ist.[/de]
 	
 	@return bIsUserType [type]bool[/type]
 	[en]Returns a boolean whether the type of the logged in user is a specific type of user.[/en]
-	[de]Gibt einen Boolean zur�ck, ob der Typ des eingeloggte Benutzer von einem bestimmten Benutzertyp ist.[/de]
+	[de]Gibt einen Boolean zurück, ob der Typ des eingeloggte Benutzer von einem bestimmten Benutzertyp ist.[/de]
 	
 	@param iType [needed][type]int[/type]
 	[en]
@@ -1714,8 +1714,8 @@ class classPG_Login extends classPG_ClassBasics
 		%LoginUserTypes%
 	[/en]
 	[de]
-		Der Benutzertyp der gepr�ft werden soll.
-		Die folgenden Benutzertypen sind m�glich:
+		Der Benutzertyp der geprüft werden soll.
+		Die folgenden Benutzertypen sind möglich:
 		%LoginUserTypes%
 	[/de]
 	*/
@@ -1733,11 +1733,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether the type of the user is a guest. (not logged in)[/en]
-	[de]Gibt zur�ck, ob der Typ des Benutzers ein Gast ist. (Nicht eingeloggt)[/de]
+	[de]Gibt zurück, ob der Typ des Benutzers ein Gast ist. (Nicht eingeloggt)[/de]
 	
 	@return bIsGuest [type]bool[/type]
 	[en]Returns a boolean whether the type of the user is a guest. (not logged in)[/en]
-	[de]Gibt einen Boolean zur�ck, ob der Typ des Benutzers ein Gast ist. (Nicht eingeloggt)[/de]
+	[de]Gibt einen Boolean zurück, ob der Typ des Benutzers ein Gast ist. (Nicht eingeloggt)[/de]
 	*/
 	public function isGuest() {if ($this->iUserType == PG_LOGIN_USERTYPE_GUEST) {return true;} return false;}
 	/* @end method */
@@ -1749,11 +1749,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Set columns that are to be read in addition.[/en]
-	[de]Setzt Spalten die zus�tzlich ausgelesen werden sollen.[/de]
+	[de]Setzt Spalten die zusätzlich ausgelesen werden sollen.[/de]
 	
 	@param sSelect [needed][type]string[/type]
 	[en]The columns that are to be read in addition.[/en]
-	[de]Die Spalten die zus�tzlich ausgelesen werden sollen.[/de]
+	[de]Die Spalten die zusätzlich ausgelesen werden sollen.[/de]
 	*/
 	public function setAdditionalSelect($_sSelect)
 	{
@@ -1769,11 +1769,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the columns that are to be read in addition.[/en]
-	[de]Gibt die Spalten zur�ck, die zus�tzlich ausgelesen werden sollen.[/de]
+	[de]Gibt die Spalten zurück, die zusätzlich ausgelesen werden sollen.[/de]
 	
 	@return sSelect [type]string[/type]
 	[en]Returns the columns that are to be read in addition as a string.[/en]
-	[de]Gibt die Spalten als String zur�ck, die zus�tzlich ausgelesen werden sollen.[/de]
+	[de]Gibt die Spalten als String zurück, die zusätzlich ausgelesen werden sollen.[/de]
 	*/
 	public function getAdditionalSelect() {return $this->sAdditionalSelect;}
 	/* @end method */
@@ -1785,11 +1785,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns data about the user logged-on.[/en]
-	[de]Gibt Daten �ber den angemeldeten Benutzer zur�ck.[/de]
+	[de]Gibt Daten über den angemeldeten Benutzer zurück.[/de]
 	
 	@return xValue [type]mixed[/type]
 	[en]Returns the value of the desired data to the user logged-on.[/en]
-	[de]Gibt den Wert der gew�nschten Daten zu dem angemeldeten Benutzer zur�ck.[/de]
+	[de]Gibt den Wert der gewünschten Daten zu dem angemeldeten Benutzer zurück.[/de]
 	
 	@param sProperty [needed][type]string[/type]
 	[en]The name of the data to be requested.[/en]
@@ -1817,7 +1817,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets data about the user logged-on. (The data used only temporarily and are not saved!)[/en]
-	[de]Setzt Daten �ber den angemeldeten Benutzer. (Die Daten werden nur tempor�r gesetzt und nicht gespeichert!)[/de]
+	[de]Setzt Daten über den angemeldeten Benutzer. (Die Daten werden nur temporär gesetzt und nicht gespeichert!)[/de]
 	
 	@param sProperty [needed][type]string[/type]
 	[en]The name of the data to be set.[/en]
@@ -1842,7 +1842,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets a global, absolute URL for example Confirmation e-mails.[/en]
-	[de]Setzt eine globale, absolute URL f�r z.B. Best�tigungsmails.[/de]
+	[de]Setzt eine globale, absolute URL für z.B. Bestätigungs-Mails.[/de]
 	
 	@param sUrl [needed][type]string[/type]
 	[en]The global, absolute path or URL to the login.[/en]
@@ -1862,7 +1862,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]The file path to the confirmation script for password resetting.[/en]
-	[de]Der Dateipfad zum Best�tigungsscript f�r Passw�rter zur�ck zu setzen.[/de]
+	[de]Der Dateipfad zum Bestätigungsscript für Passwörter zurück zu setzen.[/de]
 	
 	@param sFile [needed][type]string[/type]
 	[en]The file path to the script.[/en]
@@ -1882,7 +1882,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]The file path to the confirmation script for account registration.[/en]
-	[de]Der Dateipfad zum Best�tigungsscript f�r Account Registrierungen.[/de]
+	[de]Der Dateipfad zum Bestätigungsscript für Account Registrierungen.[/de]
 	
 	@param sFile [needed][type]string[/type]
 	[en]The file path to the script.[/en]
@@ -2200,7 +2200,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the email address to be used as the sender for messages from the system.[/en]
-	[de]Setzt die E-Mail-Adresse, die als Absender f�r Nachrichten vom System verwendet werden soll.[/de]
+	[de]Setzt die E-Mail-Adresse, die als Absender für Nachrichten vom System verwendet werden soll.[/de]
 	
 	@param sEmail [needed][type]string[/type]
 	[en]The email address.[/en]
@@ -2220,7 +2220,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the title for your system, which is used in emails. The title is important, because user otherwise don't know exactly from which system the email was sent.[/en]
-	[de]Setzt den Titel f�r Ihr System, der bei E-Mails verwendet wird. Der Titel ist wichtig, da Benutzer sonst nicht genau wissen von welchem System die E-Mail gesendet wurde.[/de]
+	[de]Setzt den Titel für Ihr System, der bei E-Mails verwendet wird. Der Titel ist wichtig, da Benutzer sonst nicht genau wissen von welchem System die E-Mail gesendet wurde.[/de]
 	
 	@param sTitle [needed][type]string[/type]
 	[en]The title / name of your system / website.[/en]
@@ -2240,11 +2240,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the URL to the page on which the privacy policies are.[/en]
-	[de]Setzt die URL zur Seite an der die Datenschutzerkl�rungen stehen.[/de]
+	[de]Setzt die URL zur Seite an der die Datenschutzerklärungen stehen.[/de]
 	
 	@param sUrl [needed][type]string[/type]
 	[en]The URL to the page on which the privacy policies are.[/en]
-	[de]Die URL zur Seite an der die Datenschutzerkl�rungen stehen.[/de]
+	[de]Die URL zur Seite an der die Datenschutzerklärungen stehen.[/de]
 	*/
 	public function setPrivacyPolicyUrl($_sUrl)
 	{
@@ -2260,11 +2260,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the URL to the page on which the privacy policies are.[/en]
-	[de]Gibt die URL zur Seite auf der die Datenschutzerkl�rungen stehen zur�ck.[/de]
+	[de]Gibt die URL zur Seite auf der die Datenschutzerklärungen stehen zurück.[/de]
 	
 	@return sUrl [type]string[/type]
 	[en]Returns the URL to the page on which the privacy policies are as a string.[/en]
-	[de]Gibt die URL zur Seite auf der die Datenschutzerkl�rungen stehen als String zur�ck.[/de]
+	[de]Gibt die URL zur Seite auf der die Datenschutzerklärungen stehen als String zurück.[/de]
 	*/
 	public function getPrivacyPolicyUrl() {return $this->sPrivacyPolicyUrl;}
 	/* @end method */
@@ -2296,11 +2296,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the URL to the page on which the privacy terms are.[/en]
-	[de]Gibt die URL zur Seite auf der die Datenschutzrichtlinien stehen zur�ck.[/de]
+	[de]Gibt die URL zur Seite auf der die Datenschutzrichtlinien stehen zurück.[/de]
 	
 	@return sUrl [type]string[/type]
 	[en]Returns the URL to the page on which the privacy terms are as a string.[/en]
-	[de]Gibt die URL zur Seite auf der die Datenschutzrichtlinien stehen als String zur�ck.[/de]
+	[de]Gibt die URL zur Seite auf der die Datenschutzrichtlinien stehen als String zurück.[/de]
 	*/
 	public function getPrivacyTermsUrl() {return $this->sPrivacyTermsUrl;}
 	/* @end method */
@@ -2332,11 +2332,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the URL to the page on which the terms of use are.[/en]
-	[de]Gibt die URL zur Seite auf der die Nutzungsbedingungen stehen zur�ck.[/de]
+	[de]Gibt die URL zur Seite auf der die Nutzungsbedingungen stehen zurück.[/de]
 	
 	@return sUrl [type]string[/typ]
 	[en]Returns the URL to the page on which the terms of use are as a string.[/en]
-	[de]Gibt die URL zur Seite auf der die Nutzungsbedingungen stehen als String zur�ck.[/de]
+	[de]Gibt die URL zur Seite auf der die Nutzungsbedingungen stehen als String zurück.[/de]
 	*/
 	public function getTermsOfUseUrl() {return $this->sTermsOfUseUrl;}
 	/* @end method */
@@ -2348,11 +2348,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the URL to the page on which the terms and conditions are.[/en]
-	[de]Setzt die URL zur Seite an der die Gesch�ftsbedingungen stehen.[/de]
+	[de]Setzt die URL zur Seite an der die Geschäftsbedingungen stehen.[/de]
 	
 	@param sUrl [needed][type]string[/string]
 	[en]The URL to the page on which the terms and conditions are.[/en]
-	[de]Die URL zur Seite an der die Gesch�ftsbedingungen stehen.[/de]
+	[de]Die URL zur Seite an der die Geschäftsbedingungen stehen.[/de]
 	*/
 	public function setTermsAndConditionsUrl($_sUrl)
 	{
@@ -2368,11 +2368,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the URL to the page on which the terms and conditions are.[/en]
-	[de]Gibt die URL zur Seite auf der die Gesch�ftsbedingungen stehen zur�ck.[/de]
+	[de]Gibt die URL zur Seite auf der die Geschäftsbedingungen stehen zurück.[/de]
 	
 	@return sUrl [type]string[/type]
 	[en]Returns the URL to the page on which the terms and conditions are as a string.[/en]
-	[de]Gibt die URL zur Seite auf der die Gesch�ftsbedingungen stehen als String zur�ck.[/de]
+	[de]Gibt die URL zur Seite auf der die Geschäftsbedingungen stehen als String zurück.[/de]
 	*/
 	public function getTermsAndConditionsUrl() {return $this->sTermsAndConditionsUrl;}
 	/* @end method */
@@ -2384,11 +2384,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the names of the required fields which have failed.[/en]
-	[de]Gibt die Namen der ben�tigten Felder die fehlgeschlagen sind zur�ck.[/de]
+	[de]Gibt die Namen der benätigten Felder die fehlgeschlagen sind zurück.[/de]
 	
 	@return asRequiredFailed [type]string[][/type]
 	[en]Returns the names of the required fields which have failed as an string array.[/en]
-	[de]Gibt die Namen der ben�tigten Felder die fehlgeschlagen sind als String-Array zur�ck.[/de]
+	[de]Gibt die Namen der benätigten Felder die fehlgeschlagen sind als String-Array zurück.[/de]
 	*/
 	public function getRequiredFailed()
 	{
@@ -2403,23 +2403,23 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Checks if all required fields are completed.[/en]
-	[de]Pr�ft ob alle Pflichtfelder ausgef�llt wurden.[/de]
+	[de]Prüft ob alle Pflichtfelder ausgefüllt wurden.[/de]
 	
 	@return bRequirementsOk [type]bool[/type]
 	[en]Returns a boolean whether all required fields have been filled out.[/en]
-	[de]Gibt einen Boolean zur�ck ob alle Pflichtfelder ausgef�llt wurden.[/de]
+	[de]Gibt einen Boolean zurück ob alle Pflichtfelder ausgefüllt wurden.[/de]
 	
 	@param asFilled [needed][type]string[][/type]
 	[en]The fields that have been transferred by the form. Usually this is $_POST.[/en]
-	[de]Die Felder, die vom Formular �bertragen wurden. In der Regel ist das $_POST.[/de]
+	[de]Die Felder, die vom Formular übertragen wurden. In der Regel ist das $_POST.[/de]
 	
 	@param bPasswordRequired [needed][type]bool[/type]
 	[en]Specifies whether the password field is a required field also when data changes.[/en]
-	[de]Gibt an ob das Passwortfeld auch bei �nderungen der Daten ein Pflichtfeld ist.[/de]
+	[de]Gibt an ob das Passwortfeld auch bei Änderungen der Daten ein Pflichtfeld ist.[/de]
 	
 	@param asRequired [type]string[][/type]
 	[en]The required fields as a string array to be tested in addition to username, password and e-mail.[/en]
-	[de]Die Pflichtfelder als String-Array, die zus�tzlich zu Benutzername, Passwort und E-Mail gepr�ft werden sollen.[/de]
+	[de]Die Pflichtfelder als String-Array, die zusätzlich zu Benutzername, Passwort und E-Mail geprüft werden sollen.[/de]
 	*/
 	public function checkRequiredFields($_asFilled, $_bPasswordRequired = NULL, $_asRequired = NULL)
 	{
@@ -2522,7 +2522,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the user successfully banned.[/en]
-	[de]Gibt einen Boolean zur�ck, ob der Benutzer erfolgreich gebannt wurde.[/de]
+	[de]Gibt einen Boolean zurück, ob der Benutzer erfolgreich gebannt wurde.[/de]
 	
 	@param iUserID [type]int[/type]
 	[en]The user ID of the user to be banned.[/en]
@@ -2567,7 +2567,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the user successfully banned.[/en]
-	[de]Gibt einen Boolean zur�ck, ob der Benutzer erfolgreich gebannt wurde.[/de]
+	[de]Gibt einen Boolean zurück, ob der Benutzer erfolgreich gebannt wurde.[/de]
 	
 	@param iUserID [needed][type]int[/type]
 	[en]The user ID of the user to be banned.[/en]
@@ -2617,7 +2617,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the user successfully banned.[/en]
-	[de]Gibt einen Boolean zur�ck, ob der Benutzer erfolgreich gebannt wurde.[/de]
+	[de]Gibt einen Boolean zurück, ob der Benutzer erfolgreich gebannt wurde.[/de]
 	
 	@param sUsername [needed][type]string[/type]
 	[en]The username of the user to be banned.[/en]
@@ -2671,7 +2671,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the user successfully banned.[/en]
-	[de]Gibt einen Boolean zur�ck, ob der Benutzer erfolgreich gebannt wurde.[/de]
+	[de]Gibt einen Boolean zurück, ob der Benutzer erfolgreich gebannt wurde.[/de]
 	
 	@param sEmail [needed][type]string[/type]
 	[en]The email adress of the user to be banned.[/en]
@@ -2721,11 +2721,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the status of a user whether he has already accepted the registration on the confirmation e-mail.[/en]
-	[de]Setzt den Status eines Benutzers ob er die Registrierung �ber die Best�tigungsmail bereits akzeptiert hat.[/de]
+	[de]Setzt den Status eines Benutzers ob er die Registrierung �ber die Bestätigungs-Mail bereits akzeptiert hat.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns or sets whether the acceptance was successful.[/en]
-	[de]Gibt zur�ck ob das Akzeptieren erfolgreich war.[/de]
+	[de]Gibt zurück ob das Akzeptieren erfolgreich war.[/de]
 	
 	@param iUserID [type]int[/type]
 	[en]The user ID of the user to be accepted.[/en]
@@ -2764,11 +2764,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the status of a user whether he has already accepted the registration on the confirmation e-mail.[/en]
-	[de]Setzt den Status eines Benutzers ob er die Registrierung �ber die Best�tigungsmail bereits akzeptiert hat.[/de]
+	[de]Setzt den Status eines Benutzers ob er die Registrierung über die Bestätigungs-Mail bereits akzeptiert hat.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns or sets whether the acceptance was successful.[/en]
-	[de]Gibt zur�ck ob das Akzeptieren erfolgreich war.[/de]
+	[de]Gibt zurück ob das Akzeptieren erfolgreich war.[/de]
 	
 	@param iUserID [needed][type]int[/type]
 	[en]The user ID of the user to be accepted.[/en]
@@ -2811,11 +2811,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the status of a user whether he has already accepted the registration on the confirmation e-mail.[/en]
-	[de]Setzt den Status eines Benutzers ob er die Registrierung �ber die Best�tigungsmail bereits akzeptiert hat.[/de]
+	[de]Setzt den Status eines Benutzers ob er die Registrierung über die Bestätigungsmail bereits akzeptiert hat.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns or sets whether the acceptance was successful.[/en]
-	[de]Gibt zur�ck ob das Akzeptieren erfolgreich war.[/de]
+	[de]Gibt zurück ob das Akzeptieren erfolgreich war.[/de]
 	
 	@param sUsername [needed][type]string[/type]
 	[en]The username of the user to be accepted.[/en]
@@ -2865,11 +2865,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the status of a user whether he has already accepted the registration on the confirmation e-mail.[/en]
-	[de]Setzt den Status eines Benutzers ob er die Registrierung �ber die Best�tigungsmail bereits akzeptiert hat.[/de]
+	[de]Setzt den Status eines Benutzers ob er die Registrierung über die Bestätigungsmail bereits akzeptiert hat.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns or sets whether the acceptance was successful.[/en]
-	[de]Gibt zur�ck ob das Akzeptieren erfolgreich war.[/de]
+	[de]Gibt zurück ob das Akzeptieren erfolgreich war.[/de]
 	
 	@param sEmail [needed][type]string[/type]
 	[en]The email adress of the user to be accepted.[/en]
@@ -2919,15 +2919,15 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether a user name is not allowed.[/en]
-	[de]Gibt zur�ck, ob ein Benutzername nicht erlaubt ist.[/de]
+	[de]Gibt zurück, ob ein Benutzername nicht erlaubt ist.[/de]
 	
 	@return bIsDisallowed [type]bool[/type]
 	[en]Returns a boolean whether a user name is not allowed.[/en]
-	[de]Gibt einen Boolean zur�ck, ob ein Benutzername nicht erlaubt ist.[/de]
+	[de]Gibt einen Boolean zurück, ob ein Benutzername nicht erlaubt ist.[/de]
 	
 	@param sUsername [needed][type]string[/type]
 	[en]The username that must be checked.[/en]
-	[de]Der Benutzername der zu pr�fen ist.[/de]
+	[de]Der Benutzername der zu prüfen ist.[/de]
 	*/
 	public function isUsernameDisallowed($_sUsername)
 	{
@@ -3099,7 +3099,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@return iUserID [type]int[/type]
 	[en]Returns the user ID on success.[/en]
-	[de]Gibt bei Erfolg die Benutzer ID zur�ck.[/de]
+	[de]Gibt bei Erfolg die Benutzer ID zurück.[/de]
 	
 	@param iUserID [needed][type]int[/type]
 	[en]The user ID if the user already exists.[/en]
@@ -3113,7 +3113,7 @@ class classPG_Login extends classPG_ClassBasics
 	[/en]
 	[de]
 		Der Typ des Benutzers.
-		Folgende Benutzertypen sind m�glich:
+		Folgende Benutzertypen sind möglich:
 		%LoginUserTypes%
 	[/de]
 	
@@ -3131,7 +3131,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@param sStreet [needed][type]string[/type]
 	[en]The street of the user.[/en]
-	[de]Die Stra�e des Benutzers.[/de]
+	[de]Die Straße des Benutzers.[/de]
 	
 	@param sZipCode [needed][type]string[/type]
 	[en]The zip code of the user.[/en]
@@ -3392,11 +3392,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Loads a user based on the UserID from the database.[/en]
-	[de]L�dt einen Benutzer anhand der BenutzerID aus der Datenbank.[/de]
+	[de]Lädt einen Benutzer anhand der BenutzerID aus der Datenbank.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns whether the user was successfully loaded.[/en]
-	[de]Gibt zur�ck ob der Benutzer erfolgreich geladen wurde.[/de]
+	[de]Gibt zurück ob der Benutzer erfolgreich geladen wurde.[/de]
 	
 	@param iUserID [needed][type]int[/type]
 	[en]The user ID of the user to load.[/en]
@@ -4024,7 +4024,7 @@ class classPG_Login extends classPG_ClassBasics
 	[/en]
 	[de]
 		Der Typ des Passworts.
-		M�gliche Typen sind:
+		Mögliche Typen sind:
 		PG_LOGIN_BUILD_RANDOM_PASSWORD_TYPE_SERIAL
 		PG_LOGIN_BUILD_RANDOM_PASSWORD_TYPE_SIMPLE
 		PG_LOGIN_BUILD_RANDOM_PASSWORD_TYPE_STRONG
@@ -4150,7 +4150,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@return sPasswordCryption [type]string[/type]
 	[en]Returns the encrypted password.[/en]
-	[de]Gibt das verschlüsselte Passwort zur�ck.[/de]
+	[de]Gibt das verschlüsselte Passwort zurück.[/de]
 	
 	@param sPassword [needed][type]string[/type]
 	[en]The password in plain text.[/en]
@@ -4416,7 +4416,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@param sSecureCode [needed][type]string[/type]
 	[en]The security code is required to ensure that only authorized users can reset the password. This code is sent with the link in the confirmation email.[/en]
-	[de]Der Sicherheitscode, der benütigt wird, um sicherzustellen das nur Berechtigte das Passwort zurücksetzen können. Dieser Code wird mit dem Link in der Bestätigungsmail gesendet.[/de]
+	[de]Der Sicherheitscode, der benütigt wird, um sicherzustellen das nur Berechtigte das Passwort zurücksetzen können. Dieser Code wird mit dem Link in der Bestätigungs-Mail gesendet.[/de]
 	
 	@param sEmail [type]string[/type]
 	[en]The email address of the user for the password to be reset.[/en]
@@ -4494,15 +4494,15 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Generate the HTML code for the confirmation of a user registration and executes the confirmation.[/en]
-	[de]Erstellt den HTML Code zur Best�tigung von einer Benutzerregistrierung und f�hrt die Best�tigung aus.[/de]
+	[de]Erstellt den HTML Code zur Bestätigung von einer Benutzerregistrierung und führt die Bestätigung aus.[/de]
 	
 	@return sAcceptUserHtml [type]string[/type]
 	[en]Returns the HTML code as a string.[/en]
-	[de]Gibt den HTML Code als String zur�ck.[/de]
+	[de]Gibt den HTML Code als String zurück.[/de]
 	
 	@param sSecureCode [needed][type]string[/type]
 	[en]The security code is required to ensure that only authorized users can confirm the registration. This code is sent with the link in the confirmation email.[/en]
-	[de]Der Sicherheitscode, der ben�tigt wird, um sicherzustellen das nur Berechtigte die Registrierung best�tigen k�nnen. Dieser Code wird mit dem Link in der Best�tigungsmail gesendet.[/de]
+	[de]Der Sicherheitscode, der benötigt wird, um sicherzustellen das nur Berechtigte die Registrierung bestätigen können. Dieser Code wird mit dem Link in der Bestätigungs-Mail gesendet.[/de]
 	
 	@param sEmail [type]string[/type]
 	[en]The email adress of the user.[/en]
@@ -4706,11 +4706,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the subject of the confirmation email when you reset passwords.[/en]
-	[de]Setzt den Betreff der Best�tigungsmail beim Zur�cksetzen von Passw�rtern.[/de]
+	[de]Setzt den Betreff der Bestätigungs-Mail beim Zur�cksetzen von Passwörtern.[/de]
 	
 	@param sSubject [needed][type]string[/type]
 	[en]The subject of the confirmation mail.[/en]
-	[de]Der Betreff der Best�tigungsmail.[/de]
+	[de]Der Betreff der Bestätigungs-Mail.[/de]
 	*/
 	public function setMailPasswordResetSubject($_sSubject)
 	{
@@ -4726,11 +4726,11 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the text of the confirmation email when you reset passwords.[/en]
-	[de]Setzt den Text der Best�tigungsmail beim Zur�cksetzen von Passw�rtern.[/de]
+	[de]Setzt den Text der Bestätigungsmail beim Zurücksetzen von Passwörtern.[/de]
 	
 	@param sMessage [needed][type]string[/type]
 	[en]The text of the confirmation mail.[/en]
-	[de]Der Text der Best�tigungsmail.[/de]
+	[de]Der Text der Bestätigungsmail.[/de]
 	*/
 	public function setMailPasswordResetMessage($_sMessage)
 	{

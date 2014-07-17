@@ -1,10 +1,6 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Aug 22 2012
 */
 /*
@@ -54,15 +50,15 @@ function classPG_Api()
 	
 	@description
 	[en]Performs a query that selects objects, elements, or  variables and stores the result in a internally context for further processing.[/en]
-	[de]Führt eine Abfrage aus, selektiert Objekte, Elemente oder Variablen und speichert das Ergebnis in einem intern Kontext zur Weiterverarbeitung.[/de]
+	[de]FÃ¼hrt eine Abfrage aus, selektiert Objekte, Elemente oder Variablen und speichert das Ergebnis in einem intern Kontext zur Weiterverarbeitung.[/de]
 	
 	@return xMixed [type]mixed[/type]
 	[en]Returns the API object or the desired query result.[/en]
-	[de]Gibt das API-Objekt oder das erwünschte Anfrage-Ergebnis zurück.[/de]
+	[de]Gibt das API-Objekt oder das erwÃ¼nschte Anfrage-Ergebnis zurÃ¼ck.[/de]
 	
 	@param xStatement [needed][type]mixed[/type]
 	[en]The statement, to be executed as a query.[/en]
-	[de]Das Statement, das als Abfrage ausgeführt werden soll.[/de]
+	[de]Das Statement, das als Abfrage ausgefÃ¼hrt werden soll.[/de]
 	*/
 	this.select = function(_xStatement)
 	{
@@ -78,15 +74,15 @@ function classPG_Api()
 	
 	@description
 	[en]Performs a query that selects objects, elements, or  variables and stores the result in a internally context for further processing.[/en]
-	[de]Führt eine Abfrage aus, selektiert Objekte, Elemente oder Variablen und speichert das Ergebnis in einem intern Kontext zur Weiterverarbeitung.[/de]
+	[de]FÃ¼hrt eine Abfrage aus, selektiert Objekte, Elemente oder Variablen und speichert das Ergebnis in einem intern Kontext zur Weiterverarbeitung.[/de]
 	
 	@return xMixed [type]mixed[/type]
 	[en]Returns the API object or the desired query result.[/en]
-	[de]Gibt das API-Objekt oder das erwünschte Anfrage-Ergebnis zurück.[/de]
+	[de]Gibt das API-Objekt oder das erwÃ¼nschte Anfrage-Ergebnis zurÃ¼ck.[/de]
 	
 	@param xStatement [needed][type]mixed[/type]
 	[en]The statement, to be executed as a query.[/en]
-	[de]Das Statement, das als Abfrage ausgeführt werden soll.[/de]
+	[de]Das Statement, das als Abfrage ausgefÃ¼hrt werden soll.[/de]
 	*/
 	this.query = function(_xStatement)
 	{
@@ -117,11 +113,11 @@ function classPG_Api()
 	
 	@description
 	[en]Returns a previously registered / set variable.[/en]
-	[de]Gibt eine zuvor registrierte / gesetzte Variable zurück.[/de]
+	[de]Gibt eine zuvor registrierte / gesetzte Variable zurÃ¼ck.[/de]
 	
 	@return xValue [type]mixed[/type]
 	[en]Returns the value of a variable or an associative array with all the variables.[/en]
-	[de]Gibt den Wert einer Variablen oder einen assoziativen Array mit allen Variablen zurück.[/de]
+	[de]Gibt den Wert einer Variablen oder einen assoziativen Array mit allen Variablen zurÃ¼ck.[/de]
 	
 	@param sName [needed][type]string[/type]
 	[en]The name of the variable.[/en]
@@ -144,15 +140,15 @@ function classPG_Api()
 	
 	@description
 	[en]Returns a previously registered / set variable or something from the previously saved context.[/en]
-	[de]Gibt eine zuvor registrierte / gesetzte Variable oder etwas aus dem zuvor gespeicherten Context zurück.[/de]
+	[de]Gibt eine zuvor registrierte / gesetzte Variable oder etwas aus dem zuvor gespeicherten Context zurÃ¼ck.[/de]
 	
 	@return xContext [type]mixed[/type]
 	[en]Returns the desired item from the internal context or a registered variable.[/en]
-	[de]Gibt das gewünschte Element aus dem internen Kontext oder eine registrierte Variable zurück.[/de]
+	[de]Gibt das gewÃ¼nschte Element aus dem internen Kontext oder eine registrierte Variable zurÃ¼ck.[/de]
 	
 	@param xGet [needed][type]string[/type]
 	[en]The index as an integer or string name of the desired element.[/en]
-	[de]Der Index als Integer bzw. Name als String vom gewünschten Element.[/de]
+	[de]Der Index als Integer bzw. Name als String vom gewÃ¼nschten Element.[/de]
 	*/
 	this.get = function(_xGet)
 	{
@@ -168,15 +164,15 @@ function classPG_Api()
 	
 	@description
 	[en]Returns a previously registered / set variable or something from the previously saved context.[/en]
-	[de]Gibt eine zuvor registrierte / gesetzte Variable oder etwas aus dem zuvor gespeicherten Context zurück.[/de]
+	[de]Gibt eine zuvor registrierte / gesetzte Variable oder etwas aus dem zuvor gespeicherten Context zurÃ¼ck.[/de]
 	
 	@return xContext [type]mixed[/type]
 	[en]Returns the desired item from the internal context or a registered variable.[/en]
-	[de]Gibt das gewünschte Element aus dem internen Kontext oder eine registrierte Variable zurück.[/de]
+	[de]Gibt das gewÃ¼nschte Element aus dem internen Kontext oder eine registrierte Variable zurÃ¼ck.[/de]
 	
 	@param xGet [needed][type]mixed[/type]
 	[en]The index as an integer or string name of the desired element.[/en]
-	[de]Der Index als Integer bzw. Name als String vom gewünschten Element.[/de]
+	[de]Der Index als Integer bzw. Name als String vom gewÃ¼nschten Element.[/de]
 	*/
 	this.getContext = function(_xGet)
 	{
@@ -320,7 +316,7 @@ function classPG_Api()
 	}
 	/* @end method */
 	
-	// this.class = function(_sClass) {/* todo*/ return this;}
+	// this.class = function(_sClass) {/* todo */ return this;}
 	
 	/*
 	@start method

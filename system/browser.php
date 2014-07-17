@@ -1,12 +1,8 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 13 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Jul 17 2014
 */
 define('PG_BROWSER_CHROME', 'Chrome');
 define('PG_BROWSER_OPERA', 'Opera');
@@ -45,7 +41,7 @@ define('PG_BROWSER_PROVIDER_KABELDEUTSCHLAND', 'Kabel Deutschland');
 define('PG_BROWSER_PROVIDER_BADGMBH', 'BAD GmbH');
 define('PG_BROWSER_PROVIDER_FACEBOOK', 'Facebook');
 define('PG_BROWSER_PROVIDER_MEDIAWAYS', 'mediaWays GmbH Internet Services');
-define('PG_BROWSER_PROVIDER_BWL', 'Baden-Württemberg');
+define('PG_BROWSER_PROVIDER_BWL', 'Baden-Wï¿½rttemberg');
 
 /*
 @start class
@@ -634,7 +630,7 @@ class classPG_Browser extends classPG_ClassBasics
 	@return sUrlParameters [type]string[/type]
 	[en]...[/en]
 	*/
-	public function getUrlParameters()
+	public function parseUrlParameters()
 	{
 		$_sURL = '';
 		

@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Mar 15 2013
 */
 /*
@@ -34,11 +30,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the update and installation structure for the tables of the database and returns it.[/en]
-	[de]Erstellt die Update- und Installationsstruktur f�r die Tabellen der Datenbank und gibt es zur�ck.[/de]
+	[de]Erstellt die Update- und Installationsstruktur für die Tabellen der Datenbank und gibt es zurück.[/de]
 	
 	@return axDBChunkStructure [type]mixed[][/type]
 	[en]Returns the update structure as a mixed array.[/en]
-	[de]Gibt die Updatestruktur als Mixed-Array zur�ck.[/de]
+	[de]Gibt die Updatestruktur als Mixed-Array zurück.[/de]
 	
 	@param oDatabaseUpdate [needed][type]object[/type]
 	[en]The database update object, the update structure is to be expanded.[/en]
@@ -80,11 +76,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the update and installation for the tables in the database and returns the update object.[/en]
-	[de]Erstellt das Update und Installation f�r die Tabellen der Datenbank und gibt das Update-Objekt zur�ck.[/de]
+	[de]Erstellt das Update und Installation für die Tabellen der Datenbank und gibt das Update-Objekt zurück.[/de]
 	
 	@return oUpdate [type]object[/type]
 	[en]Returns the updated object, which was expanded by the tables of the login.[/en]
-	[de]Gibt das Update-Objekt zur�ck, welches um die Tabellen des Logins erweitert wurde.[/de]
+	[de]Gibt das Update-Objekt zurück, welches um die Tabellen des Logins erweitert wurde.[/de]
 	
 	@param oUpdate [needed][type]object[/type]
 	[en]Update object, which should be expanded.[/en]
@@ -130,11 +126,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the column name to sort the order of the usergroups.[/en]
-	[de]Gibt den Spaltennamen zur Sortierung der Benutzergruppen zur�ck.[/de]
+	[de]Gibt den Spaltennamen zur Sortierung der Benutzergruppen zurück.[/de]
 	
 	@return sOrderBy [type]string[/type]
 	[en]Returns the column name to sort the order of the usergroups as a string.[/en]
-	[de]Gibt den Spaltennamen zur Sortierung der Benutzergruppen als String zur�ck.[/de]
+	[de]Gibt den Spaltennamen zur Sortierung der Benutzergruppen als String zurück.[/de]
 	*/
 	public function getOrderBy() {return $this->sOrderBy;}
 	/* @end method */
@@ -166,11 +162,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether the sort of usergroups is reversed.[/en]
-	[de]Gibt zur�ck, ob die Sortierung der Benutzergruppen umgedreht ist.[/de]
+	[de]Gibt zurück, ob die Sortierung der Benutzergruppen umgedreht ist.[/de]
 	
 	@return bOrderReverse [type]bool[/type]
 	[en]Returns an boolean whether the sort of usergroups is reversed.[/en]
-	[de]Gibt einen Boolean zur�ck, ob die Sortierung der Benutzergruppen umgedreht ist.[/de]
+	[de]Gibt einen Boolean zurück, ob die Sortierung der Benutzergruppen umgedreht ist.[/de]
 	*/
 	public function isReverseSortOrder() {return $this->bOrderReverse;}
 	/* @end method */
@@ -182,11 +178,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]loads a usergroup ID from the database.[/en]
-	[de]L�dt eine Benutzergruppen ID aus der Datenbank.[/de]
+	[de]Lädt eine Benutzergruppen ID aus der Datenbank.[/de]
 	
 	@return iUserID [type]int[/type]
 	[en]Returns the usergroup ID as an integer.[/en]
-	[de]Gibt die Benutzergruppen ID als Integer zur�ck.[/de]
+	[de]Gibt die Benutzergruppen ID als Integer zurück.[/de]
 	
 	@param xUserGroup [needed][type]mixed[/type]
 	[en]The usergroup as usergroup ID (integer) or usergroup name (String), which usergroup ID should be read.[/en]
@@ -233,11 +229,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]loads user IDs of a usergroup from the database.[/en]
-	[de]L�dt Benutzer IDs von einer Benutzergruppe aus der Datenbank.[/de]
+	[de]Lädt Benutzer IDs von einer Benutzergruppe aus der Datenbank.[/de]
 	
 	@return axUserIDs [type]mixed[][/type]
 	[en]Returns user IDs as an integer array.[/en]
-	[de]Gibt die Benutzer IDs als Integer-Array zur�ck.[/de]
+	[de]Gibt die Benutzer IDs als Integer-Array zurück.[/de]
 	
 	@param xUserGroup [needed][type]mixed[/type]
 	[en]The usergroup as usergroup ID (integer) or usergroup name (String), which user IDs should be read.[/en]
@@ -280,11 +276,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]loads a usergroup from the database.[/en]
-	[de]L�dt eine Benutzergruppe aus der Datenbank.[/de]
+	[de]Lädt eine Benutzergruppe aus der Datenbank.[/de]
 	
 	@return axUserGroup [type]mixed[][/type]
 	[en]Returns the usergroup as an mixed array.[/en]
-	[de]Gibt die Benutzergruppe als mixed Array zur�ck.[/de]
+	[de]Gibt die Benutzergruppe als mixed Array zurück.[/de]
 	
 	@param iUserGroupID [needed][type]int[/type]
 	[en]The usergroup ID of the usergroup, which data should be read.[/en]
@@ -306,11 +302,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]Loads usergroups from the database and keeps them in memory.[/en]
-	[de]L�dt Benutzergruppen aus der Datenbank und merkt sie sich.[/de]
+	[de]Lädt Benutzergruppen aus der Datenbank und merkt sie sich.[/de]
 	
 	@return axUserGroups [type]mixed[][/type]
 	[en]Returns the usergroups as an mixed array.[/en]
-	[de]Gibt die Benutzergruppen als mixed Array zur�ck.[/de]
+	[de]Gibt die Benutzergruppen als mixed Array zurück.[/de]
 	
 	@param xWhere [type]mixed[/type]
 	[en]A condition under which the usergroups are to load.[/en]
@@ -424,7 +420,7 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]Removes the registered usergroups from the temporary cache.[/en]
-	[de]Entfernt die gemerkten Benutzergruppen wieder aus dem Tempor�ren Zwischenspeicher.[/de]
+	[de]Entfernt die gemerkten Benutzergruppen wieder aus dem Temporären Zwischenspeicher.[/de]
 	*/
 	public function clearUserGroups() {$this->axUserGroupsData = array();}
 	/* @end method */
@@ -436,11 +432,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the usergroups.[/en]
-	[de]Gibt die Benutzergruppen zur�ck.[/de]
+	[de]Gibt die Benutzergruppen zurück.[/de]
 	
 	@return axUserGroups [type]mixed[][/type]
 	[en]Returns the usergroups as an mixed array.[/en]
-	[de]Gibt die Benutzergruppen als mixed Array zur�ck.[/de]
+	[de]Gibt die Benutzergruppen als mixed Array zurück.[/de]
 	*/
 	public function getUserGroups() {return $this->axUserGroupsData;}
 	/* @end method */
@@ -452,11 +448,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the usergroup from the memory.[/en]
-	[de]Gibt eine Benutzergruppe aus dem Zwischenspeicher zur�ck.[/de]
+	[de]Gibt eine Benutzergruppe aus dem Zwischenspeicher zurück.[/de]
 	
 	@return axUserGroup [type]mixed[][/type]
 	[en]Returns the usergroup as an mixed array.[/en]
-	[de]Gibt eine Benutzergruppe als mixed Array zur�ck.[/de]
+	[de]Gibt eine Benutzergruppe als mixed Array zurück.[/de]
 	
 	@param iIndex [needed][type]int[/type]
 	[en]The index or the position from which a usergroup should be get.[/en]
@@ -476,11 +472,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the usergroup from the memory.[/en]
-	[de]Gibt eine Benutzergruppe aus dem Zwischenspeicher zur�ck.[/de]
+	[de]Gibt eine Benutzergruppe aus dem Zwischenspeicher zurück.[/de]
 
 	@return axUserGroup [type]mixed[][/type]
 	[en]Returns the usergroup as an mixed array.[/en]
-	[de]Gibt eine Benutzergruppe als mixed Array zur�ck.[/de]
+	[de]Gibt eine Benutzergruppe als mixed Array zurück.[/de]
 	
 	@param iUserGroupID [needed][type]int[/type]
 	[en]The ID of the usergroup.[/en]
@@ -504,11 +500,11 @@ class classPG_UserGroups extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the usergroup from the memory.[/en]
-	[de]Gibt eine Benutzergruppe aus dem Zwischenspeicher zur�ck.[/de]
+	[de]Gibt eine Benutzergruppe aus dem Zwischenspeicher zurück.[/de]
 	
 	@return axUserGroup [type]mixed[][/type]
 	[en]Returns the usergroup as an mixed array.[/en]
-	[de]Gibt eine Benutzergruppe als mixed Array zur�ck.[/de]
+	[de]Gibt eine Benutzergruppe als mixed Array zurück.[/de]
 	
 	@param sName [needed][type]string[/type]
 	[en]The name of the usergroup.[/en]

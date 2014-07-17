@@ -1,10 +1,6 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Aug 23 2012
 */
 /*
@@ -12,7 +8,7 @@
 
 @description
 [en]This class has methods to authenticate users and their general user status.[/en]
-[de]Diese Klasse verfügt über Methoden zur Authentifizierung von Benutzern und dessen allgemeiner Benutzerstatus.[/de]
+[de]Diese Klasse verfÃ¼gt Ã¼ber Methoden zur Authentifizierung von Benutzern und dessen allgemeiner Benutzerstatus.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -49,11 +45,11 @@ function classPG_Login()
 	
 	@description
 	[en]Returns the file path or URL to the captcha file.[/en]
-	[de]Gibt den Dateipfad bzw. die URL zur Captcha Datei zurück.[/de]
+	[de]Gibt den Dateipfad bzw. die URL zur Captcha Datei zurÃ¼ck.[/de]
 	
 	@return sFile [type]string[/type]
 	[en]Returns the file path or URL to the captcha file as a string.[/en]
-	[de]Gibt den Dateipfad bzw. die URL zur Captcha Datei als String zurück.[/de]
+	[de]Gibt den Dateipfad bzw. die URL zur Captcha Datei als String zurÃ¼ck.[/de]
 	*/
 	this.getCaptchaFile = function() {return this.sCaptchaFile;}
 	/* @end method */
@@ -63,7 +59,7 @@ function classPG_Login()
 	
 	@description
 	[en]Loads a newly generated captcha from the server.[/en]
-	[de]Lädt ein neu generiertes Captcha vom Server.[/de]
+	[de]LÃ¤dt ein neu generiertes Captcha vom Server.[/de]
 	*/
 	this.loadCaptcha = function()
 	{

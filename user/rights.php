@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright (c) 2012 Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: "http://api.progade.de/api_terms.php" or "./license.txt"
-*
 * Last changes of this file: Dec 11 2012
 */
 
@@ -30,7 +26,7 @@ PG_RIGHT_STATUS_FORBIDDEN
 
 @description
 [en]This class has methods to the manage and check user and group permissions.[/en]
-[de]Diese Klasse beinhaltet Methoden zum verwalten und pr�fen von Benutzer- und Gruppenrechten.[/de]
+[de]Diese Klasse beinhaltet Methoden zum verwalten und prüfen von Benutzer- und Gruppenrechten.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -63,7 +59,7 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@param sTable [needed][type]string[/type]
 	[en]The table name for the rights.[/en]
-	[de]Der Tabellenname f�r die Rechte.[/de]
+	[de]Der Tabellenname für die Rechte.[/de]
 	*/
 	public function setUserRightsTable($_sTable) {$this->sUserRightsTable = $_sTable;}
 	/* @end method */
@@ -75,11 +71,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the table name in which to store and read user rights.[/en]
-	[de]Gibt den Tabellennamen zur�ck, in dem die Benutzer-Rechte gespeichert und ausgelesen werden.[/de]
+	[de]Gibt den Tabellennamen zurück, in dem die Benutzer-Rechte gespeichert und ausgelesen werden.[/de]
 	
 	@return sTable [type]string[/type]
 	[en]Returns the table name in which to store and read user rights.[/en]
-	[de]Gibt den Tabellennamen zur�ck, in dem die Benutzer-Rechte gespeichert und ausgelesen werden.[/de]
+	[de]Gibt den Tabellennamen zurück, in dem die Benutzer-Rechte gespeichert und ausgelesen werden.[/de]
 	*/
 	public function getUserRightsTable() {return $this->sUserRightsTable;}
 	/* @end method */
@@ -91,11 +87,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the name for the column to be used as the ID for the user rights.[/en]
-	[de]Setzt den Namen f�r die Spalte die als ID f�r die Benutzer-Rechte verwendet werden soll.[/de]
+	[de]Setzt den Namen für die Spalte die als ID für die Benutzer-Rechte verwendet werden soll.[/de]
 	
 	@param sName [needed][type]string[/type]
 	[en]The name for the column of the ID.[/en]
-	[de]Der Name f�r die Spalte der ID.[/de]
+	[de]Der Name für die Spalte der ID.[/de]
 	*/
 	public function setUserRightsIDName($_sName) {$this->sUserRightsIDName = $_sName;}
 	/* @end method */
@@ -107,11 +103,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the name for the column to be used as the ID for the user rights.[/en]
-	[de]Gibt den Namen f�r die Spalte die als IF f�r die Benutzer-Rechte verwendet werden soll zur�ck.[/de]
+	[de]Gibt den Namen für die Spalte die als IF für die Benutzer-Rechte verwendet werden soll zurück.[/de]
 	
 	@return sIDName [type]string[/type]
 	[en]Returns the name for the column to be used as the ID for the user rights as a string.[/en]
-	[de]Gibt den Namen f�r die Spalte die als IF f�r die Benutzer-Rechte verwendet werden soll als String zur�ck.[/de]
+	[de]Gibt den Namen für die Spalte die als IF für die Benutzer-Rechte verwendet werden soll als String zurück.[/de]
 	*/
 	public function getUserRightsIDName() {return $this->sUserRightsIDName;}
 	/* @end method */
@@ -127,7 +123,7 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@param sTable [needed][type]string[/type]
 	[en]The table name for the rights.[/en]
-	[de]Der Tabellenname f�r die Rechte.[/de]
+	[de]Der Tabellenname für die Rechte.[/de]
 	*/
 	public function setUserGroupRightsTable($_sTable) {$this->sUserGroupRightsTable = $_sTable;}
 	/* @end method */
@@ -139,11 +135,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the table name in which to store and read usergroup rights.[/en]
-	[de]Gibt den Tabellennamen zur�ck, in dem die Benutzergruppen-Rechte gespeichert und ausgelesen werden.[/de]
+	[de]Gibt den Tabellennamen zurück, in dem die Benutzergruppen-Rechte gespeichert und ausgelesen werden.[/de]
 	
 	@return sTable [type]string[/type]
 	[en]Returns the table name in which to store and read usergroup rights.[/en]
-	[de]Gibt den Tabellennamen zur�ck, in dem die Benutzergruppen-Rechte gespeichert und ausgelesen werden.[/de]
+	[de]Gibt den Tabellennamen zurück, in dem die Benutzergruppen-Rechte gespeichert und ausgelesen werden.[/de]
 	*/
 	public function getUserGroupRightsTable() {return $this->sUserGroupRightsTable;}
 	/* @end method */
@@ -155,11 +151,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the name for the column to be used as the ID for the usergroup rights.[/en]
-	[de]Setzt den Namen f�r die Spalte die als ID f�r die Benutzergruppen-Rechte verwendet werden soll.[/de]
+	[de]Setzt den Namen für die Spalte die als ID für die Benutzergruppen-Rechte verwendet werden soll.[/de]
 	
 	@param sName [needed][type]string[/type]
 	[en]The name for the column of the ID.[/en]
-	[de]Der Name f�r die Spalte der ID.[/de]
+	[de]Der Name für die Spalte der ID.[/de]
 	*/
 	public function setUserGroupRightsIDName($_sName) {$this->sUserGroupRightsIDName = $_sName;}
 	/* @end method */
@@ -171,11 +167,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the name for the column to be used as the ID for the usergroup rights.[/en]
-	[de]Gibt den Namen f�r die Spalte die als IF f�r die Benutzergruppen-Rechte verwendet werden soll zur�ck.[/de]
+	[de]Gibt den Namen für die Spalte die als IF für die Benutzergruppen-Rechte verwendet werden soll zurück.[/de]
 	
 	@return sIDName [type]string[/type]
 	[en]Returns the name for the column to be used as the ID for the usergroup rights as a string.[/en]
-	[de]Gibt den Namen f�r die Spalte die als IF f�r die Benutzergruppen-Rechte verwendet werden soll als String zur�ck.[/de]
+	[de]Gibt den Namen für die Spalte die als IF für die Benutzergruppen-Rechte verwendet werden soll als String zurück.[/de]
 	*/
 	public function getUserGroupRightsIDName() {return $this->sUserGroupRightsIDName;}
 	/* @end method */
@@ -187,11 +183,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the update and installation structure for the tables of the database and returns it.[/en]
-	[de]Erstellt die Update- und Installationsstruktur f�r die Tabellen der Datenbank und gibt es zur�ck.[/de]
+	[de]Erstellt die Update- und Installationsstruktur für die Tabellen der Datenbank und gibt es zurück.[/de]
 	
 	@return axDBChunkStructure [type]mixed[][/type]
 	[en]Returns the update structure as a mixed array.[/en]
-	[de]Gibt die Updatestruktur als Mixed-Array zur�ck.[/de]
+	[de]Gibt die Updatestruktur als Mixed-Array zurück.[/de]
 	
 	@param oDatabaseUpdate [needed][type]object[/type]
 	[en]The database update object, the update structure is to be expanded.[/en]
@@ -235,11 +231,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the update and installation for the tables in the database and returns the update object.[/en]
-	[de]Erstellt das Update und Installation f�r die Tabellen der Datenbank und gibt das Update-Objekt zur�ck.[/de]
+	[de]Erstellt das Update und Installation für die Tabellen der Datenbank und gibt das Update-Objekt zurück.[/de]
 	
 	@return oUpdate [type]object[/type]
 	[en]Returns the updated object, which was expanded by the tables of the rights system.[/en]
-	[de]Gibt das Update-Objekt zur�ck, welches um die Tabellen des Rechtesystems erweitert wurde.[/de]
+	[de]Gibt das Update-Objekt zurück, welches um die Tabellen des Rechtesystems erweitert wurde.[/de]
 	
 	@param oUpdate [needed][type]object[/type]
 	[en]Update object, which should be expanded.[/en]
@@ -265,11 +261,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the status of a right from the memory.[/en]
-	[de]Gibt den Status f�r ein Recht aus dem Zwischenspeicher zur�ck.[/de]
+	[de]Gibt den Status für ein Recht aus dem Zwischenspeicher zurück.[/de]
 	
 	@return sRightStatus [type]string[/type]
 	[en]Returns the status of a right from the memory as a string.[/en]
-	[de]Gibt den Status f�r ein Recht aus dem Zwischenspeicher als String zur�ck.[/de]
+	[de]Gibt den Status für ein Recht aus dem Zwischenspeicher als String zurück.[/de]
 	
 	@param sRightName [needed][type]string[/type]
 	[en]The name of the right.[/en]
@@ -294,7 +290,7 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@return asRightsStatus [type]mixed[][/type]
 	[en]Returns all rights with a particular prefix at the beginnig of the name as an string array.[/en]
-	[de]Gibt alle Rechte mit einem bestimmten Prefix am Anfang des Namens als String-Array zur�ck.[/de]
+	[de]Gibt alle Rechte mit einem bestimmten Prefix am Anfang des Namens als String-Array zurück.[/de]
 	
 	@param sTable [type]string[/type]
 	[en]The name of the rights table.[/en]
@@ -363,11 +359,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Loads a right from a rights table.[/en]
-	[de]L�dt ein Recht aus einer Rechtetabelle.[/de]
+	[de]Lädt ein Recht aus einer Rechtetabelle.[/de]
 	
 	@return sRightStatus [type]string[/type]
 	[en]Returns the rights status of right as a string.[/en]
-	[de]Gibt den Rechtestatus des Rechts als String zur�ck.[/de]
+	[de]Gibt den Rechtestatus des Rechts als String zurück.[/de]
 	
 	@param sTable [type]string[/type]
 	[en]The table in which the right is.[/en]
@@ -437,7 +433,7 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the save was successful.[/en]
-	[de]Gibt ein Boolean zur�ck, ob das Speichern erfolgreich war.[/de]
+	[de]Gibt ein Boolean zurück, ob das Speichern erfolgreich war.[/de]
 	
 	@param sTable [type]string[/type]
 	[en]The name of the rights table.[/en]
@@ -512,11 +508,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Loads user rights and group rights of all rights with a particular prefix at the beginning of the name of the rights.[/en]
-	[de]L�dt Benutzer- und Gruppenrechte aller Rechte mit einem bestimmten Prefix am Anfang des Rechtenamen.[/de]
+	[de]Lädt Benutzer- und Gruppenrechte aller Rechte mit einem bestimmten Prefix am Anfang des Rechtenamen.[/de]
 	
 	@return asRightsStatus [type]mixed[][/type]
 	[en]Returns the rights status of the rights as an string array.[/en]
-	[de]Gibt den Rechtestatus der Rechte als String-Array zur�ck.[/de]
+	[de]Gibt den Rechtestatus der Rechte als String-Array zurück.[/de]
 	
 	@param xUser [needed][type]mixed[/type]
 	[en]The user whose rights should be loaded.[/en]
@@ -560,11 +556,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Loads a specific user right and group right of a user.[/en]
-	[de]L�dt ein bestimmtes Benutzer- und Gruppenrecht eines Benutzers.[/de]
+	[de]Lädt ein bestimmtes Benutzer- und Gruppenrecht eines Benutzers.[/de]
 	
 	@return sRightStatus [type]string[/type]
 	[en]Returns the rights status of the right as a string.[/en]
-	[de]Gibt den Rechtestatus des Rechts als String zur�ck.[/de]
+	[de]Gibt den Rechtestatus des Rechts als String zurück.[/de]
 	
 	@param xUser [needed][type]mixed[/type]
 	[en]The user whose rights should be loaded.[/en]
@@ -630,11 +626,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Checks the priority of the rights status of user and group rights, and returns the rights status with the highest priority.[/en]
-	[de]Prüft die Priorität vom Rechtestatus von Benutzer- und Gruppenrechten und gibt den Rechtestatus mit der h�chsten Priorit�t zur�ck.[/de]
+	[de]Prüft die Priorität vom Rechtestatus von Benutzer- und Gruppenrechten und gibt den Rechtestatus mit der höchsten Priorität zurück.[/de]
 	
 	@return sRightStatus [type]string[/type]
 	[en]Returns the rights status of the right with the highest priority as a string.[/en]
-	[de]Gibt den Rechtestatus des Rechts mit der höchsten Proorität als String zur�ck.[/de]
+	[de]Gibt den Rechtestatus des Rechts mit der höchsten Proorität als String zurück.[/de]
 	
 	@param sUserRight [needed][type]string[/type]
 	[en]The rights status of the right from a user.[/en]
@@ -670,11 +666,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Loads group rights of all rights with a particular prefix at the beginning of the name of the rights for a user.[/en]
-	[de]L�dt Gruppenrechte aller Rechte, mit einem bestimmten Prefix am Anfang des Rechtenamen, f�r einen Benutzer.[/de]
+	[de]Lädt Gruppenrechte aller Rechte, mit einem bestimmten Prefix am Anfang des Rechtenamen, für einen Benutzer.[/de]
 	
 	@return asRightsStatus [type]string[][/type]
 	[en]Returns the rights status of the rights as an string array.[/en]
-	[de]Gibt den Rechtestatus der Rechte als String-Array zur�ck.[/de]
+	[de]Gibt den Rechtestatus der Rechte als String-Array zurück.[/de]
 	
 	@param xUser [needed][type]mixed[/type]
 	[en]The user whose rights should be loaded.[/en]
@@ -715,11 +711,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Loads the rights status of all user groups of a user and returns the rights status with the highest priority.[/en]
-	[de]L�dt den Rechtestatus aller Benutzergruppen eines Benutzers und gibt den Rechtestatus mit der h�chsten Priorit�t zur�ck.[/de]
+	[de]Lädt den Rechtestatus aller Benutzergruppen eines Benutzers und gibt den Rechtestatus mit der höchsten Priorität zurück.[/de]
 	
 	@return sRightStatus [type]string[/type]
 	[en]Returns the rights status of the right as a string.[/en]
-	[de]Gibt den Rechtestatus des Rechts als String zur�ck.[/de]
+	[de]Gibt den Rechtestatus des Rechts als String zurück.[/de]
 	
 	@param xUser [needed][type]mixed[/type]
 	[en]The user whose right should be loaded.[/en]
@@ -757,11 +753,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Checks the priority of the rights status of group rights, and returns the rights status with the highest priority.[/en]
-	[de]Pr�ft die Priorit�t vom Rechtestatus von Gruppenrechten und gibt den Rechtestatus mit der h�chsten Priorit�t zur�ck.[/de]
+	[de]Prüft die Priorität vom Rechtestatus von Gruppenrechten und gibt den Rechtestatus mit der höchsten Priorität zurück.[/de]
 	
 	@return sRightStatus [type]string[/type]
 	[en]Returns the rights status of the right with the highest priority as a string.[/en]
-	[de]Gibt den Rechtestatus des Rechts mit der h�chsten Proorit�t als String zur�ck.[/de]
+	[de]Gibt den Rechtestatus des Rechts mit der höchsten Proorität als String zurück.[/de]
 	
 	@param sRight [needed][type]string[/type]
 	[en]The rights status of a right from a group.[/en]
@@ -794,11 +790,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Loads all user rights that have a specific prefix at the beginning of the name of the right.[/en]
-	[de]L�dt alle Rechte eines Benutzers, die einen bestimmten Prefix am Anfang des Rechtenamens haben.[/de]
+	[de]Lädt alle Rechte eines Benutzers, die einen bestimmten Prefix am Anfang des Rechtenamens haben.[/de]
 	
 	@return asRightsStatus [type]string[][/type]
 	[en]Returns the rights status of the rights as an string array.[/en]
-	[de]Gibt den Rechtestatus der Rechte als String-Array zur�ck.[/de]
+	[de]Gibt den Rechtestatus der Rechte als String-Array zurück.[/de]
 	
 	@param xUser [needed][type]mixed[/type]
 	[en]The user whose rights should be loaded.[/en]
@@ -827,11 +823,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Loads a right with a specific name of the right for a user and returns it.[/en]
-	[de]L�dt ein Recht mit einem bestimmten Rechtenamen f�r einen Benutzer und gibt es zur�ck.[/de]
+	[de]Lädt ein Recht mit einem bestimmten Rechtenamen für einen Benutzer und gibt es zurück.[/de]
 	
 	@return sRightStatus [type]string[/type]
 	[en]Returns the rights status of the right as a string.[/en]
-	[de]Gibt den Rechtestatus des Rechts als String zur�ck.[/de]
+	[de]Gibt den Rechtestatus des Rechts als String zurück.[/de]
 	
 	@param xUser [needed][type]mixed[/type]
 	[en]The user whose right should be loaded.[/en]
@@ -860,11 +856,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Saves a right for a user.[/en]
-	[de]Speichert ein Recht f�r einen Benutzer.[/de]
+	[de]Speichert ein Recht für einen Benutzer.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the save was successful.[/en]
-	[de]Gibt ein Boolean zur�ck, ob das Speichern erfolgreich war.[/de]
+	[de]Gibt ein Boolean zurück, ob das Speichern erfolgreich war.[/de]
 	
 	@param xUser [needed][type]mixed[/type]
 	[en]The user whose rights should be saved.[/en]
@@ -898,11 +894,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Loads all user group rights that have a specific prefix at the beginning of the name of the right.[/en]
-	[de]L�dt alle Rechte einer Benutzergruppe, die einen bestimmten Prefix am Anfang des Rechtenamens haben.[/de]
+	[de]Lädt alle Rechte einer Benutzergruppe, die einen bestimmten Prefix am Anfang des Rechtenamens haben.[/de]
 	
 	@return asRightsStatus [type]string[][/type]
 	[en]Returns the rights status of the rights as an string array.[/en]
-	[de]Gibt den Rechtestatus der Rechte als String-Array zur�ck.[/de]
+	[de]Gibt den Rechtestatus der Rechte als String-Array zurück.[/de]
 	
 	@param iUserGroupID [needed][type]int[/type]
 	[en]The ID of the user group.[/en]
@@ -928,11 +924,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Loads a right with a specific name of the right for a user group and returns it.[/en]
-	[de]L�dt ein Recht mit einem bestimmten Rechtenamen f�r eine Benutzergruppe und gibt es zur�ck.[/de]
+	[de]Lädt ein Recht mit einem bestimmten Rechtenamen für eine Benutzergruppe und gibt es zurück.[/de]
 	
 	@return sRightStatus [type]string[/type]
 	[en]Returns the rights status of the right as a string.[/en]
-	[de]Gibt den Rechtestatus des Rechts als String zur�ck.[/de]
+	[de]Gibt den Rechtestatus des Rechts als String zurück.[/de]
 	
 	@param iUserGroupID [needed][type]int[/type]
 	[en]The ID of the user group.[/en]
@@ -958,11 +954,11 @@ class classPG_Rights extends classPG_ClassBasics
 	
 	@description
 	[en]Saves a right for a user group.[/en]
-	[de]Speichert ein Recht f�r eine Benutzergruppe.[/de]
+	[de]Speichert ein Recht für eine Benutzergruppe.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the save was successful.[/en]
-	[de]Gibt ein Boolean zur�ck, ob das Speichern erfolgreich war.[/de]
+	[de]Gibt ein Boolean zurück, ob das Speichern erfolgreich war.[/de]
 	
 	@param iUserGroupID [needed][type]int[/type]
 	[en]The ID of the user group.[/en]
