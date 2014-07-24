@@ -6196,6 +6196,7 @@ class classPG_Login extends classPG_ClassBasics
 
                 $this->addTemplateReplaceVar(array('sVarname' => 'FieldNameUsername', 'sReplace' => 'sUsername'));
                 $this->addTemplateReplaceVar(array('sVarname' => 'FieldNamePassword', 'sReplace' => 'sPassword'));
+				$this->addTemplateReplaceVar(array('sVarname' => 'FieldNamePasswordRetype', 'sReplace' => 'sPasswordRetype'));
                 $this->addTemplateReplaceVar(array('sVarname' => 'FieldNameEmail', 'sReplace' => 'sEmail'));
                 $this->addTemplateReplaceVar(array('sVarname' => 'FieldNameFirstName', 'sReplace' => 'sFirstName'));
                 $this->addTemplateReplaceVar(array('sVarname' => 'FieldNameLastName', 'sReplace' => 'sLastName'));
