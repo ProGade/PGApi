@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Feb 10 2012
 */
 /*
@@ -442,18 +438,18 @@ class classPG_Strings extends classPG_ClassBasics
 		$_asReplace["\n"] = '<br />';
 		// $_asReplace[' '] = '&nbsp;';
 		$_asReplace["\t"] = '&nbsp;&nbsp;&nbsp;&nbsp;';
-		$_asReplace["€"] = '&euro;';
+		$_asReplace["ï¿½"] = '&euro;';
 		$_asReplace["(c)"] = '&copy;';
 		$_asReplace["(r)"] = '&reg;';
 		$_asReplace["(tm)"] = '&trade;';
-		$_asReplace["²"] = '&sup2;';
-		$_asReplace["³"] = '&sup3;';
-		$_asReplace['ä'] = '&auml;';
-		$_asReplace['Ä'] = '&Auml;';
-		$_asReplace['ü'] = '&uuml;';
-		$_asReplace['Ü'] = '&Uuml;';
-		$_asReplace['ö'] = '&ouml;';
-		$_asReplace['Ö'] = '&Ouml;';
+		$_asReplace["ï¿½"] = '&sup2;';
+		$_asReplace["ï¿½"] = '&sup3;';
+		$_asReplace['ï¿½'] = '&auml;';
+		$_asReplace['ï¿½'] = '&Auml;';
+		$_asReplace['ï¿½'] = '&uuml;';
+		$_asReplace['ï¿½'] = '&Uuml;';
+		$_asReplace['ï¿½'] = '&ouml;';
+		$_asReplace['ï¿½'] = '&Ouml;';
 		$_sString = $this->replace(array('sString' => $_sString, 'asReplace' => $_asReplace));
 
 		if ($_bConvertUris == true)
@@ -517,22 +513,22 @@ class classPG_Strings extends classPG_ClassBasics
 		$_asReplace = array(
 			'<br>' => "\r\n",
 			'<br />' => "\r\n",
-			'&auml;' => 'ä',
-			'&Auml;' => 'Ä',
-			'&uuml;' => 'ü',
-			'&Uuml;' => 'Ü',
-			'&ouml;' => 'ö',
-			'&Ouml;' => 'Ö',
+			'&auml;' => 'ï¿½',
+			'&Auml;' => 'ï¿½',
+			'&uuml;' => 'ï¿½',
+			'&Uuml;' => 'ï¿½',
+			'&ouml;' => 'ï¿½',
+			'&Ouml;' => 'ï¿½',
 			'&quot;' => '"',
 			'&nbsp;&nbsp;&nbsp;&nbsp;' => "\t",
 			'&nbsp;' => ' ',
 			'&amp;' => '&',
-			'&euro;' => '€',
+			'&euro;' => 'ï¿½',
 			'&copy;' => '(c)',
 			'&reg;' => '(r)',
 			'&trade;' => '(tm)',
-			'&sup2;' => '²',
-			'&sup3;' => '³',
+			'&sup2;' => 'ï¿½',
+			'&sup3;' => 'ï¿½',
 			'&lt;' => '<',
 			'&gt;' => '>'
 		);
@@ -965,12 +961,12 @@ class classPG_Strings extends classPG_ClassBasics
 		if ($_bBBCodeOnly === NULL) {$_bBBCodeOnly = true;}
 		
 		$_asBBCode = array(
-		"!\[fläche=([0-9]+),([0-9]+)\](.*?)\[\/fläche\]!is" => "<div style=\"width:\\1px; height:\\2px;\">\\3</div>", // mi
+		"!\[flï¿½che=([0-9]+),([0-9]+)\](.*?)\[\/flï¿½che\]!is" => "<div style=\"width:\\1px; height:\\2px;\">\\3</div>", // mi
 		
 		// Absolute Layer...
 		"!\[ebene=([0-9\-]+),([0-9\-]+),([0-9]+)\](.*?)\[\/ebene\]!is" => "<div style=\"position:relative; left:\\1px; top:\\2px; z-index:\\3;\"><div style=\"position:absolute;\">\\4</div></div>",
 		
-		// Schriftgröße...
+		// Schriftgrï¿½ï¿½e...
 		"!\[size=([0-9]*)\](.*?)\[\/size\]!mi" => "<span style=\"font-size:\\1px;\">\\2</span>",
 		
 		// Schriftfarbe...
@@ -988,7 +984,7 @@ class classPG_Strings extends classPG_ClassBasics
 		"!\[i\](.*?)\[\/i\]!is" => "<i>\\1</i>",
 		"!\[italic\](.*?)\[\/italic\]!is" => "<i>\\1</i>",
 		"!\[kursiv\](.*?)\[\/kursiv\]!is" => "<i>\\1</i>",
-		"!\[schräg\](.*?)\[\/schräg\]!is" => "<i>\\1</i>",
+		"!\[schrÃ¤g\](.*?)\[\/schrÃ¤g\]!is" => "<i>\\1</i>",
 
 		// Unterstrichene Schrift...
 		"!\[u\](.*?)\[\/u\]!is" => "<u>\\1</u>",

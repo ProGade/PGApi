@@ -1,10 +1,6 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright (c) 2012 Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: "http://api.progade.de/api_terms.php" or "./license.txt"
-*
 * Last changes of this file: Aug 21 2012
 */
 var PG_EVENTTYPE_ONABORT = 'abort';
@@ -54,7 +50,7 @@ var PG_EVENTTYPE_ONMENUKEYDOWN = 'menukeydown';
 
 @description
 [en]This class has methods for managing events.[/en]
-[de]Diese Klasse verfügt über Methoden zum Verwalten von Events.[/de]
+[de]Diese Klasse verfÃ¼gt Ã¼ber Methoden zum Verwalten von Events.[/de]
 
 @param extends classPG_ClassBasics
 
@@ -115,15 +111,15 @@ function classPG_EventManager()
 	
 	@description
 	[en]Tests EventTypes for compatibility with different browsers and returns the correct EventType.[/en]
-	[de]Prüft EventTypes auf Kompatibilität zu verschiedenen Browsern und gibt den richtigen EventType zurück.[/de]
+	[de]PrÃ¼ft EventTypes auf KompatibilitÃ¤t zu verschiedenen Browsern und gibt den richtigen EventType zurÃ¼ck.[/de]
 	
 	@return sEventType [type]string[/type]
 	[en]Returns the appropriate event type.[/en]
-	[de]Gibt den passenden EventType zurück.[/de]
+	[de]Gibt den passenden EventType zurÃ¼ck.[/de]
 	
 	@param sEventType [needed][type]string[/type]
 	[en]The EventType which should be tested.[/en]
-	[de]Der EventType der geprüft werden soll.[/de]
+	[de]Der EventType der geprï¿½ft werden soll.[/de]
 	*/
 	this.checkFeatures = function(_sEventType)
 	{
@@ -167,7 +163,7 @@ function classPG_EventManager()
 	
 	@description
 	[en]Adds an Event to an object or element.[/en]
-	[de]Fügt ein Event einem Objekt oder Element hinzu.[/de]
+	[de]FÃ¼gt ein Event einem Objekt oder Element hinzu.[/de]
 	
 	@param oObject [needed][type]object[/type]
 	[en]The object or element whose event should be set.[/en]
@@ -185,11 +181,11 @@ function classPG_EventManager()
 	
 	@param fFunction [needed][type]function[/type]
 	[en]The function to be executed when the event happens.[/en]
-	[de]Die Funktion, die ausgeführt werden soll, sobald das Event passiert.[/de]
+	[de]Die Funktion, die ausgefÃ¼hrt werden soll, sobald das Event passiert.[/de]
 	
 	@param bUseCapture [type]bool[/type]
 	[en]Specifies whether to use capture. In most cases it is not required.[/en]
-	[de]Gibt an ob Capture verwendet werden soll. In den meisten Fällen wird es nicht benötigt.[/de]
+	[de]Gibt an ob Capture verwendet werden soll. In den meisten FÃ¤llen wird es nicht benÃ¶tigt.[/de]
 	*/
 	this.addEvent = function(_oObject, _sEventType, _fFunction, _bUseCapture)
 	{
@@ -240,11 +236,11 @@ function classPG_EventManager()
 	
 	@param fFunction [needed][type]function[/type]
 	[en]The function to be not anymore executed when the event happens.[/en]
-	[de]Die Funktion, die nicht mehr ausgeführt werden soll, sobald das Event passiert.[/de]
+	[de]Die Funktion, die nicht mehr ausgefÃ¼hrt werden soll, sobald das Event passiert.[/de]
 	
 	@param bUseCapture [type]bool[/type]
 	[en]Specifies whether to use capture. In most cases it is not required.[/en]
-	[de]Gibt an ob Capture verwendet werden soll. In den meisten Fällen wird es nicht benötigt.[/de]
+	[de]Gibt an ob Capture verwendet werden soll. In den meisten Fï¿½llen wird es nicht benÃ¶tigt.[/de]
 	*/
 	this.removeEvent = function(_oObject, _sEventType, _fFunction, _bUseCapture)
 	{

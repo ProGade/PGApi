@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Aug 14 2012
 */
 /*
@@ -732,6 +728,9 @@ class classPG_Mail extends classPG_ClassBasics
 	[en]...[/en]
 	
 	@param asCcMail [type]string[][/type]
+	[en]...[/en]
+
+	@param xTemplate [type]string[/type]
 	[en]...[/en]
 	*/
 	public function send(

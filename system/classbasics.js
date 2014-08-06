@@ -1,10 +1,6 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Oct 10 2012
 */
 var PG_DEBUG_LOW = 1;
@@ -21,7 +17,7 @@ var PG_DEBUG_HIGH = 4;
 [/en]
 [de]
 	Diese Klasse ist eine Basisklasse von der die meisten anderen Klassen erben.
-	Sie enth�lt Methoden wie z.B. Netwerk-Kommunikation und Grafikfunktionen usw.
+	Sie enthält Methoden wie z.B. Netwerk-Kommunikation und Grafikfunktionen usw.
 [/de]
 
 @param extends classPG_ClassBasics
@@ -77,11 +73,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns a container object.[/en]
-	[de]Gibt ein Kontainer-Objekt zur�ck.[/de]
+	[de]Gibt ein Kontainer-Objekt zurück.[/de]
 	
 	@return oContainer [type]object[/type]
 	[en]Returns a container object.[/en]
-	[de]Gibt ein Kontainer-Objekt zur�ck.[/de]
+	[de]Gibt ein Kontainer-Objekt zurück.[/de]
 	
 	@param xContainer [needed][type]mixed[/type]
 	[en]The container as string or object.[/en]
@@ -114,11 +110,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Find out how parameters are passed to a method and returns the appropriate value of the parameter.[/en]
-	[de]Findet heraus auf welche Weise Parameter an eine Methode �bergeben wurden und gibt den passenden Wert des Parameters zur�ck.[/de]
+	[de]Findet heraus auf welche Weise Parameter an eine Methode übergeben wurden und gibt den passenden Wert des Parameters zurück.[/de]
 	
 	@return xValue [type]mixed[/type]
 	[en]Returns the appropriate value for the desired parameter.[/en]
-	[de]Gibt den passenden Wert zum gesuchten Parameter zur�ck.[/de]
+	[de]Gibt den passenden Wert zum gesuchten Parameter zurück.[/de]
 	
 	@param sName [needed][type]string[/type]
 	[en]The name of the desired parameter.[/en]
@@ -126,7 +122,7 @@ function classPG_ClassBasics()
 	
 	@param xParameter [needed][type]mixed[/type]
 	[en]The parameters should actually be passed.[/en]
-	[de]Der Parameter der eigentlich �bergeben werden sollte.[/de]
+	[de]Der Parameter der eigentlich übergeben werden sollte.[/de]
 	
 	@param oParameters [needed][type]object[/type]
 	[en]The first parameter of a method. It is either an array, which contains all the parameters or it is only the first parameter.[/en]
@@ -134,7 +130,7 @@ function classPG_ClassBasics()
 	
 	@param bNotNull [type]bool[/type]
 	[en]If the first parameter was supposed to be an array and is not optional, then must bNotNull be set to true.[/en]
-	[de]Falls der erste Parameter urspr�nglich ein array sein sollte und nicht optional ist, dann muss bNotNull auf true gesetzt werden.[/de]
+	[de]Falls der erste Parameter ursprünglich ein array sein sollte und nicht optional ist, dann muss bNotNull auf true gesetzt werden.[/de]
 	*/
 	this.getRealParameter = function(_sName, _xParameter, _oParameters, _bNotNull)
 	{
@@ -172,7 +168,7 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Sets the ID for an object.[/en]
-	[de]Setzt die ID f�r eine Objekt.[/de]
+	[de]Setzt die ID für ein Objekt.[/de]
 	
 	@param sID [needed][type]string[/type]
 	[en]The ID as a string.[/en]
@@ -192,11 +188,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the ID of an object/a class.[/en]
-	[de]Gibt die ID von einem Objekt/einer Klasse zur�ck.[/de]
+	[de]Gibt die ID von einem Objekt/einer Klasse zurück.[/de]
 	
 	@return sID [type]string[/type]
 	[en]Returns the ID of an object/a class as a string.[/en]
-	[de]Gibt die ID von einem Objekt/einer Klasse als String zur�ck.[/de]
+	[de]Gibt die ID von einem Objekt/einer Klasse als String zurück.[/de]
 	*/
 	this.getID = function() {return this.sID;}
 	/* @end method */
@@ -208,11 +204,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the next, generated ID of an object/a class.[/en]
-	[de]Gibt die n�chste, generierte ID von einem Objekt/einer Klasse zur�ck.[/de]
+	[de]Gibt die nächste, generierte ID von einem Objekt/einer Klasse zurück.[/de]
 	
 	@return sID [type]string[/type]
 	[en]Returns the next, generated ID of an object/a class as a string.[/en]
-	[de]Gibt die n�chste, generierte ID von einem Objekt/einer Klasse als String zur�ck.[/de]
+	[de]Gibt die nächste, generierte ID von einem Objekt/einer Klasse als String zurück.[/de]
 	*/
 	this.getNextID = function() {var _sID = this.sID+this.iIDNext; this.iIDNext++; return _sID;}
 	/* @end method */
@@ -224,11 +220,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the most recently generated ID of an object/a class.[/en]
-	[de]Gibt die zuletzt generierte ID von einem Objekt/einer Klasse zur�ck.[/de]
+	[de]Gibt die zuletzt generierte ID von einem Objekt/einer Klasse zurück.[/de]
 	
 	@return sID [type]string[/type]
 	[en]Returns the most recently generated ID of an object/a class as a string.[/en]
-	[de]Gibt die zuletzt generierte ID von einem Objekt/einer Klasse als String zur�ck.[/de]
+	[de]Gibt die zuletzt generierte ID von einem Objekt/einer Klasse als String zurück.[/de]
 	*/
 	this.getLastID = function() {return this.sID+this.iIDNext;}
 	/* @end method */
@@ -241,15 +237,15 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Sets text for a class. Can be used for multilingual websites.[/en]
-	[de]Setzt Text(e) f�r eine Klasse. Kann f�r Mehrsprachige Webseiten verwendet werden.[/de]
+	[de]Setzt Text(e) für eine Klasse. Kann für Mehrsprachige Webseiten verwendet werden.[/de]
 	
 	@param xType [needed][type]mixed[/type]
 	[en]The type of the text as string is equivalent to an ID for a text. An string array of texts can be passed also.[/en]
-	[de]Der Typ des Textes als String. Entspricht einer ID f�r einen Text. Hier kann aber auch ein String-Array von Texten �bergeben werden.[/de]
+	[de]Der Typ des Textes als String. Entspricht einer ID für einen Text. Hier kann aber auch ein String-Array von Texten übergeben werden.[/de]
 	
 	@param sText [needed][type]string[/type]
 	[en]The text to the type. Is not needed, if the type is a string array.[/en]
-	[de]Der Text zum Typ. Wird nicht ben�tigt, wenn der Typ ein String-Array ist.[/de]
+	[de]Der Text zum Typ. Wird nicht benötigt, wenn der Typ ein String-Array ist.[/de]
 	*/
 	this.setText = function(_xType, _sText)
 	{
@@ -270,11 +266,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Adds text to a class. Can be used for multilingual websites.[/en]
-	[de]F�gt einen Text einer Klasse hinzu. Kann f�r Mehrsprachige Webseiten verwendet werden.[/de]
+	[de]Fügt einen Text einer Klasse hinzu. Kann für Mehrsprachige Webseiten verwendet werden.[/de]
 	
 	@param sType [needed][type]mixed[/type]
 	[en]The type of the text as string is equivalent to an ID for a text.[/en]
-	[de]Der Typ des Textes als String. Entspricht einer ID f�r einen Text.[/de]
+	[de]Der Typ des Textes als String. Entspricht einer ID für einen Text.[/de]
 	
 	@param sText [needed][type]string[/type]
 	[en]The text to the type.[/en]
@@ -298,11 +294,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the text of a class to the appropriate type[/en]
-	[de]Gibt den Text einer Klasse zum entsprechenden Typ zur�ck.[/de]
+	[de]Gibt den Text einer Klasse zum entsprechenden Typ zurück.[/de]
 	
 	@param sType [needed][type]string[/type]
 	[en]Returns the text of a class to the appropriate type as a string[/en]
-	[de]Gibt den Text einer Klasse zum entsprechenden Typ als String zur�ck.[/de]
+	[de]Gibt den Text einer Klasse zum entsprechenden Typ als String zurück.[/de]
 	*/
 	this.getText = function(_sType)
     {
@@ -319,7 +315,7 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Sets the GFX package for the object.[/en]
-	[de]Setzt das GFX-Pack f�r das Objekt.[/de]
+	[de]Setzt das GFX-Pack für das Objekt.[/de]
 	
 	@param oGfx [needed][type]object[/type]
 	[en]The GFX package object which is to be used. When this parameter is omitted, the default GFX package object is used.[/en]
@@ -339,11 +335,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the GFX package object.[/en]
-	[de]Gibt das GFX-Pack-Objekt zur�ck.[/de]
+	[de]Gibt das GFX-Pack-Objekt zurück.[/de]
 	
 	@return oGfx [type]object[/type]
 	[en]Returns the GFX package object.[/en]
-	[de]Gibt das GFX-Pack-Objekt als object zur�ck.[/de]
+	[de]Gibt das GFX-Pack-Objekt als object zurück.[/de]
 	*/
 	this.getGfx = function() {return this.oGfx;}
 	/* @end method */
@@ -355,7 +351,7 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Sets a subpath, to be used after the GFX path for the current object.[/en]
-	[de]Setzt einen Unter-Pfad, der nach dem GFX Pfad f�r das aktuelle Objekt verwendet werden soll.[/de]
+	[de]Setzt einen Unter-Pfad, der nach dem GFX Pfad für das aktuelle Objekt verwendet werden soll.[/de]
 	
 	@param sPath [needed][type]string[/type]
 	[en]The subpath as a string to be used.[/en]
@@ -375,11 +371,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the subpath.[/en]
-	[de]Gibt den Unter-Pfad zur�ck.[/de]
+	[de]Gibt den Unter-Pfad zurück.[/de]
 	
 	@return sSubPath [type]string[/type]
 	[en]Returns the subpath as a string.[/en]
-	[de]Gibt den Unter-Pfad als String zur�ck.[/de]
+	[de]Gibt den Unter-Pfad als String zurück.[/de]
 	*/
 	this.getGfxSubPath = function() {return this.sGfxSubPath;}
 	/* @end method */
@@ -395,13 +391,13 @@ function classPG_ClassBasics()
 		sFile passing can be also an absolute URL and is checked out automatically.
 	[/en]
 	[de]
-		Gibt den kompletten CSS-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zur�ck.
-		Die �bergabe von sFile darf auch eine absolute URL sein und wird automatisch darauf gepr�ft.
+		Gibt den kompletten CSS-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zurück.
+		Die übergabe von sFile darf auch eine absolute URL sein und wird automatisch darauf geprüft.
 	[/de]
 	
 	@return sPath [type]string[/type]
 	[en]Returns the full path of CSS with all subpaths and, where appropriate, the file name.[/en]
-	[de]Gibt den kompletten CSS-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zur�ck.[/de]
+	[de]Gibt den kompletten CSS-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zurück.[/de]
 	
 	@param sFile [type]string[/type]
 	[en]The file name or an absolute URL to the file as a string.[/en]
@@ -436,13 +432,13 @@ function classPG_ClassBasics()
 		sImage passing can be also an absolute URL and is checked out automatically.
 	[/en]
 	[de]
-		Gibt den kompletten Bilder-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zur�ck.
-		Die �bergabe von sImage darf auch eine absolute URL sein und wird automatisch darauf gepr�ft.
+		Gibt den kompletten Bilder-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zurück.
+		Die übergabe von sImage darf auch eine absolute URL sein und wird automatisch darauf geprüft.
 	[/de]
 	
 	@return sPath [type]string[/type]
 	[en]Returns the full path of images with all subpaths and, where appropriate, the file name.[/en]
-	[de]Gibt den kompletten Bilder-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zur�ck.[/de]
+	[de]Gibt den kompletten Bilder-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zurück.[/de]
 	
 	@param sImage [type]string[/type]
 	[en]The file name or an absolute URL to the file as a string.[/en]
@@ -473,11 +469,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Builds an image and returns it as a string.[/en]
-	[de]Erstellt ein Image und gibt es als String zur�ck.[/de]
+	[de]Erstellt ein Image und gibt es als String zurück.[/de]
 	
 	@return sImageHtml [type]string[/type]
 	[en]Returns the image as a string.[/en]
-	[de]Gibt das Image als String zur�ck.[/de]
+	[de]Gibt das Image als String zurück.[/de]
 	
 	@param sImage [needed][type]string[/type]
 	[en]The image that should be used.[/en]
@@ -489,23 +485,23 @@ function classPG_ClassBasics()
 	
 	@param sSizeY [type]string[/type]
 	[en]The height to be used.[/en]
-	[de]Die H�he die verwendet werden soll.[/de]
+	[de]Die Höhe die verwendet werden soll.[/de]
 	
 	@param sTitle [type]string[/type]
 	[en]The title of the image tags. Is displayed when the mouse pointer is over the image.[/en]
-	[de]Der Title des Image-Tags. Wird angezeigt, wenn der Mauszeiger �ber dem Bild ist.[/de]
+	[de]Der Title des Image-Tags. Wird angezeigt, wenn der Mauszeiger über dem Bild ist.[/de]
 	
 	@param sAddTag [type]string[/type]
 	[en]Additional information for the image tag. HTML properties can be passed here for the IMG tag.[/en]
-	[de]Zus�tzliche angaben im Image-Tag. Hier k�nnen HTML-Properties f�r das IMG-Tag �bergeben werden.[/de]
+	[de]Zusätzliche angaben im Image-Tag. Hier können HTML-Properties für das IMG-Tag übergeben werden.[/de]
 	
 	@param sCssStyle [type]string[/type]
 	[en]CSS style for the tag.[/en]
-	[de]CSS-Style f�r das Tag.[/de]
+	[de]CSS-Style für das Tag.[/de]
 	
 	@param sCssClass [type]string[/type]
 	[en]CSS class for the tag.[/en]
-	[de]CSS-Clas f�r das Tag.[/de]
+	[de]CSS-Clas für das Tag.[/de]
 	*/
 	this.img = function(_sImage, _sSizeX, _sSizeY, _sTitle, _sAddTag, _sCssStyle, _sCssClass)
 	{
@@ -558,7 +554,7 @@ function classPG_ClassBasics()
 	
 	@return iMode [type]int[/type]
 	[en]Returns the newly set mode.[/en]
-	[de]Gibt den neu gesetzten Modus zur�ck.[/de]
+	[de]Gibt den neu gesetzten Modus zurück.[/de]
 	
 	@param iMode [needed][type]int[/type]
 	[en]The mode to be set.[/en]
@@ -588,11 +584,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the mode of an object.[/en]
-	[de]Gibt den Modus eines Objekts zur�ck.[/de]
+	[de]Gibt den Modus eines Objekts zurück.[/de]
 	
 	@return iMode [type]int[/type]
 	[en]Returns the mode of an object as a integer.[/en]
-	[de]Gibt den Modus eines Objekts als Integer zur�ck.[/de]
+	[de]Gibt den Modus eines Objekts als Integer zurück.[/de]
 	*/
 	this.getMode = function() {return this.iMode;}
 	/* @end method */
@@ -608,7 +604,7 @@ function classPG_ClassBasics()
 	
 	@return iMode [type]int[/type]
 	[en]Returns the newly set mode.[/en]
-	[de]Gibt den neu gesetzten Modus zur�ck.[/de]
+	[de]Gibt den neu gesetzten Modus zurück.[/de]
 	
 	@param iMode [needed][type]int[/type]
 	[en]The mode which is to be repealed.[/en]
@@ -642,7 +638,7 @@ function classPG_ClassBasics()
 	
 	@return iMode [type]int[/type]
 	[en]Returns the newly set mode.[/en]
-	[de]Gibt den neu gesetzten Modus zur�ck.[/de]
+	[de]Gibt den neu gesetzten Modus zurück.[/de]
 	
 	@param iMode [needed][type]int[/type]
 	[en]The mode which is to be switched.[/en]
@@ -672,15 +668,15 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns whether a mode is switched on.[/en]
-	[de]Gibt zur�ck, ob ein Modus an geschaltet wurde.[/de]
+	[de]Gibt zurück, ob ein Modus an geschaltet wurde.[/de]
 	
 	@return bIsMode [type]bool[/type]
 	[en]Returns a boolean whether a mode is switched on (true) or off (false).[/en]
-	[de]Gibt einen Boolean zur�ck, ob ein Modus an (true) oder aus (false) geschaltet wurde.[/de]
+	[de]Gibt einen Boolean zurück, ob ein Modus an (true) oder aus (false) geschaltet wurde.[/de]
 	
 	@param iMode [needed][type]int[/type]
 	[en]The mode to be tested.[/en]
-	[de]Der Modus der gepr�ft werden soll.[/de]
+	[de]Der Modus der geprüft werden soll.[/de]
 	
 	@param iCurrentMode [type]int[/type]
 	[en]The mode that is currently used. For example, a variable of type integer.[/en]
@@ -726,11 +722,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the debug mode of an object.[/en]
-	[de]Gibt den Debug-Modus eines Objekts zur�ck.[/de]
+	[de]Gibt den Debug-Modus eines Objekts zurück.[/de]
 	
 	@return iMode [type]int[/type]
 	[en]Returns the debug mode of an object as a integer.[/en]
-	[de]Gibt den Debug-Modus eines Objekts als Integer zur�ck.[/de]
+	[de]Gibt den Debug-Modus eines Objekts als Integer zurück.[/de]
 	*/
 	this.getDebugMode = function() {return this.iDebugMode;}
 	/* @end method */
@@ -782,15 +778,15 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns whether a debug mode is switched on.[/en]
-	[de]Gibt zur�ck, ob ein Debug-Modus an geschaltet wurde.[/de]
+	[de]Gibt zurück, ob ein Debug-Modus an geschaltet wurde.[/de]
 	
 	@return bIsMode [type]bool[/type]
 	[en]Returns a boolean whether a debug mode is switched on (true) or off (false).[/en]
-	[de]Gibt einen Boolean zur�ck, ob ein Debug-Modus an (true) oder aus (false) geschaltet wurde.[/de]
+	[de]Gibt einen Boolean zurück, ob ein Debug-Modus an (true) oder aus (false) geschaltet wurde.[/de]
 	
 	@param iMode [needed][type]int[/type]
 	[en]The mode to be tested.[/en]
-	[de]Der Modus der gepr�ft werden soll.[/de]
+	[de]Der Modus der geprüft werden soll.[/de]
 	*/
 	this.isDebugMode = function(_iMode)
 	{
@@ -826,11 +822,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Adds text to the debug string.[/en]
-	[de]F�gt dem Debug-String Text hinzu.[/de]
+	[de]Fügt dem Debug-String Text hinzu.[/de]
 	
 	@param sString [needed][type]string[/type]
 	[en]The text that should be added.[/en]
-	[de]Der Text, der hinzugef�gt werden soll.[/de]
+	[de]Der Text, der hinzugefügt werden soll.[/de]
 	*/
 	this.addDebugString = function(_sString)
 	{
@@ -846,11 +842,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the debug string.[/en]
-	[de]Gibt den Debug String zur�ck.[/de]
+	[de]Gibt den Debug String zurück.[/de]
 	
 	@return sDebugString [type]string[/type]
 	[en]Returns the debug string.[/en]
-	[de]Gibt den Debug String zur�ck.[/de]
+	[de]Gibt den Debug String zurück.[/de]
 	*/
 	this.getDebugString = function()
 	{
@@ -872,11 +868,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Initializes network functions for the object / the class.[/en]
-	[de]Initialisiert Netzwerk Funktionen f�r das Objekt / die Klasse.[/de]
+	[de]Initialisiert Netzwerk Funktionen für das Objekt / die Klasse.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the initialization was successfully.[/en]
-	[de]Gibt einen Boolean, ob das Initialisieren erfolgreich war, zur�ck.[/de]
+	[de]Gibt einen Boolean, ob das Initialisieren erfolgreich war, zurück.[/de]
 	
 	@param oNetwork [type]object[/type]
 	[en]The network object that should be used.[/en]
@@ -921,11 +917,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the network object.[/en]
-	[de]Gibt das Netzwerk-Objekt zur�ck.[/de]
+	[de]Gibt das Netzwerk-Objekt zurück.[/de]
 	
 	@return oNetwork [type]object[/type]
 	[en]Returns the network object.[/en]
-	[de]Gibt das Netzwerk-Objekt zur�ck.[/de]
+	[de]Gibt das Netzwerk-Objekt zurück.[/de]
 	*/
 	this.getNetwork = function() {return this.oNetwork;}
 	/* @end method */
@@ -937,11 +933,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Sets the network response function, which processes returning data. (This is a callback function.)[/en]
-	[de]Setzt die Netzwerk-Antwort-Funktion, die zur�ckkommende Daten verarbeitet. (Dies ist eine Callback-Funktion.)[/de]
+	[de]Setzt die Netzwerk-Antwort-Funktion, die zurückkommende Daten verarbeitet. (Dies ist eine Callback-Funktion.)[/de]
 	
 	@param fOnResponse [needed][type]function[/type]
 	[en]The response function that you want to process returning data from the server.[/en]
-	[de]Die Antwort-Funktion, die vom Server zur�ckkommende Daten verarbeiten soll.[/de]
+	[de]Die Antwort-Funktion, die vom Server zurückkommende Daten verarbeiten soll.[/de]
 	*/
 	this.setNetworkResponseFunction = function(_fOnResponse)
 	{
@@ -957,11 +953,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the network response function.[/en]
-	[de]Gibt die Netzwerk-Antwort-Funktion zur�ck.[/de]
+	[de]Gibt die Netzwerk-Antwort-Funktion zurück.[/de]
 	
 	@return fResponseFunction [type]function[/type]
 	[en]Returns the network response function.[/en]
-	[de]Gibt die Netzwerk-Antwort-Funktion zur�ck.[/de]
+	[de]Gibt die Netzwerk-Antwort-Funktion zurück.[/de]
 	*/
 	this.getNetworkResponseFunction = function() {return this.fNetworkOnResponse;}
 	/* @end method */
@@ -993,11 +989,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns a parameter string of network data.[/en]
-	[de]Gibt einen Parameter-String der Netzwerkdaten zur�ck.[/de]
+	[de]Gibt einen Parameter-String der Netzwerkdaten zurück.[/de]
 	
 	@return sParameters [type]string[/type]
 	[en]Returns a parameter string of network data. The data are separated by an "&" characters.[/en]
-	[de]Gibt einen Parameter-String der Netzwerkdaten zur�ck. Die Daten sind durch ein "&" Zeichen getrennt.[/de]
+	[de]Gibt einen Parameter-String der Netzwerkdaten zurück. Die Daten sind durch ein "&" Zeichen getrennt.[/de]
 	*/
 	this.getNetworkParameters = function() {return this.sNetworkParameters;}
 	/* @end method */
@@ -1029,11 +1025,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the file path to the answer script file.[/en]
-	[de]Gibt den Dateipfad zur Antwort-Script-Datei zur�ck.[/de]
+	[de]Gibt den Dateipfad zur Antwort-Script-Datei zurück.[/de]
 	
 	@return sResponseFile [type]string[/type]
 	[en]Returns the file path to the answer script file as a string.[/en]
-	[de]Gibt den Dateipfad zur Antwort-Script-Datei als String zur�ck.[/de]
+	[de]Gibt den Dateipfad zur Antwort-Script-Datei als String zurück.[/de]
 	*/
 	this.getNetworkResponseFile = function() {return this.sNetworkResponseFile;}
 	/* @end method */
@@ -1045,19 +1041,19 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Sends data over the network.[/en]
-	[de]Sendet Daten �ber das Netzwerk.[/de]
+	[de]Sendet Daten über das Netzwerk.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a Boolean whether the send was successful.[/en]
-	[de]Gibt einen Boolean zur�ck, ob das Senden erfolgreich war.[/de]
+	[de]Gibt einen Boolean zurück, ob das Senden erfolgreich war.[/de]
 	
 	@param sParameters [type]string[/type]
 	[en]Parameters to be transmitted over the network. The parameters can be separated by a & character, just like URL parameters.[/en]
-	[de]Parameter, die �ber das Netzwerk �bertragen werden sollen. Die Parameter k�nnen mit einem & Zeichen getrennt werden, genau wie bei einer URL die Parameter.[/de]
+	[de]Parameter, die über das Netzwerk übertragen werden sollen. Die Parameter können mit einem & Zeichen getrennt werden, genau wie bei einer URL die Parameter.[/de]
 	
 	@param fOnResponse [type]function[/type]
 	[en]The response function that you want to process returning data from the server.[/en]
-	[de]Die Antwort-Funktion, die vom Server zur�ckkommende Daten verarbeiten soll.[/de]
+	[de]Die Antwort-Funktion, die vom Server zurückkommende Daten verarbeiten soll.[/de]
 	
 	@param sResponseFile [type]string[/type]
 	[en]The file path to the response script file.[/en]
@@ -1096,7 +1092,7 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Sets a target (window or frame) for a URL of the object / the class.[/en]
-	[de]Setzt ein Ziel (Fenster oder Frame) f�r eine URL des Objekts / der Klasse.[/de]
+	[de]Setzt ein Ziel (Fenster oder Frame) für eine URL des Objekts / der Klasse.[/de]
 	
 	@param sTarget [needed][type]string[/type]
 	[en]The target in which something is to be loaded.[/en]
@@ -1116,11 +1112,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the target (window or frame) of a URL.[/en]
-	[de]Gibt das Ziel (Fenster oder Frame) f�r eine URL zur�ck.[/de]
+	[de]Gibt das Ziel (Fenster oder Frame) für eine URL zurück.[/de]
 	
 	@return sUrlTarget [type]string[/type]
 	[en]Returns the target (window or frame) of a URL as a string.[/en]
-	[de]Gibt das Ziel (Fenster oder Frame) f�r eine URL als String zur�ck.[/de]
+	[de]Gibt das Ziel (Fenster oder Frame) für eine URL als String zurück.[/de]
 	*/
 	this.getUrlTarget = function() {return this.sUrlTarget;}
 	/* @end method */
@@ -1132,7 +1128,7 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Sets a URL for an object / the class.[/en]
-	[de]Setzt eine URL f�r ein Objekt / die Klasse.[/de]
+	[de]Setzt eine URL für ein Objekt / die Klasse.[/de]
 	
 	@param sUrl [needed][type]string[/type]
 	[en]The URL to be loaded.[/en]
@@ -1152,11 +1148,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the URL to be loaded.[/en]
-	[de]Gibt die URL zur�ck, die geladen werden soll.[/de]
+	[de]Gibt die URL zurück, die geladen werden soll.[/de]
 	
 	@return sUrl [type]string[/type]
 	[en]Returns the URL to be loaded as a string.[/en]
-	[de]Gibt die URL als string zur�ck, die geladen werden soll.[/de]
+	[de]Gibt die URL als string zurück, die geladen werden soll.[/de]
 	*/
 	this.getUrl = function() {return this.sUrl;}
 	/* @end method */
@@ -1188,11 +1184,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Adds URL parameters to be sent on load.[/en]
-	[de]F�gt URL Parameter hinzu, die beim laden mit geschickt werden.[/de]
+	[de]Fügt URL Parameter hinzu, die beim laden mit geschickt werden.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether adding parameters was successful.[/en]
-	[de]Gibt ein Boolean zur�ck, ob das Hinzuf�gen von Parametern erfolgreich war.[/de]
+	[de]Gibt ein Boolean zurück, ob das Hinzufügen von Parametern erfolgreich war.[/de]
 	
 	@param oUrlParameters [needed][type]object[/type]
 	[en]The parameter names and values as an object.[/en]
@@ -1213,7 +1209,7 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Adds an URL parameter to be sent on load.[/en]
-	[de]F�gt einen URL Parameter hinzu, der beim laden mit geschickt werden soll.[/de]
+	[de]Fügt einen URL Parameter hinzu, der beim laden mit geschickt werden soll.[/de]
 
 	@param sName [needed][type]string[/type]
 	[en]The name of the parameter.[/en]
@@ -1241,11 +1237,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the URL parameters.[/en]
-	[de]Gibt die URL Parameter zur�ck.[/de]
+	[de]Gibt die URL Parameter zurück.[/de]
 	
 	@return oParameters [type]object[/type]
 	[en]Returns the URL parameter as an object.[/en]
-	[de]Gibt die URL Parameter als Objekt zur�ck.[/de]
+	[de]Gibt die URL Parameter als Objekt zurück.[/de]
 	*/
 	this.getUrlParameters = function() {return this.oUrlParameters;}
 	/* @end method */
@@ -1257,15 +1253,15 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the URL parameters as a string for the transfer on a form.[/en]
-	[de]Gibt die URL Parameter f�r die �bergabe in einem Formular als String zur�ck.[/de]
+	[de]Gibt die URL Parameter für die übergabe in einem Formular als String zurück.[/de]
 	
 	@return sHtml [type]string[/type]
 	[en]Returns the URL parameters as a string for the transfer on a form.[/en]
-	[de]Gibt die URL Parameter f�r die �bergabe in einem Formular als String zur�ck.[/de]
+	[de]Gibt die URL Parameter für die übergabe in einem Formular als String zurück.[/de]
 	
 	@param bUseLineBreak [type]bool[/type]
 	[en]Specifies whether line breaks are used.[/en]
-	[de]Gibt an ob Zeilenumbr�che verwendet werden sollen.[/de]
+	[de]Gibt an ob Zeilenumbrüche verwendet werden sollen.[/de]
 	*/
 	this.getUrlParametersForm = function(_bUseLineBreak)
 	{
@@ -1292,11 +1288,11 @@ function classPG_ClassBasics()
 	
 	@description
 	[en]Returns the URL parameters as a string for the transfer on a link.[/en]
-	[de]Gibt die URL Parameter f�r die �bergabe in einem Link als String zur�ck.[/de]
+	[de]Gibt die URL Parameter für die übergabe in einem Link als String zurück.[/de]
 	
 	@return sString [type]string[/type]
 	[en]Returns the URL parameters as a string for the transfer on a link.[/en]
-	[de]Gibt die URL Parameter f�r die �bergabe in einem Link als String zur�ck.[/de]
+	[de]Gibt die URL Parameter für die übergabe in einem Link als String zurück.[/de]
 	*/
 	this.getUrlParametersString = function()
 	{

@@ -1,18 +1,14 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Nov 07 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 05 2014
 */
 /*
 @start class
 
 @description
 [en]The class has methods for loading JavaScript files.[/en]
-[de]Die Klasse verfügt über Methoden zum laden von JavaScript Dateien.[/de]
+[de]Die Klasse verfÃ¼gt Ã¼ber Methoden zum laden von JavaScript Dateien.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -37,7 +33,7 @@ function classPG_JsLoader()
 	
 	@param bAsync [type]bool[/type]
 	[en]Specifies whether the file should be included asynchronously. The script waits at "false" until the file is completely loaded, on "true" the script continues to run while it loads the file.[/en]
-	[de]Gibt an ob die Datei asynchron eingebunden werden soll. Bei "false" wartet das Script bis die Datei komplett geladen wurde, bei "true" läuft das Script weiter während es die Datei lädt.[/de]
+	[de]Gibt an ob die Datei asynchron eingebunden werden soll. Bei "false" wartet das Script bis die Datei komplett geladen wurde, bei "true" lÃ¤uft das Script weiter wÃ¤hrend es die Datei lÃ¤dt.[/de]
 	
 	@param sIncludeID [type]string[/type]
 	[en]...[/en]

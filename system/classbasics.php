@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Oct 09 2012
 */
 define('PG_DEBUG_NONE', 0);
@@ -23,7 +19,7 @@ define('PG_DEBUG_HIGH', 4);
 [/en]
 [de]
 	Diese Klasse ist eine Basisklasse von der die meisten anderen Klassen erben.
-	Sie enth�lt Methoden wie z.B. Netwerk-Kommunikation, Datenbank- und Grafikfunktionen usw.
+	Sie enthält Methoden wie z.B. Netwerk-Kommunikation, Datenbank- und Grafikfunktionen usw.
 [/de]
 
 @param extends classPG_ClassBasics
@@ -87,11 +83,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Find out how parameters are passed to a method and returns the appropriate value of the parameter.[/en]
-	[de]Findet heraus auf welche Weise Parameter an eine Methode �bergeben wurden und gibt den passenden Wert des Parameters zur�ck.[/de]
+	[de]Findet heraus auf welche Weise Parameter an eine Methode übergeben wurden und gibt den passenden Wert des Parameters zurück.[/de]
 	
 	@return xValue [type]mixed[/type]
 	[en]Returns the appropriate value for the desired parameter.[/en]
-	[de]Gibt den passenden Wert zum gesuchten Parameter zur�ck.[/de]
+	[de]Gibt den passenden Wert zum gesuchten Parameter zurück.[/de]
 	
 	@param sName [needed][type]string[/type]
 	[en]The name of the desired parameter.[/en]
@@ -99,7 +95,7 @@ class classPG_ClassBasics
 	
 	@param xParameter [needed][type]mixed[/type]
 	[en]The parameters should actually be passed.[/en]
-	[de]Der Parameter der eigentlich �bergeben werden sollte.[/de]
+	[de]Der Parameter der eigentlich übergeben werden sollte.[/de]
 	
 	@param oParameters [needed][type]object[/type]
 	[en]The first parameter of a method. It is either an array, which contains all the parameters or it is only the first parameter.[/en]
@@ -107,7 +103,7 @@ class classPG_ClassBasics
 	
 	@param bNotNull [type]bool[/type]
 	[en]If the first parameter was supposed to be an array and is not optional, then must bNotNull be set to true.[/en]
-	[de]Falls der erste Parameter urspr�nglich ein array sein sollte und nicht optional ist, dann muss bNotNull auf true gesetzt werden.[/de]
+	[de]Falls der erste Parameter ursprünglich ein array sein sollte und nicht optional ist, dann muss bNotNull auf true gesetzt werden.[/de]
 	*/
 	public function getRealParameter($_sName = NULL, $_xParameter = NULL, $_oParameters = NULL, $_bNotNull = NULL)
 	{
@@ -140,11 +136,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sets whether to use line breaks.[/en]
-	[de]Setzt ob Zeilenumbr�che verwendet werden sollen.[/de]
+	[de]Setzt ob Zeilenumbrüche verwendet werden sollen.[/de]
 	
 	@param bUse [needed][type]bool[/type]
 	[en]The state whether line breaks should be used (true) or not to be used (false).[/en]
-	[de]Der Status ob Zeilenumbr�che verwendet werden sollen (true) oder nicht verwendet werden sollen (false).[/de]
+	[de]Der Status ob Zeilenumbrüche verwendet werden sollen (true) oder nicht verwendet werden sollen (false).[/de]
 	*/
 	public function useLineBreak($_bUse)
 	{
@@ -160,11 +156,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns whether line breaks should be used.[/en]
-	[de]Gibt zur�ck ob Zeilenumbr�che verwendet werden sollen.[/de]
+	[de]Gibt zurück ob Zeilenumbrüche verwendet werden sollen.[/de]
 	
 	@return bUseLineBreak [type]bool[/type]
 	[en]Returns an boolean that indicates whether a line break should be used (true) or not (false).[/en]
-	[de]Gibt einen Boolean zur�ck, der angibt ob Zeilenumbr�che verwendet werden sollen (true) oder nicht verwendet werden sollen (false).[/de]
+	[de]Gibt einen Boolean zurück, der angibt ob Zeilenumbrüche verwendet werden sollen (true) oder nicht verwendet werden sollen (false).[/de]
 	*/
 	public function isLineBreak() {return $this->bUseLineBreak;}
 	/* @end method */
@@ -196,11 +192,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the characters that represent the line break.[/en]
-	[de]Gibt die Zeichen zur�ck, die den Zeilenumbruch darstellen.[/de]
+	[de]Gibt die Zeichen zurück, die den Zeilenumbruch darstellen.[/de]
 	
 	@return sLineBreak [type]string[/type]
 	[en]Returns the line break as a string.[/en]
-	[de]Gibt den Zeilenumbruch als String zur�ck.[/de]
+	[de]Gibt den Zeilenumbruch als String zurück.[/de]
 	*/
 	public function getLineBreak() {if ($this->bUseLineBreak == true) {return $this->sLineBreak;} return '';}
 	/* @end method */
@@ -213,7 +209,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sets the ID for an object.[/en]
-	[de]Setzt die ID f�r eine Objekt.[/de]
+	[de]Setzt die ID für eine Objekt.[/de]
 	
 	@param sID [needed][type]string[/type]
 	[en]The ID as a string.[/en]
@@ -233,11 +229,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the ID of an object/a class.[/en]
-	[de]Gibt die ID von einem Objekt/einer Klasse zur�ck.[/de]
+	[de]Gibt die ID von einem Objekt/einer Klasse zurück.[/de]
 	
 	@return sID [type]string[/type]
 	[en]Returns the ID of an object/a class as a string.[/en]
-	[de]Gibt die ID von einem Objekt/einer Klasse als String zur�ck.[/de]
+	[de]Gibt die ID von einem Objekt/einer Klasse als String zurück.[/de]
 	*/
 	public function getID() {return $this->sID;}
 	/* @end method */
@@ -249,11 +245,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the next, generated ID of an object/a class.[/en]
-	[de]Gibt die n�chste, generierte ID von einem Objekt/einer Klasse zur�ck.[/de]
+	[de]Gibt die nächste, generierte ID von einem Objekt/einer Klasse zurück.[/de]
 	
 	@return sID [type]string[/type]
 	[en]Returns the next, generated ID of an object/a class as a string.[/en]
-	[de]Gibt die n�chste, generierte ID von einem Objekt/einer Klasse als String zur�ck.[/de]
+	[de]Gibt die nächste, generierte ID von einem Objekt/einer Klasse als String zurück.[/de]
 	*/
 	public function getNextID() {$_sID = $this->sID.$this->iIDNext; $this->iIDNext++; return $_sID;}
 	/* @end method */
@@ -265,11 +261,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the most recently generated ID of an object/a class.[/en]
-	[de]Gibt die zuletzt generierte ID von einem Objekt/einer Klasse zur�ck.[/de]
+	[de]Gibt die zuletzt generierte ID von einem Objekt/einer Klasse zurück.[/de]
 	
 	@return sID [type]string[/type]
 	[en]Returns the most recently generated ID of an object/a class as a string.[/en]
-	[de]Gibt die zuletzt generierte ID von einem Objekt/einer Klasse als String zur�ck.[/de]
+	[de]Gibt die zuletzt generierte ID von einem Objekt/einer Klasse als String zurück.[/de]
 	*/
 	public function getLastID() {return $this->sID.$this->iIDNext;}
 	/* @end method */
@@ -282,15 +278,15 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sets text for a class. Can be used for multilingual websites.[/en]
-	[de]Setzt Text(e) f�r eine Klasse. Kann f�r Mehrsprachige Webseiten verwendet werden.[/de]
+	[de]Setzt Text(e) für eine Klasse. Kann für Mehrsprachige Webseiten verwendet werden.[/de]
 	
 	@param xType [needed][type]mixed[/type]
 	[en]The type of the text as string is equivalent to an ID for a text. An string array of texts can be passed also.[/en]
-	[de]Der Typ des Textes als String. Entspricht einer ID f�r einen Text. Hier kann aber auch ein String-Array von Texten �bergeben werden.[/de]
+	[de]Der Typ des Textes als String. Entspricht einer ID für einen Text. Hier kann aber auch ein String-Array von Texten übergeben werden.[/de]
 	
 	@param sText [needed][type]string[/type]
 	[en]The text to the type. Is not needed, if the type is a string array.[/en]
-	[de]Der Text zum Typ. Wird nicht ben�tigt, wenn der Typ ein String-Array ist.[/de]
+	[de]Der Text zum Typ. Wird nicht benötigt, wenn der Typ ein String-Array ist.[/de]
 	*/
 	public function setText($_xType, $_sText = NULL)
 	{
@@ -308,11 +304,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Adds text to a class. Can be used for multilingual websites.[/en]
-	[de]F�gt einen Text einer Klasse hinzu. Kann f�r Mehrsprachige Webseiten verwendet werden.[/de]
+	[de]Fügt einen Text einer Klasse hinzu. Kann für Mehrsprachige Webseiten verwendet werden.[/de]
 	
 	@param sType [needed][type]mixed[/type]
 	[en]The type of the text as string is equivalent to an ID for a text.[/en]
-	[de]Der Typ des Textes als String. Entspricht einer ID f�r einen Text.[/de]
+	[de]Der Typ des Textes als String. Entspricht einer ID für einen Text.[/de]
 	
 	@param sText [needed][type]string[/type]
 	[en]The text to the type.[/en]
@@ -333,11 +329,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the text of a class to the appropriate type[/en]
-	[de]Gibt den Text einer Klasse zum entsprechenden Typ zur�ck.[/de]
+	[de]Gibt den Text einer Klasse zum entsprechenden Typ zurück.[/de]
 	
 	@param sType [needed][type]string[/type]
 	[en]Returns the text of a class to the appropriate type as a string[/en]
-	[de]Gibt den Text einer Klasse zum entsprechenden Typ als String zur�ck.[/de]
+	[de]Gibt den Text einer Klasse zum entsprechenden Typ als String zurück.[/de]
 	*/
 	public function getText($_sType)
 	{
@@ -358,7 +354,7 @@ class classPG_ClassBasics
 	
 	@return iMode [type]int[/type]
 	[en]Returns the newly set mode.[/en]
-	[de]Gibt den neu gesetzten Modus zur�ck.[/de]
+	[de]Gibt den neu gesetzten Modus zurück.[/de]
 	
 	@param iMode [needed][type]int[/type]
 	[en]The mode to be set.[/en]
@@ -385,11 +381,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the mode of an object.[/en]
-	[de]Gibt den Modus eines Objekts zur�ck.[/de]
+	[de]Gibt den Modus eines Objekts zurück.[/de]
 	
 	@return iMode [type]int[/type]
 	[en]Returns the mode of an object as a integer.[/en]
-	[de]Gibt den Modus eines Objekts als Integer zur�ck.[/de]
+	[de]Gibt den Modus eines Objekts als Integer zurück.[/de]
 	*/
 	public function getMode() {return $this->iMode;}
 	/* @end method */
@@ -405,7 +401,7 @@ class classPG_ClassBasics
 	
 	@return iMode [type]int[/type]
 	[en]Returns the newly set mode.[/en]
-	[de]Gibt den neu gesetzten Modus zur�ck.[/de]
+	[de]Gibt den neu gesetzten Modus zurück.[/de]
 	
 	@param iMode [needed][type]int[/type]
 	[en]The mode which is to be repealed.[/en]
@@ -436,7 +432,7 @@ class classPG_ClassBasics
 	
 	@return iMode [type]int[/type]
 	[en]Returns the newly set mode.[/en]
-	[de]Gibt den neu gesetzten Modus zur�ck.[/de]
+	[de]Gibt den neu gesetzten Modus zurück.[/de]
 	
 	@param iMode [needed][type]int[/type]
 	[en]The mode which is to be switched.[/en]
@@ -463,15 +459,15 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns whether a mode is switched on.[/en]
-	[de]Gibt zur�ck, ob ein Modus an geschaltet wurde.[/de]
+	[de]Gibt zurück, ob ein Modus an geschaltet wurde.[/de]
 	
 	@return bIsMode [type]bool[/type]
 	[en]Returns a boolean whether a mode is switched on (true) or off (false).[/en]
-	[de]Gibt einen Boolean zur�ck, ob ein Modus an (true) oder aus (false) geschaltet wurde.[/de]
+	[de]Gibt einen Boolean zurück, ob ein Modus an (true) oder aus (false) geschaltet wurde.[/de]
 	
 	@param iMode [needed][type]int[/type]
 	[en]The mode to be tested.[/en]
-	[de]Der Modus der gepr�ft werden soll.[/de]
+	[de]Der Modus der geprüft werden soll.[/de]
 	
 	@param iCurrentMode [type]int[/type]
 	[en]The mode that is currently used. For example, a variable of type integer.[/en]
@@ -514,11 +510,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the debug mode of an object.[/en]
-	[de]Gibt den Debug-Modus eines Objekts zur�ck.[/de]
+	[de]Gibt den Debug-Modus eines Objekts zurück.[/de]
 	
 	@return iMode [type]int[/type]
 	[en]Returns the debug mode of an object as a integer.[/en]
-	[de]Gibt den Debug-Modus eines Objekts als Integer zur�ck.[/de]
+	[de]Gibt den Debug-Modus eines Objekts als Integer zurück.[/de]
 	*/
 	public function getDebugMode() {return $this->iDebugMode;}
 	/* @end method */
@@ -571,15 +567,15 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns whether a debug mode is switched on.[/en]
-	[de]Gibt zur�ck, ob ein Debug-Modus an geschaltet wurde.[/de]
+	[de]Gibt zurück, ob ein Debug-Modus an geschaltet wurde.[/de]
 	
 	@return bIsMode [type]bool[/type]
 	[en]Returns a boolean whether a debug mode is switched on (true) or off (false).[/en]
-	[de]Gibt einen Boolean zur�ck, ob ein Debug-Modus an (true) oder aus (false) geschaltet wurde.[/de]
+	[de]Gibt einen Boolean zurück, ob ein Debug-Modus an (true) oder aus (false) geschaltet wurde.[/de]
 	
 	@param iMode [needed][type]int[/type]
 	[en]The mode to be tested.[/en]
-	[de]Der Modus der gepr�ft werden soll.[/de]
+	[de]Der Modus der geprüft werden soll.[/de]
 	*/
 	public function isDebugMode($_iMode)
 	{
@@ -615,11 +611,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Adds text to the debug string.[/en]
-	[de]F�gt dem Debug-String Text hinzu.[/de]
+	[de]Fügt dem Debug-String Text hinzu.[/de]
 	
 	@param sString [needed][type]string[/type]
 	[en]The text that should be added.[/en]
-	[de]Der Text, der hinzugef�gt werden soll.[/de]
+	[de]Der Text, der hinzugefügt werden soll.[/de]
 	*/
 	public function addDebugString($_sString)
 	{
@@ -635,11 +631,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the debug string.[/en]
-	[de]Gibt den Debug String zur�ck.[/de]
+	[de]Gibt den Debug String zurück.[/de]
 	
 	@return sDebugString [type]string[/type]
 	[en]Returns the debug string.[/en]
-	[de]Gibt den Debug String zur�ck.[/de]
+	[de]Gibt den Debug String zurück.[/de]
 	*/
 	public function getDebugString()
 	{
@@ -661,11 +657,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Initializes the GFX package system for the object.[/en]
-	[de]Initialisiert das GFX-Pack-System f�r das Objekt.[/de]
+	[de]Initialisiert das GFX-Pack-System für das Objekt.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean indicating whether the initialization was successful.[/en]
-	[de]Gibt einen Boolean zur�ck der angibt ob das Initialisieren erfolgreich war.[/de]
+	[de]Gibt einen Boolean zurück der angibt ob das Initialisieren erfolgreich war.[/de]
 	
 	@param oGfx [type]object[/type]
 	[en]The GFX package object which is to be used. When this parameter is omitted, the default GFX package object is used.[/en]
@@ -687,7 +683,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sets the GFX package for the object.[/en]
-	[de]Setzt das GFX-Pack f�r das Objekt.[/de]
+	[de]Setzt das GFX-Pack für das Objekt.[/de]
 	
 	@param oGfx [needed][type]object[/type]
 	[en]The GFX package object which is to be used. When this parameter is omitted, the default GFX package object is used.[/en]
@@ -707,11 +703,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the GFX package object.[/en]
-	[de]Gibt das GFX-Pack-Objekt zur�ck.[/de]
+	[de]Gibt das GFX-Pack-Objekt zurück.[/de]
 	
 	@return oGfx [type]object[/type]
 	[en]Returns the GFX package object.[/en]
-	[de]Gibt das GFX-Pack-Objekt als object zur�ck.[/de]
+	[de]Gibt das GFX-Pack-Objekt als object zurück.[/de]
 	*/
 	public function getGfx() {return $this->oGfx;}
 	/* @end method */
@@ -755,7 +751,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sets a subpath, to be used after the GFX path for the current object.[/en]
-	[de]Setzt einen Unter-Pfad, der nach dem GFX Pfad f�r das aktuelle Objekt verwendet werden soll.[/de]
+	[de]Setzt einen Unter-Pfad, der nach dem GFX Pfad für das aktuelle Objekt verwendet werden soll.[/de]
 	
 	@param sPath [needed][type]string[/type]
 	[en]The subpath as a string to be used.[/en]
@@ -775,11 +771,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the subpath.[/en]
-	[de]Gibt den Unter-Pfad zur�ck.[/de]
+	[de]Gibt den Unter-Pfad zurück.[/de]
 	
 	@return sSubPath [type]string[/type]
 	[en]Returns the subpath as a string.[/en]
-	[de]Gibt den Unter-Pfad als String zur�ck.[/de]
+	[de]Gibt den Unter-Pfad als String zurück.[/de]
 	*/
 	public function getGfxSubPath() {return $this->sGfxSubPath;}
 	/* @end method */
@@ -795,13 +791,13 @@ class classPG_ClassBasics
 		sFile passing can be also an absolute URL and is checked out automatically.
 	[/en]
 	[de]
-		Gibt den kompletten CSS-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zur�ck.
-		Die �bergabe von sFile darf auch eine absolute URL sein und wird automatisch darauf gepr�ft.
+		Gibt den kompletten CSS-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zurück.
+		Die Übergabe von sFile darf auch eine absolute URL sein und wird automatisch darauf geprüft.
 	[/de]
 	
 	@return sPath [type]string[/type]
 	[en]Returns the full path of CSS with all subpaths and, where appropriate, the file name.[/en]
-	[de]Gibt den kompletten CSS-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zur�ck.[/de]
+	[de]Gibt den kompletten CSS-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zurück.[/de]
 	
 	@param sFile [type]string[/type]
 	[en]The file name or an absolute URL to the file as a string.[/en]
@@ -842,11 +838,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the full base path of CSS with all subpaths.[/en]
-	[de]Gibt den kompletten Basis-CSS-Pfad mit allen Unter-Pfaden zur�ck.[/de]
+	[de]Gibt den kompletten Basis-CSS-Pfad mit allen Unter-Pfaden zurück.[/de]
 	
 	@return sPath [type]string[/type]
 	[en]Returns the full base path of CSS with all subpaths.[/en]
-	[de]Gibt den kompletten Basis-CSS-Pfad mit allen Unter-Pfaden zur�ck.[/de]
+	[de]Gibt den kompletten Basis-CSS-Pfad mit allen Unter-Pfaden zurück.[/de]
 	*/
 	public function getGfxBasePathCss()
 	{
@@ -866,13 +862,13 @@ class classPG_ClassBasics
 		sImage passing can be also an absolute URL and is checked out automatically.
 	[/en]
 	[de]
-		Gibt den kompletten Bilder-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zur�ck.
-		Die �bergabe von sImage darf auch eine absolute URL sein und wird automatisch darauf gepr�ft.
+		Gibt den kompletten Bilder-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zurück.
+		Die Übergabe von sImage darf auch eine absolute URL sein und wird automatisch darauf geprüft.
 	[/de]
 	
 	@return sPath [type]string[/type]
 	[en]Returns the full path of images with all subpaths and, where appropriate, the file name.[/en]
-	[de]Gibt den kompletten Bilder-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zur�ck.[/de]
+	[de]Gibt den kompletten Bilder-Pfad mit allen Unter-Pfaden und ggf. dem Dateinamen zurück.[/de]
 	
 	@param sImage [type]string[/type]
 	[en]The file name or an absolute URL to the file as a string.[/en]
@@ -913,11 +909,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Builds an image and returns it as a string.[/en]
-	[de]Erstellt ein Image und gibt es als String zur�ck.[/de]
+	[de]Erstellt ein Image und gibt es als String zurück.[/de]
 	
 	@return sImageHtml [type]string[/type]
 	[en]Returns the image as a string.[/en]
-	[de]Gibt das Image als String zur�ck.[/de]
+	[de]Gibt das Image als String zurück.[/de]
 	
 	@param sImage [needed][type]string[/type]
 	[en]The image that should be used.[/en]
@@ -929,23 +925,23 @@ class classPG_ClassBasics
 	
 	@param xSizeY [type]mixed[/type]
 	[en]The height to be used.[/en]
-	[de]Die H�he die verwendet werden soll.[/de]
+	[de]Die Höhe die verwendet werden soll.[/de]
 	
 	@param sTitle [type]string[/type]
 	[en]The title of the image tags. Is displayed when the mouse pointer is over the image.[/en]
-	[de]Der Title des Image-Tags. Wird angezeigt, wenn der Mauszeiger �ber dem Bild ist.[/de]
+	[de]Der Title des Image-Tags. Wird angezeigt, wenn der Mauszeiger über dem Bild ist.[/de]
 	
 	@param sAddTag [type]string[/type]
 	[en]Additional information for the image tag. HTML properties can be passed here for the IMG tag.[/en]
-	[de]Zus�tzliche angaben im Image-Tag. Hier k�nnen HTML-Properties f�r das IMG-Tag �bergeben werden.[/de]
+	[de]Zusätzliche angaben im Image-Tag. Hier können HTML-Properties für das IMG-Tag übergeben werden.[/de]
 	
 	@param sCssStyle [type]string[/type]
 	[en]CSS style for the tag.[/en]
-	[de]CSS-Style f�r das Tag.[/de]
+	[de]CSS-Style für das Tag.[/de]
 	
 	@param sCssClass [type]string[/type]
 	[en]CSS class for the tag.[/en]
-	[de]CSS-Clas f�r das Tag.[/de]
+	[de]CSS-Clas für das Tag.[/de]
 	*/
 	public function img($_sImage, $_xSizeX = NULL, $_xSizeY = NULL, $_sTitle = NULL, $_sAddTag = NULL, $_sCssStyle = NULL, $_sCssClass = NULL)
 	{
@@ -987,11 +983,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Initializes network functions for the object / the class.[/en]
-	[de]Initialisiert Netzwerk Funktionen f�r das Objekt / die Klasse.[/de]
+	[de]Initialisiert Netzwerk Funktionen für das Objekt / die Klasse.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the initialization was successfully.[/en]
-	[de]Gibt einen Boolean, ob das Initialisieren erfolgreich war, zur�ck.[/de]
+	[de]Gibt einen Boolean, ob das Initialisieren erfolgreich war, zurück.[/de]
 	
 	@param oNetwork [type]object[/type]
 	[en]The network object that should be used.[/en]
@@ -1038,11 +1034,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the network object.[/en]
-	[de]Gibt das Netzwerk-Objekt zur�ck.[/de]
+	[de]Gibt das Netzwerk-Objekt zurück.[/de]
 	
 	@return oNetwork [type]object[/type]
 	[en]Returns the network object.[/en]
-	[de]Gibt das Netzwerk-Objekt zur�ck.[/de]
+	[de]Gibt das Netzwerk-Objekt zurück.[/de]
 	*/
 	public function getNetwork() {return $this->oNetwork;}
 	/* @end method */
@@ -1054,7 +1050,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Adds data to send over the network.[/en]
-	[de]F�gt Daten zum Senden �ber das Netzwerk hinzu.[/de]
+	[de]Fügt Daten zum Senden über das Netzwerk hinzu.[/de]
 	
 	@param sName [needed][type]string[/type]
 	[en]The naming of the network data. Similar to a variable name.[/en]
@@ -1062,7 +1058,7 @@ class classPG_ClassBasics
 	
 	@param xValue [needed][type]mixed[/type]
 	[en]The data to be transmitted over the network.[/en]
-	[de]Die Daten, die �ber das Netzwerk �bertragen werden sollen.[/de]
+	[de]Die Daten, die über das Netzwerk übertragen werden sollen.[/de]
 	*/
 	public function addNetworkData($_sName, $_xValue = NULL)
 	{
@@ -1079,15 +1075,15 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sends data over the network and returns the Protocol as a string.[/en]
-	[de]Sendet Daten �ber das Netzwerk und gibt das Protokoll als String zur�ck.[/de]
+	[de]Sendet Daten über das Netzwerk und gibt das Protokoll als String zurück.[/de]
 	
 	@return sNetworkProtocol [type]string[/type]
 	[en]Returns the Protocol as a string.[/en]
-	[de]Gibt das Protokoll als String zur�ck.[/de]
+	[de]Gibt das Protokoll als String zurück.[/de]
 	
 	@param sParameters [type]string[/type]
 	[en]Parameters to be transmitted over the network. The parameters can be separated by a & character, just like URL parameters.[/en]
-	[de]Parameter, die �ber das Netzwerk �bertragen werden sollen. Die Parameter k�nnen mit einem & Zeichen getrennt werden, genau wie bei einer URL die Parameter.[/de]
+	[de]Parameter, die über das Netzwerk übertragen werden sollen. Die Parameter können mit einem & Zeichen getrennt werden, genau wie bei einer URL die Parameter.[/de]
 	
 	@param oNetworkUser [type]object[/type]
 	[en]The network user that is sending the data. Used with WebSockets.[/en]
@@ -1109,11 +1105,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Initializes the template system for the object / the class.[/en]
-	[de]Initialisiert das Template-System f�r das Objekt/die Klasse.[/de]
+	[de]Initialisiert das Template-System für das Objekt/die Klasse.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the initialization was successful.[/en]
-	[de]Gibt ein Boolean zur�ck, ob die Initialisierung erfolgreich war.[/de]
+	[de]Gibt ein Boolean zurück, ob die Initialisierung erfolgreich war.[/de]
 	
 	@param oTemplate [needed][type]object[/type]
 	[en]The template object to be used.[/en]
@@ -1180,11 +1176,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the variable names and values as an associative string array.[/en]
-	[de]Gibt die Variablennamen und Werte als Assoziatives-String-Array zur�ck.[/de]
+	[de]Gibt die Variablennamen und Werte als Assoziatives-String-Array zurück.[/de]
 	
 	@return asVars [type]string[][/type]
 	[en]Returns the variable names and values as an associative string array.[/en]
-	[de]Gibt die Variablennamen und Werte als Assoziatives-String-Array zur�ck.[/de]
+	[de]Gibt die Variablennamen und Werte als Assoziatives-String-Array zurück.[/de]
 	*/
 	public function getTemplateReplaceVars() {return $this->oTemplate->getReplaceVars();}
 	/* @end method */
@@ -1221,11 +1217,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the value of a variable.[/en]
-	[de]Gibt den Wert einer Variable zur�ck.[/de]
+	[de]Gibt den Wert einer Variable zurück.[/de]
 	
 	@return sValue [type]string[/type]
 	[en]Returns the value of a variable as a string.[/en]
-	[de]Gibt den Wert einer Variable als String zur�ck.[/de]
+	[de]Gibt den Wert einer Variable als String zurück.[/de]
 	
 	@param sVarname [needed][type]string[/type]
 	[en]The name of the variable.[/en]
@@ -1245,11 +1241,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Builds the template and returns HTML as a string.[/en]
-	[de]Erstellt das Template und gibt HTML als String zur�ck.[/de]
+	[de]Erstellt das Template und gibt HTML als String zurück.[/de]
 	
 	@return sTemplateHtml [type]string[/type]
 	[en]Returns HTML as a string.[/en]
-	[de]Gibt HTML als String zur�ck.[/de]
+	[de]Gibt HTML als String zurück.[/de]
 	
 	@param xTemplate [type]mixed[/type]
 	[en]The template as a file path or the code of the template as a string.[/en]
@@ -1257,7 +1253,7 @@ class classPG_ClassBasics
 	
 	@param bReplaceUrlProtocols [type]bool[/type]
 	[en]Specifies whether the protocols of used absolute URLs to be converted, if necessary.[/en]
-	[de]Gibt an ob die Protokolle der verwendeten absoluten URLs umgewandelt werden sollen, wenn es n�tig ist.[/de]
+	[de]Gibt an ob die Protokolle der verwendeten absoluten URLs umgewandelt werden sollen, wenn es nötig ist.[/de]
 	
 	@param bReplaceBBCode [type]bool[/type]
 	[en]Specifies whether BB code will automatically be converted.[/en]
@@ -1290,11 +1286,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Initializes the database functions for the object / the class.[/en]
-	[de]Initialisiert die Datenbank Funktionen f�r das Objekt / die Klasse.[/de]
+	[de]Initialisiert die Datenbank Funktionen für das Objekt / die Klasse.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns whether the initialization was successful.[/en]
-	[de]Gibt zur�ck ob die Initialisierung erfolgreich war.[/de]
+	[de]Gibt zurück ob die Initialisierung erfolgreich war.[/de]
 	
 	@param oDatabase [type]object[/type]
 	[en]The database object which is to be used.[/en]
@@ -1382,7 +1378,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns whether the database is used.[/en]
-	[de]Gibt zur�ck, ob die Datenbank verwendet wird.[/de]
+	[de]Gibt zurück, ob die Datenbank verwendet wird.[/de]
 	*/
 	public function isDatabase()
 	{
@@ -1417,7 +1413,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the database object.[/en]
-	[de]Gibt das Datenbank Objekt zur�ck.[/de]	
+	[de]Gibt das Datenbank Objekt zurück.[/de]
 	*/
 	public function getDatabase()
 	{
@@ -1461,11 +1457,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sets the user name used to establish of the connection[/en]
-	[de]Setzt den Usernamen der zum Aufbau der Connection ben�tigt wird.[/de]
+	[de]Setzt den Usernamen der zum Aufbau der Connection benötigt wird.[/de]
 	
 	@param sUser [needed][type]string[/type]
 	[en]The user to be used for the connection.[/en]
-	[de]Der User der f�r die Connection verwendet werden soll.[/de]
+	[de]Der User der für die Connection verwendet werden soll.[/de]
 	
 	@param sEngine [type]string[/type]
 	[en]The database engine to be used. For example, mysql, mssql or all.[/en]
@@ -1486,11 +1482,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sets the password used to establish of the connection[/en]
-	[de]Setzt das Passwort, welches zum Aufbau der Connection ben�tigt wird.[/de]
+	[de]Setzt das Passwort, welches zum Aufbau der Connection benötigt wird.[/de]
 	
 	@param sPassword [needed][type]string[/type]
 	[en]The password to be used for the connection.[/en]
-	[de]Das passwort, welches f�r die Connection verwendet werden soll.[/de]
+	[de]Das passwort, welches für die Connection verwendet werden soll.[/de]
 	
 	@param sEngine [type]string[/type]
 	[en]The database engine to be used. For example, mysql, mssql or all.[/en]
@@ -1552,7 +1548,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sets the database engine, which by default should be used[/en]
-	[de]Setzt die Datenbank-Engine, welche standardgem�� verwendet werden soll.[/de]
+	[de]Setzt die Datenbank-Engine, welche standardgemäß verwendet werden soll.[/de]
 	
 	@param sEngine [needed][type]string[/type]
 	[en]The database engine to be used. For example, mysql, mssql or all.[/en]
@@ -1592,11 +1588,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the prefix that is used by every table name.[/en]
-	[de]Gibt den Prefix zur�ck, der bei jedem Tabellennamen verwendet wird.[/de]
+	[de]Gibt den Prefix zurück, der bei jedem Tabellennamen verwendet wird.[/de]
 	
 	@return sPrefix [type]string[/type]
 	[en]Returns the prefix as a string that is used for each table name.[/en]
-	[de]Gibt den Prefix als String zur�ck, der bei jedem Tabellennamen verwendet wird.[/de]
+	[de]Gibt den Prefix als String zurück, der bei jedem Tabellennamen verwendet wird.[/de]
 	*/
 	public function getDatabaseTablePrefix() {return $this->sDatabaseTablePrefix;}
 	/* @end method */
@@ -1612,7 +1608,7 @@ class classPG_ClassBasics
 	
 	@return oConnection [type]object[/type]
 	[en]Returns the connection as object if it was successful.[/en]
-	[de]Gibt die Connection (Verbindung) als Objekt zur�ck, wenn es erfolgreich war.[/de]
+	[de]Gibt die Connection (Verbindung) als Objekt zurück, wenn es erfolgreich war.[/de]
 	
 	@param sHost [type]string[/type]
 	[en]The host to which the connection should be established.[/en]
@@ -1620,11 +1616,11 @@ class classPG_ClassBasics
 	
 	@param sUser [type]string[/type]
 	[en]The name of the user through which the connection should be made.[/en]
-	[de]Der Name des Benutzers �ber den die Verbindung hergestellt werden soll.[/de]
+	[de]Der Name des Benutzers über den die Verbindung hergestellt werden soll.[/de]
 	
 	@param sPassword [type]string[/type]
 	[en]The password that is required for a connection.[/en]
-	[de]Das Passwort, welches f�r eine Verbindung ben�tigt wird.[/de]
+	[de]Das Passwort, welches für eine Verbindung benötigt wird.[/de]
 	
 	@param sEngine [type]string[/type]
 	[en]The database engine to be used. For example, mysql, mssql or all.[/en]
@@ -1648,11 +1644,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Closes the connection to the database.[/en]
-	[de]Schlie�t die Verbindung zur Datenbank.[/de]
+	[de]Schließt die Verbindung zur Datenbank.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a Boolean whether the closing of the connection was successful.[/en]
-	[de]Gibt einen Boolean zur�ck, ob das Schlie�en der Verbindung erfolgreich war.[/de]
+	[de]Gibt einen Boolean zurück, ob das Schließen der Verbindung erfolgreich war.[/de]
 	
 	@param sEngine [type]string[/type]
 	[en]The database engine to be used. For example, mysql, mssql or all.[/en]
@@ -1677,7 +1673,7 @@ class classPG_ClassBasics
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a Boolean whether the connection is successfully established.[/en]
-	[de]Gibt einen Boolean zur�ck, ob die Verbindung erfolgreich zustande gekommen ist.[/de]
+	[de]Gibt einen Boolean zurück, ob die Verbindung erfolgreich zustande gekommen ist.[/de]
 	
 	@param sDatabase [needed][type]string[/type]
 	[en]The name of the database to be used.[/en]
@@ -1741,11 +1737,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sends an SQL statement to the database and may return a result.[/en]
-	[de]Sendet ein SQL-Statement an die Datenbank und gibt ggf. einen Result (Ergebnis einer Anfrage) zur�ck.[/de]
+	[de]Sendet ein SQL-Statement an die Datenbank und gibt ggf. einen Result (Ergebnis einer Anfrage) zurück.[/de]
 	
 	@return oResult [type]object[/type]
 	[en]May return a result. Otherwise can be queried whether the return is positive and the statement has been successfully executed.[/en]
-	[de]Gibt ggf. einen Result zur�ck. Ansonsten kann abgefragt werden ob die R�ckgabe Positiv ist und das Statement erfolgreich umgesetzt wurde.[/de]
+	[de]Gibt ggf. einen Result zurück. Ansonsten kann abgefragt werden ob die Rückgabe Positiv ist und das Statement erfolgreich umgesetzt wurde.[/de]
 	
 	@param xStatement [needed][type]mixed[/type]
 	[en]
@@ -1756,9 +1752,9 @@ class classPG_ClassBasics
 		asStatements['mssql'] = 'SELECT * FROM users LIMIT 10,10';	
 	[/en]
 	[de]
-		Das SQL-Statement, welches ausgef�hrt werden soll.
-		Kann auch ein Assoziatives-String-Array sein, welches pro Datenbank-Engine einen anderen SQL-Statement ausf�hren soll.
-		Ein Beispiel f�r ein Assoziatives-String-Array:
+		Das SQL-Statement, welches ausgeführt werden soll.
+		Kann auch ein Assoziatives-String-Array sein, welches pro Datenbank-Engine einen anderen SQL-Statement ausführen soll.
+		Ein Beispiel für ein Assoziatives-String-Array:
 		asStatements['mysql'] = 'SELECT * FROM users LIMIT 0,10';
 		asStatements['mssql'] = 'SELECT * FROM users LIMIT 10,10';
 	[/de]
@@ -1843,19 +1839,19 @@ class classPG_ClassBasics
 		You should use it only as additional protection to other security measures.
 	[/en]
 	[de]
-		Ver�ndert einen String, damit z.B. SQL-Injections (von Hackern) nicht ausgef�hrt werden k�nnen.
+		Verändert einen String, damit z.B. SQL-Injections (von Hackern) nicht ausgeführt werden können.
 		Sollte unbedingt verwendet werden, wenn man die SQL-Statements komplett selbst schreibt.
-		Bei Verwendung ist es aber auch noch lange keine Garantie daf�r, dass Hacker abgewehrt werden.
-		Man sollte es nur als zus�tzlichen Schutz zu anderen Sicherheitsma�nahmen verwenden.
+		Bei Verwendung ist es aber auch noch lange keine Garantie dafür, dass Hacker abgewehrt werden.
+		Man sollte es nur als zusätzlichen Schutz zu anderen Sicherheitsmaßnahmen verwenden.
 	[/de]
 	
 	@return sString [type]string[/type]
 	[en]The string that is to be protected from hackers.[/en]
-	[de]Der String, der vor Hackern gesch�tzt werden soll.[/de]
+	[de]Der String, der vor Hackern geschützt werden soll.[/de]
 	
 	@param xString [needed][type]mixed[/type]
 	[en]The string that is to be protected from hackers. But it can also pass an string array.[/en]
-	[de]Der String, der vor Hackern gesch�tzt werden soll. Es kann aber auch ein String-Array �bergeben werden.[/de]
+	[de]Der String, der vor Hackern geschützt werden soll. Es kann aber auch ein String-Array übergeben werden.[/de]
 	
 	@param sEngine [type]string[/type]
 	[en]The database engine to be used. For example, mysql, mssql or all.[/en]
@@ -1877,15 +1873,15 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the number of rows (datasets) in a result of a query.[/en]
-	[de]Gibt die Anzahl der Zeilen (Datens�tze) eines Results (Ergebnis einer Abfrage) zur�ck.[/de]
+	[de]Gibt die Anzahl der Zeilen (Datensätze) eines Results (Ergebnis einer Abfrage) zurück.[/de]
 	
 	@return iRowCount [type]int[/type]
 	[en]Returns the number of rows (datasets) as an integer.[/en]
-	[de]Gibt die Anzahl an Zeilen (Datens�tze) als Integer zur�ck.[/de]
+	[de]Gibt die Anzahl an Zeilen (Datensätze) als Integer zurück.[/de]
 	
 	@param xResult [type]mixed[/type]
 	[en]The result of which was returned by the database query.[/en]
-	[de]Der Result der von der Datenbank-Abfrage zur�ckgeliefert wurde.[/de]
+	[de]Der Result der von der Datenbank-Abfrage zurückgeliefert wurde.[/de]
 	
 	@param sEngine [type]string[/type]
 	[en]The database engine to be used. For example, mysql, mssql or all.[/en]
@@ -1911,7 +1907,7 @@ class classPG_ClassBasics
 	
 	@return axData [type]mixed[][/type]
 	[en]Returns an associative array.[/en]
-	[de]Gibt einen Assoziativen Array zur�ck.[/de]
+	[de]Gibt einen Assoziativen Array zurück.[/de]
 	
 	@param xResult [type]mixed[/type]
 	[en]The result object or an associative array of result objects.[/en]
@@ -1937,11 +1933,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Collects data from the database and returns a result object.[/en]
-	[de]Sammelt Daten aus der Datenbank und gibt sie in einem Result-Objekt zur�ck.[/de]
+	[de]Sammelt Daten aus der Datenbank und gibt sie in einem Result-Objekt zurück.[/de]
 	
 	@return oResult [type]object[/type]
 	[en]Returns a result object.[/en]
-	[de]Gibt ein Result-Objekt zur�ck.[/de]
+	[de]Gibt ein Result-Objekt zurück.[/de]
 	
 	@param sTable [needed][type]string[/type]
 	[en]The table from which the data are to pick up.[/en]
@@ -1957,11 +1953,11 @@ class classPG_ClassBasics
 	
 	@param iStart [type]int[/type]
 	[en]The starting position from which dataset collected data should be returned.[/en]
-	[de]Die Startposition, ab welchen Datensatz die gesammelten Daten zur�ckgegeben werden sollen.[/de]
+	[de]Die Startposition, ab welchen Datensatz die gesammelten Daten zurückgegeben werden sollen.[/de]
 	
 	@param iCount [type]int[/type]
 	[en]The number of datasets to be returned from the collected data.[/en]
-	[de]Die Anzahl an Datens�tze die von den gesammelten Daten zur�ckgegeben werden sollen.[/de]
+	[de]Die Anzahl an Datensätze die von den gesammelten Daten zurückgegeben werden sollen.[/de]
 	
 	@param sOrderBy [type]string[/type]
 	[en]The name of the column to be sort.[/en]
@@ -1969,7 +1965,7 @@ class classPG_ClassBasics
 	
 	@param bOrderReverse [type]bool[/type]
 	[en]Specifies whether backward (from high to low) to sort.[/en]
-	[de]Gibt an ob R�ckw�rts (von gro� nach klein) sortiert werden soll.[/de]
+	[de]Gibt an ob Rückwärts (von groß nach klein) sortiert werden soll.[/de]
 	
 	@param sEngine [type]string[/type]
 	[en]The database engine to be used. For example, mysql, mssql or all.[/en]
@@ -1997,19 +1993,19 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Adds a dataset to a table and returns the new ID.[/en]
-	[de]F�gt einen Datensatz einer Tabelle hinzu und gibt die neue ID zur�ck.[/de]
+	[de]Fügt einen Datensatz einer Tabelle hinzu und gibt die neue ID zurück.[/de]
 	
 	@return iInsertID [type]int[/type]
 	[en]Returns the new InsertID.[/en]
-	[de]Gibt die neue InsertID zur�ck.[/de]
+	[de]Gibt die neue InsertID zurück.[/de]
 	
 	@param sTable [needed][type]string[/type]
 	[en]The table, which is a new dataset to be added.[/en]
-	[de]Die Tabelle, der ein neuer Datensatz hinzugef�gt werden soll.[/de]
+	[de]Die Tabelle, der ein neuer Datensatz hinzugefügt werden soll.[/de]
 	
 	@param axColumnsAndValues [type]mixed[][/type]
 	[en]The column names and values as an associative array to add the new dataset.[/en]
-	[de]Die Spaltennamen und Werte als assoziatives Array zum hinzuf�gen des neuen Datensatzes.[/de]
+	[de]Die Spaltennamen und Werte als assoziatives Array zum hinzufügen des neuen Datensatzes.[/de]
 
 	@param sAutoIDColumn [type]string[/type]
 	[en]...[/en]
@@ -2046,19 +2042,19 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Updates datasets from a table.[/en]
-	[de]Aktualisiert Datens�tze einer Tabelle.[/de]
+	[de]Aktualisiert Datensätze einer Tabelle.[/de]
 	
 	@return xIDValue [type]mixed[/type]
 	[en]Returns the ID on success or false on failure.[/en]
-	[de]Gibt bei erfolg die ID oder bei einem Fehler false zur�ck.[/de]
+	[de]Gibt bei erfolg die ID oder bei einem Fehler false zurück.[/de]
 	
 	@param sTable [needed][type]string[/type]
 	[en]The table whose datasets should be updated.[/en]
-	[de]Die Tabelle, deren Datens�tze aktualisiert werden sollen.[/de]
+	[de]Die Tabelle, deren Datensätze aktualisiert werden sollen.[/de]
 	
 	@param sIDColumn [type]string[/type]
 	[en]The name of the column that has been marked as the ID of the table datasets.[/en]
-	[de]Der Name der Spalte, die als ID der Datens�tze einer Tabelle markiert wurde.[/de]
+	[de]Der Name der Spalte, die als ID der Datensätze einer Tabelle markiert wurde.[/de]
 	
 	@param xIDValue [type]mixed[/type]
 	[en]The value of the ID if a certain dataset should be updated.[/en]
@@ -2066,7 +2062,7 @@ class classPG_ClassBasics
 	
 	@param axColumnsAndValues [type]mixed[][/type]
 	[en]The column names and values as an associative array to update the datasets.[/en]
-	[de]Die Spaltennamen und Werte als assoziatives Array zum Aktualisieren der Datens�tze.[/de]
+	[de]Die Spaltennamen und Werte als assoziatives Array zum Aktualisieren der Datensätze.[/de]
 
 	@param xWhere [type]string[/type]
 	[en]The condition under which to update the data.[/en]
@@ -2106,19 +2102,19 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Stores one dataset in a table. This detects whether the dataset already exists, or is to be added.[/en]
-	[de]Speichert einen Datensatz in einer Tabelle. Erkennt dabei ob der Datensatz schon vorhanden ist oder neu hinzugef�gt werden soll.[/de]
+	[de]Speichert einen Datensatz in einer Tabelle. Erkennt dabei ob der Datensatz schon vorhanden ist oder neu hinzugefügt werden soll.[/de]
 	
 	@return xMixed [type]mixed[/type]
 	[en]Returns the ID on success or false on failure.[/en]
-	[de]Gibt bei erfolg die ID oder bei einem Fehler false zur�ck.[/de]
+	[de]Gibt bei erfolg die ID oder bei einem Fehler false zurück.[/de]
 	
 	@param sTable [needed][type]string[/type]
 	[en]The table whose datasets should be updated or added.[/en]
-	[de]Die Tabelle, deren Datens�tze aktualisiert oder hinzugef�gt werden sollen.[/de]
+	[de]Die Tabelle, deren Datensätze aktualisiert oder hinzugefügt werden sollen.[/de]
 	
 	@param sIDColumn [needed][type]string[/type]
 	[en]The name of the column that has been marked as the ID (of the table datasets).[/en]
-	[de]Der Name der Spalte, die als ID (der Datens�tze einer Tabelle) markiert wurde.[/de]
+	[de]Der Name der Spalte, die als ID (der Datensätze einer Tabelle) markiert wurde.[/de]
 	
 	@param xIDValue [needed][type]mixed[/type]
 	[en]The value of the ID if a certain dataset should be updated.[/en]
@@ -2126,11 +2122,11 @@ class classPG_ClassBasics
 	
 	@param axColumnsAndValues [type]mixed[][/type]
 	[en]The column names and values as an associative array to update or add the dataset.[/en]
-	[de]Die Spaltennamen und Werte als assoziatives Array zum Aktualisieren oder hinzuf�gen des Datensatzes.[/de]
+	[de]Die Spaltennamen und Werte als assoziatives Array zum Aktualisieren oder hinzufügen des Datensatzes.[/de]
 	
 	@param axColumnsAndValuesOnInsert [type]mixed[][/type]
 	[en]The column names and values as an associative array to add the dataset. (Is used only when the dataset will be created.)[/en]
-	[de]Die Spaltennamen und Werte als assoziatives Array zum hinzuf�gen des Datensatzes. (Wird nur verwendet, wenn der Datensatz neu angelegt wird.)[/de]
+	[de]Die Spaltennamen und Werte als assoziatives Array zum hinzufügen des Datensatzes. (Wird nur verwendet, wenn der Datensatz neu angelegt wird.)[/de]
 	
 	@param axColumnsAndValuesOnUpdate [type]mixed[][/type]
 	[en]The column names and values as an associative array to update the dataset. (Is used only when an existing dataset is updated.)[/en]
@@ -2178,27 +2174,27 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Deletes datasets from a table.[/en]
-	[de]L�scht Datens�tze aus einer Tabelle.[/de]
+	[de]Löscht Datensätze aus einer Tabelle.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns a boolean whether the deletion was successful.[/en]
-	[de]Gibt einen Boolean zur�ck, ob das L�schen erfolgreich war.[/de]
+	[de]Gibt einen Boolean zurück, ob das Löschen erfolgreich war.[/de]
 	
 	@param sTable [needed][type]string[/type]
 	[en]The table whose datasets are to be deleted.[/en]
-	[de]Die Tabelle, deren Datens�tze gel�scht werden sollen.[/de]
+	[de]Die Tabelle, deren Datensätze gelöscht werden sollen.[/de]
 	
 	@param sIDColumn [needed][type]string[/type]
 	[en]The name of the column that has been marked as the ID of the table datasets.[/en]
-	[de]Der Name der Spalte, die als ID der Datens�tze einer Tabelle markiert wurde.[/de]
+	[de]Der Name der Spalte, die als ID der Datensätze einer Tabelle markiert wurde.[/de]
 	
 	@param xIDValue [needed][type]mixed[/type]
 	[en]The value of the ID if a certain dataset should be deleted.[/en]
-	[de]Der Wert der ID, falls ein bestimmter Datensatz gel�scht werden soll.[/de]
+	[de]Der Wert der ID, falls ein bestimmter Datensatz gelöscht werden soll.[/de]
 	
 	@param xWhere [type]string[/type]
 	[en]The condition under which the datasets should be deleted.[/en]
-	[de]Die Bedingung, unter der die Datens�tze gel�scht werden sollen.[/de]
+	[de]Die Bedingung, unter der die Datensätze gelöscht werden sollen.[/de]
 	
 	@param bAllowAnonymDelete [type]bool[/type]
 	[en]...[/en]
@@ -2227,11 +2223,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Reads column information from a column of a table and returns that information.[/en]
-	[de]Liest Spalteninformationen einer Spalte von einer Tabelle aus und gibt diese Informationen zur�ck.[/de]
+	[de]Liest Spalteninformationen einer Spalte von einer Tabelle aus und gibt diese Informationen zurück.[/de]
 	
 	@return axColumnStructure [type]mixed[][/type]
 	[en]Returns the column information as an associative array.[/en]
-	[de]Gibt die Spalteninformationen als assoziatives Array zur�ck.[/de]
+	[de]Gibt die Spalteninformationen als assoziatives Array zurück.[/de]
 	
 	@param sTable [needed][type]string[/type]
 	[en]The table from which the column information to be read.[/en]
@@ -2266,7 +2262,7 @@ class classPG_ClassBasics
 	
 	@return xMixed [type]mixed[/type]
 	[en]Returns a boolean, or an associative array of boolean whether the column has been successfully deleted.[/en]
-	[de]Gibt einen Boolean oder ein assoziatives Boolean-Array zur�ck, ob die spalte erfolgreich gel�scht wurde.[/de]
+	[de]Gibt einen Boolean oder ein assoziatives Boolean-Array zurück, ob die spalte erfolgreich gelöscht wurde.[/de]
 	
 	@param sTable [needed][type]string[/type]
 	[en]The table from which the column should be removed.[/en]
@@ -2297,11 +2293,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Changes the name of a column from a table of a database.[/en]
-	[de]�ndert den Namen einer Spalte aus einer Tabelle von einer Datenbank.[/de]
+	[de]Ändert den Namen einer Spalte aus einer Tabelle von einer Datenbank.[/de]
 	
 	@return xMixed [type]mixed[/type]
 	[en]Returns a boolean, or an associative array of boolean whether the column has been successfully changed.[/en]
-	[de]Gibt einen Boolean oder ein assoziatives Boolean-Array zur�ck, ob die spalte erfolgreich ge�ndert wurde.[/de]
+	[de]Gibt einen Boolean oder ein assoziatives Boolean-Array zurück, ob die spalte erfolgreich geändert wurde.[/de]
 	
 	@param sOldName [needed][type]string[/type]
 	[en]The old name of the column.[/en]
@@ -2396,7 +2392,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sets a target (window or frame) for a URL of the object / the class.[/en]
-	[de]Setzt ein Ziel (Fenster oder Frame) f�r eine URL des Objekts / der Klasse.[/de]
+	[de]Setzt ein Ziel (Fenster oder Frame) für eine URL des Objekts / der Klasse.[/de]
 	
 	@param sTarget [needed][type]string[/type]
 	[en]The target in which something is to be loaded.[/en]
@@ -2416,11 +2412,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the target (window or frame) of a URL.[/en]
-	[de]Gibt das Ziel (Fenster oder Frame) f�r eine URL zur�ck.[/de]
+	[de]Gibt das Ziel (Fenster oder Frame) für eine URL zurück.[/de]
 	
 	@return sUrlTarget [type]string[/type]
 	[en]Returns the target (window or frame) of a URL as a string.[/en]
-	[de]Gibt das Ziel (Fenster oder Frame) f�r eine URL als String zur�ck.[/de]
+	[de]Gibt das Ziel (Fenster oder Frame) für eine URL als String zurück.[/de]
 	*/
 	public function getUrlTarget() {return $this->sUrlTarget;}
 	/* @end method */
@@ -2448,7 +2444,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Sets a URL for an object / the class.[/en]
-	[de]Setzt eine URL f�r ein Objekt / die Klasse.[/de]
+	[de]Setzt eine URL für ein Objekt / die Klasse.[/de]
 	
 	@param sUrl [needed][type]string[/type]
 	[en]The URL to be loaded.[/en]
@@ -2468,11 +2464,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the URL to be loaded.[/en]
-	[de]Gibt die URL zur�ck, die geladen werden soll.[/de]
+	[de]Gibt die URL zurück, die geladen werden soll.[/de]
 	
 	@return sUrl [type]string[/type]
 	[en]Returns the URL to be loaded as a string.[/en]
-	[de]Gibt die URL als string zur�ck, die geladen werden soll.[/de]
+	[de]Gibt die URL als string zurück, die geladen werden soll.[/de]
 	*/
 	public function getUrl() {return $this->sUrl;}
 	/* @end method */
@@ -2505,7 +2501,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Adds URL parameters to be sent on load.[/en]
-	[de]F�gt URL Parameter hinzu, die beim laden mit geschickt werden.[/de]
+	[de]Fügt URL Parameter hinzu, die beim laden mit geschickt werden.[/de]
 	
 	@param axParameters [needed][type]mixed[][/type]
 	[en]The parameter names and values as an associative array.[/en]
@@ -2525,7 +2521,7 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Adds an URL parameter to be sent on load.[/en]
-	[de]F�gt einen URL Parameter hinzu, der beim laden mit geschickt werden soll.[/de]
+	[de]Fügt einen URL Parameter hinzu, der beim laden mit geschickt werden soll.[/de]
 
 	@param sName [needed][type]string[/type]
 	[en]The name of the parameter.[/en]
@@ -2550,11 +2546,11 @@ class classPG_ClassBasics
 	
 	@description
 	[en]Returns the URL parameters.[/en]
-	[de]Gibt die URL Parameter zur�ck.[/de]
+	[de]Gibt die URL Parameter zurück.[/de]
 	
 	@return axParameters [type]mixed[][/type]
 	[en]Returns the URL parameter as an associative array.[/en]
-	[de]Gibt die URL Parameter als assoziatives Array zur�ck.[/de]
+	[de]Gibt die URL Parameter als assoziatives Array zurück.[/de]
 	*/
 	public function getUrlParameters() {return $this->axUrlParameters;}
 	/* @end method */

@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Aug 14 2012
 */
 /*
@@ -181,7 +177,7 @@ class classPG_MailUpload extends classPG_ClassBasics
 	public function setMaxBytesPerFile($_iBytes)
 	{
 		$_iBytes = $this->getRealParameter(array('oParameters' => $_iBytes, 'sName' => 'iBytes', 'xParameter' => $_iBytes));
-		$this->iMaxBytesPerFile = $_iSize;
+		$this->iMaxBytesPerFile = $_iBytes;
 	}
 	/* @end method */
 	

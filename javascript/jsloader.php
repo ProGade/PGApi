@@ -1,19 +1,15 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 13 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 5 2014
 */
 /*
 @start class
 
 @description
 [en]This class has methods for loading of JavaScript files.[/en]
-[de]Diese Klasse verf�gt �ber Methoden zum laden von JavaScript Dateien.[/de]
+[de]Diese Klasse verfügt über Methoden zum laden von JavaScript Dateien.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -38,7 +34,7 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the base path for all JavaScript files to be loaded.[/en]
-	[de]Setzt den Basis-Pfad f�r alle JavaScript Dateien die geladen werden sollen.[/de]
+	[de]Setzt den Basis-Pfad für alle JavaScript Dateien die geladen werden sollen.[/de]
 	
 	@param sPath [needed][type]string[/type]
 	[en]The path as the basis of all the files.[/en]
@@ -56,11 +52,11 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Returns base path for all JavaScript files.[/en]
-	[de]Gibt den Basis-Pfad f�r alle JavaScript Dateien zur�ck.[/de]
+	[de]Gibt den Basis-Pfad für alle JavaScript Dateien zurück.[/de]
 	
 	@return sFilesPath [type]string[/type]
 	[en]Returns the path as a string.[/en]
-	[de]Gibt den Pfad als String zur�ck.[/de]
+	[de]Gibt den Pfad als String zurück.[/de]
 	*/
 	public function getFilesPath() {return $this->sFilesPath;}
 	/* @end method */
@@ -88,7 +84,7 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Adds files to the loader to load.[/en]
-	[de]F�gt Dateien zum Loader hinzu, die geladen werden sollen.[/de]
+	[de]Fügt Dateien zum Loader hinzu, die geladen werden sollen.[/de]
 	
 	@param asFiles [needed][type]string[][/type]
 	[en]The files to be loaded as a string array.[/en]
@@ -106,7 +102,7 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a file to the loader to load.[/en]
-	[de]F�gt eine Datei zum Loader hinzu, die geladen werden soll.[/de]
+	[de]Fügt eine Datei zum Loader hinzu, die geladen werden soll.[/de]
 	
 	@param sFile [needed][type]string[/type]
 	[en]The file to be loaded as a string.[/en]
@@ -124,11 +120,11 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Returns all the files (names) to be loaded as a string array.[/en]
-	[de]Gibt alle Dateien (Namen), die geladen werden sollen, als String-Array zur�ck.[/de]
+	[de]Gibt alle Dateien (Namen), die geladen werden sollen, als String-Array zurück.[/de]
 	
 	@return asFiles [type]string[][/type]
 	[en]Returns the files as a string array.[/en]
-	[de]Gibt die Dateien als String-Array zur�ck.[/de]
+	[de]Gibt die Dateien als String-Array zurück.[/de]
 	*/
 	public function getFiles() {return $this->asFiles;}
 	/* @end method */
@@ -138,11 +134,11 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Sets code to be executed in the header tag.[/en]
-	[de]Setzt Code der im Header-Tag ausgef�hrt werden soll.[/de]
+	[de]Setzt Code der im Header-Tag ausgeführt werden soll.[/de]
 	
 	@param sCode [needed][type]string[/type]
 	[en]The code to be executed as a string.[/en]
-	[de]Der auszuf�hrende Code als String.[/de]
+	[de]Der auszuführende Code als String.[/de]
 	*/
 	public function setCode($_sCode)
 	{
@@ -156,11 +152,11 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Adds code to who does not come from a file.[/en]
-	[de]F�gt Code hinzu, der nicht aus einer Datei kommt.[/de]
+	[de]Fügt Code hinzu, der nicht aus einer Datei kommt.[/de]
 	
 	@param sCode [needed][type]string[/type]
 	[en]The code to be executed as a string.[/en]
-	[de]Der auszuf�hrende Code als String.[/de]
+	[de]Der auszuführende Code als String.[/de]
 	*/
 	public function addCode($_sCode)
 	{
@@ -179,11 +175,11 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@descriptuion
 	[en]Returns the code that does not come from a file.[/en]
-	[de]Gibt den Code zur�ck, der nicht aus einer Datei kommt.[/de]
+	[de]Gibt den Code zurück, der nicht aus einer Datei kommt.[/de]
 	
 	@return sCode [type]string[/type]
 	[en]Returns the code as a string.[/en]
-	[de]Gibt den Code als String zur�ck.[/de]
+	[de]Gibt den Code als String zurück.[/de]
 	*/
 	public function getCode() {return $this->sCode;}
 	/* @end method */
@@ -193,7 +189,7 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Sets whether the code should be include from external files or read and will be returned as a String by build().[/en]
-	[de]Setzt ob der Code �ber externe Dateien eingebunden werden soll oder ausgelesen und als String von build() zur�ck gegeben wird.[/de]
+	[de]Setzt ob der Code über externe Dateien eingebunden werden soll oder ausgelesen und als String von build() zurück gegeben wird.[/de]
 	
 	@param bUse [needed][type]bool[/type]
 	[en]Specifies whether external files or embedded code should be used.[/en]
@@ -211,11 +207,11 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether external files or embedded code to be used.[/en]
-	[de]Gibt zur�ck ob externe Dateien oder eingebetteter Code verwendet werden soll.[/de]
+	[de]Gibt zurück ob externe Dateien oder eingebetteter Code verwendet werden soll.[/de]
 	
 	@return bUseIncludes [type]bool[/type]
 	[en]Returns a boolean whether external files (true) or embedded code (false) should be used.[/en]
-	[de]Gibt als Boolean zur�ck ob externe Dateien (true) oder eingebetteter Code (false) verwendet werden soll.[/de]
+	[de]Gibt als Boolean zurück ob externe Dateien (true) oder eingebetteter Code (false) verwendet werden soll.[/de]
 	*/
 	public function isIncludes() {return $this->bUseIncludes;}
 	/* @end method */
@@ -235,11 +231,11 @@ class classPG_JsLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the JavaScript code to load the files and returns it.[/en]
-	[de]Erstellt den JavaScript-Code zum Laden der Dateien und gibt ihn zur�ck.[/de]
+	[de]Erstellt den JavaScript-Code zum Laden der Dateien und gibt ihn zurück.[/de]
 	
 	@return sHtml [type]string[/type]
 	[en]Returns JavaScript code or HTML script tags as a string. Depending on how useIncludes() has been set.[/en]
-	[de]Gibt JavaScript-Code oder HTML-Script-Tags als String zur�ck. Je nachdem wie useIncludes() gesetzt wurde.[/de]
+	[de]Gibt JavaScript-Code oder HTML-Script-Tags als String zurück. Je nachdem wie useIncludes() gesetzt wurde.[/de]
 	*/
 	public function build()
 	{

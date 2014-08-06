@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Aug 13 2012
 */
 define('PG_CODEPARSER_CONTENT_TYPE_CLASS', 'class');
@@ -60,7 +56,7 @@ class classPG_CodeParser extends classPG_ClassBasics
 	
 	@return sReturn [type]string[/type]
 	[en]Returns the appropriate description text to the specified language.[/en]
-	[de]Gibt den entsprechenden Beschreibungstext zur angegebenen Sprache zurück.[/de]
+	[de]Gibt den entsprechenden Beschreibungstext zur angegebenen Sprache zurÃ¼ck.[/de]
 	
 	@description
 	[en]Method for filtering a specific language from a comment. Search for &#091;en&#093; ... &#091;/en&#093;.[/en]
@@ -102,7 +98,7 @@ class classPG_CodeParser extends classPG_ClassBasics
 	
 	@return asReturn [type]string[][/type]
 	[en]Returns an array containing all the found variable types from a comment.[/en]
-	[de]Gibt einen Array mit alle gefundenen Variablentypen aus einem Kommentar zurück.[/de]
+	[de]Gibt einen Array mit alle gefundenen Variablentypen aus einem Kommentar zurÃ¼ck.[/de]
 	
 	@description
 	[en]Method used to filter variable types from a comment. Search for &#091;needed&#093;.[/en]
@@ -140,7 +136,7 @@ class classPG_CodeParser extends classPG_ClassBasics
 	
 	@return bIsNeeded [type]bool[/type]
 	[en]Returns true if a variable is required, or false if the variable is optional.[/en]
-	[de]Gibt true zurück wenn eine Variable benötigt wird oder false wenn die Variable optional ist.[/de]
+	[de]Gibt true zurÃ¼ck wenn eine Variable benÃ¶tigt wird oder false wenn die Variable optional ist.[/de]
 	
 	@description
 	[en]Method used to filter non-optional variables of a comment.[/en]
@@ -295,7 +291,7 @@ class classPG_CodeParser extends classPG_ClassBasics
 		$_asReturn = array();
 		$_asParameters = array();
 		$_sSearch = '/';
-			$_sSearchParameterName;
+		$_sSearch .= $_sSearchParameterName;
 		$_sSearch .= '/is';
 		if ($_iSearchCount = preg_match_all($_sSearch, $_sString, $_asParameters, PREG_SET_ORDER))
 		{

@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Aug 13 2012
 */
 
@@ -146,7 +142,7 @@ class classPG_RegisterVars extends classPG_ClassBasics
 		if ($_sType == 'int') {$$_sName = 0;}
 		else if (($_sType == 'float') || ($_sType == 'double')) {$$_sName = 0.0;}
 		else if ($_sType == 'string') {$$_sName = '';}
-		else {$$_sName == ''; $_sType = 'string';}
+		else {$$_sName = ''; $_sType = 'string';}
 
 		if ($_sMethod == 'session')
 		{

@@ -1,10 +1,6 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Oct 11 2012
 */
 var PG_KEYCODE_BACKSPACE = 8;
@@ -45,8 +41,8 @@ var PG_KEYCODE_EXCLAMATION_MARK = 49; // !
 var PG_KEYCODE_2 = 50;
 var PG_KEYCODE_QUOTES = 50; // "
 var PG_KEYCODE_3 = 51;
-var PG_KEYCODE_PARAGRAPH = 51; // §
-var PG_KEYCODE_SECTION = 51; // §
+var PG_KEYCODE_PARAGRAPH = 51; // ï¿½
+var PG_KEYCODE_SECTION = 51; // ï¿½
 var PG_KEYCODE_4 = 52;
 var PG_KEYCODE_DOLLAR = 52; // $
 var PG_KEYCODE_5 = 53;
@@ -132,18 +128,18 @@ var PG_KEYCODE_SHARP = 191; // #
 // var PG_KEYCODE_ 191		# and '
 var PG_KEYCODE_OE = 192;
 var PG_KEYCODE_QUESTION_MARK = 219; // ?
-// var PG_KEYCODE_ 219		ß and  ?
-var PG_KEYCODE_CIRCUMFLEX = 220;	// ^ and °
-// var PG_KEYCODE_ 221		´ and `
+// var PG_KEYCODE_ 219		ï¿½ and  ?
+var PG_KEYCODE_CIRCUMFLEX = 220;	// ^ and ï¿½
+// var PG_KEYCODE_ 221		ï¿½ and `
 var PG_KEYCODE_AE = 222;
 // var PG_KEYCODE_ 226		< and >
 
 /*
 Code	Key
 191		# and '
-219		ß and  ?
-220		^ and °
-221		´ and `
+219		ï¿½ and  ?
+220		^ and ï¿½
+221		ï¿½ and `
 226		< and >
 */
 
@@ -176,14 +172,14 @@ PG_KEYCODE_0 ... PG_KEYCODE_9
 PG_KEYCODE_EQUALS = "="
 PG_KEYCODE_EXCLAMATION, PG_KEYCODE_EXCLAMATION_MARK = !
 PG_KEYCODE_QUOTES = "
-PG_KEYCODE_PARAGRAPH, PG_KEYCODE_SECTION = §
+PG_KEYCODE_PARAGRAPH, PG_KEYCODE_SECTION = Â§
 PG_KEYCODE_DOLLAR = $
 PG_KEYCODE_PERCENT = %
 PG_KEYCODE_AND = &
 PG_KEYCODE_SLASH = /
 PG_KEYCODE_BRACKET = (
 PG_KEYCODE_PARENTHESIS = )
-PG_KEYCODE_UE = ü
+PG_KEYCODE_UE = Ãœ
 PG_KEYCODE_A ... PG_KEYCODE_Z
 PG_KEYCODE_WINDOWS, PG_KEYCODE_COMMAND, PG_KEYCODE_CONTEXT
 PG_KEYCODE_NUM_0 ... PG_KEYCODE_NUM_9
@@ -206,10 +202,10 @@ PG_KEYCODE_COMMA = ,
 PG_KEYCODE_POINT = .
 PG_KEYCODE_COLON = :
 PG_KEYCODE_SHARP = #
-PG_KEYCODE_OE = ö
+PG_KEYCODE_OE = Ã–
 PG_KEYCODE_QUESTION_MARK = ?
-PG_KEYCODE_CIRCUMFLEX = ^ and °
-PG_KEYCODE_AE = ä
+PG_KEYCODE_CIRCUMFLEX = ^ and ï¿½
+PG_KEYCODE_AE = Ã„
 
 @description
 [en]
@@ -218,8 +214,8 @@ PG_KEYCODE_AE = ä
 	%KeyHandlerKeyDefines%
 [/en]
 [de]
-	Diese Klasse enthält Methoden zum Binden von Tasten der Tastatur an Funktionen.
-	Folgende Defines können als Tasten verwendet werden:
+	Diese Klasse enthÃ¤lt Methoden zum Binden von Tasten der Tastatur an Funktionen.
+	Folgende Defines kÃ¶nnen als Tasten verwendet werden:
 	%KeyHandlerKeyDefines%
 [/de]
 
@@ -260,7 +256,7 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Overrides the default function of the browser of a key or key combination.[/en]
-	[de]Überschreibt die Standardfunktion des Browsers einer Taste oder Tastenkombination.[/de]
+	[de]Ãœberschreibt die Standardfunktion des Browsers einer Taste oder Tastenkombination.[/de]
 	
 	@param oEvent [needed][type]object[/type]
 	[en]The event object of the browser.[/en]
@@ -287,7 +283,7 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Frees the saved state of the keys already pressed.[/en]
-	[de]Gibt den gespeicherten Zustand der bereits gedrückten Tasten wieder frei.[/de]
+	[de]Gibt den gespeicherten Zustand der bereits gedrÃ¼ckten Tasten wieder frei.[/de]
 	*/
 	this.releaseAllKeysDown = function()
 	{
@@ -322,11 +318,11 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Sets the pressed state of a key.[/en]
-	[de]Setzt den gedrückt Status für eine Taste.[/de]
+	[de]Setzt den gedrÃ¼ckt Status fÃ¼r eine Taste.[/de]
 	
 	@param xKey [needed][type]mixed[/type]
 	[en]The key whose status is to be stored as a key.[/en]
-	[de]Die Taste, dessen Zustand als gedrückt gespeichert werden soll.[/de]
+	[de]Die Taste, dessen Zustand als gedrÃ¼ckt gespeichert werden soll.[/de]
 	*/
 	this.setKeyCodeDown = function(_xKey)
 	{
@@ -341,15 +337,15 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Returns whether the pressed status of a key was saved.[/en]
-	[de]Gibt zurück, ob für eine Taste der gedrückt Status gespeichert wurde.[/de]
+	[de]Gibt zurÃ¼ck, ob fÃ¼r eine Taste der gedrÃ¼ckt Status gespeichert wurde.[/de]
 	
 	@return bIsDown [type]bool[/type]
 	[en]Returns a boolean if the key is pressed.[/en]
-	[de]Gibt ein Boolean zurück, ob die Taste gedrückt ist.[/de]
+	[de]Gibt ein Boolean zurï¿½ck, ob die Taste gedrï¿½ckt ist.[/de]
 	
 	@param xKey [needed][type]mixed[/type]
 	[en]The key whose status is to be tested.[/en]
-	[de]Die Taste, dessen Zustand geprüft werden soll.[/de]
+	[de]Die Taste, dessen Zustand geprï¿½ft werden soll.[/de]
 	*/
 	this.isKeyCodeDown = function(_xKey)
 	{
@@ -373,7 +369,7 @@ function classPG_KeyHandler()
 	
 	@return iKeyCodeIndex [type]int[/type]
 	[en]Returns the memory index of the binding.[/en]
-	[de]Gibt den Speicherindex der Bindung zurück.[/de]
+	[de]Gibt den Speicherindex der Bindung zurï¿½ck.[/de]
 	
 	@param xKey1 [needed][type]mixed[/type]
 	[en]The first key that is to be bound.[/en]
@@ -389,7 +385,7 @@ function classPG_KeyHandler()
 	
 	@param xFunction [needed][type]mixed[/type]
 	[en]The function that will be executed when pressing the key or key combination.[/en]
-	[de]Die Funktion, die beim drücken der Taste oder Tastenkombination ausgeführt werden soll.[/de]
+	[de]Die Funktion, die beim drï¿½cken der Taste oder Tastenkombination ausgefï¿½hrt werden soll.[/de]
 	*/
 	this.bindKeys = function(_xKey1, _xKey2, _xKey3, _xFunction)
 	{
@@ -427,11 +423,11 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Suppresses the standard function of a key or key combination of the browser.[/en]
-	[de]Unterdrückt die Standardfunktion einer Taste oder Tastenkombination des Browsers.[/de]
+	[de]Unterdrï¿½ckt die Standardfunktion einer Taste oder Tastenkombination des Browsers.[/de]
 	
 	@return iKeyCodeIndex [type]int[/type]
 	[en]Returns the memory index of the binding.[/en]
-	[de]Gibt den Speicherindex der Bindung zurück.[/de]
+	[de]Gibt den Speicherindex der Bindung zurï¿½ck.[/de]
 	
 	@param xKey1 [needed][type]mixed[/type]
 	[en]The first key that is to be bound.[/en]
@@ -544,15 +540,15 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Returns the name of a key.[/en]
-	[de]Gibt den Namen einer Taste zurück.[/de]
+	[de]Gibt den Namen einer Taste zurï¿½ck.[/de]
 	
 	@return sKeyName [type]string[/type]
 	[en]Returns the name of a key as a string.[/en]
-	[de]Gibt den Namen einer Taste als String zurück.[/de]
+	[de]Gibt den Namen einer Taste als String zurï¿½ck.[/de]
 	
 	@param xKey [needed][type]mixed[/type]
 	[en]The key whose name should be returned.[/en]
-	[de]Die Taste, deren Namen zurück gegeben werden soll.[/de]
+	[de]Die Taste, deren Namen zurï¿½ck gegeben werden soll.[/de]
 	*/
 	this.getKeyName = function(_xKey)
 	{
@@ -576,15 +572,15 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Returns the key code of a key.[/en]
-	[de]Gibt den Tastaturcode einer Taste zurück.[/de]
+	[de]Gibt den Tastaturcode einer Taste zurï¿½ck.[/de]
 	
 	@return iKeyCode [type]int[/type]
 	[en]Returns the key code of a key as a integer.[/en]
-	[de]Gibt den Tastaturcode einer Taste als Integer zurück.[/de]
+	[de]Gibt den Tastaturcode einer Taste als Integer zurï¿½ck.[/de]
 	
 	@param xKey [needed][type]mixed[/type]
 	[en]The key whose key code should be returned.[/en]
-	[de]Die Taste, deren Tastaturcode zurück gegeben werden soll.[/de]
+	[de]Die Taste, deren Tastaturcode zurï¿½ck gegeben werden soll.[/de]
 	*/
 	this.getKeyCode = function(_xKey)
 	{
@@ -608,7 +604,7 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Checks whether keys have been released.[/en]
-	[de]Prüft ob Tasten wieder losgelassen wurden.[/de]
+	[de]Prï¿½ft ob Tasten wieder losgelassen wurden.[/de]
 	
 	@param oEvent [needed][type]object[/type]
 	[en]The event object of the browser.[/en]
@@ -627,11 +623,11 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Executes the functions of the bindings if the corresponding key or key combination is pressed.[/en]
-	[de]Führt die Funktionen der Bindungen aus, wenn die entsprechende Tast oder Tastenkombination gedrückt wird.[/de]
+	[de]Fï¿½hrt die Funktionen der Bindungen aus, wenn die entsprechende Tast oder Tastenkombination gedrï¿½ckt wird.[/de]
 	
 	@return bPreventedDefault [type]bool[/type]
 	[en]Returns a Boolean whether the browser should prevent the default function of the keys.[/en]
-	[de]Gibt ein Boolean zurück ob der Browser die Standardfunktion der Tasten unterbinden soll.[/de]
+	[de]Gibt ein Boolean zurï¿½ck ob der Browser die Standardfunktion der Tasten unterbinden soll.[/de]
 	
 	@param oEvent [needed][type]object[/type]
 	[en]The event object of the browser.[/en]
@@ -706,7 +702,7 @@ function classPG_KeyHandler()
 	
 	@return bFalse [type]bool[/type]
 	[en]Returns false to suppress the default function of the key of the browser.[/en]
-	[de]Gibt false zurück um die Standardfunktion der Taste vom Browser zu unterdrücken.[/de]
+	[de]Gibt false zurï¿½ck um die Standardfunktion der Taste vom Browser zu unterdrï¿½cken.[/de]
 	
 	@param oEvent [needed][type]object[/type]
 	[en]The event object of the browser.[/en]

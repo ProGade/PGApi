@@ -1,10 +1,6 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Aug 21 2012
 */
 /*
@@ -276,7 +272,7 @@ document.getElementById('testArea').innerHTML = _sTest;
 		if (_oSelection)
 		{
 			if ((_oSelection.createTextRange) && (_bAllowTextRange == true)) {_oRange = _oSelection.createTextRange();}
-			// IE 10 Error beim löschen von Tabellenzeilen im Wysiwyg...
+			// IE 10 Error beim lï¿½schen von Tabellenzeilen im Wysiwyg...
 			// SCRIPT606: Der Vorgang konnte aufgrund des folgenden Fehlers nicht fortgesetzt werden: 800a025e. 
 			// selection.js, Zeile 260 Zeichen 57 (_oRange = _oSelection.createRange();)
 			if ((_oRange == null) && (_oSelection.createRange)) {_oRange = _oSelection.createRange();}

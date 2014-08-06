@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Aug 13 2012
 */
 /*
@@ -13,7 +9,7 @@
 
 @description
 [en]This class has methods for loading of PHP files.[/en]
-[de]Diese Klasse verfügt über Methoden zum laden von PHP Dateien.[/de]
+[de]Diese Klasse verfÃ¼gt Ã¼ber Methoden zum laden von PHP Dateien.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -39,7 +35,7 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the base path for all PHP files to be loaded.[/en]
-	[de]Setzt den Basis-Pfad für alle PHP Dateien die geladen werden sollen.[/de]
+	[de]Setzt den Basis-Pfad fÃ¼r alle PHP Dateien die geladen werden sollen.[/de]
 	
 	@param sPath [needed][type]string[/type]
 	[en]The path as the basis of all the files.[/en]
@@ -59,11 +55,11 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Returns base path for all PHP files.[/en]
-	[de]Gibt den Basis-Pfad für alle PHP Dateien zurück.[/de]
+	[de]Gibt den Basis-Pfad fÃ¼r alle PHP Dateien zurÃ¼ck.[/de]
 	
 	@return sFilesPath [type]string[/type]
 	[en]Returns the path as a string.[/en]
-	[de]Gibt den Pfad als String zurück.[/de]
+	[de]Gibt den Pfad als String zurÃ¼ck.[/de]
 	*/
 	public function getFilesPath() {return $this->sFilesPath;}
 	/* @end method */
@@ -95,7 +91,7 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Adds files to the loader to load.[/en]
-	[de]Fügt Dateien zum Loader hinzu, die geladen werden sollen.[/de]
+	[de]FÃ¼gt Dateien zum Loader hinzu, die geladen werden sollen.[/de]
 	
 	@param asFiles [needed][type]string[][/type]
 	[en]The files to be loaded as a string array.[/en]
@@ -115,7 +111,7 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a file to the loader to load.[/en]
-	[de]Fügt eine Datei zum Loader hinzu, die geladen werden soll.[/de]
+	[de]FÃ¼gt eine Datei zum Loader hinzu, die geladen werden soll.[/de]
 	
 	@param sFile [needed][type]string[/type]
 	[en]The file to be loaded as a string.[/en]
@@ -135,11 +131,11 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Returns all the files (names) to be loaded as a string array.[/en]
-	[de]Gibt alle Dateien (Namen), die geladen werden sollen, als String-Array zurück.[/de]
+	[de]Gibt alle Dateien (Namen), die geladen werden sollen, als String-Array zurÃ¼ck.[/de]
 	
 	@return asFiles [type]string[][/type]
 	[en]Returns the files as a string array.[/en]
-	[de]Gibt die Dateien als String-Array zurück.[/de]
+	[de]Gibt die Dateien als String-Array zurÃ¼ck.[/de]
 	*/
 	public function getFiles() {return $this->asFiles;}
 	/* @end method */
@@ -171,11 +167,11 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Returns a boolean if "require" is to be used.[/en]
-	[de]Gibt als Boolean zurück ob "requires" verwendet werden.[/de]
+	[de]Gibt als Boolean zurÃ¼ck ob "requires" verwendet werden.[/de]
 	
 	@return bIsRequire [type]bool[/type]
 	[en]Returns a boolean if "require" (true) or "include" (false) is to be used.[/en]
-	[de]Gibt als Boolean zurück ob "require" (true) oder "include" (false) verwendet wird.[/de]
+	[de]Gibt als Boolean zurÃ¼ck ob "require" (true) oder "include" (false) verwendet wird.[/de]
 	*/
 	public function isRequire() {return $this->bRequire;}
 	/* @end method */
@@ -185,11 +181,11 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the PHP code to load the files and returns it.[/en]
-	[de]Erstellt den PHP-Code zum Laden der Dateien und gibt ihn zurück.[/de]
+	[de]Erstellt den PHP-Code zum Laden der Dateien und gibt ihn zurÃ¼ck.[/de]
 	
 	@return sHtml [type]string[/type]
 	[en]Returns PHP code as a string. The code can then e.g. be executed by eval() or stored in a PHP file.[/en]
-	[de]Gibt PHP-Code als String zurück. Der Code kann dann z.B. per eval() ausgeführt oder in eine PHP-Datei gespeichert werden.[/de]
+	[de]Gibt PHP-Code als String zurÃ¼ck. Der Code kann dann z.B. per eval() ausgefÃ¼hrt oder in eine PHP-Datei gespeichert werden.[/de]
 	*/
 	public function build()
 	{

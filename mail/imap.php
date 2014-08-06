@@ -1,11 +1,7 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Aug 14 2012
 */
 if (defined('SORTARRIVAL')) {define('PG_IMAP_ORDER_BY_SEND_DATE', SORTARRIVAL);}
@@ -448,13 +444,13 @@ class classPG_Imap extends classPG_ClassBasics
 	{
 		$_sString = $this->getRealParameter(array('oParameters' => $_sString, 'sName' => 'sString', 'xParameter' => $_sString));
 		
-		$_sString = str_replace("ä", "&AOQ-", $_sString);
-		$_sString = str_replace("ö", "&APY-", $_sString);
-		$_sString = str_replace("ü", "&APw-", $_sString);
-		$_sString = str_replace("Ä", "&AMQ-", $_sString);
-		$_sString = str_replace("Ö", "&ANY-", $_sString);
-		$_sString = str_replace("Ü", "&ANw-", $_sString);
-		$_sString = str_replace("ß", "&AN8-", $_sString);
+		$_sString = str_replace("ï¿½", "&AOQ-", $_sString);
+		$_sString = str_replace("ï¿½", "&APY-", $_sString);
+		$_sString = str_replace("ï¿½", "&APw-", $_sString);
+		$_sString = str_replace("ï¿½", "&AMQ-", $_sString);
+		$_sString = str_replace("ï¿½", "&ANY-", $_sString);
+		$_sString = str_replace("ï¿½", "&ANw-", $_sString);
+		$_sString = str_replace("ï¿½", "&AN8-", $_sString);
 		
 		return $_sString;
 	}
@@ -551,11 +547,13 @@ class classPG_Imap extends classPG_ClassBasics
 
 		$_bSpace = false;
 		$_sSearchString = 'ALL';
+		$_axMail = array();
 		
 		if ($_sFrom != NULL) {$_sSearchString .= ' FROM "'.$_sFrom.'"';}
 		if ($_sTo != NULL) {$_sSearchString .= ' TO "'.$_sTo.'"';}
 		if ($_sSubject != NULL) {$_sSearchString .= ' SUBJECT "'.$_sSubject.'"';}
-		
+
+		$_iCurrentMailNr = 0;
 		$_aiMailNr = imap_search($this->oImapMailBox, $_sSearchString);
 		for ($i=count($_aiMailNr)-1; $i>=0; $i--)
 		{
@@ -1252,7 +1250,7 @@ class classPG_Imap extends classPG_ClassBasics
 		$_sCID = $this->getRealParameter(array('oParameters' => $_iMailID, 'sName' => 'sCID', 'xParameter' => $_sCID));
 		$_iMailID = $this->getRealParameter(array('oParameters' => $_iMailID, 'sName' => 'iMailID', 'xParameter' => $_iMailID));
 
-		$_oStructure = imap_fetchstructure($oMailBox, $vMailID, FT_UID);
+		$_oStructure = imap_fetchstructure($this->oImapMailBox, $_iMailID, FT_UID);
 		$_axCIDInfo = array();
 		$i = 0;
 		foreach ($_oStructure->parts as $_iPartNr => $_oPart)
@@ -1451,26 +1449,37 @@ class classPG_Imap extends classPG_ClassBasics
 	@return bSuccess [type]bool[/type]
 	[en]...[/en]
 	
-	@param sFolderName [needed][type]string[/type]
+	@param sOldFolderName [needed][type]string[/type]
 	[en]...[/en]
-	
+
+	@param sNewFolderName [needed][type]string[/type]
+	[en]...[/en]
+
 	@param sMailBoxString [type]string[/type]
 	[en]...[/en]
 	*/
-	public function renameImapFolder($_sFolderName, $_sMailBoxString = NULL)
+	public function renameImapFolder($_sOldFolderName, $_sNewFolderName = NULL, $_sMailBoxString = NULL)
 	{
-		$_sMailBoxString = $this->getRealParameter(array('oParameters' => $_sFolderName, 'sName' => 'sMailBoxString', 'xParameter' => $_sMailBoxString));
-		$_sFolderName = $this->getRealParameter(array('oParameters' => $_sFolderName, 'sName' => 'sFolderName', 'xParameter' => $_sFolderName));
+		$_sMailBoxString = $this->getRealParameter(array('oParameters' => $_sOldFolderName, 'sName' => 'sMailBoxString', 'xParameter' => $_sMailBoxString));
+		$_sNewFolderName = $this->getRealParameter(array('oParameters' => $_sOldFolderName, 'sName' => 'sNewFolderName', 'xParameter' => $_sNewFolderName));
+		$_sOldFolderName = $this->getRealParameter(array('oParameters' => $_sOldFolderName, 'sName' => 'sOldFolderName', 'xParameter' => $_sOldFolderName));
 
 		if ($_sMailBoxString == NULL) {$_sMailBoxString = $this->sImapMailBoxString;}
 		if ($_sMailBoxString == '') {$_sMailBoxString = $this->imapGenerateMailBoxString();}
-		
-		$_sFolderName = trim(str_replace($this->sImapDelimiter, '', $_sFolderName));
-		if (($_sFolderName != '') && ($_sMailBoxString != ''))
+
+		$_sOldFolderName = trim(str_replace($this->sImapDelimiter, '', $_sOldFolderName));
+		$_sNewFolderName = trim(str_replace($this->sImapDelimiter, '', $_sNewFolderName));
+		if (($_sOldFolderName != '') && ($_sNewFolderName != '') && ($_sMailBoxString != ''))
 		{
-			if (imap_renamemailbox($this->oImapMailBox, $sRealName, $this->imapUTF7SpecialChars(array('sString' => $_sMailBoxString.$this->sImapDelimiter.$_sFolderName.$this->sImapDelimiter))))
+			if (
+				imap_renamemailbox(
+					$this->oImapMailBox,
+					$this->imapUTF7SpecialChars(array('sString' => $_sMailBoxString.$this->sImapDelimiter.$_sOldFolderName.$this->sImapDelimiter)),
+					$this->imapUTF7SpecialChars(array('sString' => $_sMailBoxString.$this->sImapDelimiter.$_sNewFolderName.$this->sImapDelimiter))
+				)
+			)
 			{
-				imap_subscribe($this->oImapMailBox, $this->imapUTF7SpecialChars(array('sString' => $_sMailBoxString.$this->sImapDelimiter.$_sFolderName.$this->sImapDelimiter)));
+				imap_subscribe($this->oImapMailBox, $this->imapUTF7SpecialChars(array('sString' => $_sMailBoxString.$this->sImapDelimiter.$_sNewFolderName.$this->sImapDelimiter)));
 				return true;
 			}
 		}

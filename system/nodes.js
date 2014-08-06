@@ -1,10 +1,6 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
 * Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
 * Last changes of this file: Aug 21 2012
 */
 /*
@@ -683,7 +679,8 @@ function classPG_Nodes()
 		_bIncludeCurrent = this.getRealParameter({'oParameters': _bIncludeCurrent, 'sName': 'bIncludeCurrent', 'xParameter': _bIncludeCurrent});
 		
 		if (_bIncludeCurrent == null) {_bIncludeCurrent = false;}
-		
+
+		var _sNodeName = '';
 		var _sMaxElementName = '';
 		var _oNode = this.getNode({'xElement': _xElement});
 		if (_xMaxElement != null)
@@ -702,7 +699,7 @@ function classPG_Nodes()
 		{
 			var _aoNodes = new Array();
 			if ((_sNodeName == 'body') || (_sNodeName == '#document')) {return _aoNodes;}
-			var _sNodeName = _oNode.nodeName.toLowerCase();
+			_sNodeName = _oNode.nodeName.toLowerCase();
 			if (_bIncludeCurrent == true) {_aoNodes.push(_oNode);}
 			if (_sNodeName == _sMaxElementName) {return _aoNodes;}
 			_oNode = _oNode.parentNode;

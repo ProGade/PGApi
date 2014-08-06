@@ -24,24 +24,24 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 ###################################################
 #
-# Deutsche Übersetzung der Lizenz.
-# Diese Version der Lizenz ist nur eine Übersetzung 
+# Deutsche Ãœbersetzung der Lizenz.
+# Diese Version der Lizenz ist nur eine Ãœbersetzung
 # und rechtlich gilt die englische Version!
 #
 ###################################################
 
 Copyright (c) 2012 Hans-Peter Wandura (ProGade)
 
-Hiermit wird unentgeltlich, jeder Person, die eine Kopie der Software und der zugehörigen Dokumentationen (die "Software") erhält, die Erlaubnis erteilt, sie uneingeschränkt zu benutzen, inklusive und ohne Ausnahme, dem Recht, sie zu verwenden, kopieren, ändern, fusionieren, verlegen, verbreiten, unterlizenzieren und/oder zu verkaufen, und Personen, die diese Software erhalten, diese Rechte zu geben, unter den folgenden Bedingungen:
+Hiermit wird unentgeltlich, jeder Person, die eine Kopie der Software und der zugehÃ¶rigen Dokumentationen (die "Software") erhÃ¤lt, die Erlaubnis erteilt, sie uneingeschrÃ¤nkt zu benutzen, inklusive und ohne Ausnahme, dem Recht, sie zu verwenden, kopieren, Ã¤ndern, fusionieren, verlegen, verbreiten, unterlizenzieren und/oder zu verkaufen, und Personen, die diese Software erhalten, diese Rechte zu geben, unter den folgenden Bedingungen:
  
 1. Der obige Urheberrechtsvermerk und dieser Erlaubnisvermerk sind in allen Kopien oder Teilkopien der Software beizulegen.
 
 2. Die Software darf nicht verwendet werden um absichtlich Schaden jeglicher Art anzurichten.
 
-3. Die Software darf nicht direkt als Download auf Webseiten angeboten werden, die nicht vom Copyright Inhaber genemigt wurden. Eine Genehmigung benötigt eine ausdrückliche Erlaubnis vom Copyright Inhaber.
+3. Die Software darf nicht direkt als Download auf Webseiten angeboten werden, die nicht vom Copyright Inhaber genemigt wurden. Eine Genehmigung benÃ¶tigt eine ausdrÃ¼ckliche Erlaubnis vom Copyright Inhaber.
 
-4. Die Software darf weder in Originalform noch in modifizierter / veränderter Form als komplett eigenes Produkt dargestellt werden. Es muss immer erkenntlich werden, dass es sich um die Software vom Copyright Inhaber handelt und gegebenenfalls auf veränderte Teile der Software hingewiesen wird. Bei Verwendung der Software in einem eigenen Produkt/Software könnte zum Beispiel unter einem "About" des endgültigen Produkts/Software ein Hinweis auf den Copyright Inhaber im Zusammenhang mit der Software als Library oder als Teil des Produktes/der Sortware mit Link auf die dazugehörige Webseite hingewisen werden.
+4. Die Software darf weder in Originalform noch in modifizierter / verÃ¤nderter Form als komplett eigenes Produkt dargestellt werden. Es muss immer erkenntlich werden, dass es sich um die Software vom Copyright Inhaber handelt und gegebenenfalls auf verÃ¤nderte Teile der Software hingewiesen wird. Bei Verwendung der Software in einem eigenen Produkt/Software kÃ¶nnte zum Beispiel unter einem "About" des endgÃ¼ltigen Produkts/Software ein Hinweis auf den Copyright Inhaber im Zusammenhang mit der Software als Library oder als Teil des Produktes/der Sortware mit Link auf die dazugehÃ¶rige Webseite hingewisen werden.
 
 5. Bei Fragen zur Lizenz richten Sie sich bitte direkt an den Copyright Inhaber.
 
-6. DIE SOFTWARE WIRD OHNE JEDE AUSDRÜCKLICHE ODER IMPLIZIERTE GARANTIE BEREITGESTELLT, EINSCHLIESSLICH DER GARANTIE ZUR BENUTZUNG FÜR DEN VORGESEHENEN ODER EINEM BESTIMMTEN ZWECK SOWIE JEGLICHER RECHTSVERLETZUNG, JEDOCH NICHT DARAUF BESCHRÄNKT. IN KEINEM FALL SIND DIE AUTOREN ODER COPYRIGHTINHABER FÜR JEGLICHEN SCHADEN ODER SONSTIGE ANSPRÜCHE HAFTBAR ZU MACHEN, OB INFOLGE DER ERFÜLLUNG EINES VERTRAGES, EINES DELIKTES ODER ANDERS IM ZUSAMMENHANG MIT DER SOFTWARE ODER SONSTIGER VERWENDUNG DER SOFTWARE ENTSTANDEN.
+6. DIE SOFTWARE WIRD OHNE JEDE AUSDRÃœCKLICHE ODER IMPLIZIERTE GARANTIE BEREITGESTELLT, EINSCHLIESSLICH DER GARANTIE ZUR BENUTZUNG FÃœR DEN VORGESEHENEN ODER EINEM BESTIMMTEN ZWECK SOWIE JEGLICHER RECHTSVERLETZUNG, JEDOCH NICHT DARAUF BESCHRÃ„NKT. IN KEINEM FALL SIND DIE AUTOREN ODER COPYRIGHTINHABER FÃœR JEGLICHEN SCHADEN ODER SONSTIGE ANSPRï¿½CHE HAFTBAR ZU MACHEN, OB INFOLGE DER ERFï¿½LLUNG EINES VERTRAGES, EINES DELIKTES ODER ANDERS IM ZUSAMMENHANG MIT DER SOFTWARE ODER SONSTIGER VERWENDUNG DER SOFTWARE ENTSTANDEN.
