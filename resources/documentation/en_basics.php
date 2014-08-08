@@ -10,7 +10,7 @@ They form the basic system of the API. Other classes of the API use these base c
 	<tr><td>classPG_Arrays</td><td>arrays.php/.js</td><td class="pg_docu_descriptions">...</td></tr>
 	<tr><td>classPG_Browser</td><td>browser.php/.js</td><td class="pg_docu_descriptions">...</td></tr>
 	<tr><td>classPG_Curl</td><td>curl.php</td><td class="pg_docu_descriptions">...</td></tr>
-	<tr><td>classPG_Date</td><td>curl.php/.js</td><td class="pg_docu_descriptions">...</td></tr>
+	<tr><td>classPG_Date</td><td>date.php/.js</td><td class="pg_docu_descriptions">...</td></tr>
 	<tr><td>classPG_EventManager</td><td>eventmanager.js</td><td class="pg_docu_descriptions">...</td></tr>
 	<tr><td>classPG_Functions</td><td>function.php</td><td class="pg_docu_descriptions">...</td></tr>
 	<tr><td>classPG_Math</td><td>math.php</td><td class="pg_docu_descriptions">...</td></tr>

@@ -1,7 +1,7 @@
 <h1>Basics</h1>
 
 <h2>System</h2>
-Die Basics sind eine Ansammlung von Klassen (im Ordner "system") die das programmieren erleichtern und einem ständig wiederkehrende Arbeit abnehmen.<br />
+Die Basics sind eine Ansammlung von Klassen (im Ordner "system") die das programmieren erleichtern und einem stÃ¤ndig wiederkehrende Arbeit abnehmen.<br />
 Sie bilden das Grundsystem der API. Anderen Klassen der API verwenden diese Basisklassen, daher sind sie fester Bestandteil der API und sollten immer ins Projekt eingebunden werden. (Beispiel: include("include_basics.php");)<br />
 <br />
 <table class="pg_docu_example_container">
@@ -10,7 +10,7 @@ Sie bilden das Grundsystem der API. Anderen Klassen der API verwenden diese Basi
 	<tr><td>classPG_Arrays</td><td>arrays.php/.js</td><td class="pg_docu_descriptions">...</td></tr>
 	<tr><td>classPG_Browser</td><td>browser.php/.js</td><td class="pg_docu_descriptions">...</td></tr>
 	<tr><td>classPG_Curl</td><td>curl.php</td><td class="pg_docu_descriptions">...</td></tr>
-	<tr><td>classPG_Date</td><td>curl.php/.js</td><td class="pg_docu_descriptions">...</td></tr>
+	<tr><td>classPG_Date</td><td>date.php/.js</td><td class="pg_docu_descriptions">...</td></tr>
 	<tr><td>classPG_EventManager</td><td>eventmanager.js</td><td class="pg_docu_descriptions">...</td></tr>
 	<tr><td>classPG_Functions</td><td>function.php</td><td class="pg_docu_descriptions">...</td></tr>
 	<tr><td>classPG_Math</td><td>math.php</td><td class="pg_docu_descriptions">...</td></tr>
@@ -31,13 +31,13 @@ Hier ist ein kleines Beispiel wie man diese Basisklasse einer eigenen Klasse ver
 <br />
 <?php
 $sExampleCode = '<?php
-	// einbinden der wichtigsten API Dateien über die Datei include_basics.php...
+	// einbinden der wichtigsten API Dateien Ã¼ber die Datei include_basics.php...
 	include(PG_API_PATH_PHP."system/classbasics.php");
 	include(PG_API_PATH_PHP."php/phploader.php");
 	include(PG_API_PATH_PHP."include_basics.php");
 	eval($oPGPhpLoader->build());
 	
-	include("data.php"); // einbinden der benötigten Daten wie z.B. MySQL Login und Passwort
+	include("data.php"); // einbinden der benÃ¶tigten Daten wie z.B. MySQL Login und Passwort
 
 	// Eigene Klasse, die von der Grundklasse erbt...
 	class MeineKlasse extends classPG_ClassBasics
@@ -45,13 +45,13 @@ $sExampleCode = '<?php
 		public function __construct()
 		{
 			$this->setID(array("sID" => "MeineKlasseID")); // Setzen einer KlassenID
-			$this->initClassBasics(); // Initialisieren der häufig verwendeten Basics
+			$this->initClassBasics(); // Initialisieren der hÃ¤ufig verwendeten Basics
 			$this->initDatabase(); // Initialisieren der Datenbank(en)
 		}
 		
 		public function saveData($_axData)
 		{
-			// saveDataset() ist verfügbar nachdem geerbt wurde...
+			// saveDataset() ist verfÃ¼gbar nachdem geerbt wurde...
 			$this->saveDataset(
 				array(
 					"sTable" => "test", 
@@ -63,7 +63,7 @@ $sExampleCode = '<?php
 		
 		public function readData()
 		{
-			// selectDatasets() ist verfügbar nachdem geerbt wurde...
+			// selectDatasets() ist verfÃ¼gbar nachdem geerbt wurde...
 			return $this->selectDatasets("sTable" => "test");
 		}
 	}

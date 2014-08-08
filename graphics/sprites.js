@@ -1,11 +1,7 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 23 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 06 2014
 */
 var PG_SPRITES_INDEX_ID = 0;
 var PG_SPRITES_INDEX_OBJECT = 1;
@@ -441,21 +437,21 @@ function classPG_Sprites()
 				if (_iMilliseconds > 0)
 				{
 					var _vLastScaleDiff = _dScale-_vLastScale; //_dScale-_vCurrentScale;
-					var _dScaleRealtion = _iMilliseconds/_iSpeedTimeout;
+					var _dScaleRelation = _iMilliseconds/_iSpeedTimeout;
 					
-					if (this.isDebugMode(PG_DEBUG_HIGH)) {this.sDebugString += '_dScaleRealtion = '+_dScaleRealtion+"\n";}
+					if (this.isDebugMode(PG_DEBUG_HIGH)) {this.sDebugString += '_dScaleRelation = '+_dScaleRelation+"\n";}
 					
-					var _dScaleRealtionDiff = Math.ceil(_vLastScaleDiff/_dScaleRealtion*10000);
-					_dScaleRealtionDiff = _dScaleRealtionDiff/10000;
+					var _dScaleRelationDiff = Math.ceil(_vLastScaleDiff/_dScaleRelation*10000);
+					_dScaleRelationDiff = _dScaleRelationDiff/10000;
 					
-					if (this.isDebugMode(PG_DEBUG_HIGH)) {this.sDebugString += '_dScaleRealtionDiff = '+_dScaleRealtionDiff+"\n";}
+					if (this.isDebugMode(PG_DEBUG_HIGH)) {this.sDebugString += '_dScaleRelationDiff = '+_dScaleRelationDiff+"\n";}
 					
-					if (((_dScaleDiff > 0) && (_vCurrentScale + _dScaleRealtionDiff < _dScale))
-					|| ((_dScaleDiff < 0) && (_vCurrentScale + _dScaleRealtionDiff > _dScale)))
+					if (((_dScaleDiff > 0) && (_vCurrentScale + _dScaleRelationDiff < _dScale))
+					|| ((_dScaleDiff < 0) && (_vCurrentScale + _dScaleRelationDiff > _dScale)))
 					{
-						// _dScaleDiff = Math.round(_dScaleRealtionDiff*100);
+						// _dScaleDiff = Math.round(_dScaleRelationDiff*100);
 						// _dScaleDiff = _dScaleDiff/100;
-						_dScaleDiff = _dScaleRealtionDiff;
+						_dScaleDiff = _dScaleRelationDiff;
 					}
 				}
 				else

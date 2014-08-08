@@ -1,6 +1,6 @@
 <h1>Controls</h1>
 <h2>Eingabeelemente</h2>
-Eingabeelemente für die Benutzeroberfäche (sogenannte Controls) sind Eingabefelder, Textfelder, Buttons, Formulare uvm. mit erweiterten Funktionalitäten und flexiblen Einsatzmöglichkeiten.<br />
+Eingabeelemente fÃ¼r die BenutzeroberfÃ¤che (sogenannte Controls) sind Eingabefelder, Textfelder, Buttons, Formulare uvm. mit erweiterten FunktionalitÃ¤ten und flexiblen EinsatzmÃ¶glichkeiten.<br />
 Folgende Eingabeelemente stellt die API im Ordner "controls" bereit:<br />
 <br />
 <table class="pg_docu_example_container">
@@ -31,7 +31,7 @@ Folgende Eingabeelemente stellt die API im Ordner "controls" bereit:<br />
 	<tr><td>classPG_Wysiwyg</td><td>wysiwyg.php/.js</td><td class="pg_docu_descriptions">...</td></tr>
 </table>
 <br />
-<h2>Hauptklasse für Eingabeelemente</h2>
+<h2>Hauptklasse fÃ¼r Eingabeelemente</h2>
 Die Klasse "classPG_Controls" ist eine sogenannte Helferklasse, in der allgemeine Methoden bereitgestellt werden.<br />
 Diese Methoden dienen zum Beispiel um die genaue Position eines Eingabeelements oder relative Mauspositionen zu diesem Eingabeelement im HTML-Dokument festzustellen.<br />
-Es wird empfohlen diese Klasse immer einzubinden, sobald man Eingabeelemente (Controls) der API verwenden möchte.<br />
+Es wird empfohlen diese Klasse immer einzubinden, sobald man Eingabeelemente (Controls) der API verwenden mÃ¶chte.<br />

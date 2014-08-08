@@ -1,12 +1,8 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 16 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 06 2014
 */
 /*
 @start class
@@ -78,9 +74,9 @@ class classPG_Divs extends classPG_ClassBasics
 		
 		$_sDiv = '<div ';
 		if (($_sDivID !== NULL) && ($_sDivID !== '')) {$_sDiv .= 'id="'.$_sDivID.'" ';}
-		if (($_sOnClick !== NULL) && ($_sOnClick !== '')) {$_sHTML .= ' onclick="'.$_sOnClick.'"';}
-		if (($_sOnMouseOver !== NULL) && ($_sOnMouseOver !== '')) {$_sHTML .= ' onmouseover="'.$_sOnMouseOver.'"';}
-		if (($_sOnMouseOut !== NULL) && ($_sOnMouseOut !== '')) {$_sHTML .= ' onmouseout="'.$_sOnMouseOut.'"';}
+		if (($_sOnClick !== NULL) && ($_sOnClick !== '')) {$_sDiv .= ' onclick="'.$_sOnClick.'"';}
+		if (($_sOnMouseOver !== NULL) && ($_sOnMouseOver !== '')) {$_sDiv .= ' onmouseover="'.$_sOnMouseOver.'"';}
+		if (($_sOnMouseOut !== NULL) && ($_sOnMouseOut !== '')) {$_sDiv .= ' onmouseout="'.$_sOnMouseOut.'"';}
 		if (($_sCssClass !== NULL) && ($_sCssClass !== '')) {$_sDiv .= 'class="'.$_sCssClass.'" ';}
 				
 		if

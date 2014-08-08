@@ -188,7 +188,7 @@ class classPG_Documentation extends classPG_ClassBasics
 	{
 		$_sString = $this->getRealParameter(array('oParameters' => $_sString, 'sName' => 'sString', 'xParameter' => $_sString));
 		
-		$_asSearch = array('ä', 'Ä', 'ü', 'Ü', 'ö', 'Ö');
+		$_asSearch = array('ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½', 'ï¿½');
 		$_asReplace = array('&auml;', '&Auml;', '&uuml;', '&Uuml;', '&ouml;', '&Ouml;');
 		
 		$_sString = str_replace($_asSearch, $_asReplace, $_sString);
@@ -630,7 +630,7 @@ class classPG_Documentation extends classPG_ClassBasics
 				)
 			)
 			{
-				$_axProperty = $this->fetchDatabaseArray(array('xResult' => $_oDefineResult));
+				$_axProperty = $this->fetchDatabaseArray(array('xResult' => $_oPropertyResult));
 			} // _oPropertyResult
 		}
 	
@@ -713,7 +713,7 @@ class classPG_Documentation extends classPG_ClassBasics
 	@start method
 	@param iClassID
 	*/
-	public function buildClassEditForm($_iClassID)
+	public function buildClassEditForm($_iClassID, $_iPropertyID = NULL)
 	{
 		global $oPGForm;
 
@@ -1003,10 +1003,10 @@ class classPG_Documentation extends classPG_ClassBasics
 	*/
 	public function buildMethodParameterEditForm($_iMethodID, $_iParameterID = NULL)
 	{
-		global $oPGForm;
+		global $oPGForm, $oPGCheckBox;
 
-		$_iParameterID = $this->getRealParameter(array('oParameters' => $_iParameterID, 'sName' => 'iParameterID', 'xParameter' => $_iParameterID));
-		$_iClassID = $this->getRealParameter(array('oParameters' => $_iClassID, 'sName' => 'iClassID', 'xParameter' => $_iClassID));
+		$_iParameterID = $this->getRealParameter(array('oParameters' => $_iMethodID, 'sName' => 'iParameterID', 'xParameter' => $_iParameterID));
+		$_iMethodID = $this->getRealParameter(array('oParameters' => $_iMethodID, 'sName' => 'iMethodID', 'xParameter' => $_iMethodID));
 
 		$_sHtml = '';
 
@@ -1193,7 +1193,7 @@ class classPG_Documentation extends classPG_ClassBasics
 				array(
 					'sTable' => $this->getDatabaseTablePrefix().'docu_methods', 
 					'asColumns' => array('MethodID', 'Name', 'Description', 'ReturnType', 'ReturnValue'), 
-					'sWhere' => 'ClassID = "'.$this->realEscapeDatabaseString(array('xString' => $_axClass['ClassID'])).'"', 
+					'sWhere' => 'ClassID = "'.$this->realEscapeDatabaseString(array('xString' => $_iClassID)).'"',
 					'iStart' => NULL, 
 					'iEnd' => NULL, 
 					'sOrderBy' => 'Name', 
@@ -1211,7 +1211,6 @@ class classPG_Documentation extends classPG_ClassBasics
 					'sLocation' => '',
 					'sPermission' => '',
 					'sType' => '',
-					'sName' => '',
 					'sParameters' => '',
 					'description' => ''
 				);
@@ -1237,7 +1236,7 @@ class classPG_Documentation extends classPG_ClassBasics
 				array(
 					'sTable' => $this->getDatabaseTablePrefix().'docu_methods', 
 					'asColumns' => array('Type', 'Name', 'DefaultValue', 'IsNeeded'), 
-					'sWhere' => 'MethodID = "'.$this->realEscapeDatabaseString(array('xString' => trim($_axMethod['iMethodID']))).'"', 
+					'sWhere' => 'MethodID = "'.$this->realEscapeDatabaseString(array('xString' => trim($_iMethodID))).'"',
 					'iStart' => NULL, 
 					'iEnd' => NULL, 
 					'sOrderBy' => 'Position', 

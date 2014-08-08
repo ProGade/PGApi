@@ -341,11 +341,11 @@ function classPG_KeyHandler()
 	
 	@return bIsDown [type]bool[/type]
 	[en]Returns a boolean if the key is pressed.[/en]
-	[de]Gibt ein Boolean zur�ck, ob die Taste gedr�ckt ist.[/de]
+	[de]Gibt ein Boolean zurück, ob die Taste gedrückt ist.[/de]
 	
 	@param xKey [needed][type]mixed[/type]
 	[en]The key whose status is to be tested.[/en]
-	[de]Die Taste, dessen Zustand gepr�ft werden soll.[/de]
+	[de]Die Taste, dessen Zustand geprüft werden soll.[/de]
 	*/
 	this.isKeyCodeDown = function(_xKey)
 	{
@@ -369,7 +369,7 @@ function classPG_KeyHandler()
 	
 	@return iKeyCodeIndex [type]int[/type]
 	[en]Returns the memory index of the binding.[/en]
-	[de]Gibt den Speicherindex der Bindung zur�ck.[/de]
+	[de]Gibt den Speicherindex der Bindung zurück.[/de]
 	
 	@param xKey1 [needed][type]mixed[/type]
 	[en]The first key that is to be bound.[/en]
@@ -385,7 +385,7 @@ function classPG_KeyHandler()
 	
 	@param xFunction [needed][type]mixed[/type]
 	[en]The function that will be executed when pressing the key or key combination.[/en]
-	[de]Die Funktion, die beim dr�cken der Taste oder Tastenkombination ausgef�hrt werden soll.[/de]
+	[de]Die Funktion, die beim drücken der Taste oder Tastenkombination ausgeführt werden soll.[/de]
 	*/
 	this.bindKeys = function(_xKey1, _xKey2, _xKey3, _xFunction)
 	{
@@ -423,11 +423,11 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Suppresses the standard function of a key or key combination of the browser.[/en]
-	[de]Unterdr�ckt die Standardfunktion einer Taste oder Tastenkombination des Browsers.[/de]
+	[de]Unterdrückt die Standardfunktion einer Taste oder Tastenkombination des Browsers.[/de]
 	
 	@return iKeyCodeIndex [type]int[/type]
 	[en]Returns the memory index of the binding.[/en]
-	[de]Gibt den Speicherindex der Bindung zur�ck.[/de]
+	[de]Gibt den Speicherindex der Bindung zurück.[/de]
 	
 	@param xKey1 [needed][type]mixed[/type]
 	[en]The first key that is to be bound.[/en]
@@ -540,15 +540,15 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Returns the name of a key.[/en]
-	[de]Gibt den Namen einer Taste zur�ck.[/de]
+	[de]Gibt den Namen einer Taste zurück.[/de]
 	
 	@return sKeyName [type]string[/type]
 	[en]Returns the name of a key as a string.[/en]
-	[de]Gibt den Namen einer Taste als String zur�ck.[/de]
+	[de]Gibt den Namen einer Taste als String zurück.[/de]
 	
 	@param xKey [needed][type]mixed[/type]
 	[en]The key whose name should be returned.[/en]
-	[de]Die Taste, deren Namen zur�ck gegeben werden soll.[/de]
+	[de]Die Taste, deren Namen zurück gegeben werden soll.[/de]
 	*/
 	this.getKeyName = function(_xKey)
 	{
@@ -572,15 +572,15 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Returns the key code of a key.[/en]
-	[de]Gibt den Tastaturcode einer Taste zur�ck.[/de]
+	[de]Gibt den Tastaturcode einer Taste zurück.[/de]
 	
 	@return iKeyCode [type]int[/type]
 	[en]Returns the key code of a key as a integer.[/en]
-	[de]Gibt den Tastaturcode einer Taste als Integer zur�ck.[/de]
+	[de]Gibt den Tastaturcode einer Taste als Integer zurück.[/de]
 	
 	@param xKey [needed][type]mixed[/type]
 	[en]The key whose key code should be returned.[/en]
-	[de]Die Taste, deren Tastaturcode zur�ck gegeben werden soll.[/de]
+	[de]Die Taste, deren Tastaturcode zurück gegeben werden soll.[/de]
 	*/
 	this.getKeyCode = function(_xKey)
 	{
@@ -604,7 +604,7 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Checks whether keys have been released.[/en]
-	[de]Pr�ft ob Tasten wieder losgelassen wurden.[/de]
+	[de]Prüft ob Tasten wieder losgelassen wurden.[/de]
 	
 	@param oEvent [needed][type]object[/type]
 	[en]The event object of the browser.[/en]
@@ -623,11 +623,11 @@ function classPG_KeyHandler()
 	
 	@description
 	[en]Executes the functions of the bindings if the corresponding key or key combination is pressed.[/en]
-	[de]F�hrt die Funktionen der Bindungen aus, wenn die entsprechende Tast oder Tastenkombination gedr�ckt wird.[/de]
+	[de]Führt die Funktionen der Bindungen aus, wenn die entsprechende Tast oder Tastenkombination gedrückt wird.[/de]
 	
 	@return bPreventedDefault [type]bool[/type]
 	[en]Returns a Boolean whether the browser should prevent the default function of the keys.[/en]
-	[de]Gibt ein Boolean zur�ck ob der Browser die Standardfunktion der Tasten unterbinden soll.[/de]
+	[de]Gibt ein Boolean zurück ob der Browser die Standardfunktion der Tasten unterbinden soll.[/de]
 	
 	@param oEvent [needed][type]object[/type]
 	[en]The event object of the browser.[/en]
@@ -702,7 +702,7 @@ function classPG_KeyHandler()
 	
 	@return bFalse [type]bool[/type]
 	[en]Returns false to suppress the default function of the key of the browser.[/en]
-	[de]Gibt false zur�ck um die Standardfunktion der Taste vom Browser zu unterdr�cken.[/de]
+	[de]Gibt false zurück um die Standardfunktion der Taste vom Browser zu unterdrücken.[/de]
 	
 	@param oEvent [needed][type]object[/type]
 	[en]The event object of the browser.[/en]

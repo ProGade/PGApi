@@ -767,7 +767,7 @@ class classPG_Meta extends classPG_ClassBasics
 		if ($this->sContentType != '') {$_sHTML .= '<meta charset="'.$this->sContentType.'" />'.$_sLineBreak;}
 		
 		// meta http-equiv...
-		if ($this->sContentType != '') {$_sHTML .= '<meta http-equiv="Content-Type" content="text/html; charset='.strtolower($this->sContentType).'" />'.$_sLineBreak;}
+		// if ($this->sContentType != '') {$_sHTML .= '<meta http-equiv="Content-Type" content="text/html; charset='.strtolower($this->sContentType).'" />'.$_sLineBreak;}
 		if ($this->sContentLanguage != '') {$_sHTML .= '<meta http-equiv="content-language" content="'.$this->sContentLanguage.'" />'.$_sLineBreak;} // http://de.selfhtml.org/diverses/sprachenlaenderkuerzel.htm
 		if ($this->sExpiresDate != '') {$_sHTML .= '<meta http-equiv="expires" content="'.$this->sExpiresDate.'" />'.$_sLineBreak;} // expires: Sat, 15 Dec 2001 12:00:00 GMT
 		if ($this->bNoCache != '')

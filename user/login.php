@@ -4803,6 +4803,8 @@ class classPG_Login extends classPG_ClassBasics
 	*/
 	public function sendPasswordResetMail($_xSendToMail, $_sUsername = NULL, $_sPassword = NULL)
 	{
+		global $oPGMail;
+
 		$_sUsername = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'sUsername', 'xParameter' => $_sUsername));
 		$_sPassword = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'sPassword', 'xParameter' => $_sPassword));
 		$_xSendToMail = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'xSendToMail', 'xParameter' => $_xSendToMail, 'bNotNull' => true));
@@ -4847,6 +4849,8 @@ class classPG_Login extends classPG_ClassBasics
 			$_sMessage .= '<br /><br /><br />';
 			$_sMessage .= $_sSignature;
 		}
+
+		$oPGMail->setTemplateReplaceVars(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
 	
 		return $this->sendMail(
             array(
@@ -4965,6 +4969,8 @@ class classPG_Login extends classPG_ClassBasics
 	*/
 	public function sendAccountAcceptMail($_xSendToMail, $_sUsername = NULL, $_sPassword = NULL)
 	{
+		global $oPGMail;
+
 		$_sUsername = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'sUsername', 'xParameter' => $_sUsername));
 		$_sPassword = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'sPassword', 'xParameter' => $_sPassword));
 		$_xSendToMail = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'xSendToMail', 'xParameter' => $_xSendToMail, 'bNotNull' => true));
@@ -5012,6 +5018,8 @@ class classPG_Login extends classPG_ClassBasics
 			$_sMessage .= '<br /><br /><br />';
 			$_sMessage .= $_sSignature;
 		}
+
+		$oPGMail->setTemplateReplaceVars(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
 		
 		return $this->sendMail(
             array(
@@ -5046,6 +5054,8 @@ class classPG_Login extends classPG_ClassBasics
 	*/
 	public function sendAccountAcceptSuccessMail($_xSendToMail, $_sUsername = NULL)
 	{
+		global $oPGMail;
+
 		$_sUsername = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'sUsername', 'xParameter' => $_sUsername));
 		$_xSendToMail = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'xSendToMail', 'xParameter' => $_xSendToMail, 'bNotNull' => true));
 		
@@ -5078,7 +5088,9 @@ class classPG_Login extends classPG_ClassBasics
 			$_sMessage .= '<br />';
 			$_sMessage .= 'Gruß<br />Ihr '.$this->sSystemTitle.' Team';
 		}
-		
+
+		$oPGMail->setTemplateReplaceVars(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
+
 		return $this->sendMail(
             array(
                 'xSendToMail' => $_xSendToMail,
@@ -5108,6 +5120,8 @@ class classPG_Login extends classPG_ClassBasics
 	*/
 	public function sendAccountRegisterFailedMail($_xSendToMail, $_sReasons = NULL)
 	{
+		global $oPGMail;
+
 		$_sReasons = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'sReasons', 'xParameter' => $_sReasons));
 		$_xSendToMail = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'xSendToMail', 'xParameter' => $_xSendToMail, 'bNotNull' => true));
 		
@@ -5135,7 +5149,9 @@ class classPG_Login extends classPG_ClassBasics
 		
 		$_sReasons = '<h2>Gründe:</h2>'.$_sReasons.'<br /><br />';
 		$_sMessage = str_replace('[reasons]', $_sReasons, $_sMessage);
-		
+
+		$oPGMail->setTemplateReplaceVars(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
+
 		return $this->sendMail(
             array(
                 'xSendToMail' => $_xSendToMail,

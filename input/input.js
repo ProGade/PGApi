@@ -1,11 +1,7 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Nov 06 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 06 2014
 */
 /*
 @start class
@@ -85,11 +81,11 @@ function classPG_Input()
 	
 	@description
 	[en]Returns the current horizontal mouse or touch position.[/en]
-	[de]Gibt die aktuelle, horizontale Mouse oder Touch Position zurück.[/de]
+	[de]Gibt die aktuelle, horizontale Mouse oder Touch Position zurÃ¼ck.[/de]
 	
 	@return iDocPosX [type]int[/type]
 	[en]Returns the current horizontal mouse or touch position as an integer.[/en]
-	[de]Gibt die aktuelle, horizontale Mouse oder Touch Position als Integer zurück.[/de]
+	[de]Gibt die aktuelle, horizontale Mouse oder Touch Position als Integer zurÃ¼ck.[/de]
 	*/
 	this.getDocPosX = function()
 	{
@@ -103,11 +99,11 @@ function classPG_Input()
 	
 	@description
 	[en]Returns the current vertical mouse or touch position.[/en]
-	[de]Gibt die aktuelle, vertikale Mouse oder Touch Position zurück.[/de]
+	[de]Gibt die aktuelle, vertikale Mouse oder Touch Position zurÃ¼ck.[/de]
 	
 	@return iDocPosY [type]int[/type]
 	[en]Returns the current vertical mouse or touch position as an integer.[/en]
-	[de]Gibt die aktuelle, vertikale Mouse oder Touch Position als Integer zurück.[/de]
+	[de]Gibt die aktuelle, vertikale Mouse oder Touch Position als Integer zurÃ¼ck.[/de]
 	*/
 	this.getDocPosY = function()
 	{
@@ -121,7 +117,7 @@ function classPG_Input()
 	
 	@description
 	[en]Suppresses the default mouse buttons or touch function.[/en]
-	[de]Unterdrückt die Standard Maustasten oder Touch Funktion.[/de]
+	[de]UnterdrÃ¼ckt die Standard Maustasten oder Touch Funktion.[/de]
 	
 	@param oEvent [needed][type]object[/type]
 	[en]The event object of the browser.[/en]

@@ -33,6 +33,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	private $sXML = '';
 	private $sLastTag = '';
 	private $asTags = array();
+	private $bConvertToUtf8 = false;
 
 	// Construct...
 	public function __construct() {}
@@ -49,6 +50,19 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	*/
 	public function putHeader() {header('Content-Type: text/xml');}
 	/* @end method */
+
+	public function useConvertToUtf8($_bUse)
+	{
+		$_bUse = $this->getRealParameter(array('oParameters' => $_bUse, 'sName' => 'bUse', 'xParameter' => $_bUse));
+		$this->bConvertToUtf8 = $_bUse;
+	}
+
+	public function convertToUtf8($_sString)
+	{
+		$_sString = $this->getRealParameter(array('oParameters' => $_sString, 'sName' => 'sString', 'xParameter' => $_sString));
+		if ($this->bConvertToUtf8 == true) {return utf8_encode($_sString);}
+		return $_sString;
+	}
 	
 	/*
 	@start method
@@ -84,9 +98,9 @@ class classPG_XmlWrite extends classPG_ClassBasics
 		$this->sXML = '';
 		$this->sXML .= '<?xml version="1.0"?>';
 		$this->sXML .= '<PG_XML>';
-		$this->sXML .= '<PG_XMLType>'.htmlspecialchars(utf8_encode(PG_XML_TYPE)).'</PG_XMLType>';
-		$this->sXML .= '<PG_XMLRequestType>'.htmlspecialchars(utf8_encode($_sRequestType)).'</PG_XMLRequestType>';
-		$this->sXML .= '<PG_XMLRequestObjectID>'.htmlspecialchars(utf8_encode($_sRequestObjectID)).'</PG_XMLRequestObjectID>';
+		$this->sXML .= '<PG_XMLType>'.htmlspecialchars($this->convertToUtf8(PG_XML_TYPE)).'</PG_XMLType>';
+		$this->sXML .= '<PG_XMLRequestType>'.htmlspecialchars($this->convertToUtf8($_sRequestType)).'</PG_XMLRequestType>';
+		$this->sXML .= '<PG_XMLRequestObjectID>'.htmlspecialchars($this->convertToUtf8($_sRequestObjectID)).'</PG_XMLRequestObjectID>';
 		$this->sXML .= '<PG_UserID>'.$_iUserID.'</PG_UserID>';
 	}
 	/* @end method */
@@ -168,7 +182,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 				if ($_sAttribute != 'axAttributes')
 				{
 					$_sAttribute = trim($_sAttribute);
-					$_xValue = htmlspecialchars(utf8_encode(trim($_xValue)));
+					$_xValue = htmlspecialchars($this->convertToUtf8(trim($_xValue)));
 					if ($_sAttribute != '') {$_sHTML .= ' '.$_sAttribute.'="'.$_xValue.'"';}
 				}
 			}
@@ -258,7 +272,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 		$_sText = $this->getRealParameter(array('oParameters' => $_sTag, 'sName' => 'sText', 'xParameter' => $_sText));
 		$_axAttributes = $this->getRealParameter(array('oParameters' => $_sTag, 'sName' => 'axAttributes', 'xParameter' => $_axAttributes));
 		$_sTag = $this->getRealParameter(array('oParameters' => $_sTag, 'sName' => 'sTag', 'xParameter' => $_sTag));
-		return '<'.trim($_sTag).$this->buildAttributesString(array('axAttributes' => $_axAttributes)).'><![CDATA['.utf8_encode($_sText).']]></'.trim($_sTag).'>';
+		return '<'.trim($_sTag).$this->buildAttributesString(array('axAttributes' => $_axAttributes)).'><![CDATA['.$this->convertToUtf8($_sText).']]></'.trim($_sTag).'>';
 	}
 	/* @end method */
 	
@@ -343,7 +357,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 		$_sText = $this->getRealParameter(array('oParameters' => $_sTag, 'sName' => 'sText', 'xParameter' => $_sText));
 		$_axAttributes = $this->getRealParameter(array('oParameters' => $_sTag, 'sName' => 'axAttributes', 'xParameter' => $_axAttributes));
 		$_sTag = $this->getRealParameter(array('oParameters' => $_sTag, 'sName' => 'sTag', 'xParameter' => $_sTag));
-		return '<'.trim($_sTag).$this->buildAttributesString(array('axAttributes' => $_axAttributes)).'>'.htmlspecialchars(utf8_encode($_sText)).'</'.trim($_sTag).'>';
+		return '<'.trim($_sTag).$this->buildAttributesString(array('axAttributes' => $_axAttributes)).'>'.htmlspecialchars($this->convertToUtf8($_sText)).'</'.trim($_sTag).'>';
 	}
 	/* @end method */
 	
@@ -725,7 +739,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	public function buildCData($_sText)
 	{
 		$_sText = $this->getRealParameter(array('oParameters' => $_sText, 'sName' => 'sText', 'xParameter' => $_sText));
-		return '<![CDATA['.htmlspecialchars(utf8_encode($_sText)).']]>';
+		return '<![CDATA['.htmlspecialchars($this->convertToUtf8($_sText)).']]>';
 	}
 	/* @end method */
 
@@ -789,7 +803,7 @@ class classPG_XmlWrite extends classPG_ClassBasics
 	public function buildTextData($_sText)
 	{
 		$_sText = $this->getRealParameter(array('oParameters' => $_sText, 'sName' => 'sText', 'xParameter' => $_sText));
-		return htmlspecialchars(utf8_encode(trim($_sText)));
+		return htmlspecialchars($this->convertToUtf8(trim($_sText)));
 	}
 	/* @end method */
 	

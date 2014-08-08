@@ -1,12 +1,8 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 16 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 06 2014
 */
 define('PG_SPRITE_ANIMATION_INDEX_ID', 0);
 define('PG_SPRITE_ANIMATION_INDEX_STARTPOS_X', 1);
@@ -219,6 +215,7 @@ class classPG_Sprite extends classPG_ClassBasics
 	{
 		$_xAnimation = $this->getRealParameter(array('oParameters' => $_xAnimation, 'sName' => 'xAnimation', 'xParameter' => $_xAnimation));
 
+		$_sHtml = '';
 		$_bAnimationDone = false;
 		if ((($_xAnimation === NULL) || ($_xAnimation === '')) && ($this->sCurrentAnimationName != ''))
 		{
@@ -246,7 +243,6 @@ class classPG_Sprite extends classPG_ClassBasics
 				$_iNewPosSubX = -($_iStepStartPosX+($this->iCurrentAnimationStepX*$_iStepSizeX));
 				$_iNewPosSubY = -($_iStepStartPosY+($this->iCurrentAnimationStepY*$_iStepSizeY));
 
-				$_sHtml = '';
 				$_sHtml .= $this->update($_iIndex);
 				$this->iCurrentAnimationStepX++;
 	

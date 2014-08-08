@@ -7,7 +7,7 @@ if (isset($_POST['sLanguage'])) {$sLanguage = strtolower($_POST['sLanguage']);}
 There are serveral ways to include the API files. One way is to directly include single files as needed, the other way is to include predefined include files.<br /> 
 Currently there are 2 predefined include files (more will follow):<br />
 <br />
-- The optimized way is to include the basics.php file. This files includes the most necessary scripts and then you include the rest of the scripts you need to program.<br />
+- The optimized way is to include the include_basics.php file. This files includes the most necessary scripts and then you include the rest of the scripts you need to program.<br />
 - Alternatively you can start faster if it's not needed to get fastest performance on loading the website with including the include_full.php to include the whole API files.<br />
 <br />
 Here is a litte example to include the files:<br />

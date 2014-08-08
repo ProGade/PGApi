@@ -8,20 +8,20 @@ $sHtml = '';
 $sHtml .= '<div>';
 	$sHtml .=  '<h1>Das Login System</h1>';
 	$sHtml .=  '<p>';
-		$sHtml .= 'Die API verfügt über ein eigenes, recht flexibles Login-System. Es bietet sehr viele Optionen, kann aber bereits mit wenig Aufwand schnell und einfach eingebunden werden.<br />';
+		$sHtml .= 'Die API verfÃ¼gt Ã¼ber ein eigenes, recht flexibles Login-System. Es bietet sehr viele Optionen, kann aber bereits mit wenig Aufwand schnell und einfach eingebunden werden.<br />';
 		$sHtml .= '<br />';
 		$sHtml .= 'Folgendes Beispiel zeigt die Grundlage zum Einbinden des Login-Systems:';
 	$sHtml .=  '</p>';
 $sHtml .=  '</div>';
 
 $sExampleCode = '<?php
-	// einbinden der wichtigsten API Dateien über die Datei include_basics.php...
+	// einbinden der wichtigsten API Dateien Ã¼ber die Datei include_basics.php...
 	include(PG_API_PATH_PHP."system/classbasics.php");
 	include(PG_API_PATH_PHP."php/phploader.php");
 	include(PG_API_PATH_PHP."include_basics.php");
 	eval($oPGPhpLoader->build());
 
-	// über die Datei auto_login.php läuft die komplette Login-Abfrage automatisch...
+	// Ã¼ber die Datei auto_login.php lÃ¤uft die komplette Login-Abfrage automatisch...
 	include(PG_API_PATH_PHP."auto_login.php");
 
 	if ($oPGLogin->isGuest()) // ist der Benutzer noch nicht eingeloggt? (ist Gast)
@@ -47,11 +47,11 @@ $sHtml .= '<br />';
 $sHtml .= '<div>';
 	$sHtml .= '<h1>Authentifizierung und Sicherheit</h1>';
 	$sHtml .= '<p>';
-		$sHtml .= 'Authentifizierung und Sicherheit sind wichtige Themen und besonders beim Rechte- und beim Login-System sollte darauf geachtet werden, damit sich kein Unbefugter Zugang zu Bereichen verschaffen kann die ihm unzugänglich sein sollten.<br />';
-		$sHtml .= 'Daher machen wir uns stetig gedanken um neue Verfahren und gegbenenfalls Verbesserungen der vorhandenen Sicherheitsmaßnahmen der API. Daher ist es sinnvoll immer die möglichst aktuellste Version der API zu verwenden und sich zu informieren welche neuen Maßnahmen hinzu gekommen sind.<br />';
-		$sHtml .= 'Da es aber bekannterweise keine absoluten Sicherheitsmaßnahmen gegen alle Möglichkeiten für Angriffe von Hackern gibt, gilt es stets für jeden der die API verwenden möchte, trotz der eingebauten Maßnahmen, über eigene Möglichkeiten der Sicherheit Ihres Systems nachzudenken und entsprechende Maßnahmen zu ergreifen.<br />';
-		$sHtml .= 'Wir versuchen Lücken in unserem System immer zeitnah zu entfernen und die Sicherheit zu erhöhen, aber da die Nutzung der API freiwillig ist, haften wir nicht für diese Lücken oder Schaden der dadurch entstehen könnte.<br />';
-		$sHtml .= 'Bitte prüfen Sie selbst, ob Ihnen das System sicher genug ist oder ob Sie Änderungen vornehmen möchten und melden Sie uns gefundene Lücken, damit wir die API verbessern können.<br />';
+		$sHtml .= 'Authentifizierung und Sicherheit sind wichtige Themen und besonders beim Rechte- und beim Login-System sollte darauf geachtet werden, damit sich kein Unbefugter Zugang zu Bereichen verschaffen kann die ihm unzugÃ¤nglich sein sollten.<br />';
+		$sHtml .= 'Daher machen wir uns stetig gedanken um neue Verfahren und gegbenenfalls Verbesserungen der vorhandenen SicherheitsmaÃŸnahmen der API. Daher ist es sinnvoll immer die mÃ¶glichst aktuellste Version der API zu verwenden und sich zu informieren welche neuen MaÃŸnahmen hinzu gekommen sind.<br />';
+		$sHtml .= 'Da es aber bekannterweise keine absoluten SicherheitsmaÃŸnahmen gegen alle MÃ¶glichkeiten fÃ¼r Angriffe von Hackern gibt, gilt es stets fÃ¼r jeden der die API verwenden mÃ¶chte, trotz der eingebauten MaÃŸnahmen, Ã¼ber eigene MÃ¶glichkeiten der Sicherheit Ihres Systems nachzudenken und entsprechende MaÃŸnahmen zu ergreifen.<br />';
+		$sHtml .= 'Wir versuchen LÃ¼cken in unserem System immer zeitnah zu entfernen und die Sicherheit zu erhÃ¶hen, aber da die Nutzung der API freiwillig ist, haften wir nicht fÃ¼r diese LÃ¼cken oder Schaden der dadurch entstehen kÃ¶nnte.<br />';
+		$sHtml .= 'Bitte prÃ¼fen Sie selbst, ob Ihnen das System sicher genug ist oder ob Sie Ã„nderungen vornehmen mÃ¶chten und melden Sie uns gefundene LÃ¼cken, damit wir die API verbessern kÃ¶nnen.<br />';
 	$sHtml .= '</p>';
 $sHtml .= '</div>';
 
@@ -60,9 +60,9 @@ $sHtml .= '<div>';
 	$sHtml .= '<h2>Benutzertypen</h2>';
 	$sHtml .= '<p>';
 		$sHtml .= 'Wie jedes gute Login-System, hat auch unser Login-System verschiedene Benutzertypen um zu unterscheiden ob der Benutzer Administratorenrechte besitzt oder lediglich einfacher Anwender ist.<br />';
-		$sHtml .= 'Da die API für viele Einsatzmöglichkeiten und Systeme entwickelt wurde, gibt es nicht lediglich die Unterscheidung zwischen Admins und Anwender, sondern auch noch Super-Admins und Moderatoren.<br />';
+		$sHtml .= 'Da die API fÃ¼r viele EinsatzmÃ¶glichkeiten und Systeme entwickelt wurde, gibt es nicht lediglich die Unterscheidung zwischen Admins und Anwender, sondern auch noch Super-Admins und Moderatoren.<br />';
 		$sHtml .= '<br />';
-		$sHtml .= 'Ein Beispiel für die Abgefragt der Benutzertypen:<br />';
+		$sHtml .= 'Ein Beispiel fÃ¼r die Abgefragt der Benutzertypen:<br />';
 	$sHtml .= '</p>';
 $sHtml .= '</div>';
 
@@ -107,25 +107,25 @@ $sHtml .= '<div>';
 	$sHtml .= '<h2>Captcha Codes</h2>';
 	$sHtml .= '<p>';
 		$sHtml .= 'Was ist das denn? Oftmals kennt man etwas vom Sehen her, aber der Name ist relativ unbekannt. So ist es auch bei den Capture Codes.<br />';
-		$sHtml .= 'Man muss Sie oft bei Registrationen von Benutzerprofilen und ab und zu auch bei Logins oder anderen Formularen als zusätzliche Sicherheitsabfrage eingeben.<br />';
+		$sHtml .= 'Man muss Sie oft bei Registrationen von Benutzerprofilen und ab und zu auch bei Logins oder anderen Formularen als zusÃ¤tzliche Sicherheitsabfrage eingeben.<br />';
 		$sHtml .= 'Nur welchen Sinn haben nun diese Capture Codes und wie funktionieren sie?<br />';
-		$sHtml .= 'Capture Codes sind Grafiken, die beim Aufruf einer Webseite dynamisch generiert werden und Zahlen sowie Buchstaben enthalten können.<br />';
-		$sHtml .= 'Diese Buchstaben und Zahlen dienen dazu sie in ein dafür vorgesehenes Eingabefeld einzugeben um dadurch herauszufinden ob das Formular von einem Menschen oder von einem Bot (Script) ausgefüllt wurde.<br />';
-		$sHtml .= 'Damit nicht auch diese Bot-Scripte die Buchstaben und Zahlen auf den Bildern erkennen können, wird versucht das Bild etwas zu verfremden, indem etwas wie ein Gitternetz oder krumme Buchstaben und Zahlen sowie irgendwelche wild drauf los gemalten Striche hinzugefügt werden.<br />';
+		$sHtml .= 'Capture Codes sind Grafiken, die beim Aufruf einer Webseite dynamisch generiert werden und Zahlen sowie Buchstaben enthalten kÃ¶nnen.<br />';
+		$sHtml .= 'Diese Buchstaben und Zahlen dienen dazu sie in ein dafÃ¼r vorgesehenes Eingabefeld einzugeben um dadurch herauszufinden ob das Formular von einem Menschen oder von einem Bot (Script) ausgefÃ¼llt wurde.<br />';
+		$sHtml .= 'Damit nicht auch diese Bot-Scripte die Buchstaben und Zahlen auf den Bildern erkennen kÃ¶nnen, wird versucht das Bild etwas zu verfremden, indem etwas wie ein Gitternetz oder krumme Buchstaben und Zahlen sowie irgendwelche wild drauf los gemalten Striche hinzugefÃ¼gt werden.<br />';
 		$sHtml .= '<br />';
-		$sHtml .= 'Die API bietet vorgefertigte Capture-Code Grafiken (Zahlen), die aber auch leicht durch eigene ersetzt werden können:<br />';
+		$sHtml .= 'Die API bietet vorgefertigte Capture-Code Grafiken (Zahlen), die aber auch leicht durch eigene ersetzt werden kÃ¶nnen:<br />';
 	$sHtml .= '</p>';
 $sHtml .= '</div>';
 
 $sExampleCode = '<?php
-	// einbinden der wichtigsten API Dateien über die Datei include_basics.php...
+	// einbinden der wichtigsten API Dateien Ã¼ber die Datei include_basics.php...
 	include(PG_API_PATH_PHP."system/classbasics.php");
 	include(PG_API_PATH_PHP."php/phploader.php");
 	include(PG_API_PATH_PHP."include_basics.php");
 	$oPGPhpLoader->addFile(array("sFile" => "graphics/captcha.php")); // binde die Captcha Klasse der API ein
 	eval($oPGPhpLoader->build());
 	
-	// über die Datei auto_login.php läuft die komplette Login-Abfrage automatisch...
+	// Ã¼ber die Datei auto_login.php lÃ¤uft die komplette Login-Abfrage automatisch...
 	include(PG_API_PATH_PHP."auto_login.php");
 
 	$oPGLogin->enableRegisterWithCaptcha(); // Captcha Code beim Registrieren verwenden
@@ -178,7 +178,7 @@ $sHtml .= '<div>';
 	$sHtml .= '</p>';
 $sHtml .= '</div>';
 
-// - Aufzeigen der SimulateUserID Funktionalität
+// - Aufzeigen der SimulateUserID Funktionalitï¿½t
 // - Aufzeigen der ActionLog Funktionen
 $sHtml .= '<div>';
 	$sHtml .= '<h2>Hilfestellung bei Problemen eines Benutzers</h2>';
@@ -188,13 +188,13 @@ $sHtml .= '<div>';
 $sHtml .= '</div>';
 
 // Rechtliches...
-// - Aufzeigen von den Funktionen für "Privacy Police", "Privacy Terms", "Terms of use" und "Terms and conditions"
+// - Aufzeigen von den Funktionen fÃ¼r "Privacy Police", "Privacy Terms", "Terms of use" und "Terms and conditions"
 $sHtml .= '<div>';
 	$sHtml .= '<h1>Rechtliches</h1>';
 	$sHtml .= '<p>';
-		$sHtml .= 'Es macht immer Sinn, den Benutzer eines Systems über seine Rechte, Pflichten, die Verwendung der von ihm gespeicherten Daten und gegebene Verhaltensregeln zu informieren. Das ist in manchen Ländern sogar (zum Teil) gesetzlich festgelegt und sollte daher unbedingt beachtet werden.<br />';
-		$sHtml .= 'Natürlich können wir nicht stetig die aktuellsten Dinge in allen Ländern abdecken die rechtlich vorgesehen sind. Daher muss jeder der diese API verwenden möchte sich selbst informieren, welche gesetzlichen Bedingungen bei ihm im Land vorgeschrieben sind. Wir übernehmen keinerlei Verantwortung oder Haftung für die falsche Verwendung oder den falschen Einsatz der API.<br />';
-		$sHtml .= 'Dennoch sind wir bemüht wenigstens die gänigsten, rechtlichen Funktionen zur Informationsbereitstellung im Login System der API einzubinden. Ebenso bietet die API Bestätigungsmöglichkeiten, dass diese Informationen vom Benutzer zur Kenntniss genommen wurden.<br />';
+		$sHtml .= 'Es macht immer Sinn, den Benutzer eines Systems Ã¼ber seine Rechte, Pflichten, die Verwendung der von ihm gespeicherten Daten und gegebene Verhaltensregeln zu informieren. Das ist in manchen LÃ¤ndern sogar (zum Teil) gesetzlich festgelegt und sollte daher unbedingt beachtet werden.<br />';
+		$sHtml .= 'NatÃ¼rlich kÃ¶nnen wir nicht stetig die aktuellsten Dinge in allen LÃ¤ndern abdecken die rechtlich vorgesehen sind. Daher muss jeder der diese API verwenden mÃ¶chte sich selbst informieren, welche gesetzlichen Bedingungen bei ihm im Land vorgeschrieben sind. Wir Ã¼bernehmen keinerlei Verantwortung oder Haftung fÃ¼r die falsche Verwendung oder den falschen Einsatz der API.<br />';
+		$sHtml .= 'Dennoch sind wir bemÃ¼ht wenigstens die gÃ¤nigsten, rechtlichen Funktionen zur Informationsbereitstellung im Login System der API einzubinden. Ebenso bietet die API BestÃ¤tigungsmÃ¶glichkeiten, dass diese Informationen vom Benutzer zur Kenntniss genommen wurden.<br />';
 		$sHtml .= 'Bitte beherzigt bei der Entwicklung Eurer Systeme den Benutzer stets mit den oben genannten, wichtigen Informationen zu versorgen, damit keine rechtlichen Probleme entstehen.<br/>';
 		$sHtml .= 'Unserer Ansicht nach sollte der gute Umgang mit den Benutzern eines Systems und deren Daten "immer" im Vordergrund stehen.<br />';
 		$sHtml .= '<br />';
@@ -203,7 +203,7 @@ $sHtml .= '<div>';
 $sHtml .= '</div>';
 
 $sExampleCode = '<?php
-	// Verlinkung der Datenschutzerklärung...
+	// Verlinkung der DatenschutzerklÃ¤rung...
 	$oPGLogin->setPrivacyPolicyUrl(array("sUrl" => "info/privacy_policy.php"));
 	
 	// Verlinkung der Datenschutzrichtlinien...
@@ -212,7 +212,7 @@ $sExampleCode = '<?php
 	// Verlinkung der Nutzungsbedingungen...
 	$oPGLogin->setTermsOfUseUrl(array("sUrl" => "info/terms_of_use.php"));
 	
-	// Verlinkung der Geschäftsbedingungen (AGB)...
+	// Verlinkung der GeschÃ¤ftsbedingungen (AGB)...
 	$oPGLogin->setTermsAndConditionsUrl(array("sUrl" => "info/terms_and_conditions.php"));
 ?>';
 

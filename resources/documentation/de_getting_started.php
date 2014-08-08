@@ -1,26 +1,26 @@
 <h1>Willkommen bei der PG API!</h1>
 <br />
-Hier erfährst du wie man die API benutzt, welche Möglichkeiten und Power in Ihr steckt.<br />
-Wenn du ein erfahrener Programmierer bist und einen schnellen Einstieg in die API haben möchtest, kannst du einen Blick in den Quickstart und in die Basics werfen und gleich die API Referenz benutzen.<br />
-Möchtest du eher einen einfachen Einstieg in die API haben, empfehlen wir dir den Quickstart, die Basics und entsprechende Themen, die dich interessieren, durchzulesen.<br />
+Hier erfÃ¤hrst du wie man die API benutzt, welche MÃ¶glichkeiten und Power in Ihr steckt.<br />
+Wenn du ein erfahrener Programmierer bist und einen schnellen Einstieg in die API haben mÃ¶chtest, kannst du einen Blick in den Quickstart und in die Basics werfen und gleich die API Referenz benutzen.<br />
+MÃ¶chtest du eher einen einfachen Einstieg in die API haben, empfehlen wir dir den Quickstart, die Basics und entsprechende Themen, die dich interessieren, durchzulesen.<br />
 <br />
 <table class="pg_docu_methods_container">
-	<tr><th>Menüpunkt</th><th>Kurzbeschreibung</th></tr>
-	<tr><td>Quickstart</td><td class="pg_docu_descriptions">Einstieg in die API und Erklärung zum Programmierstil</td></tr>
-	<tr><td>Basics</td><td class="pg_docu_descriptions">Hier werden die Grundklassen behandelt, die Grundlage für viele andere Klassen sind und somit viele wichtige Methoden bereitstellt.</td></tr>
-	<tr><td>Controls</td><td class="pg_docu_descriptions">Controls sind Eingabefelder, Textfelder, Buttons, Formulare uvm. mit erweiterten Funktionalitäten und flexiblen Einsatzmöglichkeiten.</td></tr>
-	<tr><td>Templates</td><td class="pg_docu_descriptions">Templates trennen das Grundgerüst vom Hauptteil des Codes, damit alles übersichtlich und möglichst flexibel einsetzbar bleibt.</td></tr>
-	<tr><td>Framesets</td><td class="pg_docu_descriptions">Ein mögliches Grundgerüst aus gefakten Frames, um flexiblere Webanwendungen zu gestalten.</td></tr>
+	<tr><th>MenÃ¼punkt</th><th>Kurzbeschreibung</th></tr>
+	<tr><td>Quickstart</td><td class="pg_docu_descriptions">Einstieg in die API und ErklÃ¤rung zum Programmierstil</td></tr>
+	<tr><td>Basics</td><td class="pg_docu_descriptions">Hier werden die Grundklassen behandelt, die Grundlage fÃ¼r viele andere Klassen sind und somit viele wichtige Methoden bereitstellt.</td></tr>
+	<tr><td>Controls</td><td class="pg_docu_descriptions">Controls sind Eingabefelder, Textfelder, Buttons, Formulare uvm. mit erweiterten FunktionalitÃ¤ten und flexiblen EinsatzmÃ¶glichkeiten.</td></tr>
+	<tr><td>Templates</td><td class="pg_docu_descriptions">Templates trennen das GrundgerÃ¼st vom Hauptteil des Codes, damit alles Ã¼bersichtlich und mÃ¶glichst flexibel einsetzbar bleibt.</td></tr>
+	<tr><td>Framesets</td><td class="pg_docu_descriptions">Ein mÃ¶gliches GrundgerÃ¼st aus gefakten Frames, um flexiblere Webanwendungen zu gestalten.</td></tr>
 	<tr><td>Login System</td><td class="pg_docu_descriptions">Das Benutzer-System inklusive der Funktionen zum einloggen, authentifizieren, blocken uvm.</td></tr>
 	<tr><td>Rights</td><td class="pg_docu_descriptions">Die Benutzer und Gruppenrechte der API</td></tr>
-	<tr><td>Network</td><td class="pg_docu_descriptions">Netzwerk-Funktionen der API. Beschreibt wie Daten zwischen Server und Client zur Laufzeit ausgetauscht werden können.</td></tr>
-	<tr><td>Update</td><td class="pg_docu_descriptions">Hier werden Klassen beschrieben mit denen Dateien und Datenbanken, installiert und aktualisiert werden können.</td></tr>
-	<tr><td>Database</td><td class="pg_docu_descriptions">Hier bekommst du einen erweiterten Einblick in das System der API für den Zugriff auf Datenbanken.</td></tr>
+	<tr><td>Network</td><td class="pg_docu_descriptions">Netzwerk-Funktionen der API. Beschreibt wie Daten zwischen Server und Client zur Laufzeit ausgetauscht werden kÃ¶nnen.</td></tr>
+	<tr><td>Update</td><td class="pg_docu_descriptions">Hier werden Klassen beschrieben mit denen Dateien und Datenbanken, installiert und aktualisiert werden kÃ¶nnen.</td></tr>
+	<tr><td>Database</td><td class="pg_docu_descriptions">Hier bekommst du einen erweiterten Einblick in das System der API fÃ¼r den Zugriff auf Datenbanken.</td></tr>
 </table>
 <br />
-Für diejenigen von Euch, die noch nicht in PHP und JavaScript programmiert haben, sollten sich noch vor der PG API Documentation die Grundlagen von PHP und JavaScript ansehen.<br />
+FÃ¼r diejenigen von Euch, die noch nicht in PHP und JavaScript programmiert haben, sollten sich noch vor der PG API Documentation die Grundlagen von PHP und JavaScript ansehen.<br />
 <br />
-Es gibt viele Quellen für PHP, HTML, JavaScript und CSS Documentationen, hier sind ein paar die uns bekannt sind:<br />
+Es gibt viele Quellen fÃ¼r PHP, HTML, JavaScript und CSS Documentationen, hier sind ein paar die uns bekannt sind:<br />
 <br />
 <table>
 	<tr><th>Sprache</th><th>Script-Sprachen</th><th>Adresse</th></tr>
