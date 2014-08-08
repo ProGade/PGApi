@@ -4850,7 +4850,7 @@ class classPG_Login extends classPG_ClassBasics
 			$_sMessage .= $_sSignature;
 		}
 
-		$oPGMail->setTemplateReplaceVars(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
+		$oPGMail->addTemplateReplaceVar(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
 	
 		return $this->sendMail(
             array(
@@ -5019,7 +5019,7 @@ class classPG_Login extends classPG_ClassBasics
 			$_sMessage .= $_sSignature;
 		}
 
-		$oPGMail->setTemplateReplaceVars(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
+		$oPGMail->addTemplateReplaceVar(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
 		
 		return $this->sendMail(
             array(
@@ -5089,7 +5089,7 @@ class classPG_Login extends classPG_ClassBasics
 			$_sMessage .= 'Gruß<br />Ihr '.$this->sSystemTitle.' Team';
 		}
 
-		$oPGMail->setTemplateReplaceVars(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
+		$oPGMail->addTemplateReplaceVar(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
 
 		return $this->sendMail(
             array(
@@ -5150,7 +5150,7 @@ class classPG_Login extends classPG_ClassBasics
 		$_sReasons = '<h2>Gründe:</h2>'.$_sReasons.'<br /><br />';
 		$_sMessage = str_replace('[reasons]', $_sReasons, $_sMessage);
 
-		$oPGMail->setTemplateReplaceVars(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
+		$oPGMail->addTemplateReplaceVar(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
 
 		return $this->sendMail(
             array(
