@@ -1243,7 +1243,7 @@ class classPG_Gfx extends classPG_ClassBasics
 	{
 		$_sFile = $this->getRealParameter(array('oParameters' => $_sFile, 'sName' => 'sFile', 'xParameter' => $_sFile));
 		$_sFileExtension = $this->getImageFileExtension(array('sFile' => $_sFile));
-		switch($_sFileExtension)
+		switch(strtolower($_sFileExtension))
 		{
 			case 'gif':
 				return imagecreatefromgif($_sFile);
@@ -1343,7 +1343,7 @@ class classPG_Gfx extends classPG_ClassBasics
 	{
 		$_fDegrees = $this->getRealParameter(array('oParameters' => $_xImage, 'sName' => 'fDegrees', 'xParameter' => $_fDegrees));
 		$_xImage = $this->getRealParameter(array('oParameters' => $_xImage, 'sName' => 'xImage', 'xParameter' => $_xImage));
-		if (is_string($_xImage)) {return $this->rotateImageFileToObject(array('sFile' => $_xImage, 'fDegrees' => $_fDegrees));}
+		if (is_string($_xImage)) {return $this->rotateImageFile(array('sFile' => $_xImage, 'fDegrees' => $_fDegrees));}
 		else {return $this->rotateImageObject(array('oImage' => $_xImage, 'fDegrees' => $_fDegrees));}
 	}
 
@@ -1354,7 +1354,7 @@ class classPG_Gfx extends classPG_ClassBasics
 		return imagerotate($_oImage, $_fDegrees, $_iBackgroundColor = 0, $_iIgnoreTransparent = 0);
 	}
 
-	public function rotateImageFileToObject($_sFile, $_fDegrees = NULL)
+	public function rotateImageFile($_sFile, $_fDegrees = NULL)
 	{
 		$_fDegrees = $this->getRealParameter(array('oParameters' => $_sFile, 'sName' => 'fDegrees', 'xParameter' => $_fDegrees));
 		$_sFile = $this->getRealParameter(array('oParameters' => $_sFile, 'sName' => 'sFile', 'xParameter' => $_sFile));
@@ -1362,7 +1362,9 @@ class classPG_Gfx extends classPG_ClassBasics
 		if ($_oImage = $this->getImageObjectFromFile(array('sFile' => $_sFile)))
 		{
 			$_oImage = $this->rotateImageObject(array('oImage' => $_oImage, 'fDegrees' => $_fDegrees));
-			return $this->saveImageObjectToFile(array('oImage' => $_oImage, $_sFile, 100));
+			$_bSuccess = $this->saveImageObjectToFile(array('oImage' => $_oImage, 'sFile' => $_sFile, 'iQuality' => 100));
+			imagedestroy($_oImage);
+			return $_bSuccess;
 		}
 		return false;
 	}
