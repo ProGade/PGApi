@@ -1,10 +1,7 @@
 /*
 * ProGade API
-*
-* Copyright (c) 2012 Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: "http://api.progade.de/api_terms.php" or "./license.txt"
-*
-* Last changes of this file: Dec 14 2012
+* Copyright (c) 2014 Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 12 2014
 */
 
 /*
@@ -14,7 +11,7 @@
 
 @description
 [en]This class has methods to the create of images, convert color values and manage GFX packages.[/en]
-[de]Diese Klasse verfügt über Methoden zum erstellen von Bildern, umrechnen von Farbwerten und verwalten von GFX Paketen.[/de]
+[de]Diese Klasse verfÃ¼gt Ã¼ber Methoden zum erstellen von Bildern, umrechnen von Farbwerten und verwalten von GFX Paketen.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -56,11 +53,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Returns the path to the GFX package.[/en]
-	[de]Gibt den Pfad zum GFX Pack zurück.[/de]
+	[de]Gibt den Pfad zum GFX Pack zurÃ¼ck.[/de]
 	
 	@return sGfxPath [type]string[/type]
 	[en]Returns the path to the GFX package as a string.[/en]
-	[de]Gibt den Pfad zum GFX Pack als String zurück.[/de]
+	[de]Gibt den Pfad zum GFX Pack als String zurÃ¼ck.[/de]
 	*/
 	this.getGfxPath = function() {return this.sGfxPath;}
 	/* @end method */
@@ -72,7 +69,7 @@ function classPG_Gfx()
 	
 	@description
 	[en]Sets the sub path or folder for the GFX package in which are the images to find.[/en]
-	[de]Setzt den Unterpfad bzw. Verzeichnis für das GFX Pack in dem die Bilder zu finden sind.[/de]
+	[de]Setzt den Unterpfad bzw. Verzeichnis fÃ¼r das GFX Pack in dem die Bilder zu finden sind.[/de]
 	
 	@param sPath [type]string[/type]
 	[en]The relative path to the images.[/en]
@@ -92,11 +89,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Returns the sub path or directory for the GFX Pack where the images are located.[/en]
-	[de]Gibt den Unterpfad bzw. Verzeichnis für das GFX Pack zurück in dem die Bilder zu finden sind.[/de]
+	[de]Gibt den Unterpfad bzw. Verzeichnis fÃ¼r das GFX Pack zurÃ¼ck in dem die Bilder zu finden sind.[/de]
 	
 	@return sImagesPath [type]string[/type
 	[en]Returns the sub path or directory for the GFX Pack where the images are located as a string.[/en]
-	[de]Gibt den Unterpfad bzw. Verzeichnis für das GFX Pack als String zurück in dem die Bilder zu finden sind.[/de]
+	[de]Gibt den Unterpfad bzw. Verzeichnis fÃ¼r das GFX Pack als String zurÃ¼ck in dem die Bilder zu finden sind.[/de]
 	*/
 	this.getGfxSubPathImages = function() {return this.sGfxSubPathImages;}
 	/* @end method */
@@ -199,11 +196,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Returns the transparency of an HTML element in percent.[/en]
-	[de]Gibt die Transparenz von einem HTML-Element in Prozent zurück.[/de]
+	[de]Gibt die Transparenz von einem HTML-Element in Prozent zurÃ¼ck.[/de]
 	
 	@return iPercent [type]int[/type]
 	[en]Returns the transparency as an integer in percent.[/en]
-	[de]Gibt die Transparenz als Integer in Prozent zurück.[/de]
+	[de]Gibt die Transparenz als Integer in Prozent zurÃ¼ck.[/de]
 	
 	@param xElement [needed][type]mixed[/type]
 	[en]The HTML element.[/en]
@@ -249,11 +246,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Calculates the hex value to a RGB color value and returns it.[/en]
-	[de]Berechnet den Hex Wert zu einem RGB Farbwert und gibt ihn zurück.[/de]
+	[de]Berechnet den Hex Wert zu einem RGB Farbwert und gibt ihn zurÃ¼ck.[/de]
 	
 	@return sHexColor [type]string[/type]
 	[en]Returns the hex value as a string.[/en]
-	[de]Gibt den Hex Wert als String zurück.[/de]
+	[de]Gibt den Hex Wert als String zurÃ¼ck.[/de]
 	
 	@param iRed [type]int[/type]
 	[en]The red value as an integer from 0 up to 255.[/en]
@@ -261,7 +258,7 @@ function classPG_Gfx()
 	
 	@param iGreen [type]int[/type]
 	[en]The green value as an integer from 0 up to 255.[/en]
-	[de]Der Grün-Wert als Integer von 0 bis 255.[/de]
+	[de]Der GrÃ¼n-Wert als Integer von 0 bis 255.[/de]
 	
 	@param iBlue [type]int[/type]
 	[en]The blue value as an integer from 0 up to 255.[/en]
@@ -285,11 +282,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Calculates a hex value to a Number and returns it.[/en]
-	[de]Berechnet einen Hex Wert zu einer Zahl und gibt es zurück.[/de]
+	[de]Berechnet einen Hex Wert zu einer Zahl und gibt es zurÃ¼ck.[/de]
 	
 	@return sHex [type]string[/type]
 	[en]Returns the hex value as a string.[/en]
-	[de]Gibt den Hex Wert als String zurück.[/de]
+	[de]Gibt den Hex Wert als String zurÃ¼ck.[/de]
 	
 	@param iNumber [needed][type]int[/type]
 	[en]The number to be converted.[/en]
@@ -309,11 +306,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Calculates a hex value to a Number and returns it.[/en]
-	[de]Berechnet einen Hex Wert zu einer Zahl und gibt es zurück.[/de]
+	[de]Berechnet einen Hex Wert zu einer Zahl und gibt es zurÃ¼ck.[/de]
 	
 	@return sHex [type]string[/type]
 	[en]Returns the hex value as a string.[/en]
-	[de]Gibt den Hex Wert als String zurück.[/de]
+	[de]Gibt den Hex Wert als String zurÃ¼ck.[/de]
 	
 	@param iNumber [needed][type]int[/type]
 	[en]The number to be converted.[/en]
@@ -340,11 +337,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Calculates the red value of an hex color value and returns it.[/en]
-	[de]Berechnet den Rot-Wert eines Hex-Farbwertes und gibt ihn zurück.[/de]
+	[de]Berechnet den Rot-Wert eines Hex-Farbwertes und gibt ihn zurÃ¼ck.[/de]
 	
 	@return iRed [type]int[/type]
 	[en]Returns the red value as an integer from 0 to 255.[/en]
-	[de]Gibt den Rot-Wert als Integer von 0 bis 255 zurück.[/de]
+	[de]Gibt den Rot-Wert als Integer von 0 bis 255 zurÃ¼ck.[/de]
 	
 	@param sHexColor [needed][type]string[/type]
 	[en]The hex volor value.[/en]
@@ -364,11 +361,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Calculates the green value of an hex color value and returns it.[/en]
-	[de]Berechnet den Grün-Wert eines Hex-Farbwertes und gibt ihn zurück.[/de]
+	[de]Berechnet den GrÃ¼n-Wert eines Hex-Farbwertes und gibt ihn zurÃ¼ck.[/de]
 	
 	@return iGreen [type]int[/type]
 	[en]Returns the green value as an integer from 0 to 255.[/en]
-	[de]Gibt den Grün-Wert als Integer von 0 bis 255 zurück.[/de]
+	[de]Gibt den GrÃ¼n-Wert als Integer von 0 bis 255 zurÃ¼ck.[/de]
 	
 	@param sHexColor [needed][type]string[/type]
 	[en]The hex volor value.[/en]
@@ -388,11 +385,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Calculates the blue value of an hex color value and returns it.[/en]
-	[de]Berechnet den Blau-Wert eines Hex-Farbwertes und gibt ihn zurück.[/de]
+	[de]Berechnet den Blau-Wert eines Hex-Farbwertes und gibt ihn zurÃ¼ck.[/de]
 	
 	@return iBlue [type]int[/type]
 	[en]Returns the blue value as an integer from 0 to 255.[/en]
-	[de]Gibt den Blau-Wert als Integer von 0 bis 255 zurück.[/de]
+	[de]Gibt den Blau-Wert als Integer von 0 bis 255 zurÃ¼ck.[/de]
 	
 	@param sHexColor [needed][type]string[/type]
 	[en]The hex volor value.[/en]
@@ -414,7 +411,7 @@ function classPG_Gfx()
 	
 	@return sColor [type]string[/type]
 	[en]Returns the hex color value as a string.[/en]
-	[de]Gibt den Hex-Farbwert als String zurück.[/de]
+	[de]Gibt den Hex-Farbwert als String zurÃ¼ck.[/de]
 	
 	@param sHexColor [needed][type]string[/type]
 	[en]The color hex value, whose sharp should be removed.[/en]
@@ -435,7 +432,7 @@ function classPG_Gfx()
 	
 	@description
 	[en]Sets the sub path or folder for the GFX package in which are the css files to find.[/en]
-	[de]Setzt den Unterpfad bzw. Verzeichnis für das GFX Pack in dem die CSS-Dateien zu finden sind.[/de]
+	[de]Setzt den Unterpfad bzw. Verzeichnis fÃ¼r das GFX Pack in dem die CSS-Dateien zu finden sind.[/de]
 	
 	@param sPath [needed][type]string[/type]
 	[en]The relative path to the css files.[/en]
@@ -455,7 +452,7 @@ function classPG_Gfx()
 	
 	@description
 	[en]Sets the sub path or folder for the GFX package in which are the css files to find.[/en]
-	[de]Setzt den Unterpfad bzw. Verzeichnis für das GFX Pack in dem die CSS-Dateien zu finden sind.[/de]
+	[de]Setzt den Unterpfad bzw. Verzeichnis fï¿½r das GFX Pack in dem die CSS-Dateien zu finden sind.[/de]
 	
 	@param sPath [needed][type]string[/type]
 	[en]The relative path to the css files.[/en]
@@ -474,11 +471,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Returns the sub path or directory for the GFX Pack where the css files are located.[/en]
-	[de]Gibt den Unterpfad bzw. Verzeichnis für das GFX Pack zurück in dem die CSS-Dateien zu finden sind.[/de]
+	[de]Gibt den Unterpfad bzw. Verzeichnis fÃ¼r das GFX Pack zurÃ¼ck in dem die CSS-Dateien zu finden sind.[/de]
 	
 	@return sImagesPath [type]string[/type
 	[en]Returns the sub path or directory for the GFX Pack where the css files are located as a string.[/en]
-	[de]Gibt den Unterpfad bzw. Verzeichnis für das GFX Pack als String zurück in dem die CSS-Dateien zu finden sind.[/de]
+	[de]Gibt den Unterpfad bzw. Verzeichnis fÃ¼r das GFX Pack als String zurÃ¼ck in dem die CSS-Dateien zu finden sind.[/de]
 	*/
 	this.getCssGfxSubPath = function() {return this.getGfxSubPathCss();}
 	/* @end method */
@@ -490,11 +487,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Returns the sub path or directory for the GFX Pack where the css files are located.[/en]
-	[de]Gibt den Unterpfad bzw. Verzeichnis für das GFX Pack zurück in dem die CSS-Dateien zu finden sind.[/de]
+	[de]Gibt den Unterpfad bzw. Verzeichnis fÃ¼r das GFX Pack zurÃ¼ck in dem die CSS-Dateien zu finden sind.[/de]
 	
 	@return sImagesPath [type]string[/type
 	[en]Returns the sub path or directory for the GFX Pack where the css files are located as a string.[/en]
-	[de]Gibt den Unterpfad bzw. Verzeichnis für das GFX Pack als String zurück in dem die CSS-Dateien zu finden sind.[/de]
+	[de]Gibt den Unterpfad bzw. Verzeichnis fÃ¼r das GFX Pack als String zurÃ¼ck in dem die CSS-Dateien zu finden sind.[/de]
 	*/
 	this.getGfxSubPathCss = function() {return this.sGfxSubPathCss;}
 	/* @end method */
@@ -506,11 +503,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Returns the CSS link tag of a css file as HTML string.[/en]
-	[de]Gibt den CSS-Link-Tag zu einer CSS Datei als HTML-String zurück.[/de]
+	[de]Gibt den CSS-Link-Tag zu einer CSS Datei als HTML-String zurÃ¼ck.[/de]
 	
 	@return sCssTag [type]string[/type]
 	[en]Returns the CSS link tag of a css file as HTML string.[/en]
-	[de]Gibt den CSS-Link-Tag zu einer CSS Datei als HTML-String zurück.[/de]
+	[de]Gibt den CSS-Link-Tag zu einer CSS Datei als HTML-String zurÃ¼ck.[/de]
 	
 	@param sFile [needed][type]string[/type]
 	[en]The CSS file that should be linked.[/en]
@@ -530,11 +527,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Returns the CSS link tag of a css file as HTML string.[/en]
-	[de]Gibt den CSS-Link-Tag zu einer CSS Datei als HTML-String zurück.[/de]
+	[de]Gibt den CSS-Link-Tag zu einer CSS Datei als HTML-String zurÃ¼ck.[/de]
 	
 	@return sCssTag [type]string[/type]
 	[en]Returns the CSS link tag of a css file as HTML string.[/en]
-	[de]Gibt den CSS-Link-Tag zu einer CSS Datei als HTML-String zurück.[/de]
+	[de]Gibt den CSS-Link-Tag zu einer CSS Datei als HTML-String zurÃ¼ck.[/de]
 	
 	@param sFile [needed][type]string[/type]
 	[en]The CSS file that should be linked.[/en]
@@ -555,11 +552,11 @@ function classPG_Gfx()
 	
 	@description
 	[en]Creates an HTML string to display an image and returns it.[/en]
-	[de]Erstellt einen HTML-String um ein Bild anzuzeigen und gibt ihn zurück.[/de]
+	[de]Erstellt einen HTML-String um ein Bild anzuzeigen und gibt ihn zurÃ¼ck.[/de]
 	
 	@return sImageHtml [type]string[/type]
 	[en]Returns the image as an HTML string.[/en]
-	[de]Gibt das Bild als HTML-String zurück.[/de]
+	[de]Gibt das Bild als HTML-String zurÃ¼ck.[/de]
 	
 	@param sImage [needed][type]string[/type]
 	[en]The Image to display.[/en]
@@ -571,7 +568,7 @@ function classPG_Gfx()
 	
 	@param sSizeY [type]string[/type]
 	[en]The height of the image to display.[/en]
-	[de]Die Höhe in der das Bild angezeigt werden soll.[/de]
+	[de]Die HÃ¶he in der das Bild angezeigt werden soll.[/de]
 	
 	@param sTitle [type]string[/type]
 	[en]The title of the image.[/en]
@@ -579,15 +576,15 @@ function classPG_Gfx()
 	
 	@param sAddTag [type]string[/type]
 	[en]A string that allows to add additional HTML properties.[/en]
-	[de]Ein String, der es ermöglicht weitere HTML-Properties hinzuzufügen.[/de]
+	[de]Ein String, der es ermÃ¶glicht weitere HTML-Properties hinzuzufÃ¼gen.[/de]
 	
 	@param sCssStyle [type]string[/type]
 	[en]CSS code for the image.[/en]
-	[de]CSS Code für das Bild.[/de]
+	[de]CSS Code fÃ¼r das Bild.[/de]
 	
 	@param sCssClass [type]string[/type]
 	[en]CSS class for the image.[/en]
-	[de]CSS Klasse für das Bild.[/de]
+	[de]CSS Klasse fÃ¼r das Bild.[/de]
 	*/
 	this.img = function(_sImage, _sSizeX, _sSizeY, _sTitle, _sAddTag, _sCssStyle, _sCssClass)
 	{
@@ -634,8 +631,8 @@ function classPG_Gfx()
 		if ((oPGBrowser.getBrowserName() == PG_BROWSER_INTERNET_EXPLORER)
 		&& (Math.floor(oPGBrowser.getBrowserVersion()) < 7))
 		{
-			$_sHTML += '<div style="';
-			$_sHTML += 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\''+_sImagePathComplete+'\', sizingMethod=\'image\'); ';
+			_sHTML += '<div style="';
+			_sHTML += 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\''+_sImagePathComplete+'\', sizingMethod=\'image\'); ';
 			if ((_sSizeX != '') && (_sSizeX != null)) {_sHTML += 'width:'+_sSizeX+'; ';}
 			if ((_sSizeY != '') && (_sSizeY != null)) {_sHTML += 'height:'+_sSizeY+'; ';}
 			if ((_sCssStyle != '') && (_sCssStyle != null)) {_sHTML += _sCssStyle+'" ';}

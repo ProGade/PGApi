@@ -375,6 +375,7 @@ class classPG_MySql extends classPG_ClassBasics
 				}
 				else {$this->oConnection = new mysqli($this->sHost, $this->sUser, $this->sPassword, $this->sDatabase);}
 			}
+			$this->oConnection->set_charset('utf8');
 		}
 		else
 		{
@@ -402,6 +403,7 @@ class classPG_MySql extends classPG_ClassBasics
 				}
 				else {$this->oConnection = @mysql_connect($this->sHost, $this->sUser, $this->sPassword);}
 			}
+			mysql_set_charset('utf8', $this->oConnection);
 		}
 
 		return $this->oConnection;

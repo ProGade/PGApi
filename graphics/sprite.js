@@ -1,11 +1,7 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 23 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 12 2014
 */
 var PG_SPRITE_ANIMATION_INDEX_ID = 0;
 var PG_SPRITE_ANIMATION_INDEX_STARTPOS_X = 1;
@@ -241,7 +237,6 @@ function classPG_Sprite()
 		_bUpdateLastScale = this.getRealParameter({'oParameters': _dScale, 'sName': 'bUpdateLastScale', 'xParameter': _bUpdateLastScale});
 		_dScale = this.getRealParameter({'oParameters': _dScale, 'sName': 'dScale', 'xParameter': _dScale});
 
-		if (typeof(_bUpdateLastScale) == 'undefined') {var _bUpdateLastScale = null;}
 		if (_bUpdateLastScale == null) {_bUpdateLastScale = true;}
 		
 		this.dScale = _dScale;

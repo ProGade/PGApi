@@ -1,12 +1,8 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 16 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 12 2014
 */
 /*
 @start class
@@ -71,14 +67,13 @@ class classPG_Captcha extends classPG_ClassBasics
 	*/
 	public function getCaptchaCheckCodeKey(&$_sCodeImage, $_sImagePhpPath, $_iCharCount = NULL)
 	{
-		global $oPGGfx;
-
 		$_iCharCount = $this->getRealParameter(array('oParameters' => $_sImagePhpPath, 'sName' => 'iCharCount', 'xParameter' => $_iCharCount));
 		$_sImagePhpPath = $this->getRealParameter(array('oParameters' => $_sImagePhpPath, 'sName' => 'sImagePhpPath', 'xParameter' => $_sImagePhpPath));
 		
 		if ($_iCharCount < 3) {$_iCharCount = 3;}
 		mt_srand((double)microtime()*1000000);
 
+		$_sCodeKey = '';
 		for ($i=0; $i<$_iCharCount; $i++)
 		{
 			$temp = floor(mt_rand(0, 9));
@@ -153,18 +148,16 @@ class classPG_Captcha extends classPG_ClassBasics
 	@param sCodeKey [needed][type]string[/type]
 	[en]...[/en]
 	
-	@param iKompression [type]int[/type]
+	@param iCompression [type]int[/type]
 	[en]...[/en]
 	*/
-	public function putCaptchaImage($_sCodeKey, $_iKompression = NULL)
+	public function putCaptchaImage($_sCodeKey, $_iCompression = NULL)
 	{
-		global $oPGGfx;
-
-		$_iKompression = $this->getRealParameter(array('oParameters' => $_sCodeKey, 'sName' => 'iKompression', 'xParameter' => $_iKompression));
+		$_iCompression = $this->getRealParameter(array('oParameters' => $_sCodeKey, 'sName' => 'iCompression', 'xParameter' => $_iCompression));
 		$_sCodeKey = $this->getRealParameter(array('oParameters' => $_sCodeKey, 'sName' => 'sCodeKey', 'xParameter' => $_sCodeKey));
 		
-		if ($_iKompression === NULL) {$_iKompression = 0;}
-		if ($_iKompression <= 0) {$_iKompression = 80;}
+		if ($_iCompression === NULL) {$_iCompression = 0;}
+		if ($_iCompression <= 0) {$_iCompression = 80;}
 		
 		header('Content-type: image/jpeg');
 	
@@ -188,7 +181,7 @@ class classPG_Captcha extends classPG_ClassBasics
 			}
 
 			// output code image...
-			imagejpeg($_oNewImage, '', $_iKompression);
+			imagejpeg($_oNewImage, '', $_iCompression);
 			imagedestroy($_oNewImage);
 		}
 		clearstatcache();

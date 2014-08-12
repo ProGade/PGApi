@@ -1,11 +1,7 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 23 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 12 2014
 */
 /*
 @start class
@@ -1937,7 +1933,7 @@ function classPG_Canvas()
 							{'fFunction':this.addLine, 'iPosFromX':500, 'iPosFromY':100, 'iPosToX':700, 'iPosToY':100},
 							{'fFunction':this.addLine, 'iPosToX':700, 'iPosToY':300},
 						{'fFunction':this.closePath},
-						{'fFunction':this.drawPath, 'bFilled':true, 'bStroked':false},
+						{'fFunction':this.drawPath, 'bFilled':true, 'bStroked':false}
 						
 						// {'fFunction':this.drawOval, 'iPosX':350, 'iPosY':50, 'iSizeX':67, 'iSizeY': 36, 'bFilled':true, 'bStroked':true, 'xFillStyle':'#ffffff', 'sStrokeStyle':'#000000', 'dStrokeWidth':1.0, 'dAlpha':1.0}
 						/*
@@ -1961,7 +1957,7 @@ function classPG_Canvas()
 						{'fFunction':this.addRegularPolygone, 'iPosX':250, 'iPosY':100, 'iSizeX':100, 'iSizeY':50, 'iCornerCount':10},
 						{'fFunction':this.addStar, 'iPosX':450, 'iPosY':100, 'iSizeX':40, 'iSizeY':100, 'iPeakCount':10, 'iPeakSize':10},
 						{'fFunction':this.addGear, 'iPosX':350, 'iPosY':200, 'iSizeX':50, 'iSizeY':50, 'iToothCount':8, 'iToothSize':4},
-						{'fFunction':this.addRoundedRect, 'iPosX':250, 'iPosY':200, 'iSizeX':50, 'iSizeY':50, 'iCornerCurve':5},
+						{'fFunction':this.addRoundedRect, 'iPosX':250, 'iPosY':200, 'iSizeX':50, 'iSizeY':50, 'iCornerCurve':5}
 					],
 					'bFilled':true, 'bStroked':true, 'xFillStyle':'#ffffff', 'sStrokeStyle':'#00ff00'
 				}
