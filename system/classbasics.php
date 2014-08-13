@@ -2323,6 +2323,32 @@ class classPG_ClassBasics
 
     /*
     @start method
+
+    @group Database
+
+    @param xFileID [type]mixed[/type]
+    [en]...[/en]
+
+    @param asMetadata [type]mixed[][/type]
+    [en]...[/en]
+
+    @param xWhere [type]mixed[/type]
+    [en]...[/en]
+
+    @param sOrderBy [type]string[/type]
+    [en]...[/en]
+
+    @param bOrderReverse [type]bool[/type]
+    [en]...[/en]
+
+    @param iStart [type]int[/type]
+    [en]...[/en]
+
+    @param iCount [type]int[/type]
+    [en]...[/en]
+
+    @param sEngine [type]string[/type]
+    [en]...[/en]
     */
     public function selectDatabaseFiles($_xFileID = NULL, $_asMetadata = NULL, $_xWhere = NULL, $_sEngine = NULL)
     {
@@ -2337,6 +2363,14 @@ class classPG_ClassBasics
 
     /*
     @start method
+
+    @group Database
+
+    @param xFile [needed][type]mixed[/type]
+    [en]...[/en]
+
+    @param sEngine [type]string[/type]
+    [en]...[/en]
     */
     public function getDatabaseFileBytes($_xFile)
     {
@@ -2348,6 +2382,20 @@ class classPG_ClassBasics
 
     /*
     @start method
+
+    @group Database
+
+    @param sFile [needed][type]string[/type]
+    [en]...[/en]
+
+    @param axMetadata [type]mixed[][/type]
+    [en]...[/en]
+
+    @param bAllowAnonymInsert [type]bool[/type]
+    [en]...[/en]
+
+    @param sEngine [type]string[/type]
+    [en]...[/en]
     */
     public function insertDatabaseFile($_sFile, $_axMetadata = NULL, $_bAllowAnonymInsert = NULL, $_sEngine = NULL)
     {
@@ -2361,6 +2409,23 @@ class classPG_ClassBasics
 
     /*
     @start method
+
+    @group Database
+
+    @param xFileID [type]mixed[/type]
+    [en]...[/en]
+
+    @param axMetadata [type]mixed[][/type]
+    [en]...[/en]
+
+    @param sBytes [type]string[/type]
+    [en]...[/en]
+
+    @param bAllowAnonymUpdate [type]bool[/type]
+    [en]...[/en]
+
+    @param sEngine [type]string[/type]
+    [en]...[/en]
     */
     public function updateDatabaseFile($_xFileID, $_axMetadata, $_bAllowAnonymUpdate = NULL, $_sEngine = NULL)
     {
@@ -2374,6 +2439,17 @@ class classPG_ClassBasics
 
     /*
     @start method
+
+    @group Database
+
+    @param xFileID [needed][type]mixed[/type]
+    [en]...[/en]
+
+    @param bAllowAnonymDelete [type]bool[/type]
+    [en]...[/en]
+
+    @param sEngine [type]string[/type]
+    [en]...[/en]
     */
     public function deleteDatabaseFile($_xFileID, $_bAllowAnonymDelete = NULL, $_sEngine = NULL)
     {
