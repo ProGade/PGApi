@@ -1,11 +1,7 @@
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Sep 04 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 12 2014
 */
 var PG_DEBUGCONSOLE_MESSAGE_INDEX_TYPE = 0;
 
@@ -120,7 +116,7 @@ function classPG_DebugConsole()
 	this.showObjectProperties = function(_sContainerID, _sParent, _oObject)
 	{
 		if (typeof(_sParent) == 'undefined') {var _sParent = null;}
-		if (typeof(_bUseHtml) == 'undefined') {var _bUseHtml = null;}
+		if (typeof(_oObject) == 'undefined') {var _oObject = null;}
 
 		_sParent = this.getRealParameter({'oParameters': _sContainerID, 'sName': 'sParent', 'xParameter': _sParent});
 		_oObject = this.getRealParameter({'oParameters': _sContainerID, 'sName': 'oObject', 'xParameter': _oObject});
@@ -1032,15 +1028,15 @@ function classPG_DebugConsole()
 		_sHTML += '<table id="'+this.getID()+'Table" class="'+this.sCssClassPrefix+this.sCssClassMassageContainerTable+'" style="border-width:0px; width:'+_sWidth+'; height:'+_sHeight+';" cellpadding="0" cellspacing="0">';
 		_sHTML += '<tr>';
 			_sHTML += '<td style="width:20px;">';
-			_sHTML += '<img src="http://api.progade.de/1.00.00/docu/examples/debug/button_jump_to_top.gif" style="border-width:0px;" onclick="oPGDebugConsole.jumpToTop();" />';
+			_sHTML += this.img({'sImage': 'debug/button_jump_to_top.gif', 'sAddTag': 'style="border-width:0px;" onclick="oPGDebugConsole.jumpToTop();"'});
 			_sHTML += '<br />';
-			_sHTML += '<img src="http://api.progade.de/1.00.00/docu/examples/debug/button_jump_to_previous.gif" style="border-width:0px;" onclick="oPGDebugConsole.jumpToNextMessage();" />';
+			_sHTML += this.img({'sImage': 'debug/button_jump_to_previous.gif', 'sAddTag': 'style="border-width:0px;" onclick="oPGDebugConsole.jumpToNextMessage();"'});
 			_sHTML += '<br />';
-			_sHTML += '<img src="http://api.progade.de/1.00.00/docu/examples/debug/button_jump_to_active.gif" style="border-width:0px;" onclick="oPGDebugConsole.jumpToActiveMessage();" />';
+			_sHTML += this.img({'sImage': 'debug/button_jump_to_active.gif', 'sAddTag': 'style="border-width:0px;" onclick="oPGDebugConsole.jumpToActiveMessage();"'});
 			_sHTML += '<br />';
-			_sHTML += '<img src="http://api.progade.de/1.00.00/docu/examples/debug/button_jump_to_next.gif" style="border-width:0px;" onclick="oPGDebugConsole.jumpToPreviousMessage();" />';
+			_sHTML += this.img({'sImage': 'debug/button_jump_to_next.gif', 'sAddTag': 'style="border-width:0px;" onclick="oPGDebugConsole.jumpToPreviousMessage();"'});
 			_sHTML += '<br />';
-			_sHTML += '<img src="http://api.progade.de/1.00.00/docu/examples/debug/button_jump_to_bottom.gif" style="border-width:0px;" onclick="oPGDebugConsole.jumpToBottom();" />';
+			_sHTML += this.img({'sImage': 'debug/button_jump_to_bottom.gif', 'sAddTag': 'style="border-width:0px;" onclick="oPGDebugConsole.jumpToBottom();"'});
 			_sHTML += '</td>';
 			_sHTML += '<td>';
 				_sHTML += '<div id="'+this.getID()+'" style="overflow:auto; width:100%; height:'+_sHeight+'; margin:0px; padding:0px;">';
@@ -1084,15 +1080,15 @@ function classPG_DebugConsole()
 	{
 		_sText = this.getRealParameter({'oParameters': _sText, 'sName': 'sText', 'xParameter': _sText});
 
+		var _sInputFieldID = this.getID()+'CommandLineString';
 		if (typeof(oPGInputField) != 'undefined')
 		{
-			var _sInputFieldID = this.getID()+'CommandLineString';
 			oPGInputField.setDataValue({'sInputFieldID': _sInputFieldID, 'iIndex': 0, 'xData': _sText});
 		}
 		else
 		{
 			var _oCommandLineElement = this.oDocument.getElementById(_sInputFieldID);
-			if (_oCommandLineElement) {_oCommandLineString.value = _sText;}
+			if (_oCommandLineElement) {_oCommandLineElement.value = _sText;}
 		}
 	}
 	/* @end method */

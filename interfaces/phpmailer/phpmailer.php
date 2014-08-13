@@ -61,13 +61,14 @@ class classPG_PhpMailer extends classPG_ClassBasics
         $this->sSmtpSecure = $_sSecure;
     }
 
-    public function send($_sFromMail = NULL, $_xToMail = NULL, $_sSubject = NULL, $_sMessage = NULL, $_bHtml = NULL, $_bText = NULL, $_xTemplate = NULL)
+    public function send($_sFromMail = NULL, $_xToMail = NULL, $_sSubject = NULL, $_sMessage = NULL, $_asAttachment = NULL, $_bHtml = NULL, $_bText = NULL, $_xTemplate = NULL)
     {
         global $oPGStrings;
 
         $_xToMail = $this->getRealParameter(array('oParameters' => $_sFromMail, 'sName' => 'xToMail', 'xParameter' => $_xToMail));
         $_sSubject = $this->getRealParameter(array('oParameters' => $_sFromMail, 'sName' => 'sSubject', 'xParameter' => $_sSubject));
         $_sMessage = $this->getRealParameter(array('oParameters' => $_sFromMail, 'sName' => 'sMessage', 'xParameter' => $_sMessage));
+		$_asAttachment = $this->getRealParameter(array('oParameters' => $_sFromMail, 'sName' => 'asAttachment', 'xParameter' => $_asAttachment));
         $_bHtml = $this->getRealParameter(array('oParameters' => $_sFromMail, 'sName' => 'bHtml', 'xParameter' => $_bHtml));
         $_bText = $this->getRealParameter(array('oParameters' => $_sFromMail, 'sName' => 'bText', 'xParameter' => $_bText));
         $_xTemplate = $this->getRealParameter(array('oParameters' => $_sFromMail, 'sName' => 'xTemplate', 'xParameter' => $_xTemplate));
@@ -99,6 +100,14 @@ class classPG_PhpMailer extends classPG_ClassBasics
 
         $this->oMailer->WordWrap = $this->iWordWrap;
         if ($_bHtml !== NULL) {$this->oMailer->isHtml($_bHtml);}
+
+		if ($_asAttachment !== NULL)
+		{
+			for ($i=0; $i<count($_asAttachment); $i++)
+			{
+				$this->oMailer->AddAttachment($_asAttachment[$i]);
+			}
+		}
 
         if (!empty($_xTemplate))
         {

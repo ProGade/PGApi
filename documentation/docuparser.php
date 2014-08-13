@@ -1,12 +1,8 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 17 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 12 2014
 */
 /*
 	Schritt 1: auslesen der Dateien und Verzeichnisse
@@ -499,6 +495,7 @@ class classPG_DocuParser extends classPG_ClassBasics
 		
 		// $oPGDocumentation->setUrl('index.php');
 		// $oPGDocumentation->setUrlTarget('_self');
+		$_axClass = array();
 		for ($_iClassIndex=0; $_iClassIndex<count($_asParsed); $_iClassIndex++)
 		{
 			$_asClass = $_asParsed[$_iClassIndex];
@@ -522,7 +519,7 @@ class classPG_DocuParser extends classPG_ClassBasics
 	*/
 	public function build($_sUpdateScriptPath = NULL, $_bUpdateHistoryInfo = NULL)
 	{
-		global $oPGProgressBar;
+		global $oPGProgressBar, $oPGFileSystem;
 
 		$_bUpdateHistoryInfo = $this->getRealParameter(array('oParameters' => $_sUpdateScriptPath, 'sName' => 'bUpdateHistoryInfo', 'xParameter' => $_bUpdateHistoryInfo));
 		$_sUpdateScriptPath = $this->getRealParameter(array('oParameters' => $_sUpdateScriptPath, 'sName' => 'sUpdateScriptPath', 'xParameter' => $_sUpdateScriptPath));

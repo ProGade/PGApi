@@ -1,12 +1,8 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 17 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 12 2014
 */
 define('PG_DEVDOCU_REQUESTTYPE_CLASSDOCU', 'PGDocumentationRequestTypeClass');
 define('PG_DEVDOCU_REQUESTTYPE_METHODDOCU', 'PGDocumentationRequestTypeMethod');
@@ -188,7 +184,7 @@ class classPG_Documentation extends classPG_ClassBasics
 	{
 		$_sString = $this->getRealParameter(array('oParameters' => $_sString, 'sName' => 'sString', 'xParameter' => $_sString));
 		
-		$_asSearch = array('�', '�', '�', '�', '�', '�');
+		$_asSearch = array('ä', 'Ä', 'ü', 'Ü', 'ö', 'Ö');
 		$_asReplace = array('&auml;', '&Auml;', '&uuml;', '&Uuml;', '&ouml;', '&Ouml;');
 		
 		$_sString = str_replace($_asSearch, $_asReplace, $_sString);
@@ -796,8 +792,7 @@ class classPG_Documentation extends classPG_ClassBasics
 				'xFieldValue' => $_axClass['DefaultObject']
 			)
 		);
-		
-		
+
 		$oPGForm->addTextArea(
 			array(
 				'sLabelName' => 'Description',
@@ -1632,7 +1627,7 @@ class classPG_Documentation extends classPG_ClassBasics
 	{
 		$_iMethodID = $this->getRealParameter(array('oParameters' => $_iMethodID, 'sName' => 'iMethodID', 'xParameter' => $_iMethodID));
 		
-		$_axMethods = array();
+		$_axMethod = array();
 		
 		$_asColumns = array(
 			'MethodID', 'ClassID', 'Name', 'Description', 
@@ -1642,7 +1637,7 @@ class classPG_Documentation extends classPG_ClassBasics
 		
 		$_sWhere = '';
 		$_sWhere .= 'MethodID = "'.$this->realEscapeDatabaseString(array('xString' => trim($_iMethodID))).'"';
-		
+
 		if
 		(
 			$_oMethodResult = $this->selectDatasets(

@@ -1,7 +1,7 @@
 /*
 * ProGade API
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* Last changes of this file: Aug 23 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 12 2014
 */
 var PG_DEVDOCU_REQUESTTYPE_CLASSDOCU = 'PGDocumentationRequestTypeClass';
 var PG_DEVDOCU_REQUESTTYPE_METHODDOCU = 'PGDocumentationRequestTypeMethod';
@@ -148,8 +148,7 @@ function classPG_Documentation()
 		}
 	}
 	/* @end method */
-	
-	
+
 	this.getDocuFileContent = function(_iClassID, _sFile, _sClass, _sLanguage, _bDetailed, _sResponseXml, _fAjaxResult)
 	{
 		if (typeof(_iClassID) == 'undefined') {var _iClassID = null;}

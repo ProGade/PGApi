@@ -1,12 +1,8 @@
 <?php
 /*
 * ProGade API
-* http://api.progade.de/
-*
-* Copyright 2012, Hans-Peter Wandura (ProGade)
-* You can find the Licenses, Terms and Conditions under: http://api.progade.de/api_terms.php
-*
-* Last changes of this file: Aug 17 2012
+* Copyright 2014, Hans-Peter Wandura (ProGade)
+* Last changes of this file: Aug 12 2014
 */
 // Log into file, database or on screen
 define('PG_LOG_MODE_NONE', 0);
@@ -62,9 +58,9 @@ class classPG_Logs extends classPG_ClassBasics
 		if ($_iAction === NULL) {$_iAction = $this->getMode();}
 
 		$this->axLogs = array();
-		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_ACTION_SCREEN))) {}
+		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_MODE_SCREEN))) {}
 		
-		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_ACTION_FILE)))
+		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_MODE_FILE)))
 		{
 			if ((isset($oPGFileSystem)) && ($this->sLogFileName != ''))
 			{
@@ -72,7 +68,7 @@ class classPG_Logs extends classPG_ClassBasics
 			}
 		}
 		
-		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_ACTION_DATABASE))) {}
+		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_MODE_DATABASE))) {}
 	}
 	/* @end method */
 
@@ -101,9 +97,9 @@ class classPG_Logs extends classPG_ClassBasics
 		
 		$this->axLogs[] = array($_iTimeStamp, $_sMessage, $_iAction);
 		
-		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_ACTION_SCREEN))) {}
+		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_MODE_SCREEN))) {}
 		
-		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_ACTION_FILE)))
+		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_MODE_FILE)))
 		{
 			if ((isset($oPGFileSystem)) && ($this->sLogFileName != ''))
 			{
@@ -111,7 +107,7 @@ class classPG_Logs extends classPG_ClassBasics
 			}
 		}
 		
-		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_ACTION_DATABASE))) {}
+		if ($this->isMode(array('iCurrentMode' => $_iAction, 'iMode' => PG_LOG_MODE_DATABASE))) {}
 	}
 	/* @end method */
 }

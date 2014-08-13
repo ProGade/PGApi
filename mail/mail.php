@@ -791,6 +791,7 @@ class classPG_Mail extends classPG_ClassBasics
                     'xToMail' => $_xToMail,
                     'sSubject' => $_sSubject,
                     'sMessage' => $_sMessage,
+					'asAttachment' => $_asAttachment,
                     'bHtml' => $_bHtml,
                     'bText' => $_bText,
                     'xTemplate' => $_xTemplate

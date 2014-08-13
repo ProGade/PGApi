@@ -1033,11 +1033,12 @@ class classPG_Mongo extends classPG_ClassBasics
     /*
     @start method
     */
-    public function updateFile($_xFileID, $_axMetadata, $_bAllowAnonymUpdate = NULL)
+    public function updateFile($_xFileID, $_axMetadata = NULL, $_sBytes = NULL, $_bAllowAnonymUpdate = NULL)
     {
         global $oPGLogin;
 
         $_axMetadata = $this->getRealParameter(array('oParameters' => $_xFileID, 'sName' => 'axMetadata', 'xParameter' => $_axMetadata));
+		$_sBytes = $this->getRealParameter(array('oParameters' => $_xFileID, 'sName' => 'sBytes', 'xParameter' => $_sBytes));
         $_bAllowAnonymUpdate = $this->getRealParameter(array('oParameters' => $_xFileID, 'sName' => 'bAllowAnonymUpdate', 'xParameter' => $_bAllowAnonymUpdate));
         $_xFileID = $this->getRealParameter(array('oParameters' => $_xFileID, 'sName' => 'xFileID', 'xParameter' => $_xFileID));
 
@@ -1052,22 +1053,31 @@ class classPG_Mongo extends classPG_ClassBasics
 
         $this->checkConnection();
 
+		$_bAllOk = false;
         if ($_oGridFs = $this->oConnection->getGridFS())
         {
             // Note: Workaround of Bug in GridFS update...
             if($_oFile = $_oGridFs->findOne(array('_id' => new MongoID($_xFileID))))
             {
-                foreach ($_axMetadata AS $_sKey => $_xValue)
-                {
-                    $_oFile->file[$_sKey] = $_xValue;
-                }
-                if($_oGridFs->save($_oFile->file)) {return true;}
+				$_bAllOk = true;
+				if ($_axMetadata !== NULL)
+				{
+					foreach ($_axMetadata AS $_sKey => $_xValue)
+					{
+						$_oFile->file[$_sKey] = $_xValue;
+					}
+					if(!$_oGridFs->save($_oFile->file)) {$_bAllOk = false;}
+				}
+
+				// if ($_sBytes != NULL) {$_oFile->file['bytes'] = $_sBytes;}
+
+				// if (!$_oGridFs->update(array('_id' => new MongoID($_xFileID)), $_oFile->file)) {$_bAllOk = false;}
             }
 
             // Note: Normal way to update...
             // if ($_oGridFs->update(array('_id' => $_xFileID), $_axMetadata)) {return true;}
         }
-        return false;
+        return $_bAllOk;
     }
     /* @end method */
 
