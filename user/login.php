@@ -179,7 +179,9 @@ class classPG_Login extends classPG_ClassBasics
     private $xRegisterFailedMailTemplate = NULL;
     private $xPasswordResetMailTemplate = NULL;
 
-    private $sMailPasswordResetSubject = '';
+	private $asRegisterMailAttachments = array();
+
+	private $sMailPasswordResetSubject = '';
 	private $sMailPasswordResetMessage = '';
 	
 	private $sPrivacyPolicyUrl = '';
@@ -500,6 +502,19 @@ class classPG_Login extends classPG_ClassBasics
         $this->xPasswordResetMailTemplate = $_xTemplate;
     }
     /* @end method */
+
+	/*
+	@start method
+
+	@param asAttachments [type]string[][/type]
+	[en]...[/en]
+	*/
+	public function setRegisterMailAttachments($_asAttachment)
+	{
+		$_asAttachment = $this->getRealParameter(array('oParameters' => $_asAttachment, 'sName' => 'asAttachment', 'xParameter' => $_asAttachment, 'bNotNull' => true));
+		$this->asRegisterMailAttachments = $_asAttachment;
+	}
+	/* @end method */
 
     /*
     @start method
@@ -5027,7 +5042,8 @@ class classPG_Login extends classPG_ClassBasics
                 'sReplyToMail' => $this->sSystemEmail,
                 'sSubject' => $_sSubject,
                 'sMessage' => $_sMessage,
-                'xTemplate' => $this->xRegisterMailTemplate
+                'xTemplate' => $this->xRegisterMailTemplate,
+				'asAttachments' => $this->asRegisterMailAttachments
             )
         );
 	}
@@ -5203,6 +5219,9 @@ class classPG_Login extends classPG_ClassBasics
 
 	@param xTemplate [type]mixed[/type]
 	[en]...[/en]
+
+	@param asAttachments [type]string[][/type]
+	[en]...[/en]
 	*/
 	public function sendMail(
         $_xSendToMail,
@@ -5211,7 +5230,8 @@ class classPG_Login extends classPG_ClassBasics
         $_sMessage = NULL,
         $_sSalutation = NULL,
         $_sSignature = NULL,
-        $_xTemplate = NULL
+        $_xTemplate = NULL,
+		$_asAttachments = NULL
     )
 	{
 		global $oPGMail;
@@ -5222,8 +5242,9 @@ class classPG_Login extends classPG_ClassBasics
 		$_sSalutation = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'sSalutation', 'xParameter' => $_sSalutation));
 		$_sSignature = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'sSignature', 'xParameter' => $_sSignature));
         $_xTemplate = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'xTemplate', 'xParameter' => $_xTemplate));
+		$_asAttachments = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'asAttachments', 'xParameter' => $_asAttachments));
 		$_xSendToMail = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'xSendToMail', 'xParameter' => $_xSendToMail, 'bNotNull' => true));
-		
+
 		if ($_sSalutation === NULL) {$_sSalutation = '';} else {$_sSalutation .= '<br /><br />';}
 		if ($_sSignature === NULL) {$_sSignature = '';} else {$_sSignature = '<br /><br />'.$_sSignature;}
         if ($_xTemplate === NULL) {$_xTemplate = $this->xDefaultMailTemplate;}
@@ -5240,7 +5261,8 @@ class classPG_Login extends classPG_ClassBasics
 				'bText' => NULL, 
 				'sReplyToMail' => $_sReplyToMail, 
 				'asCcMail' => NULL,
-                'xTemplate' => $_xTemplate
+                'xTemplate' => $_xTemplate,
+				'asAttachment' => $_asAttachments
 			)
 		);
 	}

@@ -103,9 +103,9 @@ class classPG_PhpMailer extends classPG_ClassBasics
 
 		if ($_asAttachment !== NULL)
 		{
-			for ($i=0; $i<count($_asAttachment); $i++)
+			foreach ($_asAttachment as $_iIndex => $_sAttachment)
 			{
-				$this->oMailer->AddAttachment($_asAttachment[$i]);
+				$this->oMailer->AddAttachment($_sAttachment);
 			}
 		}
 
