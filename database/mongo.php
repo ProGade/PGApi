@@ -900,6 +900,29 @@ class classPG_Mongo extends classPG_ClassBasics
     // FILES...
     /*
     @start method
+
+    @group Database
+
+    @param xFileID [type]mixed[/type]
+    [en]...[/en]
+
+    @param asMetadata [type]mixed[][/type]
+    [en]...[/en]
+
+    @param xWhere [type]mixed[/type]
+    [en]...[/en]
+
+    @param sOrderBy [type]string[/type]
+    [en]...[/en]
+
+    @param bOrderReverse [type]bool[/type]
+    [en]...[/en]
+
+    @param iStart [type]int[/type]
+    [en]...[/en]
+
+    @param iCount [type]int[/type]
+    [en]...[/en]
     */
     public function selectFiles(
         $_xFileID = NULL,
@@ -975,7 +998,12 @@ class classPG_Mongo extends classPG_ClassBasics
 
     /*
     @start method
-    */
+
+    @group Database
+
+    @param xFile [needed][type]mixed[/type]
+    [en]...[/en]
+   */
     public function getFileBytes($_xFile)
     {
         $_xFile = $this->getRealParameter(array('oParameters' => $_xFile, 'sName' => 'xFile', 'xParameter' => $_xFile));
@@ -1000,6 +1028,17 @@ class classPG_Mongo extends classPG_ClassBasics
 
     /*
     @start method
+
+    @group Database
+
+    @param sFile [needed][type]string[/type]
+    [en]...[/en]
+
+    @param axMetadata [type]mixed[][/type]
+    [en]...[/en]
+
+    @param bAllowAnonymInsert [type]bool[/type]
+    [en]...[/en]
     */
     public function insertFile($_sFile, $_axMetadata = NULL, $_bAllowAnonymInsert = NULL)
     {
@@ -1032,6 +1071,20 @@ class classPG_Mongo extends classPG_ClassBasics
 
     /*
     @start method
+
+    @group Database
+
+    @param xFileID [type]mixed[/type]
+    [en]...[/en]
+
+    @param axMetadata [type]mixed[][/type]
+    [en]...[/en]
+
+    @param sBytes [type]string[/type]
+    [en]...[/en]
+
+    @param bAllowAnonymUpdate [type]bool[/type]
+    [en]...[/en]
     */
     public function updateFile($_xFileID, $_axMetadata = NULL, $_sBytes = NULL, $_bAllowAnonymUpdate = NULL)
     {
@@ -1083,6 +1136,14 @@ class classPG_Mongo extends classPG_ClassBasics
 
     /*
     @start method
+
+    @group Database
+
+    @param xFileID [needed][type]mixed[/type]
+    [en]...[/en]
+
+    @param bAllowAnonymDelete [type]bool[/type]
+    [en]...[/en]
     */
     public function deleteFile($_xFileID, $_bAllowAnonymDelete = NULL)
     {
