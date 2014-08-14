@@ -2427,12 +2427,12 @@ class classPG_ClassBasics
     @param sEngine [type]string[/type]
     [en]...[/en]
     */
-    public function updateDatabaseFile($_xFileID, $_axMetadata, $_bAllowAnonymUpdate = NULL, $_sEngine = NULL)
+    public function updateDatabaseFile($_xFileID, $_axMetadata = NULL, $_bAllowAnonymUpdate = NULL, $_sEngine = NULL)
     {
         $_axMetadata = $this->getRealParameter(array('oParameters' => $_xFileID, 'sName' => 'axMetadata', 'xParameter' => $_axMetadata));
         $_bAllowAnonymUpdate = $this->getRealParameter(array('oParameters' => $_xFileID, 'sName' => 'bAllowAnonymUpdate', 'xParameter' => $_bAllowAnonymUpdate));
         $_xFileID = $this->getRealParameter(array('oParameters' => $_xFileID, 'sName' => 'xFileID', 'xParameter' => $_xFileID));
-        if ($this->oDatabase != NULL) {return $this->oDatabase->updateFile($_xFileID, $_axMetadata, $_bAllowAnonymUpdate, $_sEngine);}
+        if ($this->oDatabase != NULL) {return $this->oDatabase->updateFile(array('xFileID' => $_xFileID, 'axMetadata' => $_axMetadata, 'bAllowAnonymUpdate' => $_bAllowAnonymUpdate, 'sEngine' => $_sEngine));}
         return NULL;
     }
     /* @end method */

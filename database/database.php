@@ -1399,7 +1399,7 @@ class classPG_Database extends classPG_ClassBasics
     /*
     @start method
     */
-    public function updateFile($_xFileID, $_axMetadata, $_bAllowAnonymUpdate = NULL, $_sEngine = NULL)
+    public function updateFile($_xFileID, $_axMetadata = NULL, $_bAllowAnonymUpdate = NULL, $_sEngine = NULL)
     {
         $_axMetadata = $this->getRealParameter(array('oParameters' => $_xFileID, 'sName' => 'axMetadata', 'xParameter' => $_axMetadata));
         $_bAllowAnonymUpdate = $this->getRealParameter(array('oParameters' => $_xFileID, 'sName' => 'bAllowAnonymUpdate', 'xParameter' => $_bAllowAnonymUpdate));
@@ -1416,7 +1416,7 @@ class classPG_Database extends classPG_ClassBasics
                 break;
 
             case PG_DATABASE_ENGINE_MONGO:
-                if ($this->aoEngine[PG_DATABASE_ENGINE_MONGO]) {return $this->aoEngine[PG_DATABASE_ENGINE_MONGO]->updateFile($_xFileID, $_axMetadata, $_bAllowAnonymUpdate, $_sEngine);}
+                if ($this->aoEngine[PG_DATABASE_ENGINE_MONGO]) {return $this->aoEngine[PG_DATABASE_ENGINE_MONGO]->updateFile(array('xFileID' => $_xFileID, 'axMetadata' => $_axMetadata, 'bAllowAnonymUpdate' => $_bAllowAnonymUpdate));}
                 break;
         }
         return NULL;
