@@ -159,7 +159,10 @@ class classPG_Login extends classPG_ClassBasics
 	private $sMailAcceptSuccessSubject = '';
 	private $sMailAcceptSuccessMessage = '';
 	private $bMailAcceptSuccessToSystemEmail = false;
-	private $sMailAcceptSuccessToEmails = '';
+	private $xMailAcceptSuccessToEmails = NULL;
+
+	private $sMailAcceptSuccessToSystemEmailsSubject = '';
+	private $sMailAcceptSuccessToSystemEmailsMessage = '';
 
 	/*
 	private $sMailAcceptFailedSubject = '';
@@ -176,6 +179,7 @@ class classPG_Login extends classPG_ClassBasics
     private $xDefaultMailTemplate = NULL;
     private $xRegisterMailTemplate = NULL;
     private $xRegisterSuccessMailTemplate = NULL;
+	private $xRegisterSuccessToSystemEmailsMailTemplate = NULL;
     private $xRegisterFailedMailTemplate = NULL;
     private $xPasswordResetMailTemplate = NULL;
 
@@ -476,6 +480,19 @@ class classPG_Login extends classPG_ClassBasics
         $this->xRegisterSuccessMailTemplate = $_xTemplate;
     }
     /* @end method */
+
+	/*
+	@start method
+
+	@param xTemplate [needed][type]mixed[/type]
+	[en]...[/en]
+	*/
+	public function setRegisterSuccessToSystemEmailsMailTemplate($_xTemplate)
+	{
+		$_xTemplate = $this->getRealParameter(array('oParameters' => $_xTemplate, 'sName' => 'xTemplate', 'xParameter' => $_xTemplate));
+		$this->xRegisterSuccessToSystemEmailsMailTemplate = $_xTemplate;
+	}
+	/* @end method */
 
     /*
     @start method
@@ -2051,10 +2068,10 @@ class classPG_Login extends classPG_ClassBasics
 	[en]...[/en]
 	[de]...[/de]
 	*/
-	public function setMailAcceptSuccessToEmails($_sMails)
+	public function setMailAcceptSuccessToEmails($_xEmail)
 	{
-		$_sMails = $this->getRealParameter(array('oParameters' => $_sMails, 'sName' => 'sMails', 'xParameter' => $_sMails));
-		$this->sMailAcceptSuccessToEmails = $_sMails;
+		$_xEmail = $this->getRealParameter(array('oParameters' => $_xEmail, 'sName' => 'xEmail', 'xParameter' => $_xEmail, 'bNotNull' => true));
+		$this->xMailAcceptSuccessToEmails = $_xEmail;
 	}
 	/* @end method */
 	
@@ -2736,7 +2753,7 @@ class classPG_Login extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the status of a user whether he has already accepted the registration on the confirmation e-mail.[/en]
-	[de]Setzt den Status eines Benutzers ob er die Registrierung �ber die Bestätigungs-Mail bereits akzeptiert hat.[/de]
+	[de]Setzt den Status eines Benutzers ob er die Registrierung über die Bestätigungs-Mail bereits akzeptiert hat.[/de]
 	
 	@return bSuccess [type]bool[/type]
 	[en]Returns or sets whether the acceptance was successful.[/en]
@@ -4580,6 +4597,10 @@ class classPG_Login extends classPG_ClassBasics
 								{
 									$this->sendAccountAcceptSuccessMail(array('xSendToMail' => $_sEmail, 'sUsername' => $_axUser['Username']));
 								}
+								if ($this->bMailAcceptSuccessToSystemEmail == true)
+								{
+									$this->sendAccountAcceptSuccessMailToSystemEmail(array('xSendToMail' => $this->xMailAcceptSuccessToEmails, 'xUserID' => $_axUser['UserID']));
+								}
 							}
 							else {$_sHtml .= $this->getText(array('sType' => 'AccountAcceptFailed'));}
 						}
@@ -5118,7 +5139,96 @@ class classPG_Login extends classPG_ClassBasics
         );
 	}
 	/* @end method */
-	
+
+	/*
+	@start method
+
+	@description
+	[en]Sends the success message for confirmation of the registration of a user.[/en]
+	[de]Sendet per Mail die Erfolgsmeldung zur Bestätigung der Registration eines Benutzers.[/de]
+
+	@return bSuccess [type]bool[/type]
+	[en]Returns a boolean whether the email was sent successfully.[/en]
+	[de]Gibt einen Boolean zurück, ob die E-Mail erfolgreich gesendet wurde.[/de]
+
+	@param xSendToMail [needed][type]mixed[/type]
+	[en]The email adress of the user whose registration was confirmed.[/en]
+	[de]Die E-Mail-Adresse des Benutzers, dessen Registrierung bestätigt wurde.[/de]
+
+	@param xUserID [type]mixed[/type]
+	[en]...[/en]
+	*/
+	public function sendAccountAcceptSuccessMailToSystemEmail($_xSendToMail, $_xUserID = NULL)
+	{
+		global $oPGMail;
+
+		$_xUserID = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'xUserID', 'xParameter' => $_xUserID));
+		$_xSendToMail = $this->getRealParameter(array('oParameters' => $_xSendToMail, 'sName' => 'xSendToMail', 'xParameter' => $_xSendToMail, 'bNotNull' => true));
+
+		$_axUser = array();
+		if (
+			$_oResult = $this->selectDatasets(
+				array(
+					'sTable' => $this->getDatabaseTablePrefix().'user',
+					'xWhere' => array('UserID' => $_xUserID),
+					'iCount' => 1
+				)
+			)
+		)
+		{
+			$_axUser = $this->fetchDatabaseArray(array('xResult' => $_oResult));
+		} // if _oResult
+
+		if ($this->sMailAcceptSuccessToSystemEmailsSubject != '') {$_sSubject = $this->sMailAcceptSuccessToSystemEmailsSubject;}
+		else
+		{
+			$_sSubject = 'Neuer Benutzer: Ein neuer Account wurde bei '.$this->sSystemTitle.' freigeschaltet.';
+			$oPGMail->addTemplateReplaceVar(array('sVarname' => 'Subject', 'sReplace' => $_sSubject));
+		}
+
+		if ($this->sMailAcceptSuccessToSystemEmailsMessage != '') {$_sMessage = $this->sMailAcceptSuccessToSystemEmailsMessage;}
+		else
+		{
+			$_sMessage = '';
+			$_sMessage .= '<h1>Neuer Benutzer bei '.$this->sSystemTitle.'</h1>';
+			$_sMessage .= 'Mit der E-Mail-Adresse "'.$_axUser['Email'].'" wurde bei '.$this->sSystemTitle.' ein Account erstellt.<br />';
+			$_sMessage .= 'Der Account wurde soeben freigeschaltet und kann ab sofort benutzt werden.<br /><br />';
+			if (!empty($_axUser['Username']))
+			{
+				$oPGMail->addTemplateReplaceVar(array('sVarname' => 'Username', 'sReplace' => $_axUser['Username']));
+				$_sMessage .= 'Username: '.$_axUser['Username'].'<br />';
+			}
+			if (!empty($_axUser['FirstName']))
+			{
+				$oPGMail->addTemplateReplaceVar(array('sVarname' => 'FirstName', 'sReplace' => $_axUser['FirstName']));
+				$_sMessage .= 'Vorname: '.$_axUser['FirstName'].'<br />';
+			}
+			if (!empty($_axUser['LastName']))
+			{
+				$oPGMail->addTemplateReplaceVar(array('sVarname' => 'LastName', 'sReplace' => $_axUser['LastName']));
+				$_sMessage .= 'Nachname: '.$_axUser['LastName'].'<br />';
+			}
+			if (!empty($_axUser['Email']))
+			{
+				$oPGMail->addTemplateReplaceVar(array('sVarname' => 'Email', 'sReplace' => $_axUser['Email']));
+				$_sMessage .= 'E-Mail: '.$_axUser['Email'].'<br />';
+			}
+		}
+
+		$oPGMail->addTemplateReplaceVar(array('sVarname' => 'Message', 'sReplace' => $_sMessage));
+
+		return $this->sendMail(
+			array(
+				'xSendToMail' => $_xSendToMail,
+				'sReplyToMail' => $this->sSystemEmail,
+				'sSubject' => $_sSubject,
+				'sMessage' => $_sMessage,
+				'xTemplate' => $this->xRegisterSuccessToSystemEmailsMailTemplate
+			)
+		);
+	}
+	/* @end method */
+
 	/*
 	@start method
 	
