@@ -145,7 +145,7 @@ TODO!
 
 @description
 [en]The class has methods to create forms.[/en]
-[de]Die Klasse verfügt über Methoden zum erstellen von Formularen.[/de]
+[de]Die Klasse verfï¿½gt ï¿½ber Methoden zum erstellen von Formularen.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -200,11 +200,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the method on which the form should be sent.[/en]
-	[de]Setzt die Methode über die das Formular gesendet werden soll.[/de]
+	[de]Setzt die Methode Ã¼ber die das Formular gesendet werden soll.[/de]
 	
 	@param sMethod [needed][type]string[/type]
 	[en]The method to the transfer the form data. "post" or "get" are possible. (Default: post)[/en]
-	[de]Die Methode zum übertragen der Formulardaten. Möglich sind "post" oder "get". (Standard: post)[/de]
+	[de]Die Methode zum Ã¼bertragen der Formulardaten. MÃ¶glich sind "post" oder "get". (Standard: post)[/de]
 	*/
 	public function setFormMethod($_sMethod)
 	{
@@ -218,11 +218,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the method to send the form data.[/en]
-	[de]Gibt die Methode zum Senden der Formulardaten zurück.[/de]
+	[de]Gibt die Methode zum Senden der Formulardaten zurÃ¼ck.[/de]
 	
 	@return sFormMethod [type]string[/type]
 	[en]Returns the method to send the form data as a string.[/en]
-	[de]Gibt die Methode zum Senden der Formulardaten als String zurück.[/de]
+	[de]Gibt die Methode zum Senden der Formulardaten als String zurÃ¼ck.[/de]
 	*/
 	public function getFormMethod() {return $this->sFormMethod;}
 	/* @end method */
@@ -232,11 +232,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns error messages to the security system. With the messages you can see exactly what constitutes a security problem.[/en]
-	[de]Gibt Fehlermeldungen zum Sicherheitssystem zurück. Mit den Meldungen kann man erkennen was genau ein Sicherheitsproblem darstellt.[/de]
+	[de]Gibt Fehlermeldungen zum Sicherheitssystem zurï¿½ck. Mit den Meldungen kann man erkennen was genau ein Sicherheitsproblem darstellt.[/de]
 	
 	@return axSecureErrors [type]mixed[][/type]
 	[en]Returns error messages to the security system as an mixed array.[/en]
-	[de]Gibt Fehlermeldungen zum Sicherheitssystem als gemischter Array zurück.[/de]
+	[de]Gibt Fehlermeldungen zum Sicherheitssystem als gemischter Array zurï¿½ck.[/de]
 	*/
 	public function getSecureErrors()
 	{
@@ -249,11 +249,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Specifies whether to send the form data through the network functions of the API.[/en]
-	[de]Gibt an ob die Formulardaten über die Network-Funktionen der API gesendet werden sollen.[/de]
+	[de]Gibt an ob die Formulardaten ï¿½ber die Network-Funktionen der API gesendet werden sollen.[/de]
 	
 	@param bUse [needed][type]bool[/type]
 	[en]Specifies whether to send the form data through the network functions of the API. If false, the data is sent in the traditional way using HTML Submit.[/en]
-	[de]Gibt an ob die Formulardaten über die Network-Funktionen der API gesendet werden sollen. Bei false werden die Daten auf traditionelle Weise per HTML Submit gesendet.[/de]
+	[de]Gibt an ob die Formulardaten ï¿½ber die Network-Funktionen der API gesendet werden sollen. Bei false werden die Daten auf traditionelle Weise per HTML Submit gesendet.[/de]
 	*/
 	public function useNetworkSend($_bUse)
 	{
@@ -267,11 +267,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether the form data should be sent over the network functions of the API.[/en]
-	[de]Gibt zurück, ob die Formulardaten über die Netzwerk-Funktionen der API gesendet werden sollen.[/de]
+	[de]Gibt zurï¿½ck, ob die Formulardaten ï¿½ber die Netzwerk-Funktionen der API gesendet werden sollen.[/de]
 	
 	@return bNetworkSend [type]bool[/type]
 	[en]Returns a boolean whether the form data should be sent over the network functions of the API.[/en]
-	[de]Gibt einen Boolean zurück, ob die Formulardaten über die Netzwerk-Funktionen der API gesendet werden sollen.[/de]
+	[de]Gibt einen Boolean zurï¿½ck, ob die Formulardaten ï¿½ber die Netzwerk-Funktionen der API gesendet werden sollen.[/de]
 	*/
 	public function isNetworkSend() {return $this->bNetworkSend;}
 	/* @end method */
@@ -299,11 +299,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether form fields in JavaScript will automatically be registered.[/en]
-	[de]Gibt zurück, ob Formularfelder in JavaScript automatisch registriert werden sollen.[/de]
+	[de]Gibt zurï¿½ck, ob Formularfelder in JavaScript automatisch registriert werden sollen.[/de]
 	
 	@return bAutoRegister [type]bool[/type]
 	[en]Returns a boolean whether form fields in JavaScript will automatically be registered.[/en]
-	[de]Gibt einen Boolean zurück, ob Formularfelder in JavaScript automatisch registriert werden sollen.[/de]
+	[de]Gibt einen Boolean zurï¿½ck, ob Formularfelder in JavaScript automatisch registriert werden sollen.[/de]
 	*/
 	public function isJavaScriptAutoRegister() {return $this->bJavaScriptAutoRegister;}
 	/* @end method */
@@ -313,11 +313,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether the form was already sent.[/en]
-	[de]Gibt zurück, ob das Formular bereits abgeschickt wurde.[/de]
+	[de]Gibt zurï¿½ck, ob das Formular bereits abgeschickt wurde.[/de]
 	
 	@return bIsSend [type]bool[/type]
 	[en]Returns a boolean whether the form was already sent.[/en]
-	[de]Gibt einen Boolean zurück, ob das Formular bereits abgeschickt wurde.[/de]
+	[de]Gibt einen Boolean zurï¿½ck, ob das Formular bereits abgeschickt wurde.[/de]
 	
 	@param sFormID [needed][type]string[/type]
 	[en]The ID of the form, which should be queried.[/en]
@@ -335,11 +335,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether the form was already sent.[/en]
-	[de]Gibt zurück, ob das Formular bereits abgeschickt wurde.[/de]
+	[de]Gibt zurï¿½ck, ob das Formular bereits abgeschickt wurde.[/de]
 	
 	@return bIsSubmitted [type]bool[/type]
 	[en]Returns a boolean whether the form was already sent.[/en]
-	[de]Gibt einen Boolean zurück, ob das Formular bereits abgeschickt wurde.[/de]
+	[de]Gibt einen Boolean zurï¿½ck, ob das Formular bereits abgeschickt wurde.[/de]
 	
 	@param sFormID [needed][type]string[/type]
 	[en]The ID of the form, which should be queried.[/en]
@@ -361,7 +361,7 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the action that is to be executed after send the form.[/en]
-	[de]Gibt die Aktion zurück, die nach dem senden des Formulars ausgeführt werden soll.[/de]
+	[de]Gibt die Aktion zurï¿½ck, die nach dem senden des Formulars ausgefï¿½hrt werden soll.[/de]
 	*/
 	public function getSubmittedAction($_sFormID)
 	{
@@ -380,7 +380,7 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the security level to be used for logging in the transmission of the form.[/en]
-	[de]Setzt den Sicherheitslevel der für das Loggen beim Übertragung des Formulars verwendet werden soll.[/de]
+	[de]Setzt den Sicherheitslevel der fï¿½r das Loggen beim ï¿½bertragung des Formulars verwendet werden soll.[/de]
 	
 	@param iLevel [needed][type]int[/type]
 	[en]
@@ -389,8 +389,8 @@ class classPG_Form extends classPG_ClassBasics
 		%FormSecureLogLevel%
 	[/en]
 	[de]
-		Der Sicherheitslevel für das Loggen.
-		Folgende Defines sind möglich:
+		Der Sicherheitslevel fï¿½r das Loggen.
+		Folgende Defines sind mï¿½glich:
 		%FormSecureLogLevel%
 	[/de]
 	*/
@@ -406,7 +406,7 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the security level for the Log.[/en]
-	[de]Gibt den Sicherheitslevel zum Loggen zurück.[/de]
+	[de]Gibt den Sicherheitslevel zum Loggen zurï¿½ck.[/de]
 	
 	@return iSecureLogLevel [type]int[/type]
 	[en]
@@ -415,8 +415,8 @@ class classPG_Form extends classPG_ClassBasics
 		%FormSecureLogLevel%
 	[/en]
 	[de]
-		Gibt den Sicherheitslevel zum Loggen zurück.
-		Folgende Defines sind möglich:
+		Gibt den Sicherheitslevel zum Loggen zurï¿½ck.
+		Folgende Defines sind mï¿½glich:
 		%FormSecureLogLevel%
 	[/de]
 	*/
@@ -428,7 +428,7 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the security level to be used for the transmission of the form data.[/en]
-	[de]Setzt den Sicherheitslevel der für die Übertragung der Formulardaten verwendet werden soll.[/de]
+	[de]Setzt den Sicherheitslevel der fï¿½r die ï¿½bertragung der Formulardaten verwendet werden soll.[/de]
 	
 	@param iLevel [needed][type]int[/type]
 	[en]
@@ -437,8 +437,8 @@ class classPG_Form extends classPG_ClassBasics
 		%FormSecureActionLevel%
 	[/en]
 	[de]
-		Der Sicherheitslevel für die Übertragung.
-		Folgende Defines sind möglich:
+		Der Sicherheitslevel fï¿½r die ï¿½bertragung.
+		Folgende Defines sind mï¿½glich:
 		%FormSecureActionLevel%
 	[/de]
 	*/
@@ -454,7 +454,7 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the level of security for the transmission of the form data.[/en]
-	[de]Gibt den Sicherheitslevel für die Übertragung der Formulardaten zurück.[/de]
+	[de]Gibt den Sicherheitslevel fï¿½r die ï¿½bertragung der Formulardaten zurï¿½ck.[/de]
 	
 	@return iSecureActionLevel [type]int[/type]
 	[en]
@@ -463,8 +463,8 @@ class classPG_Form extends classPG_ClassBasics
 		%FormSecureActionLevel%
 	[/en]
 	[de]
-		Gibt den Sicherheitslevel für die Übertragung zurück.
-		Folgende Defines sind möglich:
+		Gibt den Sicherheitslevel fï¿½r die ï¿½bertragung zurï¿½ck.
+		Folgende Defines sind mï¿½glich:
 		%FormSecureActionLevel%
 	[/de]
 	*/
@@ -494,11 +494,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns whether when you create the form the hidden fields will be replaced with session variables.[/en]
-	[de]Gibt zurück, ob beim Erstellen des Formulars die versteckten Felder durch Session Variablen ersetzt werden sollen.[/de]
+	[de]Gibt zurï¿½ck, ob beim Erstellen des Formulars die versteckten Felder durch Session Variablen ersetzt werden sollen.[/de]
 	
 	@return bWithoutHiddenInputs [type]bool[/type]
 	[en]Returns a boolean whether when you create the form the hidden fields will be replaced with session variables.[/en]
-	[de]Gibt einen Boolean zurück, ob beim Erstellen des Formulars die versteckten Felder durch Session Variablen ersetzt werden sollen.[/de]
+	[de]Gibt einen Boolean zurï¿½ck, ob beim Erstellen des Formulars die versteckten Felder durch Session Variablen ersetzt werden sollen.[/de]
 	*/
 	public function isSecureBuildWithoutHiddenInputs() {return $this->bSecureBuildWithoutHiddenInputs;}
 	/* @end method */
@@ -508,11 +508,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a hidden field to the form.[/en]
-	[de]Fügt dem Formular ein verstecktes Feld hinzu.[/de]
+	[de]Fï¿½gt dem Formular ein verstecktes Feld hinzu.[/de]
 	
 	@return iHiddenFieldIndex [type]int[/type]
 	[en]Returns the index of the hidden field as an integer.[/en]
-	[de]Gibt den Index des versteckten Feldes als Integer zurück.[/de]
+	[de]Gibt den Index des versteckten Feldes als Integer zurï¿½ck.[/de]
 	
 	@param sHiddenFieldID [type]string[/type]
 	[en]The ID of the hidden field.[/en]
@@ -545,11 +545,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a single-line input field or drop-down field to the form.[/en]
-	[de]Fügt dem Formular ein einzeiliges Eingabefeld oder Dropdown-Feld hinzu.[/de]
+	[de]Fï¿½gt dem Formular ein einzeiliges Eingabefeld oder Dropdown-Feld hinzu.[/de]
 	
 	@return iInputFieldIndex [type]int[/type]
 	[en]Returns the index of the input field as an integer.[/en]
-	[de]Gibt den Index des Eingabefeldes als Integer zurück.[/de]
+	[de]Gibt den Index des Eingabefeldes als Integer zurï¿½ck.[/de]
 	
 	@param sLabelName [type]string[/type]
 	[en]A text that is displayed before the input field.[/en]
@@ -566,8 +566,8 @@ class classPG_Form extends classPG_ClassBasics
 		%InputFieldModeDefines%
 	[/en]
 	[de]
-		Der Modus für das Eingabefeld.
-		Folgende Defines sind möglich:
+		Der Modus fï¿½r das Eingabefeld.
+		Folgende Defines sind mï¿½glich:
 		%InputFieldModeDefines%
 	[/de]
 	
@@ -585,11 +585,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param xFieldDatasetID [type]mixed[/type]
 	[en]The dataset ID of the input field in the background. Used when a drop-down box should transfer data other than that shown in the display.[/en]
-	[de]Die Datensatz ID im Hintergrund des Eingabefeldes. Wird verwendet, wenn ein Dropdown-Feld andere Daten als die Angezeigten übergeben soll.[/de]
+	[de]Die Datensatz ID im Hintergrund des Eingabefeldes. Wird verwendet, wenn ein Dropdown-Feld andere Daten als die Angezeigten ï¿½bergeben soll.[/de]
 	
 	@param sFieldAccessKey [type]string[/type]
 	[en]The shortcut key on, together with the ALT key pressed, you can jump directly into the input field.[/en]
-	[de]Die Shortcut Taste über die, zusammen mit gedrückter ALT Taste, direkt in das Eingabefeld gesprungen werden kann.[/de]
+	[de]Die Shortcut Taste ï¿½ber die, zusammen mit gedrï¿½ckter ALT Taste, direkt in das Eingabefeld gesprungen werden kann.[/de]
 	
 	@param bFieldRequired [type]bool[/type]
 	[en]Specifies whether the field is a required field.[/en]
@@ -608,67 +608,67 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param axDatasets [type]mixed[][/type]
 	[en]The datasets for the drop-down option. These datasets are available in the drop-down list to choose from.[/en]
-	[de]Die Datensätze für die Dropdown-Feld option. Diese Datensätze stehen in der Dropdown-Liste zur auswahl.[/de]
+	[de]Die Datensï¿½tze fï¿½r die Dropdown-Feld option. Diese Datensï¿½tze stehen in der Dropdown-Liste zur auswahl.[/de]
 	
 	@param sSendParameters [type]string[/type]
 	[en]Parameters that are also sent on a auto save function.[/en]
-	[de]Parameter die bei einer Autosave Funktion zusätzlich gesendet werden.[/de]
+	[de]Parameter die bei einer Autosave Funktion zusï¿½tzlich gesendet werden.[/de]
 	
 	@param sOnFieldBlur [type]string[/type]
 	[en]JavaScript code to be executed when the input field was abandoned.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn das Eingabefeld verlassen wurde.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn das Eingabefeld verlassen wurde.[/de]
 	
 	@param sOnFieldFocus [type]string[/type]
 	[en]JavaScript code to be executed when the input field is selected.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn das Eingabefeld angewählt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn das Eingabefeld angewï¿½hlt wird.[/de]
 	
 	@param sOnFieldKeyDown [type]string[/type]
 	[en]JavaScript code to be executed when the input field is selected and a button is pressed.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn das Eingabefeld angewählt ist und eine Taste gedrückt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn das Eingabefeld angewï¿½hlt ist und eine Taste gedrï¿½ckt wird.[/de]
 	
 	@param sOnFieldKeyUp [type]string[/type]
 	[en]JavaScript code to be executed when the input field is selected and a key was released.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn das Eingabefeld angewählt ist und eine Taste wieder losgelassen wurde.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn das Eingabefeld angewï¿½hlt ist und eine Taste wieder losgelassen wurde.[/de]
 	
 	@param sOnFieldClick [type]string[/type]
 	[en]JavaScript code which will be executed, when the input field was clicked.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn auf das Eingabefeld geklickt wurde.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn auf das Eingabefeld geklickt wurde.[/de]
 	
 	@param sOnFieldMouseDown [type]string[/type]
 	[en]JavaScript code which will be executed, when the input field is being clicked.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn auf das Eingabefeld gerade geklickt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn auf das Eingabefeld gerade geklickt wird.[/de]
 	
 	@param sOnFieldMouseUp [type]string[/type]
 	[en]JavaScript code which will be executed, when the input field was clicked.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn auf das Eingabefeld geklickt wurde.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn auf das Eingabefeld geklickt wurde.[/de]
 	
 	@param sOnFieldMouseOver [type]string[/type]
 	[en]JavaScript code to be executed when the mouse pointer is moving over the input field.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn der Mauszeiger über das Eingabefeld bewegt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn der Mauszeiger ï¿½ber das Eingabefeld bewegt wird.[/de]
 	
 	@param sOnFieldMouseOut [type]string[/type]
 	[en]JavaScript code to be executed when the mouse pointer moves away from the input field.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn der Mauszeiger von dem Eingabefeld weg bewegt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn der Mauszeiger von dem Eingabefeld weg bewegt wird.[/de]
 	
 	@param sOnDatasetSelect [type]string[/type]
 	[en]JavaScript code to be executed when a dataset from the drop-down list is selected.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn ein Datensatz aus der Dropdown-Liste ausgewählt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn ein Datensatz aus der Dropdown-Liste ausgewï¿½hlt wird.[/de]
 	
 	@param sOnSwitchEditMode [type]string[/type]
 	[en]JavaScript code to be executed when the edit mode for datasets of drop-down list is switched.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn der Bearbeitungsmodus für Datensätze der Dropdown-Liste gewechselt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn der Bearbeitungsmodus fï¿½r Datensï¿½tze der Dropdown-Liste gewechselt wird.[/de]
 	
 	@param sOnDatasetCreate [type]string[/type]
 	[en]JavaScript code to be executed when a new dataset for the drop-down list is created.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn ein neuer Datensatz für die Dropdown-Liste erstellt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn ein neuer Datensatz fï¿½r die Dropdown-Liste erstellt wird.[/de]
 	
 	@param sOnDatasetUpdate [type]string[/type]
 	[en]JavaScript code to be executed when a dataset is modified.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn ein Datensatz geändert wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn ein Datensatz geï¿½ndert wird.[/de]
 	
 	@param sOnDatasetDelete [type]string[/type]
 	[en]JavaScript code to be executed when a dataset is deleted.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn ein Datensatz gelöscht wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn ein Datensatz gelï¿½scht wird.[/de]
 	*/
 	public function addInputField(
 		$_sLabelName = NULL,
@@ -801,11 +801,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a textarea to the form.[/en]
-	[de]Fügt dem Formular ein Textfeld hinzu.[/de]
+	[de]Fï¿½gt dem Formular ein Textfeld hinzu.[/de]
 	
 	@return iTextAreaIndex [type]int[/type]
 	[en]Returns the index of the textarea as an integer.[/en]
-	[de]Gibt den Index des Textfeldes als Integer zurück.[/de]
+	[de]Gibt den Index des Textfeldes als Integer zurï¿½ck.[/de]
 	
 	@param sLabelName [type]string[/type]
 	[en]A text that is displayed before the textarea.[/en]
@@ -822,8 +822,8 @@ class classPG_Form extends classPG_ClassBasics
 		%TextAreaModeDefines%
 	[/en]
 	[de]
-		Der Modus für das Textfeldes.
-		Folgende Defines sind möglich:
+		Der Modus fï¿½r das Textfeldes.
+		Folgende Defines sind mï¿½glich:
 		%TextAreaModeDefines%
 	[/de]
 	
@@ -833,7 +833,7 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param iRows [type]int[/type]
 	[en]The number of rows that are visible and specify the height of the textarea.[/en]
-	[de]Die Anzahl an Zeilen die Sichtbar sind und die Höhe des Textfeldes vorgeben.[/de]
+	[de]Die Anzahl an Zeilen die Sichtbar sind und die Hï¿½he des Textfeldes vorgeben.[/de]
 	
 	@param sText [type]string[/type]
 	[en]The text that is in the textarea.[/en]
@@ -845,7 +845,7 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param sAccessKey [type]string[/type]
 	[en]The shortcut key on, together with the ALT key pressed, you can jump directly into the textarea.[/en]
-	[de]Die Shortcut Taste über die, zusammen mit gedrückter ALT Taste, direkt in das Textfeld gesprungen werden kann.[/de]
+	[de]Die Shortcut Taste ï¿½ber die, zusammen mit gedrï¿½ckter ALT Taste, direkt in das Textfeld gesprungen werden kann.[/de]
 	
 	@param bRequired [type]bool[/type]
 	[en]Specifies whether the textarea is a required field.[/en]
@@ -861,51 +861,51 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param iLineBreakCharCount [type]int[/type]
 	[en]The number of line breaks that are allowed. At 0, there is no limit of the line breaks.[/en]
-	[de]Die Anzahl an Zeilenumbrüche die erlaubt sind. Bei 0 gibt es keine Begrenzung der Zeilenumbrüche.[/de]
+	[de]Die Anzahl an Zeilenumbrï¿½che die erlaubt sind. Bei 0 gibt es keine Begrenzung der Zeilenumbrï¿½che.[/de]
 	
 	@param iFreeSpaceCharCount [type]int[/type]
 	[en]The number of free spaces that are allowed. At 0, there is no limit of free spaces. Can be used to limit the number of words.[/en]
-	[de]Die Anzahl an Leerzeichen die erlaubt sind. Bei 0 gibt es keine Begrenzung der Leerzeichen. Kann verwendet werden um die Anzahl an Wörtern zu begrenzen.[/de]
+	[de]Die Anzahl an Leerzeichen die erlaubt sind. Bei 0 gibt es keine Begrenzung der Leerzeichen. Kann verwendet werden um die Anzahl an Wï¿½rtern zu begrenzen.[/de]
 	
 	@param sSendParameters [type]string[/type]
 	[en]Parameters that are also sent on a auto save function.[/en]
-	[de]Parameter die bei einer Autosave Funktion zusätzlich gesendet werden.[/de]
+	[de]Parameter die bei einer Autosave Funktion zusï¿½tzlich gesendet werden.[/de]
 	
 	@param sOnBlur [type]string[/type]
 	[en]JavaScript code to be executed when the textarea was abandoned.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn das Textfeld verlassen wurde.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn das Textfeld verlassen wurde.[/de]
 	
 	@param sOnFocus [type]string[/type]
 	[en]JavaScript code to be executed when the textarea is selected.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn das Textfeld angewählt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn das Textfeld angewï¿½hlt wird.[/de]
 	
 	@param sOnKeyDown [type]string[/type]
 	[en]JavaScript code to be executed when the textarea is selected and a button is pressed.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn das Textfeld angewählt ist und eine Taste gedrückt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn das Textfeld angewï¿½hlt ist und eine Taste gedrï¿½ckt wird.[/de]
 	
 	@param sOnKeyUp [type]string[/type]
 	[en]JavaScript code to be executed when the textarea is selected and a key was released.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn das Textfeld angewählt ist und eine Taste wieder losgelassen wurde.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn das Textfeld angewï¿½hlt ist und eine Taste wieder losgelassen wurde.[/de]
 	
 	@param sOnClick [type]string[/type]
 	[en]JavaScript code which will be executed, when the textarea was clicked.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn auf das Textfeld geklickt wurde.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn auf das Textfeld geklickt wurde.[/de]
 	
 	@param sOnMouseDown [type]string[/type]
 	[en]JavaScript code which will be executed, when the textarea is being clicked.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn auf das Textfeld gerade geklickt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn auf das Textfeld gerade geklickt wird.[/de]
 	
 	@param sOnMouseUp [type]string[/type]
 	[en]JavaScript code which will be executed, when the textarea was clicked.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn auf das Textfeld geklickt wurde.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn auf das Textfeld geklickt wurde.[/de]
 	
 	@param sOnMouseOver [type]string[/type]
 	[en]JavaScript code to be executed when the mouse pointer is moving over the textarea.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn der Mauszeiger über das Textfeld bewegt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn der Mauszeiger ï¿½ber das Textfeld bewegt wird.[/de]
 	
 	@param sOnMouseOut [type]string[/type]
 	[en]JavaScript code to be executed when the mouse pointer moves away from the textarea.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn der Mauszeiger von dem Textfeld weg bewegt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn der Mauszeiger von dem Textfeld weg bewegt wird.[/de]
 	*/
 	public function addTextArea(
 		$_sLabelName = NULL,
@@ -1013,11 +1013,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Adds a checkbox to the form.[/en]
-	[de]Fügt dem Formular eine Checkbox hinzu.[/de]
+	[de]Fï¿½gt dem Formular eine Checkbox hinzu.[/de]
 	
 	@return iCheckBoxIndex [type]int[/type]
 	[en]Returns the index of the checkbox as an integer.[/en]
-	[de]Gibt den Index der Checkbox als Integer zurück.[/de]
+	[de]Gibt den Index der Checkbox als Integer zurï¿½ck.[/de]
 	
 	@param sLabelName [type]string[/type]
 	[en]A text that is displayed before the checkbox.[/en]
@@ -1034,8 +1034,8 @@ class classPG_Form extends classPG_ClassBasics
 		%CheckBoxModeDefines%
 	[/en]
 	[de]
-		Der Modus für die Checkbox.
-		Folgende Defines sind möglich:
+		Der Modus fï¿½r die Checkbox.
+		Folgende Defines sind mï¿½glich:
 		%CheckBoxModeDefines%
 	[/de]
 	
@@ -1045,31 +1045,31 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param axStatusStructure [type]mixed[][/type]
 	[en]The status structures wich can be created by $oPGCheckBox->buildStatusStructure(...). Specifies which status stages can be set.[/en]
-	[de]Die Statusstrukturen die durch $oPGCheckBox->buildStatusStructure(...) erstellt werden. Gibt an welche Status-Stufen eingestellt werden können.[/de]
+	[de]Die Statusstrukturen die durch $oPGCheckBox->buildStatusStructure(...) erstellt werden. Gibt an welche Status-Stufen eingestellt werden kï¿½nnen.[/de]
 	
 	@param sSendParameters [type]string[/type]
 	[en]Parameters that are also sent on a auto save function.[/en]
-	[de]Parameter die bei einer Autosave Funktion zusätzlich gesendet werden.[/de]
+	[de]Parameter die bei einer Autosave Funktion zusï¿½tzlich gesendet werden.[/de]
 	
 	@param sOnClick [type]string[/type]
 	[en]JavaScript code which will be executed, when the checkbox was clicked.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn auf die Checkbox geklickt wurde.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn auf die Checkbox geklickt wurde.[/de]
 	
 	@param sOnMouseDown [type]string[/type]
 	[en]JavaScript code which will be executed, when the checkbox is being clicked.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn auf die Checkbox gerade geklickt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn auf die Checkbox gerade geklickt wird.[/de]
 	
 	@param sOnMouseUp [type]string[/type]
 	[en]JavaScript code which will be executed, when the checkbox was clicked.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn auf die Checkbox geklickt wurde.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn auf die Checkbox geklickt wurde.[/de]
 	
 	@param sOnMouseOver [type]string[/type]
 	[en]JavaScript code to be executed when the mouse pointer is moving over the checkbox.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn der Mauszeiger über die Checkbox bewegt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn der Mauszeiger ï¿½ber die Checkbox bewegt wird.[/de]
 	
 	@param sOnMouseOut [type]string[/type]
 	[en]JavaScript code to be executed when the mouse pointer moves away from the checkbox.[/en]
-	[de]JavaScript Code der ausgeführt werden soll, wenn der Mauszeiger von der Checkbox weg bewegt wird.[/de]
+	[de]JavaScript Code der ausgefï¿½hrt werden soll, wenn der Mauszeiger von der Checkbox weg bewegt wird.[/de]
 	*/
 	public function addCheckBox(
 		$_sLabelName = NULL,
@@ -1167,11 +1167,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the form and returns it as an HTML string.[/en]
-	[de]Erstellt das Formular und gibt es als HTML String zurück.[/de]
+	[de]Erstellt das Formular und gibt es als HTML String zurï¿½ck.[/de]
 	
 	@return sFormHtml [type]string[/type]
 	[en]Returns the form as an HTML string.[/en]
-	[de]Gibt das Formular als HTML String zurück.[/de]
+	[de]Gibt das Formular als HTML String zurï¿½ck.[/de]
 	
 	@param sFormID [type]string[/type]
 	[en]The ID of the form.[/en]
@@ -1187,14 +1187,14 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param sFormMethod [type]string[/type]
 	[en]The method on which to send the form. "Get" and "post" are possible. (Default: post)[/en]
-	[de]Die Methode über die das Formular gesendet werden soll. Möglich sind "get" und "post". (Standard: post)[/de]
+	[de]Die Methode ï¿½ber die das Formular gesendet werden soll. Mï¿½glich sind "get" und "post". (Standard: post)[/de]
 	
 	@param xTemplate [type]mixed[/type]
 	[en]...[/en]
 	
 	@param asIgnoreHiddenInputs [type]string[][/type]
 	[en]Hidden fields that should be omitted (ignored) at security checks.[/en]
-	[de]Versteckte Felder die bei Sicherheitsprüfungen ausgelassen (ignoriert) werden sollen.[/de]
+	[de]Versteckte Felder die bei Sicherheitsprï¿½fungen ausgelassen (ignoriert) werden sollen.[/de]
 	
 	@param bUseSubmitButton [type]bool[/type]
 	[en]Specifies whether a button is used to submit the form. (Default: true)[/en]
@@ -1206,11 +1206,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param sOnSubmit [type]string[/type]
 	[en]JavaScript code to be executed when submitting the form.[/en]
-	[de]JavaScript Code der beim Abschicken des Formulars ausgeführt werden soll.[/de]
+	[de]JavaScript Code der beim Abschicken des Formulars ausgefï¿½hrt werden soll.[/de]
 	
 	@param sOnAbort [type]string[/type]
 	[en]JavaScript code to be executed when aborting the form.[/en]
-	[de]JavaScript Code der beim Abbrechen des Formulars ausgeführt werden soll.[/de]
+	[de]JavaScript Code der beim Abbrechen des Formulars ausgefï¿½hrt werden soll.[/de]
 	*/
 	public function build(
 		$_sFormID = NULL, 
@@ -1326,6 +1326,7 @@ class classPG_Form extends classPG_ClassBasics
 			}
 			else
 			{
+				$_sReplaceVar = '';
 				switch($this->axFormElements[$_iIndex][PG_FORM_ELEMENTS_INDEX_TYPE])
 				{
 					case 'InputField':
@@ -1527,11 +1528,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the submitted data of the form.[/en]
-	[de]Gibt die abgeschickten Daten des Formulars zurück.[/de]
+	[de]Gibt die abgeschickten Daten des Formulars zurï¿½ck.[/de]
 	
 	@return axData [type]mixed[][/type]
 	[en]Returns the submitted data of the form as an mixed array.[/en]
-	[de]Gibt die abgeschickten Daten des Formulars als gemischten Array zurück.[/de]
+	[de]Gibt die abgeschickten Daten des Formulars als gemischten Array zurï¿½ck.[/de]
 	
 	@param sFormID [type]string[/type]
 	[en]The ID of the form.[/en]
@@ -1539,11 +1540,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param sFormMethod [type]string[/type]
 	[en]The send method of the form from which the data should be read off. "get" and "post" are possible. (Default: post)[/en]
-	[de]Die Sende-Methode des Formulars von der die gesendeten Daten abgegriffen werden sollen. Möglich sind "get" und "post". (Standard: post)[/de]
+	[de]Die Sende-Methode des Formulars von der die gesendeten Daten abgegriffen werden sollen. Mï¿½glich sind "get" und "post". (Standard: post)[/de]
 	
 	@param bEscapeForDatabases [type]bool[/type]
 	[en]Specifies whether the data will be optimized for database queries. If set to "true" the data will be revised through realEscapeString(...).[/en]
-	[de]Gibt an ob die Daten für Datenbankabfragen optimiert werden sollen. Bei "true" werden die Daten mit realEscapeString(...) überarbeitet.[/de]
+	[de]Gibt an ob die Daten fï¿½r Datenbankabfragen optimiert werden sollen. Bei "true" werden die Daten mit realEscapeString(...) ï¿½berarbeitet.[/de]
 	*/
 	public function getReceivedData($_sFormID = NULL, $_sFormMethod = NULL, $_bEscapeForDatabases = NULL)
 	{
@@ -1620,11 +1621,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Checks whether the session is still running and is ok.[/en]
-	[de]Checkt ob die Session noch läuft und in Ordnung ist.[/de]
+	[de]Checkt ob die Session noch lï¿½uft und in Ordnung ist.[/de]
 	
 	@return sTokenID [type]string[/type]
 	[en]Returns "false" on a faulty or expired session or cancels the whole script. Returns the token of the session if the session is running and ok.[/en]
-	[de]Gibt bei einer fehlerhaften oder abgelaufenen Session "false" zurück oder bricht das ganze Script ab. Bei laufender Session die in Ordnung ist, wird der Token der Session als String zurückgegeben.[/de]
+	[de]Gibt bei einer fehlerhaften oder abgelaufenen Session "false" zurï¿½ck oder bricht das ganze Script ab. Bei laufender Session die in Ordnung ist, wird der Token der Session als String zurï¿½ckgegeben.[/de]
 	
 	@param sFormID [type]string[/type]
 	[en]The ID of the form.[/en]
@@ -1632,11 +1633,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param sToken [type]string[/type]
 	[en]The token of the session can be specified to verify. Otherwise a token of the current session will be fetched from the form data.[/en]
-	[de]Der Token der Session kann zur Überprüfung angegeben werden. Ansonsten wird ein Token der laufenden Session aus den Formulardaten geholt.[/de]
+	[de]Der Token der Session kann zur ï¿½berprï¿½fung angegeben werden. Ansonsten wird ein Token der laufenden Session aus den Formulardaten geholt.[/de]
 	
 	@param sFormMethod [type]string[/type]
 	[en]The send method of the form provides to access form data.[/en]
-	[de]Die Sende-Methode des Formulars, über die Formulardaten abgegriffen werden sollen.[/de]
+	[de]Die Sende-Methode des Formulars, ï¿½ber die Formulardaten abgegriffen werden sollen.[/de]
 	*/
 	public function checkTokenSession($_sFormID = NULL, $_sToken = NULL, $_sFormMethod = NULL)
 	{
@@ -1697,11 +1698,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the data for a session token.[/en]
-	[de]Gibt die Daten zu einem Token der Session zurück.[/de]
+	[de]Gibt die Daten zu einem Token der Session zurï¿½ck.[/de]
 	
 	@return axData [type]mixed[][/type]
 	[en]Returns the data of the session due to the token.[/en]
-	[de]Gibt die Daten der Session passend zum Token zurück.[/de]
+	[de]Gibt die Daten der Session passend zum Token zurï¿½ck.[/de]
 	
 	@param sFormID [type]string[/type]
 	[en]The ID of the form.[/en]
@@ -1709,11 +1710,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param sToken [type]string[/type]
 	[en]The token of the session can be specified to verify. Otherwise a token of the current session will be fetched from the form data.[/en]
-	[de]Der Token der Session kann zur Überprüfung angegeben werden. Ansonsten wird ein Token der laufenden Session aus den Formulardaten geholt.[/de]
+	[de]Der Token der Session kann zur ï¿½berprï¿½fung angegeben werden. Ansonsten wird ein Token der laufenden Session aus den Formulardaten geholt.[/de]
 	
 	@param sFormMethod [type]string[/type]
 	[en]The send method of the form provides to access form data.[/en]
-	[de]Die Sende-Methode des Formulars, über die Formulardaten abgegriffen werden sollen.[/de]
+	[de]Die Sende-Methode des Formulars, ï¿½ber die Formulardaten abgegriffen werden sollen.[/de]
 	*/
 	public function getTokenSessionData($_sFormID = NULL, $_sToken = NULL, $_sFormMethod = NULL)
 	{
@@ -1738,7 +1739,7 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@return sToken [type]string[/type]
 	[en]Returns the new token as a string.[/en]
-	[de]Gibt den neuen Token als String zurück.[/de]
+	[de]Gibt den neuen Token als String zurï¿½ck.[/de]
 	
 	@param sFormID [type]string[/type]
 	[en]The ID of the form.[/en]
@@ -1746,11 +1747,11 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param sToken [type]string[/type]
 	[en]A token can be specified if a certain string should be used. At "NULL" a new generated randomly.[/en]
-	[de]Ein Token kann angegeben werden, wenn ein bestimmter String dafür verwendet werden soll. Bei "NULL" wird ein neuer zufällig generiert.[/de]
+	[de]Ein Token kann angegeben werden, wenn ein bestimmter String dafï¿½r verwendet werden soll. Bei "NULL" wird ein neuer zufï¿½llig generiert.[/de]
 	
 	@param asIgnoreHiddenInputs [type]string[][/type]
 	[en]Hidden fields that should be omitted (ignored) at security checks.[/en]
-	[de]Versteckte Felder die bei Sicherheitsprüfungen ausgelassen (ignoriert) werden sollen.[/de]
+	[de]Versteckte Felder die bei Sicherheitsprï¿½fungen ausgelassen (ignoriert) werden sollen.[/de]
 	*/
 	public function createTokenSession($_sFormID = NULL, $_sToken = NULL, $_asIgnoreHiddenInputs = NULL)
 	{
@@ -1810,7 +1811,7 @@ class classPG_Form extends classPG_ClassBasics
 	
 	@param sToken [type]string[/type]
 	[en]The token that should be removed. At "NULL" the complete session of the form is removed.[/en]
-	[de]Der Token der entfernt werden soll. Bei "NULL" wird die komplette Session für das Formular gelöscht.[/de]
+	[de]Der Token der entfernt werden soll. Bei "NULL" wird die komplette Session fï¿½r das Formular gelï¿½scht.[/de]
 	*/
 	public function destroyTokenSession($_sFormID = NULL, $_sToken = NULL)
 	{

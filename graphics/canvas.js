@@ -362,8 +362,8 @@ function classPG_Canvas()
 	this.setupText = function(_sFontSize, _sFontFamily, _sTextBaseline, _sTextAlign)
 	{
 		if (typeof(_sFontFamily) == 'undefined') {var _sFontFamily = null;}
-		if (typeof(_sBaseline) == 'undefined') {var _sBaseline = null;}
-		if (typeof(_sAlign) == 'undefined') {var _sAlign = null;}
+		if (typeof(_sTextBaseline) == 'undefined') {var _sTextBaseline = null;}
+		if (typeof(_sTextAlign) == 'undefined') {var _sTextAlign = null;}
 
 		_sFontFamily = this.getRealParameter({'oParameters': _sFontSize, 'sName': 'sFontFamily', 'xParameter': _sFontFamily});
 		_sTextBaseline = this.getRealParameter({'oParameters': _sFontSize, 'sName': 'sTextBaseline', 'xParameter': _sTextBaseline});

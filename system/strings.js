@@ -1052,16 +1052,21 @@ function classPG_Strings()
 
         _xNumber = _xNumber.toFixed(_iDecimals);
 
-        var _sNumber = ""+_xNumber;
-        var _asDecimalSeperated = _sNumber.split('.', _sNumber);
-        var _oRegularExpression = /(\d+)(\d{3})/;
+		var _sNumber = ""+_xNumber;
 
-        while (_oRegularExpression.test(_asDecimalSeperated[0]))
-        {
-            _asDecimalSeperated[0] = _asDecimalSeperated[0].replace(_oRegularExpression, '$1'+_sThousandsSeperator+'$2');
-        }
+		var _asDecimalSeperated = _sNumber.split('.', _sNumber);
+		if (_sThousandsSeperator != '')
+		{
+			var _oRegularExpression = /(\d+)(\d{3})/;
+			var _iCounter = 0;
 
-        _sNumber = _asDecimalSeperated.join(_sDecimalPoint);
+			while ((_oRegularExpression.test(_asDecimalSeperated[0])) && (_iCounter < 10))
+			{
+				_asDecimalSeperated[0] = _asDecimalSeperated[0].replace(_oRegularExpression, '$1'+_sThousandsSeperator+'$2');
+				_iCounter++;
+			}
+		}
+		_sNumber = _asDecimalSeperated.join(_sDecimalPoint);
 
         return _sNumber;
     }
