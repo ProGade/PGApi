@@ -1047,7 +1047,7 @@ function classPG_ClassBasics()
 	[en]Returns a Boolean whether the send was successful.[/en]
 	[de]Gibt einen Boolean zurück, ob das Senden erfolgreich war.[/de]
 	
-	@param sParameters [type]string[/type]
+	@param xParameters [type]string[/type]
 	[en]Parameters to be transmitted over the network. The parameters can be separated by a & character, just like URL parameters.[/en]
 	[de]Parameter, die über das Netzwerk übertragen werden sollen. Die Parameter können mit einem & Zeichen getrennt werden, genau wie bei einer URL die Parameter.[/de]
 	
@@ -1059,26 +1059,44 @@ function classPG_ClassBasics()
 	[en]The file path to the response script file.[/en]
 	[de]Der Dateipfad zur Antwort-Script-Datei.[/de]
 	*/
-	this.networkSend = function(_sParameters, _fOnResponse, _sResponseFile)
+	this.networkSend = function(_xParameters, _fOnResponse, _sResponseFile, _fOnError, _fOnAbort, _fOnUploadProgress, _oFormData)
 	{
-		if (typeof(_sParameters) == 'undefined') {var _sParameters = null;}
+		if (typeof(_xParameters) == 'undefined') {var _xParameters = null;}
 		if (typeof(_fOnResponse) == 'undefined') {var _fOnResponse = null;}
 		if (typeof(_sResponseFile) == 'undefined') {var _sResponseFile = null;}
+		if (typeof(_fOnError) == 'undefined') {var _fOnError = null;}
+		if (typeof(_fOnAbort) == 'undefined') {var _fOnAbort = null;}
+		if (typeof(_fOnUploadProgress) == 'undefined') {var _fOnUploadProgress = null;}
 
-		_fOnResponse = this.getRealParameter({'oParameters': _sParameters, 'sName': 'fOnResponse', 'xParameter': _fOnResponse});
-		_sResponseFile = this.getRealParameter({'oParameters': _sParameters, 'sName': 'sResponseFile', 'xParameter': _sResponseFile});
-		_sParameters = this.getRealParameter({'oParameters': _sParameters, 'sName': 'sParameters', 'xParameter': _sParameters});
+		_fOnResponse = this.getRealParameter({'oParameters': _xParameters, 'sName': 'fOnResponse', 'xParameter': _fOnResponse});
+		_sResponseFile = this.getRealParameter({'oParameters': _xParameters, 'sName': 'sResponseFile', 'xParameter': _sResponseFile});
+		_fOnError = this.getRealParameter({'oParameters': _xParameters, 'sName': 'fOnError', 'xParameter': _fOnError});
+		_fOnAbort = this.getRealParameter({'oParameters': _xParameters, 'sName': 'fOnAbort', 'xParameter': _fOnAbort});
+		_fOnUploadProgress = this.getRealParameter({'oParameters': _xParameters, 'sName': 'fOnUploadProgress', 'xParameter': _fOnUploadProgress});
+		_oFormData = this.getRealParameter({'oParameters': _xParameters, 'sName': 'oFormData', 'xParameter': _oFormData});
+		_xParameters = this.getRealParameter({'oParameters': _xParameters, 'sName': 'xParameters', 'xParameter': _xParameters, 'bNotNull': true});
+
 		if (this.oNetwork)
 		{
-			if (typeof(_sParameters) == 'undefined') {var _sParameters = null;}
+			if (typeof(_xParameters) == 'undefined') {var _xParameters = null;}
 			if (typeof(_fOnResponse) == 'undefined') {var _fOnResponse = null;}
 			if (typeof(_sResponseFile) == 'undefined') {var _sResponseFile = null;}
 			
-			if (_sParameters == null) {_sParameters = this.sNetworkParameters;}
+			if (_xParameters == null) {_xParameters = this.sNetworkParameters;}
 			if (_fOnResponse == null) {_fOnResponse = this.fNetworkOnResponse;}
 			if (_sResponseFile == null) {_sResponseFile = this.sNetworkResponseFile;}
 
-			return this.oNetwork.send({'sParameters': _sParameters, 'fOnResponse': _fOnResponse, 'sResponseFile': _sResponseFile});
+			return this.oNetwork.send(
+				{
+					'xParameters': _xParameters,
+					'fOnResponse': _fOnResponse,
+					'sResponseFile': _sResponseFile,
+					'fOnError': _fOnError,
+					'fOnAbort': _fOnAbort,
+					'fOnUploadProgress': _fOnUploadProgress,
+					'oFormData': _oFormData
+				}
+			);
 		}
 		return false;
 	}

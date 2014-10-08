@@ -1032,44 +1032,44 @@ function classPG_Strings()
     /*
     @start method
     */
-    this.numberFormat = function(_xNumber, _iDecimals, _sDecimalPoint, _sThousandsSeperator)
-    {
-        if (typeof(_iDecimals) == 'undefined') {var _iDecimals = null;}
-        if (typeof(_sDecimalPoint) == 'undefined') {var _sDecimalPoint = null;}
-        if (typeof(_sThousandsSeperator) == 'undefined') {var _sThousandsSeperator = null;}
+	this.numberFormat = function(_xNumber, _iDecimals, _sDecimalPoint, _sThousandsSeparator)
+	{
+		if (typeof(_iDecimals) == 'undefined') {var _iDecimals = null;}
+		if (typeof(_sDecimalPoint) == 'undefined') {var _sDecimalPoint = null;}
+		if (typeof(_sThousandsSeparator) == 'undefined') {var _sThousandsSeparator = null;}
 
-        _iDecimals = this.getRealParameter({'oParameters': _xNumber, 'sName': 'iDecimals', 'xParameter': _iDecimals});
-        _sDecimalPoint = this.getRealParameter({'oParameters': _xNumber, 'sName': 'sDecimalPoint', 'xParameter': _sDecimalPoint});
-        _sThousandsSeperator = this.getRealParameter({'oParameters': _xNumber, 'sName': 'sThousandsSeperator', 'xParameter': _sThousandsSeperator});
-        _xNumber = this.getRealParameter({'oParameters': _xNumber, 'sName': 'xNumber', 'xParameter': _xNumber});
+		_iDecimals = this.getRealParameter({'oParameters': _xNumber, 'sName': 'iDecimals', 'xParameter': _iDecimals});
+		_sDecimalPoint = this.getRealParameter({'oParameters': _xNumber, 'sName': 'sDecimalPoint', 'xParameter': _sDecimalPoint});
+		_sThousandsSeparator = this.getRealParameter({'oParameters': _xNumber, 'sName': 'sThousandsSeparator', 'xParameter': _sThousandsSeparator});
+		_xNumber = this.getRealParameter({'oParameters': _xNumber, 'sName': 'xNumber', 'xParameter': _xNumber});
 
-        if (_iDecimals == null) {_iDecimals = 0;}
-        if (_sDecimalPoint == null) {_sDecimalPoint = '.';}
-        if (_sThousandsSeperator == null) {_sThousandsSeperator = '';}
+		if (_iDecimals == null) {_iDecimals = 0;}
+		if (_sDecimalPoint == null) {_sDecimalPoint = '.';}
+		if (_sThousandsSeparator == null) {_sThousandsSeparator = '';}
 
-        if (isNaN(_xNumber)) {_xNumber = parseFloat(_xNumber);}
-        if (isNaN(_xNumber)) {return _xNumber;}
+		if (isNaN(_xNumber)) {_xNumber = parseFloat(_xNumber);}
+		if (isNaN(_xNumber)) {return _xNumber;}
 
-        _xNumber = _xNumber.toFixed(_iDecimals);
+		_xNumber = _xNumber.toFixed(_iDecimals);
 
 		var _sNumber = ""+_xNumber;
 
-		var _asDecimalSeperated = _sNumber.split('.', _sNumber);
-		if (_sThousandsSeperator != '')
+		var _asDecimalSeparated = _sNumber.split('.', _sNumber);
+		if (_sThousandsSeparator != '')
 		{
 			var _oRegularExpression = /(\d+)(\d{3})/;
 			var _iCounter = 0;
 
-			while ((_oRegularExpression.test(_asDecimalSeperated[0])) && (_iCounter < 10))
+			while ((_oRegularExpression.test(_asDecimalSeparated[0])) && (_iCounter < 10))
 			{
-				_asDecimalSeperated[0] = _asDecimalSeperated[0].replace(_oRegularExpression, '$1'+_sThousandsSeperator+'$2');
+				_asDecimalSeparated[0] = _asDecimalSeparated[0].replace(_oRegularExpression, '$1'+_sThousandsSeparator+'$2');
 				_iCounter++;
 			}
 		}
-		_sNumber = _asDecimalSeperated.join(_sDecimalPoint);
+		_sNumber = _asDecimalSeparated.join(_sDecimalPoint);
 
-        return _sNumber;
-    }
+		return _sNumber;
+	}
     /* @end method */
 }
 /* @end class */

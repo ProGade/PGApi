@@ -224,12 +224,22 @@ class classPG_Api extends classPG_ClassBasics
 	[en]The index of contexts by the element on which the action should be executed.[/en]
 	[de]Der Index des Contexts von dem Element, über das die Aktion ausgeführt werden soll.[/de]
 	*/
-	public function call($_sCall, $_iContextIndex = NULL)
+	public function call($_sCall, $_xValue = NULL, $_iContextIndex = NULL)
 	{
+		$_xValue = $this->getRealParameter(array('oParameters' => $_sCall, 'sName' => 'xValue', 'xParameter' => $_xValue));
 		$_iContextIndex = $this->getRealParameter(array('oParameters' => $_sCall, 'sName' => 'iContextIndex', 'xParameter' => $_iContextIndex));
 		$_sCall = $this->getRealParameter(array('oParameters' => $_sCall, 'sName' => 'sCall', 'xParameter' => $_sCall));
-		if ($_iContextIndex === NULL) {$_iContextIndex = 0;}
-		return $this->axContext[$_iContextIndex]->$_sCall;
+		if ($_iContextIndex == NULL)
+		{
+
+		}
+		// if ($_iContextIndex === NULL) {$_iContextIndex = 0;}
+		if (function_exists($this->axContext[$_iContextIndex]->$_sCall)) {return $this->axContext[$_iContextIndex]->$_sCall($_xValue);}
+		if (property_exists($this->axContext[$_iContextIndex], $_sCall))
+		{
+			if ($_xValue !== NULL) {return $this->axContext[$_iContextIndex]->$_sCall = $_xValue;}
+			return $this->axContext[$_iContextIndex]->$_sCall;
+		}
 	}
 	/* @end method */
 }

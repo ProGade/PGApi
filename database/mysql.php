@@ -812,11 +812,11 @@ class classPG_MySql extends classPG_ClassBasics
                                     break;
 
                                 case 'in':
-                                    $_sStatement .= $_sName.' IN ('.implode(',', $_xValue2).')';
+                                    $_sStatement .= $_sName.' IN ('.(is_array($_xValue2) ? '"'.implode('","', $_xValue2).'"' : $_xValue2).')';
                                     break;
 
                                 case 'not in':
-                                    $_sStatement .= $_sName.' NOT IN ('.implode(',', $_xValue2).')';
+                                    $_sStatement .= $_sName.' NOT IN ('.(is_array($_xValue2) ? '"'.implode('","', $_xValue2).'"' : $_xValue2).')';
                                     break;
 
                                 case 'like':
@@ -952,7 +952,7 @@ class classPG_MySql extends classPG_ClassBasics
 				if ($_bStripSlashes == true) {$_xValue = stripslashes($_xValue);}
 				foreach ($this->asReplaceOnWrite as $_sSearchFor => $_sReplaceWith)
 				{
-					if ($_sSearchFor != '') {$_xVale = str_replace($_sSearchFor, $_sReplaceWith, $_xValue);}
+					if ($_sSearchFor != '') {$_xValue = str_replace($_sSearchFor, $_sReplaceWith, $_xValue);}
 				}
 			}
 			$_sSql .= $_sColumn.' = "'.$_xValue.'"';
@@ -1031,14 +1031,18 @@ class classPG_MySql extends classPG_ClassBasics
 				if ($_bStripSlashes == true) {$_xValue = stripslashes($_xValue);}
 				foreach ($this->asReplaceOnWrite as $_sSearchFor => $_sReplaceWith)
 				{
-					if ($_sSearchFor != '') {$_xVale = str_replace($_sSearchFor, $_sReplaceWith, $_xValue);}
+					if ($_sSearchFor != '') {$_xValue = str_replace($_sSearchFor, $_sReplaceWith, $_xValue);}
 				}
 			}
 			$_sSql .= $_sColumn.' = "'.$_xValue.'"';
 			$i++;
 		}
-		$_sSql .= ' WHERE '.$_sIDColumn.' = "'.$_xIDValue.'"';
-		if ($_xWhere != NULL) {$_sSql .= ' AND ('.$this->buildWhere(array('xWhere' => $_xWhere)).')';}
+		if (!empty($_sIDColumn))
+		{
+			$_sSql .= ' WHERE '.$_sIDColumn.' = "'.$_xIDValue.'"';
+			if ($_xWhere != NULL) {$_sSql .= ' AND ('.$this->buildWhere(array('xWhere' => $_xWhere)).')';}
+		}
+		else {$_sSql .= ' WHERE '.$this->buildWhere(array('xWhere' => $_xWhere));}
 		if ($this->sendSql(array('sStatement' => $_sSql, 'bAllowAnonymUpdate' => $_bAllowAnonymUpdate))) {return $_xIDValue;}
 		return false;
 	}

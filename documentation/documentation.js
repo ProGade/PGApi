@@ -64,7 +64,7 @@ function classPG_Documentation()
 		_sParameters += 'sRequestType='+PG_DEVDOCU_REQUESTTYPE_CLASSDOCU;
 		_sParameters += '&iEditDefineID='+_iDefineID;
 		_sParameters += '&iClassID='+this.iClassID;
-		this.networkSend(_sParameters, oPGDocumentation.getEditFormResponse, null);
+		this.networkSend({'xParameters': _sParameters, 'fOnResponse': oPGDocumentation.getEditFormResponse});
 	}
 	/* @end method */
 	
@@ -80,7 +80,7 @@ function classPG_Documentation()
 		_sParameters += 'sRequestType='+PG_DEVDOCU_REQUESTTYPE_CLASSDOCU;
 		_sParameters += '&iEditPropertyID='+_iPropertyID;
 		_sParameters += '&iClassID='+this.iClassID;
-		this.networkSend(_sParameters, oPGDocumentation.getEditFormResponse, null);
+		this.networkSend({'xParameters': _sParameters, 'fOnResponse': oPGDocumentation.getEditFormResponse});
 	}
 	/* @end method */
 	
@@ -95,7 +95,7 @@ function classPG_Documentation()
 		var _sParameters = '';
 		_sParameters += 'sRequestType='+PG_DEVDOCU_REQUESTTYPE_CLASSDOCU;
 		_sParameters += '&iEditClassID='+_iClassID;
-		this.networkSend(_sParameters, oPGDocumentation.getEditFormResponse, null);
+		this.networkSend({'xParameters': _sParameters, 'fOnResponse': oPGDocumentation.getEditFormResponse});
 	}
 	/* @end method */
 	
@@ -112,7 +112,7 @@ function classPG_Documentation()
 		_sParameters += '&iEditParameterID='+_iParameterID;
 		_sParameters += '&iMethodID='+this.iMethodID;
 		_sParameters += '&iClassID='+this.iClassID;
-		this.networkSend(_sParameters, oPGDocumentation.getEditFormResponse, null);
+		this.networkSend({'xParameters': _sParameters, 'fOnResponse': oPGDocumentation.getEditFormResponse});
 	}
 	/* @end method */
 	
@@ -128,7 +128,7 @@ function classPG_Documentation()
 		_sParameters += 'sRequestType='+PG_DEVDOCU_REQUESTTYPE_METHODDOCU;
 		_sParameters += '&iEditMethodID='+_iMethodID;
 		_sParameters += '&iClassID='+this.iClassID;
-		this.networkSend(_sParameters, oPGDocumentation.getEditFormResponse, null);
+		this.networkSend({'xParameters': _sParameters, 'fOnResponse': oPGDocumentation.getEditFormResponse});
 	}
 	/* @end method */
 	
@@ -183,7 +183,7 @@ function classPG_Documentation()
 			if (this.bDetailed == true) {_sParameters += '&iDetailed=1';}
 			if (this.bEditable == true) {_sParameters += '&iEditable=1';}
 
-			this.networkSend(_sParameters, _fAjaxResult, _sResponseXml);
+			this.networkSend({'xParameters': _sParameters, 'fOnResponse': _fAjaxResult, 'sResponseFile': _sResponseXml});
 		}
 	}
 	
@@ -230,7 +230,7 @@ function classPG_Documentation()
 			if (this.bDetailed == true) {_sParameters += '&iDetailed=1';}
 			if (this.bEditable == true) {_sParameters += '&iEditable=1';}
 			
-			this.networkSend(_sParameters, _fAjaxResult, _sResponseXml);
+			this.networkSend({'xParameters': _sParameters, 'fOnResponse': _fAjaxResult, 'sResponseFile': _sResponseXml});
 		}
 	}
 	/* @end method */
@@ -278,7 +278,7 @@ function classPG_Documentation()
 			if (this.bDetailed == true) {_sParameters += '&iDetailed=1';}
 			if (this.bEditable == true) {_sParameters += '&iEditable=1';}
 // alert(_sParameters);
-			this.networkSend(_sParameters, _fAjaxResult, _sResponseXml);
+			this.networkSend({'xParameters': _sParameters, 'fOnResponse': _fAjaxResult, 'sResponseFile': _sResponseXml});
 		}
 	}
 	/* @end method */
