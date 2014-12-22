@@ -88,7 +88,7 @@ function classPG_BreadCrumb()
 	[en]The final text behind the navigation.[/en]
 	[de]Der Schlusstext nach der Navigation.[/de]
 	*/
-	this.build = function(_sBreadCrumbID, _axLinkStructures, _sSeperator)
+	this.build = function(_sBreadCrumbID, _axLinkStructures, _sSeperator, _sPrefixText, _sSuffixText)
 	{
 		if (typeof(_sBreadCrumbID) == 'undefined') {var _sBreadCrumbID = null;}
 		if (typeof(_axLinkStructures) == 'undefined') {var _axLinkStructures = null;}

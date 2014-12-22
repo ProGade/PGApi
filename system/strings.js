@@ -1052,9 +1052,9 @@ function classPG_Strings()
 
 		_xNumber = _xNumber.toFixed(_iDecimals);
 
-		var _sNumber = ""+_xNumber;
+		var _sNumber = _xNumber.toString();
 
-		var _asDecimalSeparated = _sNumber.split('.', _sNumber);
+		var _asDecimalSeparated = _sNumber.split('.');
 		if (_sThousandsSeparator != '')
 		{
 			var _oRegularExpression = /(\d+)(\d{3})/;

@@ -823,6 +823,10 @@ class classPG_MySql extends classPG_ClassBasics
                                     $_sStatement .= $_sName.' LIKE "'.$_xValue2.'"';
                                     break;
 
+								case 'is':
+									$_sStatement .= $_sName.' IS '.$_xValue2;
+									break;
+
                                 /*case 'regexp':
                                     $_axExpression[$_sName] = array('$regex' => $_xValue2, '$options' => 'im');
                                     break;*/

@@ -452,7 +452,7 @@ function classPG_Gfx()
 	
 	@description
 	[en]Sets the sub path or folder for the GFX package in which are the css files to find.[/en]
-	[de]Setzt den Unterpfad bzw. Verzeichnis f�r das GFX Pack in dem die CSS-Dateien zu finden sind.[/de]
+	[de]Setzt den Unterpfad bzw. Verzeichnis für das GFX Pack in dem die CSS-Dateien zu finden sind.[/de]
 	
 	@param sPath [needed][type]string[/type]
 	[en]The relative path to the css files.[/en]
