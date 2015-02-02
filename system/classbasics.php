@@ -1144,6 +1144,7 @@ class classPG_ClassBasics
     */
     public function setTemplate($_xTemplate)
     {
+		$this->getRealParameter(array('oParameters' => $_xTemplate, 'sName' => 'xTemplate', 'xParameter' => $_xTemplate));
         if (is_string($_xTemplate)) {$this->sTemplate = $_xTemplate;}
         else {$this->oTemplate = $_xTemplate;}
     }

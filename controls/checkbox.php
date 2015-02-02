@@ -33,6 +33,18 @@ class classPG_CheckBox extends classPG_ClassBasics
 		$this->setID(array('sID' => 'PGCheckBox'));
 		$this->initClassBasics();
 		$this->setGfxSubPath(array('sPath' => 'controls/'));
+		
+		// Templates...
+		$_oTemplate = new classPG_Template();
+		$_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+		$_oTemplate->setTemplates(
+			array(
+				'default' => 'gfx/default/templates/controls/default_checkbox.php',
+				'bootstrap' => 'gfx/default/templates/controls/bootstap_checkbox.php',
+				'foundation' => 'gfx/default/templates/controls/foundation_checkbox.php'
+			)
+		);
+		$this->setTemplate(array('xTemplate' => $_oTemplate));
 	}
 
 	// Methods...
@@ -86,7 +98,9 @@ class classPG_CheckBox extends classPG_ClassBasics
 		$_sOnMouseDown = NULL,
 		$_sOnMouseUp = NULL,
 		$_sOnMouseOver = NULL,
-		$_sOnMouseOut = NULL
+		$_sOnMouseOut = NULL,
+		
+		$_sTemplateName = NULL
 	)
 	{
 		global $oPGSprites;
@@ -101,6 +115,7 @@ class classPG_CheckBox extends classPG_ClassBasics
 		$_sOnMouseUp = $this->getRealParameter(array('oParameters' => $_sCheckBoxID, 'sName' => 'sOnMouseUp', 'xParameter' => $_sOnMouseUp));
 		$_sOnMouseOver = $this->getRealParameter(array('oParameters' => $_sCheckBoxID, 'sName' => 'sOnMouseOver', 'xParameter' => $_sOnMouseOver));
 		$_sOnMouseOut = $this->getRealParameter(array('oParameters' => $_sCheckBoxID, 'sName' => 'sOnMouseOut', 'xParameter' => $_sOnMouseOut));
+		$_sTemplateName = $this->getRealParameter(array('oParameters' => $_sCheckBoxID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sCheckBoxID = $this->getRealParameter(array('oParameters' => $_sCheckBoxID, 'sName' => 'sCheckBoxID', 'xParameter' => $_sCheckBoxID));
 		
 		if (($_sCheckBoxID === NULL) || ($_sCheckBoxID === '')) {$_sCheckBoxID = $this->getNextID();}
@@ -120,6 +135,8 @@ class classPG_CheckBox extends classPG_ClassBasics
 		if ($_sOnMouseUp === NULL) {$_sOnMouseUp = '';}
 		if ($_sOnMouseOver === NULL) {$_sOnMouseOver = '';}
 		if ($_sOnMouseOut === NULL) {$_sOnMouseOut = '';}
+		
+		if ($_sTemplateName !== NULL) {return $this->oTemplate->build(array('sName' => $_sTemplateName));}
 		
 		$_sHtml = '';
 		$_iDefaultStatus = 0;
