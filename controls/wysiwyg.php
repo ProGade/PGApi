@@ -122,12 +122,15 @@ class classPG_Wysiwyg extends classPG_ClassBasics
 		$_sSourceCode = $this->getRealParameter(array('oParameters' => $_sWysiwygID, 'sName' => 'sSourceCode', 'xParameter' => $_sSourceCode));
 		$_sOnImageOpenClick = $this->getRealParameter(array('oParameters' => $_sWysiwygID, 'sName' => 'sOnImageOpenClick', 'xParameter' => $_sOnImageOpenClick));
 		$_sOnFileOpenClick = $this->getRealParameter(array('oParameters' => $_sWysiwygID, 'sName' => 'sOnFileOpenClick', 'xParameter' => $_sOnFileOpenClick));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sWysiwygID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sWysiwygID = $this->getRealParameter(array('oParameters' => $_sWysiwygID, 'sName' => 'sWysiwygID', 'xParameter' => $_sWysiwygID));
 
 		if ($_sWysiwygID === NULL) {$_sWysiwygID = $this->getNextID();}
 		if ($_bEditable === NULL) {$_bEditable = true;}
-	
-		$_sHtml = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHtml = '';
 		$_sHtml .= '<div id="'.$_sWysiwygID.'ToolbarContainer" class="wysiwyg_editor_toolbar" style="display:inline-block; width:100%;">';
 			foreach ($this->asEditorToolbarCommands as $_sGroupName => $_sCommandList)
 			{

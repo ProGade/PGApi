@@ -139,7 +139,7 @@ class classPG_DragAndDrop extends classPG_ClassBasics
 		$_iMaxDropElements = NULL
 	)
 	{
-		global $oPGStrings, $oPGDropArea;
+		global $oPGObjects, $oPGDropArea;
 		
 		$_iGridX = $this->getRealParameter(array('oParameters' => $_sDropAreaID, 'sName' => 'iGridX', 'xParameter' => $_iGridX));
 		$_iGridY = $this->getRealParameter(array('oParameters' => $_sDropAreaID, 'sName' => 'iGridY', 'xParameter' => $_iGridY));
@@ -363,7 +363,7 @@ class classPG_DragAndDrop extends classPG_ClassBasics
 			if ($_iGrabMoveDistX === NULL) {$_sHtml .= 'null';} else {$_sHtml .= $_iGrabMoveDistX;}
 			$_sHtml .= ', "iGrabMoveDistY": ';
 			if ($_iGrabMoveDistY === NULL) {$_sHtml .= 'null';} else {$_sHtml .= $_iGrabMoveDistY;}
-			if ($_aiMoveBounds != NULL) {$_sHtml .= '"aiMoveBounds": '.$oPGString->convertPhpArrayToJs(array('axArray' => $_aiMoveBounds, 'bDeclaration' => true, 'bUseDoubleQuotes' => true)).', ';}
+			if ($_aiMoveBounds != NULL) {$_sHtml .= '"aiMoveBounds": '.$oPGStrings->convertPhpArrayToJs(array('axArray' => $_aiMoveBounds, 'bDeclaration' => true, 'bUseDoubleQuotes' => true)).', ';}
 			$_sHtml .= ', "sOnGrab": ';
 			if ($_sOnGrab === NULL) {$_sHtml .= 'null';} else {$_sHtml .= '"'.$_sOnGrab.'"';}
 			$_sHtml .= ', "sOnDrop": ';

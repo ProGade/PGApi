@@ -25,8 +25,8 @@ class classPG_CodeEditor extends classPG_ClassBasics
         $_oTemplate->setTemplates(
             array(
                 'default' => 'gfx/default/templates/controls/default_codeeditor.php',
-                'bootstrap' => 'gfx/default/templates/controls/bootstrap_codeeeditor.php',
-                'foundation' => 'gfx/default/templates/controls/foundation_codeeeditor.php'
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_codeeditor.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_codeeditor.php'
             )
         );
         $this->setTemplate(array('xTemplate' => $_oTemplate));
@@ -106,11 +106,14 @@ class classPG_CodeEditor extends classPG_ClassBasics
 	@param sContent [type]string[/type]
 	[en]...[/en]
 	*/
-	public function build($_sContent = NULL)
+	public function build($_sContent = NULL, $_sTemplateName = NULL)
 	{
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sContent, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sContent = $this->getRealParameter(array('oParameters' => $_sContent, 'sName' => 'sContent', 'xParameter' => $_sContent));
 
 		if ($_sContent === NULL) {$_sContent = '';}
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
 		
 		$_asArray = array();
 		$_iLineCount = preg_match_all("/\n/i", $_sContent, $_asArray);

@@ -114,9 +114,7 @@ class classPG_ColorPicker extends classPG_ClassBasics
         $_sPickerID,
         $_iSizeX = NULL, 
         $_iSizeY = NULL,
-        $_bDisplay = NULL,
-
-		$_sTemplateName = NULL
+        $_bDisplay = NULL
     )
 	{
 		global $oPGGfx;
@@ -263,7 +261,19 @@ class classPG_ColorPicker extends classPG_ClassBasics
 		return $_sHtml;
 	}
 	
-	public function build($_sPickerID = NULL, $_iSizeX = NULL, $_iSizeY = NULL, $_sOnColorAccept = NULL, $_sOnColorAbort = NULL, $_bDisplay = NULL, $_iDetailLevel = NULL, $_sCssClass = NULL, $_sCssStyle = NULL)
+	public function build(
+        $_sPickerID = NULL,
+        $_iSizeX = NULL,
+        $_iSizeY = NULL,
+        $_sOnColorAccept = NULL,
+        $_sOnColorAbort = NULL,
+        $_bDisplay = NULL,
+        $_iDetailLevel = NULL,
+        $_sCssClass = NULL,
+        $_sCssStyle = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		global $oPGButton;
 	
@@ -275,6 +285,7 @@ class classPG_ColorPicker extends classPG_ClassBasics
 		$_iDetailLevel = $this->getRealParameter(array('oParameters' => $_sPickerID, 'sName' => 'iDetailLevel', 'xParameter' => $_iDetailLevel));
 		$_sCssClass = $this->getRealParameter(array('oParameters' => $_sPickerID, 'sName' => 'sCssClass', 'xParameter' => $_sCssClass));
 		$_sCssStyle = $this->getRealParameter(array('oParameters' => $_sPickerID, 'sName' => 'sCssStyle', 'xParameter' => $_sCssStyle));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sPickerID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sPickerID = $this->getRealParameter(array('oParameters' => $_sPickerID, 'sName' => 'sPickerID', 'xParameter' => $_sPickerID));
 		
 		if ($_sPickerID === NULL) {$_sPickerID = $this->getNextID();}

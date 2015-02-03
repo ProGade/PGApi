@@ -523,6 +523,7 @@ class classPG_Button extends classPG_ClassBasics
 		$_sCssClass = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sCssClass', 'xParameter' => $_sCssClass));
 		$_sCssClassNormal = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sCssClassNormal', 'xParameter' => $_sCssClassNormal));
 		$_sCssClassDown = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sCssClassDown', 'xParameter' => $_sCssClassDown));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sButtonID = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sButtonID', 'xParameter' => $_sButtonID));
 		
 		if ($_sButtonID === NULL) {$_sButtonID = $this->getNextID();}

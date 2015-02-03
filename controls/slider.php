@@ -52,10 +52,13 @@ class classPG_Slider extends classPG_ClassBasics
     )
 	{
 		global $oPGDragElement;
-	
+
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sSliderID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sSliderID = $this->getRealParameter(array('oParameters' => $_sSliderID, 'sName' => 'sSliderID', 'xParameter' => $_sSliderID));
 	
 		if ($_sSliderID === NULL) {$_sSliderID = $this->getNextID();}
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
 	
 		$_sHtml = '';
 		$_sHtml .= '<div id="'.$_sSliderID.'" style="border:solid 1px #000000;">';

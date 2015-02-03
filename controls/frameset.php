@@ -427,7 +427,9 @@ class classPG_Frameset extends classPG_ClassBasics
 		$_sCssStyleFrame = NULL,
 		$_sCssClassFrame = NULL,
 		$_sCssStyleBorder = NULL,
-		$_sCssClassBorder = NULL
+		$_sCssClassBorder = NULL,
+
+        $_sTemplateName = NULL
 	)
 	{
 		global $oPGFrame, $oPGTabs, $oPGArrays;
@@ -442,6 +444,7 @@ class classPG_Frameset extends classPG_ClassBasics
 		$_sCssClassFrame = $this->getRealParameter(array('oParameters' => $_sFramesetID, 'sName' => 'sCssClassFrame', 'xParameter' => $_sCssClassFrame));
 		$_sCssStyleBorder = $this->getRealParameter(array('oParameters' => $_sFramesetID, 'sName' => 'sCssStyleBorder', 'xParameter' => $_sCssStyleBorder));
 		$_sCssClassBorder = $this->getRealParameter(array('oParameters' => $_sFramesetID, 'sName' => 'sCssClassBorder', 'xParameter' => $_sCssClassBorder));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sFramesetID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sFramesetID = $this->getRealParameter(array('oParameters' => $_sFramesetID, 'sName' => 'sFramesetID', 'xParameter' => $_sFramesetID));
 
 		if ($_sFramesetID === NULL) {$_sFramesetID = $this->getNextID();}
@@ -449,8 +452,10 @@ class classPG_Frameset extends classPG_ClassBasics
 		if ($_sSizeY === NULL) {$_sSizeY = '100px';}
 		if ($_iFramesetType === NULL) {$_iFramesetType = PG_FRAMESET_FRAMES_TYPE_COLS;}
 		if ($_iBorderSize === NULL) {$_iBorderSize = $this->iBorderSize;}
-	
-		$_iDynamicFrames = 0;
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_iDynamicFrames = 0;
 		$_axJavaScriptFrames = array();
 		$_sHtml = '';
 		$_sHtml .= $this->getLineBreak();

@@ -123,9 +123,7 @@ class classPG_Frame extends classPG_ClassBasics
 		$_bUseOverlay = NULL, 
 		$_bVisible = NULL,
 		$_sCssStyle = NULL, 
-		$_sCssClass = NULL,
-
-        $_sTemplateName = NULL
+		$_sCssClass = NULL
     )
 	{
 		$_sSizeX = $this->getRealParameter(array('oParameters' => $_sFrameID, 'sName' => 'sSizeX', 'xParameter' => $_sSizeX));
@@ -222,8 +220,10 @@ class classPG_Frame extends classPG_ClassBasics
 		$_bUseOverlay = NULL, 
 		$_bVisible = NULL,
 		$_sCssStyle = NULL, 
-		$_sCssClass = NULL
-	)
+		$_sCssClass = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		global $oPGBrowser;
 
@@ -237,6 +237,7 @@ class classPG_Frame extends classPG_ClassBasics
 		$_bVisible = $this->getRealParameter(array('oParameters' => $_sFrameID, 'sName' => 'bVisible', 'xParameter' => $_bVisible));
 		$_sCssStyle = $this->getRealParameter(array('oParameters' => $_sFrameID, 'sName' => 'sCssStyle', 'xParameter' => $_sCssStyle));
 		$_sCssClass = $this->getRealParameter(array('oParameters' => $_sFrameID, 'sName' => 'sCssClass', 'xParameter' => $_sCssClass));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sFrameID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sFrameID = $this->getRealParameter(array('oParameters' => $_sFrameID, 'sName' => 'sFrameID', 'xParameter' => $_sFrameID));
 
 		if ($_sFrameID === NULL) {$_sDiv = $this->getNextID();}

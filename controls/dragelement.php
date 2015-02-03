@@ -284,9 +284,7 @@ class classPG_DragElement extends classPG_ClassBasics
 		$_sOnDrop = NULL,
 		
 		$_sCssStyle = NULL,
-		$_sCssClass = NULL,
-
-        $_sTemplateName = NULL
+		$_sCssClass = NULL
     )
 	{
 		$_sDragElementID = $this->getRealParameter(array('oParameters' => $_xDropArea, 'sName' => 'sDragElementID', 'xParameter' => $_sDragElementID));
@@ -460,8 +458,10 @@ class classPG_DragElement extends classPG_ClassBasics
 		$_sOnDrop = NULL,
 		
 		$_sCssStyle = NULL,
-		$_sCssClass = NULL
-	)
+		$_sCssClass = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		global $oPGDragAndDrop;
 		
@@ -493,6 +493,7 @@ class classPG_DragElement extends classPG_ClassBasics
 
 		$_sCssStyle = $this->getRealParameter(array('oParameters' => $_xDropArea, 'sName' => 'sCssStyle', 'xParameter' => $_sCssStyle));
 		$_sCssClass = $this->getRealParameter(array('oParameters' => $_xDropArea, 'sName' => 'sCssClass', 'xParameter' => $_sCssClass));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_xDropArea, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_xDropArea = $this->getRealParameter(array('oParameters' => $_xDropArea, 'sName' => 'xDropArea', 'xParameter' => $_xDropArea));
 
 		if ($_xDropArea === NULL) {$_xDropArea = '';}
@@ -506,9 +507,10 @@ class classPG_DragElement extends classPG_ClassBasics
 		if ($_iElementKillMode === NULL) {$_iElementKillMode = $this->iDefaultKillMode;}
 		if ($_iGrabMoveDistX === NULL) {$_iGrabMoveDistX = $this->iDefaultGrabMoveDistX;}
 		if ($_iGrabMoveDistY === NULL) {$_iGrabMoveDistY = $this->iDefaultGrabMoveDistY;}
-		
-		$_sDropAreaID = '';
 
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sDropAreaID = '';
 
 		$_sHtml = '';
 		$_sHtml .= '<div id="'.$_sDragElementID.'" ';

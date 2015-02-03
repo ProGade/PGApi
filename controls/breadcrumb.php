@@ -114,6 +114,7 @@ class classPG_BreadCrumb extends classPG_ClassBasics
 		$_sSeparator = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'sSeparator', 'xParameter' => $_sSeparator));
 		$_sPrefixText = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'sPrefixText', 'xParameter' => $_sPrefixText));
 		$_sSuffixText = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'sSuffixText', 'xParameter' => $_sSuffixText));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sBreadCrumbID = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'sBreadCrumbID', 'xParameter' => $_sBreadCrumbID));
 
 		if ($_sBreadCrumbID === NULL) {$_sBreadCrumbID = $this->getNextID();}

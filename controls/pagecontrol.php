@@ -138,6 +138,7 @@ class classPG_PageControl extends classPG_ClassBasics
 		$_sSeperator = $this->getRealParameter(array('oParameters' => $_iPageCount, 'sName' => 'sSeperator', 'xParameter' => $_sSeperator));
 		$_sPreviousPageText = $this->getRealParameter(array('oParameters' => $_iPageCount, 'sName' => 'sPreviousPageText', 'xParameter' => $_sPreviousPageText));
 		$_sNextPageText = $this->getRealParameter(array('oParameters' => $_iPageCount, 'sName' => 'sNextPageText', 'xParameter' => $_sNextPageText));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_iPageCount, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_iPageCount = $this->getRealParameter(array('oParameters' => $_iPageCount, 'sName' => 'iPageCount', 'xParameter' => $_iPageCount));
 
 		if ($_iPageCount !== NULL) {$this->iPageCount = $_iPageCount;}

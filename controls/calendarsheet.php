@@ -1114,9 +1114,6 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 		if ($_iMonth === NULL) {$_iMonth = 0;}
 		if ($_iDay === NULL) {$_iDay = 0;}
 
-        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
-
-
         $_sHTML = '';
 		
 		$_bClass2 = true;
@@ -1285,12 +1282,16 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	[en]Returns the calendar sheet as an HTML string.[/en]
 	[de]Gibt das Kalenderblatt als HTML String zurück.[/de]
 	*/
-	public function build()
+	public function build($_sTemplateName = NULL)
 	{
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sTemplateName, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
+
 		if ($this->iDay == 0) {$this->iDay = date("j");}
 		if ($this->iMonth == 0) {$this->iMonth = date("n");}
 		if ($this->iYear == 0) {$this->iYear = date("Y");}
-	
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
 		$_sHTML = '';
 		$_sHTML .= '<div id="'.$this->getID().'" class="calendarsheet">';
 			$_sHTML .= $this->buildSheet(array('iDay' => $this->iDay, 'iWeek' => $this->iWeek, 'iMonth' => $this->iMonth, 'iYear' => $this->iYear));

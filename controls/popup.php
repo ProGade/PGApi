@@ -117,6 +117,7 @@ class classPG_Popup extends classPG_ClassBasics
 		$_bHideOnBackgroundClick = $this->getRealParameter(array('oParameters' => $_sPopupID, 'sName' => 'bHideOnBackgroundClick', 'xParameter' => $_bHideOnBackgroundClick));
 		$_sCssStyle = $this->getRealParameter(array('oParameters' => $_sPopupID, 'sName' => 'sCssStyle', 'xParameter' => $_sCssStyle));
 		$_sCssClass = $this->getRealParameter(array('oParameters' => $_sPopupID, 'sName' => 'sCssClass', 'xParameter' => $_sCssClass));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sPopupID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sPopupID = $this->getRealParameter(array('oParameters' => $_sPopupID, 'sName' => 'sPopupID', 'xParameter' => $_sPopupID));
 
 		if ($_sPopupID === NULL) {$_sPopupID = $this->getNextID();}

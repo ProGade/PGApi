@@ -159,13 +159,14 @@ class classPG_Menu extends classPG_ClassBasics
 	@param sUrlTarget [type]string[/type]
 	[en]...[/en]
 	*/
-	public function build($_sMenuID = NULL, $_sUrl = NULL, $_sUrlTarget = NULL, $_axMenuItems = NULL)
+	public function build($_sMenuID = NULL, $_sUrl = NULL, $_sUrlTarget = NULL, $_axMenuItems = NULL, $_sTemplateName = NULL)
 	{
 		global $oPGStrings, $oPGUrls;
 	
 		$_sUrl = $this->getRealParameter(array('oParameters' => $_sMenuID, 'sName' => 'sUrl', 'xParameter' => $_sUrl));
 		$_sUrlTarget = $this->getRealParameter(array('oParameters' => $_sMenuID, 'sName' => 'sUrlTarget', 'xParameter' => $_sUrlTarget));
 		$_axMenuItems = $this->getRealParameter(array('oParameters' => $_sMenuID, 'sName' => 'axMenuItems', 'xParameter' => $_axMenuItems));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sMenuID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sMenuID = $this->getRealParameter(array('oParameters' => $_sMenuID, 'sName' => 'sMenuID', 'xParameter' => $_sMenuID));
 
 		if ($_sUrl === NULL) {$_sUrl = $this->getUrl();}
@@ -174,6 +175,8 @@ class classPG_Menu extends classPG_ClassBasics
 		
 		$_bFirstMenu = false;
 		if ($_sMenuID === NULL) {$_sMenuID = $this->getNextID(); $_bFirstMenu = true;}
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
 
 		$_sHtml = '';
 		$_sHtml .= '<ul id="'.$_sMenuID.'" style="';
@@ -217,7 +220,7 @@ class classPG_Menu extends classPG_ClassBasics
 				{
 					$_sHtml .= $this->build(
 						array(
-							'sMenuID' => $_sMenuID.'_'.$oPGStrings->urlEncode(array('sString' => $_axMenuPoints[$i]['sName'])),
+							'sMenuID' => $_sMenuID.'_'.$oPGStrings->urlEncode(array('sString' => $_axMenuItems[$i]['sName'])),
 							'sUrl' => $_sUrl,
 							'sUrlTarget' => $_sUrlTarget,
 							'axMenuItems' => $_axMenuItems[$i][PG_MENUITEM_INDEX_SUBMENU]

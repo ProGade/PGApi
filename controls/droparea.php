@@ -358,6 +358,7 @@ class classPG_DropArea extends classPG_ClassBasics
 		$_iMaxDragElements = $this->getRealParameter(array('oParameters' => $_sDropAreaID, 'sName' => 'iMaxDragElements', 'xParameter' => $_iMaxDragElements));
 		$_sCssStyle = $this->getRealParameter(array('oParameters' => $_sDropAreaID, 'sName' => 'sCssStyle', 'xParameter' => $_sCssStyle));
 		$_sCssClass = $this->getRealParameter(array('oParameters' => $_sDropAreaID, 'sName' => 'sCssClass', 'xParameter' => $_sCssClass));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sDropAreaID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sDropAreaID = $this->getRealParameter(array('oParameters' => $_sDropAreaID, 'sName' => 'sDropAreaID', 'xParameter' => $_sDropAreaID));
 		
 		if ($_sDropAreaID === NULL) {$_sDropAreaID = $this->getNextID();}

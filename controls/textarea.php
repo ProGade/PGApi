@@ -149,38 +149,39 @@ class classPG_TextArea extends classPG_ClassBasics
 	@param sOnMouseOut [type]string[/type]
 	[en]...[/en]
 	*/
-	public function build($_sTextAreaID = NULL, 
-						  $_iTextAreaMode = NULL, 
-						  $_iSizeX = NULL, 
-						  $_iRows = NULL, 
-						  
-						  $_sName = NULL,
-						  $_sText = NULL, 
-						  $_sNoDataText = NULL, 
-						  
-						  $_sAccessKey = NULL,
-						  $_bRequired = NULL, 
-						  $_iMaxLength = NULL,
-						  $_iTabIndex = NULL,
-						  
-						  $_iLineBreakCharCount = NULL,
-						  $_iFreeSpaceCharCount = NULL,
-						  
-						  $_sSendParameters = NULL,
+	public function build(
+        $_sTextAreaID = NULL,
+        $_iTextAreaMode = NULL,
+        $_iSizeX = NULL,
+        $_iRows = NULL,
 
-						  $_sOnBlur = NULL,
-						  $_sOnFocus = NULL,
-						  $_sOnKeyDown = NULL,
-						  $_sOnKeyUp = NULL,
-						
-						  $_sOnClick = NULL,
-						  $_sOnMouseDown = NULL,
-						  $_sOnMouseUp = NULL,
-						  $_sOnMouseOver = NULL,
-						  $_sOnMouseOut = NULL,
+        $_sName = NULL,
+        $_sText = NULL,
+        $_sNoDataText = NULL,
 
-                          $_sTemplateName = NULL
-                        )
+        $_sAccessKey = NULL,
+        $_bRequired = NULL,
+        $_iMaxLength = NULL,
+        $_iTabIndex = NULL,
+
+        $_iLineBreakCharCount = NULL,
+        $_iFreeSpaceCharCount = NULL,
+
+        $_sSendParameters = NULL,
+
+        $_sOnBlur = NULL,
+        $_sOnFocus = NULL,
+        $_sOnKeyDown = NULL,
+        $_sOnKeyUp = NULL,
+
+        $_sOnClick = NULL,
+        $_sOnMouseDown = NULL,
+        $_sOnMouseUp = NULL,
+        $_sOnMouseOver = NULL,
+        $_sOnMouseOut = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		$_iTextAreaMode = $this->getRealParameter(array('oParameters' => $_sTextAreaID, 'sName' => 'iTextAreaMode', 'xParameter' => $_iTextAreaMode));
 		$_iSizeX = $this->getRealParameter(array('oParameters' => $_sTextAreaID, 'sName' => 'iSizeX', 'xParameter' => $_iSizeX));
@@ -211,7 +212,9 @@ class classPG_TextArea extends classPG_ClassBasics
 		$_sOnMouseOver = $this->getRealParameter(array('oParameters' => $_sTextAreaID, 'sName' => 'sOnMouseOver', 'xParameter' => $_sOnMouseOver));
 		$_sOnMouseOut = $this->getRealParameter(array('oParameters' => $_sTextAreaID, 'sName' => 'sOnMouseOut', 'xParameter' => $_sOnMouseOut));
 
-		$_sTextAreaID = $this->getRealParameter(array('oParameters' => $_sTextAreaID, 'sName' => 'sTextAreaID', 'xParameter' => $_sTextAreaID));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sTextAreaID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
+
+        $_sTextAreaID = $this->getRealParameter(array('oParameters' => $_sTextAreaID, 'sName' => 'sTextAreaID', 'xParameter' => $_sTextAreaID));
 
 		if (($_sTextAreaID === NULL) || ($_sTextAreaID === '')) {$_sTextAreaID = $this->getNextID();}
 		if ($_iTextAreaMode === NULL) {$_iTextAreaMode = PG_TEXTAREA_MODE_NONE;}

@@ -51,11 +51,18 @@ class classPG_Tab extends classPG_ClassBasics
 	@param sContent [type]string[/type]
 	[en]...[/en]
 	*/
-	public function build($_sTabID = NULL, $_iTabMode = NULL, $_sContent = NULL)
+	public function build($_sTabID = NULL, $_iTabMode = NULL, $_sContent = NULL, $_sTemplateName = NULL)
 	{
         global $oPGDragAndDrop;
 
-		$_sHtml = '';
+        $_iTabMode = $this->getRealParameter(array('oParameters' => $_sTabID, 'sName' => 'iTabMode', 'xParameter' => $_iTabMode));
+        $_sContent = $this->getRealParameter(array('oParameters' => $_sTabID, 'sName' => 'sContent', 'xParameter' => $_sContent));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sTabID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
+        $_sTabID = $this->getRealParameter(array('oParameters' => $_sTabID, 'sName' => 'sTabID', 'xParameter' => $_sTabID));
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHtml = '';
 		
 		$_sHtml .= '<div id="'.$_sTabID.'" style="overflow:hidden;">';
 		

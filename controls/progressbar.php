@@ -125,9 +125,12 @@ class classPG_ProgressBar extends classPG_ClassBasics
 		$_sBackgroundCssStyle = $this->getRealParameter(array('oParameters' => $_sProgressBarID, 'sName' => 'sBackgroundCssStyle', 'xParameter' => $_sBackgroundCssStyle));
 		$_sBarCssClass = $this->getRealParameter(array('oParameters' => $_sProgressBarID, 'sName' => 'sBarCssClass', 'xParameter' => $_sBarCssClass));
 		$_sBarCssStyle = $this->getRealParameter(array('oParameters' => $_sProgressBarID, 'sName' => 'sBarCssStyle', 'xParameter' => $_sBarCssStyle));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sProgressBarID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sProgressBarID = $this->getRealParameter(array('oParameters' => $_sProgressBarID, 'sName' => 'sProgressBarID', 'xParameter' => $_sProgressBarID));
 
-		$_sHTML = '';
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHTML = '';
 		
 		if ($_sProgressBarID === NULL) {$_sProgressBarID = $this->getNextID();}
 		if ($_iPercent === NULL) {$_iPercent = 0;}

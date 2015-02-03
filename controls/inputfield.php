@@ -437,11 +437,15 @@ class classPG_InputField extends classPG_ClassBasics
 		$_sOnDatasetUpdate = $this->getRealParameter(array('oParameters' => $_sInputFieldID, 'sName' => 'sOnDatasetUpdate', 'xParameter' => $_sOnDatasetUpdate));
 		$_sOnDatasetDelete = $this->getRealParameter(array('oParameters' => $_sInputFieldID, 'sName' => 'sOnDatasetDelete', 'xParameter' => $_sOnDatasetDelete));
 
-		$_sInputFieldID = $this->getRealParameter(array('oParameters' => $_sInputFieldID, 'sName' => 'sInputFieldID', 'xParameter' => $_sInputFieldID));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sInputFieldID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
+
+        $_sInputFieldID = $this->getRealParameter(array('oParameters' => $_sInputFieldID, 'sName' => 'sInputFieldID', 'xParameter' => $_sInputFieldID));
 
 		if (($_sInputFieldID === NULL) || ($_sInputFieldID === '')) {$_sInputFieldID = $this->getNextID();}
 		if (($_iFieldSizeX === NULL) || ($_iFieldSizeX === 0)) {$_iFieldSizeX = 150;}
 		if ($_bFieldRequired === NULL) {$_bFieldRequired = false;}
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
 		
 		$_axFieldStructures[] = $this->buildFieldStructure(
 			array(

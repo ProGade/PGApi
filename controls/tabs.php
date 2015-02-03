@@ -123,6 +123,7 @@ class classPG_Tabs extends classPG_ClassBasics
 		$_sCssClassTabs = $this->getRealParameter(array('oParameters' => $_sTabsID, 'sName' => 'sCssClassTabs', 'xParameter' => $_sCssClassTabs));
 		$_sCssStyleContents = $this->getRealParameter(array('oParameters' => $_sTabsID, 'sName' => 'sCssStyleContents', 'xParameter' => $_sCssStyleContents));
 		$_sCssClassContents = $this->getRealParameter(array('oParameters' => $_sTabsID, 'sName' => 'sCssClassContents', 'xParameter' => $_sCssClassContents));
+        $_sTemplateName = $this->getRealParameter(array('oParameters' => $_sTabsID, 'sName' => 'sTemplateName', 'xParameter' => $_sTemplateName));
 		$_sTabsID = $this->getRealParameter(array('oParameters' => $_sTabsID, 'sName' => 'sTabsID', 'xParameter' => $_sTabsID));
 
 		if ($_sTabsID === NULL) {$_sTabsID = $this->getNextID();}
