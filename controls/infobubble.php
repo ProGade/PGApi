@@ -1,7 +1,13 @@
 <?php
 class classPG_InfoBubble extends classPG_ClassBasics
 {
-	public function build($_sInfoBubbleID, $_sAnchorContent = NULL, $_sBubbleContent = NULL)
+	public function build(
+        $_sInfoBubbleID,
+        $_sAnchorContent = NULL,
+        $_sBubbleContent = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		$_sAnchorContent = $this->getRealParameter(array('oParameters' => $_sInfoBubbleID, 'sName' => 'sAnchorContent', 'xParameter' => $_sAnchorContent));
 		$_sBubbleContent = $this->getRealParameter(array('oParameters' => $_sInfoBubbleID, 'sName' => 'sBubbleContent', 'xParameter' => $_sBubbleContent));
@@ -11,7 +17,9 @@ class classPG_InfoBubble extends classPG_ClassBasics
 		if ($_sAnchorContent === NULL) {$_sAnchorContent = 'info';}
 		if ($_sBubbleContent === NULL) {$_sBubbleContent = '';}
 
-		$_sHtml = '';
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHtml = '';
 		
 		$_sHtml .= '<div id="'.$_sInfoBubbleID.'" class="info_bubble" ';
 		$_sHtml .= 'style="position:absolute; display:inline-block; display:none; border-radius:5px; padding:5px; border:solid 1px #cccccc; background-color:#ffffff;" ';

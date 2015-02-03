@@ -18,7 +18,20 @@ class classPG_CodeEditor extends classPG_ClassBasics
 	public function __construct()
 	{
 		$this->setID(array('sID' => 'PGCodeEditor'));
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_codeeditor.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_codeeeditor.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_codeeeditor.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+
+    }
 	
 	// Methods...
 	/*

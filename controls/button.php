@@ -53,7 +53,19 @@ class classPG_Button extends classPG_ClassBasics
 		$this->setID(array('sID' => 'PGButton'));
 		$this->initClassBasics();
 		$this->setGfxSubPath(array('sPath' => 'controls/'));
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_button.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_button.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_button.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*
@@ -482,7 +494,9 @@ class classPG_Button extends classPG_ClassBasics
 		$_sCssStyle = NULL,
 		$_sCssClass = NULL,
 		$_sCssClassNormal = NULL,
-		$_sCssClassDown = NULL
+		$_sCssClassDown = NULL,
+
+		$_sTemplateName = NULL
 	)
 	{
 		global $oPGControls;
@@ -521,8 +535,10 @@ class classPG_Button extends classPG_ClassBasics
 		if ($_sCssClassNormal === NULL) {$_sCssClassNormal = $this->sCssClassNormal;}
 		if ($_sCssClassDown === NULL) {$_sCssClassDown = $this->sCssClassDown;}
 //		if ($_sCssStyle === NULL) {if (!$this->isMode(array('iMode' => PG_BUTTON_MODE_HYPERLINK, 'iCurrentMode' => $_iButtonMode))) {$_sCssStyle = 'float:left;';} else {$_sCssStyle = '';}}
-		
-		$_sHTML = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHTML = '';
 		if ($this->isMode(array('iMode' => PG_BUTTON_MODE_HYPERLINK, 'iCurrentMode' => $_iButtonMode)))
 		{
 			if ($_sOnClick == '') {$_sOnClick = 'javascript:;';}

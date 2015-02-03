@@ -21,7 +21,19 @@ class classPG_Slider extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGProgressBar'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_slider.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_slider.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_slider.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*
@@ -33,7 +45,11 @@ class classPG_Slider extends classPG_ClassBasics
 	@return sSliderHtml [type]string[/type]
 	[en]...[/en]
 	*/
-	public function build($_sSliderID = NULL)
+	public function build(
+        $_sSliderID = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		global $oPGDragElement;
 	

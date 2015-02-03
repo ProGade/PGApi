@@ -21,7 +21,19 @@ class classPG_Tab extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGTab'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_tab.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_tab.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_tab.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*
@@ -41,11 +53,13 @@ class classPG_Tab extends classPG_ClassBasics
 	*/
 	public function build($_sTabID = NULL, $_iTabMode = NULL, $_sContent = NULL)
 	{
+        global $oPGDragAndDrop;
+
 		$_sHtml = '';
 		
 		$_sHtml .= '<div id="'.$_sTabID.'" style="overflow:hidden;">';
 		
-			$_sHtml .= $oPGDragAndDrop->buildDropArea(
+			$_sHtml .= $oPGDragAndDrop->build(
 				array(
 					'sDropAreaID' => $_sTabID.'Navigation', 
 					'sSizeX' => '100%', 
@@ -59,8 +73,10 @@ class classPG_Tab extends classPG_ClassBasics
 					'xData' => NULL, 
 					'iMaxDropElements' => NULL, 
 					'sCssStyle' => NULL, 
-					'sCssClass' => NULL
-				)
+					'sCssClass' => NULL,
+
+                    $_sTemplateName = NULL
+                )
 			);
 			
 			$_sHtml .= '<div id="'.$_sTabID.'Content">';

@@ -1222,8 +1222,10 @@ class classPG_Form extends classPG_ClassBasics
 		$_bUseSubmitButton = NULL, 
 		$_bUseAbortButton = NULL, 
 		$_sOnSubmit = NULL, 
-		$_sOnAbort = NULL
-	)
+		$_sOnAbort = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		global $oPGInputField, $oPGTextArea, $oPGCheckBox;
 

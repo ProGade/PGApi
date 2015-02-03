@@ -22,7 +22,19 @@ class classPG_BreadCrumb extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGBreadCrumb'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_breadcrumb.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_breadcrumb.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_breadcrumb.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*
@@ -88,7 +100,15 @@ class classPG_BreadCrumb extends classPG_ClassBasics
 	[en]The final text behind the navigation.[/en]
 	[de]Der Schlusstext nach der Navigation.[/de]
 	*/
-	public function build($_sBreadCrumbID = NULL, $_axLinkStructures = NULL, $_sSeparator = NULL, $_sPrefixText = NULL, $_sSuffixText = NULL)
+	public function build(
+        $_sBreadCrumbID = NULL,
+        $_axLinkStructures = NULL,
+        $_sSeparator = NULL,
+        $_sPrefixText = NULL,
+        $_sSuffixText = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		$_axLinkStructures = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'axLinkStructures', 'xParameter' => $_axLinkStructures));
 		$_sSeparator = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'sSeparator', 'xParameter' => $_sSeparator));
@@ -101,8 +121,10 @@ class classPG_BreadCrumb extends classPG_ClassBasics
 		if ($_sSeparator === NULL) {$_sSeparator = '&gt;';}
 		if ($_sPrefixText === NULL) {$_sPrefixText = '';}
 		if ($_sSuffixText === NULL) {$_sSuffixText = '';}
-		
-		$_sHTML = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHTML = '';
 		
 		$_sHTML .= '<div id="'.$_sBreadCrumbID.'">';
 		if ($_sPrefixText != '') {$_sHTML .= $_sPrefixText.' ';}

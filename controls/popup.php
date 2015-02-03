@@ -13,7 +13,7 @@
 
 @description
 [en]This class has methods to the create and display HTML alements as popups.[/en]
-[de]Diese Klasse verfügt über Methoden zum erstellen und anzeigen von HTML-Elementen als Popup.[/de]
+[de]Diese Klasse verfï¿½gt ï¿½ber Methoden zum erstellen und anzeigen von HTML-Elementen als Popup.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -26,7 +26,20 @@ class classPG_Popup extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGPopup'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_popup.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_popup.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_popup.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+
+    }
 	
 	// Methods...
 	/*
@@ -38,7 +51,7 @@ class classPG_Popup extends classPG_ClassBasics
 	
 	@return sPopupHtml [type]string[/type]
 	[en]Returns the popup as an HTML string.[/en]
-	[de]Gibt das Popup als HTML String zurück.[/de]
+	[de]Gibt das Popup als HTML String zurï¿½ck.[/de]
 	
 	@param sPopupID [type]string[/type]
 	[en]The ID of the popup.[/en]
@@ -46,7 +59,7 @@ class classPG_Popup extends classPG_ClassBasics
 	
 	@param sContent [type]string[/type]
 	[en]The content for the popup.[/en]
-	[de]Der Inhalt für das Popup.[/de]
+	[de]Der Inhalt fï¿½r das Popup.[/de]
 	
 	@param iSizeX [type]int[/type]
 	[en]The width of the popup.[/en]
@@ -54,7 +67,7 @@ class classPG_Popup extends classPG_ClassBasics
 	
 	@param iSizeY [type]int[/type]
 	[en]The height of the popup.[/en]
-	[de]Die Höhe des Popups.[/de]
+	[de]Die Hï¿½he des Popups.[/de]
 	
 	@param iZIndex [type]int[/type]
 	[en]The level (Z-index) where the popup should be displayed.[/en]
@@ -62,11 +75,11 @@ class classPG_Popup extends classPG_ClassBasics
 	
 	@param iOverlayAlpha [type]int[/type]
 	[en]The transparency of the background where the popup will be displayed. The background is darkened.[/en]
-	[de]Die Transparenz für den Hintergrund worauf das Popup dargestellt werden soll. Der Hintergrund wird abgedunkelt.[/de]
+	[de]Die Transparenz fï¿½r den Hintergrund worauf das Popup dargestellt werden soll. Der Hintergrund wird abgedunkelt.[/de]
 	
 	@param iOverlayAlphaSpeedTimeout [type]int[/type]
 	[en]The speed of darkening the background. The higher the number (in milliseconds) the slower the effect.[/en]
-	[de]Die Geschwindigkeit für das Abdunkeln des Hintergundes. Je größer die Zahl (in Millisekunden) um so langsamer der Effeckt.[/de]
+	[de]Die Geschwindigkeit fï¿½r das Abdunkeln des Hintergundes. Je grï¿½ï¿½er die Zahl (in Millisekunden) um so langsamer der Effeckt.[/de]
 	
 	@param bHideOnBackgroundClick [type]bool[/type]
 	[en]Specifies whether the popup should hide on clicking on the background.[/en]
@@ -74,11 +87,11 @@ class classPG_Popup extends classPG_ClassBasics
 	
 	@param sCssStyle [type]string[/type]
 	[en]CSS code for the popup element.[/en]
-	[de]CSS Code für das Popup Element.[/de]
+	[de]CSS Code fï¿½r das Popup Element.[/de]
 	
 	@param sCssClass [type]string[/type]
 	[en]CSS class for the popup element.[/en]
-	[de]CSS Klasse für das Popup Element.[/de]
+	[de]CSS Klasse fï¿½r das Popup Element.[/de]
 	*/
 	public function build(
 		$_sPopupID = NULL,
@@ -90,8 +103,10 @@ class classPG_Popup extends classPG_ClassBasics
 		$_iOverlayAlphaSpeedTimeout = NULL,
 		$_bHideOnBackgroundClick = NULL,
 		$_sCssStyle = NULL,
-		$_sCssClass = NULL
-	)
+		$_sCssClass = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		$_sContent = $this->getRealParameter(array('oParameters' => $_sPopupID, 'sName' => 'sContent', 'xParameter' => $_sContent));
 		$_iSizeX = $this->getRealParameter(array('oParameters' => $_sPopupID, 'sName' => 'iSizeX', 'xParameter' => $_iSizeX));
@@ -114,8 +129,10 @@ class classPG_Popup extends classPG_ClassBasics
 		if ($_bHideOnBackgroundClick === NULL) {$_bHideOnBackgroundClick = false;}
 		if ($_sCssStyle === NULL) {$_sCssStyle = '';}
 		if ($_sCssClass === NULL) {$_sCssClass = '';}
-		
-		$_sHtml = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHtml = '';
 		
 		$_sHtml .= '<div id="'.$_sPopupID.'Overlay" ';
 		if ($_bHideOnBackgroundClick == true) {$_sHtml .= 'onmouseup="oPGPopup.hide({\'sPopupID\': \''.$_sPopupID.'\'});" ';}

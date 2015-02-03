@@ -31,7 +31,19 @@ class classPG_DropArea extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGDropArea'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_droparea.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_droparea.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_droparea.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	/*
 	@start method
@@ -86,7 +98,7 @@ class classPG_DropArea extends classPG_ClassBasics
 	public function setDefaultType($_iType)
 	{
 		$_iType = $this->getRealParameter(array('oParameters' => $_iType, 'sName' => 'iType', 'xParameter' => $_iType));
-		$this->iDefaultType = $_iDropAreaType;
+		$this->iDefaultType = $_iType;
 	}
 	/* @end method */
 	
@@ -321,8 +333,10 @@ class classPG_DropArea extends classPG_ClassBasics
 		$_axDragElementsStructure = NULL,
 		$_iMaxDragElements = NULL, 
 		$_sCssStyle = NULL, 
-		$_sCssClass = NULL
-	)
+		$_sCssClass = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		global $oPGDragAndDrop, $oPGDragElement;
 	
@@ -356,8 +370,10 @@ class classPG_DropArea extends classPG_ClassBasics
 		if ($_sCssClass === NULL) {$_sCssClass = $this->sDefaultCssClass;}
 		if ($_iGrabMoveDistX === NULL) {$_iGrabMoveDistX = $this->iDefaultGrabMoveDistX;}
 		if ($_iGrabMoveDistY === NULL) {$_iGrabMoveDistY = $this->iDefaultGrabMoveDistY;}
-		
-		$_sHtml = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHtml = '';
 		$_sHtml .= $this->getLineBreak();
 		$_sHtml .= '<div id="'.$_sDropAreaID.'" style="position:relative; width:'.$_sSizeX.'; height:'.$_sSizeY.'; overflow:hidden; top:0px; left:0px; ';
 		if ($this->isDebugMode(array('iMode' => PG_DEBUG_HIGH))) {$_sHtml .= 'border:solid 1px #ff0000; ';}

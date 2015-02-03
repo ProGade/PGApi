@@ -33,7 +33,19 @@ class classPG_TextArea extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGTextArea'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_textarea.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_textarea.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_textarea.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 
 	// Methods...
 	/*
@@ -165,7 +177,10 @@ class classPG_TextArea extends classPG_ClassBasics
 						  $_sOnMouseDown = NULL,
 						  $_sOnMouseUp = NULL,
 						  $_sOnMouseOver = NULL,
-						  $_sOnMouseOut = NULL)
+						  $_sOnMouseOut = NULL,
+
+                          $_sTemplateName = NULL
+                        )
 	{
 		$_iTextAreaMode = $this->getRealParameter(array('oParameters' => $_sTextAreaID, 'sName' => 'iTextAreaMode', 'xParameter' => $_iTextAreaMode));
 		$_iSizeX = $this->getRealParameter(array('oParameters' => $_sTextAreaID, 'sName' => 'iSizeX', 'xParameter' => $_iSizeX));
@@ -229,8 +244,10 @@ class classPG_TextArea extends classPG_ClassBasics
 		if ($_sOnMouseOut === NULL) {$_sOnMouseOut = '';}
 		
 		if ($_sName == '') {$_sName = $_sTextAreaID;}
-		
-		$_sHTML = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHTML = '';
 		$_sHTML .= '<textarea id="'.$_sTextAreaID.'" ';
 		$_sHTML .= 'name="'.$_sName.'" ';
 		$_sHTML .= 'style="width:'.$_iSizeX.'px; ';

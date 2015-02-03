@@ -20,7 +20,19 @@ class classPG_ColorPicker extends classPG_ClassBasics
 	public function __construct()
 	{
 		$this->setID(array('sID' => 'PGColorPicker'));
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_colorpicker.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_colorpicker.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_colorpicker.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	public function calculateColor($_iColor, $_iStep, $_dMultiply) {return min((int)(($_iStep*$_dMultiply)+$_iColor), 255);}
@@ -98,7 +110,14 @@ class classPG_ColorPicker extends classPG_ClassBasics
 		return $_sHtml;
 	}
 
-	public function buildSimpleColorBars($_sPickerID, $_iSizeX = NULL, $_iSizeY = NULL, $_bDisplay = NULL)
+	public function buildSimpleColorBars(
+        $_sPickerID,
+        $_iSizeX = NULL, 
+        $_iSizeY = NULL,
+        $_bDisplay = NULL,
+
+		$_sTemplateName = NULL
+    )
 	{
 		global $oPGGfx;
 
@@ -262,8 +281,10 @@ class classPG_ColorPicker extends classPG_ClassBasics
 		if ($_iSizeX === NULL) {$_iSizeX = 300;}
 		if ($_iSizeY === NULL) {$_iSizeY = 200;}
 		if ($_bDisplay === NULL) {$_bDisplay = true;}
-		
-		$_sHtml = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHtml = '';
 		$_sHtml .= '<div id="'.$_sPickerID.'" style="';
 		if ($_bDisplay == true) {$_sHtml .= 'display:inline-block; ';} else {$_sHtml .= 'display:none; ';}
 		if ($_sCssStyle != NULL) {$_sHtml .= $_sCssStyle;}

@@ -40,7 +40,7 @@ class classPG_CheckBox extends classPG_ClassBasics
 		$_oTemplate->setTemplates(
 			array(
 				'default' => 'gfx/default/templates/controls/default_checkbox.php',
-				'bootstrap' => 'gfx/default/templates/controls/bootstap_checkbox.php',
+				'bootstrap' => 'gfx/default/templates/controls/bootstrap_checkbox.php',
 				'foundation' => 'gfx/default/templates/controls/foundation_checkbox.php'
 			)
 		);
@@ -136,7 +136,7 @@ class classPG_CheckBox extends classPG_ClassBasics
 		if ($_sOnMouseOver === NULL) {$_sOnMouseOver = '';}
 		if ($_sOnMouseOut === NULL) {$_sOnMouseOut = '';}
 		
-		if ($_sTemplateName !== NULL) {return $this->oTemplate->build(array('sName' => $_sTemplateName));}
+		if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
 		
 		$_sHtml = '';
 		$_iDefaultStatus = 0;

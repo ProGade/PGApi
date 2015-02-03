@@ -81,7 +81,19 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGCalendarSheet'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_calendarsheet.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_calendarsheet.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_calendarsheet.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*
@@ -1101,8 +1113,11 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 		if ($_iYear === NULL) {$_iYear = 0;}
 		if ($_iMonth === NULL) {$_iMonth = 0;}
 		if ($_iDay === NULL) {$_iDay = 0;}
-		
-		$_sHTML = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+
+        $_sHTML = '';
 		
 		$_bClass2 = true;
 		$_iActualMonth = date("n");			// ermitteln des aktuellen Monats 

@@ -25,7 +25,7 @@ class classPG_Wysiwyg extends classPG_ClassBasics
 		'linking' => array(
 			'createlink' => 'oPGWysiwyg.onCreateLinkPress({\'sWysiwygID\': \'%sWysiwygID%\', \'sRichEditCommand\': \'createlink\'});',
 			'unlink' => 'oPGWysiwyg.richEdit({\'sWysiwygID\': \'%sWysiwygID%\', \'sCommand\': \'unlink\'});'
-			// ? Anker einfügen ?
+			// ? Anker einfï¿½gen ?
 		),
 		
 		'inserting' => array(
@@ -87,10 +87,34 @@ class classPG_Wysiwyg extends classPG_ClassBasics
 		$this->setID(array('sID' => 'PGWysiwyg'));
 		$this->initClassBasics();
 		$this->setGfxSubPath(array('sPath' => 'wysiwyg/'));
-	}
 
-	public function build($_sWysiwygID = NULL, $_bEditable = NULL, $_bHtmlMode = NULL, $_sSourceFile = NULL, $_sSourceCode = NULL, $_sOnImageOpenClick = NULL, $_sOnFileOpenClick = NULL)
-	{
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_wysiwyg.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_wysiwyg.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_wysiwyg.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+
+    }
+
+	public function build(
+        $_sWysiwygID = NULL,
+        $_bEditable = NULL,
+        $_bHtmlMode = NULL,
+        $_sSourceFile = NULL,
+        $_sSourceCode = NULL,
+        $_sOnImageOpenClick = NULL,
+        $_sOnFileOpenClick = NULL,
+
+        $_sTemplateName = NULL
+    )
+
+    {
 		global $oPGButton, $oPGPopup, $oPGColorPicker;
 	
 		$_bHtmlMode = $this->getRealParameter(array('oParameters' => $_sWysiwygID, 'sName' => 'bHtmlMode', 'xParameter' => $_bHtmlMode));

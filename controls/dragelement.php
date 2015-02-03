@@ -28,7 +28,19 @@ class classPG_DragElement extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGDragElement'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_dragelement.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_dragelement.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_dragelement.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 
 	// Methods...
 	/*
@@ -272,8 +284,10 @@ class classPG_DragElement extends classPG_ClassBasics
 		$_sOnDrop = NULL,
 		
 		$_sCssStyle = NULL,
-		$_sCssClass = NULL
-	)
+		$_sCssClass = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		$_sDragElementID = $this->getRealParameter(array('oParameters' => $_xDropArea, 'sName' => 'sDragElementID', 'xParameter' => $_sDragElementID));
 		$_iPosX = $this->getRealParameter(array('oParameters' => $_xDropArea, 'sName' => 'iPosX', 'xParameter' => $_iPosX));
@@ -494,6 +508,7 @@ class classPG_DragElement extends classPG_ClassBasics
 		if ($_iGrabMoveDistY === NULL) {$_iGrabMoveDistY = $this->iDefaultGrabMoveDistY;}
 		
 		$_sDropAreaID = '';
+
 
 		$_sHtml = '';
 		$_sHtml .= '<div id="'.$_sDragElementID.'" ';

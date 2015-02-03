@@ -112,7 +112,19 @@ class classPG_InputField extends classPG_ClassBasics
 				)
 			)
 		);
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_inputfield.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_inputfield.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_inputfield.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 
 	// Methods...
 	/*
@@ -384,8 +396,10 @@ class classPG_InputField extends classPG_ClassBasics
 		$_sOnSwitchEditMode = NULL,
 		$_sOnDatasetCreate = NULL,
 		$_sOnDatasetUpdate = NULL,
-		$_sOnDatasetDelete = NULL
-	)
+		$_sOnDatasetDelete = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		$_iInputFieldMode = $this->getRealParameter(array('oParameters' => $_sInputFieldID, 'sName' => 'iInputFieldMode', 'xParameter' => $_iInputFieldMode));
 		$_iFieldSizeX = $this->getRealParameter(array('oParameters' => $_sInputFieldID, 'sName' => 'iFieldSizeX', 'xParameter' => $_iFieldSizeX));
@@ -879,6 +893,7 @@ class classPG_InputField extends classPG_ClassBasics
 		if ($this->isDebugMode(array('iMode' => PG_DEBUG_HIGH))) {$_sHTML .= '</td></tr><tr><td>DatasetCount:</td><td>';}	$_sHTML .= '<input type="'.$_sHiddenType.'" id="'.$_sInputFieldID.'DatasetCount" name="'.$_sInputFieldID.'DatasetCount" value="'.count($_axDatasets).'" />';
 		if ($this->isDebugMode(array('iMode' => PG_DEBUG_HIGH))) {$_sHTML .= '</td></tr><tr><td>SendParams:</td><td>';}		$_sHTML .= '<input type="'.$_sHiddenType.'" id="'.$_sInputFieldID.'SendParams" name="'.$_sInputFieldID.'SendParams" value="'.$_sSendParameters.'" />';
 		if ($this->isDebugMode(array('iMode' => PG_DEBUG_HIGH)))
+
 		{
 			$_sHTML .= '</td></tr>';
 			$_sHTML .= '</table>';

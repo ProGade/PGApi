@@ -13,7 +13,7 @@
 
 @description
 [en]This class has methods to create page navigations.[/en]
-[de]Diese Klasse verfügt über Methoden zum erstellen von Seitennavigationen.[/de]
+[de]Diese Klasse verfï¿½gt ï¿½ber Methoden zum erstellen von Seitennavigationen.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -44,7 +44,20 @@ class classPG_PageControl extends classPG_ClassBasics
 				)
 			)
 		);
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_pagecontrol.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_pagecontrol.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_pagecontrol.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+
+    }
 	
 	// Methods...
 	/*
@@ -56,15 +69,15 @@ class classPG_PageControl extends classPG_ClassBasics
 	
 	@return iCount [type]int[/type]
 	[en]Returns the count of pages as an integer.[/en]
-	[de]Gibt die Anzahl an Seiten als Integer zurück.[/de]
+	[de]Gibt die Anzahl an Seiten als Integer zurï¿½ck.[/de]
 	
 	@param iEntriesCount [needed][type]int[/type]
 	[en]The entries that should be displayed on all pages as a whole.[/en]
-	[de]Die Einträge die Insgesamt auf allen Seiten dargestellt werden sollen.[/de]
+	[de]Die Eintrï¿½ge die Insgesamt auf allen Seiten dargestellt werden sollen.[/de]
 	
 	@param iEntriesPerPage [needed][type]int[/type]
 	[en]The number of entries that should be displayed per page.[/en]
-	[de]Die Anzahl an Einträgen, die pro Seite dargestellt werden sollen.[/de]
+	[de]Die Anzahl an Eintrï¿½gen, die pro Seite dargestellt werden sollen.[/de]
 	*/
 	public function calcPageCount($_iEntriesCount, $_iEntriesPerPage = NULL)
 	{
@@ -83,7 +96,7 @@ class classPG_PageControl extends classPG_ClassBasics
 	
 	@return sPageControlHtml [type]string[/type]
 	[en]Returns the page navigation as an HTML string.[/en]
-	[de]Gibt die Seitennavigation als HTML String zurück.[/de]
+	[de]Gibt die Seitennavigation als HTML String zurï¿½ck.[/de]
 	
 	@param iPageCount [type]int[/type]
 	[en]The number of pages that should be used.[/en]
@@ -91,11 +104,11 @@ class classPG_PageControl extends classPG_ClassBasics
 	
 	@param iPageActive [type]int[/type]
 	[en]The page that is currently selected.[/en]
-	[de]Die Seite die gerade ausgewählt ist.[/de]
+	[de]Die Seite die gerade ausgewï¿½hlt ist.[/de]
 	
 	@param iPagesToShow [type]int[/type]
 	[en]The number of pages that are directly selectable in navigation.[/en]
-	[de]Die Anzahl an Seiten die bei der Navigation direkt anwählbar sind.[/de]
+	[de]Die Anzahl an Seiten die bei der Navigation direkt anwï¿½hlbar sind.[/de]
 	
 	@param sSeperator [type]string[/type]
 	[en]The separators between page numbers.[/en]
@@ -103,13 +116,22 @@ class classPG_PageControl extends classPG_ClassBasics
 	
 	@param sPreviousPageText [type]string[/type]
 	[en]The text for the previous page.[/en]
-	[de]Der Text für die vorherige Seite.[/de]
+	[de]Der Text fï¿½r die vorherige Seite.[/de]
 	
 	@param sNextPageText [type]string[/type]
 	[en]The text for the next page.[/en]
-	[de]Der Text für die nächste Seite.[/de]
+	[de]Der Text fï¿½r die nï¿½chste Seite.[/de]
 	*/
-	public function build($_iPageCount = NULL, $_iPageActive = NULL, $_iPagesToShow = NULL, $_sSeperator = NULL, $_sPreviousPageText = NULL, $_sNextPageText = NULL)
+	public function build(
+        $_iPageCount = NULL,
+        $_iPageActive = NULL,
+        $_iPagesToShow = NULL,
+        $_sSeperator = NULL,
+        $_sPreviousPageText = NULL,
+        $_sNextPageText = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		$_iPageActive = $this->getRealParameter(array('oParameters' => $_iPageCount, 'sName' => 'iPageActive', 'xParameter' => $_iPageActive));
 		$_iPagesToShow = $this->getRealParameter(array('oParameters' => $_iPageCount, 'sName' => 'iPagesToShow', 'xParameter' => $_iPagesToShow));
@@ -124,8 +146,10 @@ class classPG_PageControl extends classPG_ClassBasics
 		if ($_sSeperator === NULL) {$_sSeperator = $this->getText(array('sType' => 'Seperator'));}
 		if ($_sPreviousPageText === NULL) {$_sPreviousPageText = $this->getText(array('sType' => 'PreviousPage'));}
 		if ($_sNextPageText === NULL) {$_sNextPageText = $this->getText(array('sType' => 'NextPage'));}
-		
-		$_sHTML = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHTML = '';
 		$_iStartPage = max($this->iPageActive - ceil($this->iPagesToShow/3), 1);
 		$_iStartPage = min($_iStartPage, max($this->iPageCount-$this->iPagesToShow, 1));
 		$_sUrlParameters = $this->getUrlParametersString();
@@ -231,11 +255,11 @@ class classPG_PageControl extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the number of pages that are directly selectable in navigation.[/en]
-	[de]Setzt die Anzahl an Seiten die bei der Navigation direkt anwählbar sind.[/de]
+	[de]Setzt die Anzahl an Seiten die bei der Navigation direkt anwï¿½hlbar sind.[/de]
 	
 	@param iCount [needed][type]int[/type]
 	[en]The number of pages that are directly selectable in navigation.[/en]
-	[de]Die Anzahl an Seiten die bei der Navigation direkt anwählbar sind.[/de]
+	[de]Die Anzahl an Seiten die bei der Navigation direkt anwï¿½hlbar sind.[/de]
 	*/
 	public function setPagesToShow($_iCount)
 	{
@@ -267,11 +291,11 @@ class classPG_PageControl extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the page that is currently selected.[/en]
-	[de]Setzt die Seite die gerade ausgewählt ist.[/de]
+	[de]Setzt die Seite die gerade ausgewï¿½hlt ist.[/de]
 	
 	@param iPage [needed][type]int[/type]
 	[en]The page that is currently selected.[/en]
-	[de]Die Seite die gerade ausgewählt ist.[/de]
+	[de]Die Seite die gerade ausgewï¿½hlt ist.[/de]
 	*/
 	public function setPageActive($_iPage)
 	{
@@ -285,11 +309,11 @@ class classPG_PageControl extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the CSS class for the active page.[/en]
-	[de]Setzt die CSS Klasse für die aktive Seite.[/de]
+	[de]Setzt die CSS Klasse fï¿½r die aktive Seite.[/de]
 	
 	@param sClass [needed][type]string[/type]
 	[en]The CSS class for the active page.[/en]
-	[de]Die CSS Klasse für die aktive Seite.[/de]
+	[de]Die CSS Klasse fï¿½r die aktive Seite.[/de]
 	*/
 	public function setCssClassForActive($_sClass)
 	{
@@ -303,11 +327,11 @@ class classPG_PageControl extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the CSS class for the not active pages.[/en]
-	[de]Setzt die CSS Klasse für die nicht aktiven Seiten.[/de]
+	[de]Setzt die CSS Klasse fï¿½r die nicht aktiven Seiten.[/de]
 	
 	@param sClass [needed][type]string[/type]
 	[en]The CSS class for the not active pages.[/en]
-	[de]Die CSS Klasse für die nicht aktiven Seiten.[/de]
+	[de]Die CSS Klasse fï¿½r die nicht aktiven Seiten.[/de]
 	*/
 	public function setCssClassForNormal($_sClass)
 	{
@@ -321,11 +345,11 @@ class classPG_PageControl extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the CSS code for the active page.[/en]
-	[de]Setzt die CSS Code für die aktive Seite.[/de]
+	[de]Setzt die CSS Code fï¿½r die aktive Seite.[/de]
 	
 	@param sStyle [needed][type]string[/type]
 	[en]The CSS code for the active page.[/en]
-	[de]Die CSS Code für die aktive Seite.[/de]
+	[de]Die CSS Code fï¿½r die aktive Seite.[/de]
 	*/
 	public function setCssStyleForActive($_sStyle)
 	{
@@ -339,11 +363,11 @@ class classPG_PageControl extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the CSS code for the not active pages.[/en]
-	[de]Setzt die CSS Code für die nicht aktiven Seiten.[/de]
+	[de]Setzt die CSS Code fï¿½r die nicht aktiven Seiten.[/de]
 	
 	@param sStyle [needed][type]string[/type]
 	[en]The CSS code for the not active pages.[/en]
-	[de]Die CSS Code für die nicht aktiven Seiten.[/de]
+	[de]Die CSS Code fï¿½r die nicht aktiven Seiten.[/de]
 	*/
 	public function setCssStyleForNormal($_sStyle)
 	{

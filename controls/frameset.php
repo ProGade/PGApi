@@ -36,7 +36,7 @@ PG_FRAMESET_FRAMES_TYPE_ROWS
 
 @description
 [en]This class contains methods to create and manage (faked) framesets.[/en]
-[de]Diese Klasse enthält Methoden zum erstellen und verwalten von (gefakten) Framesets.[/de]
+[de]Diese Klasse enthï¿½lt Methoden zum erstellen und verwalten von (gefakten) Framesets.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -59,7 +59,19 @@ class classPG_Frameset extends classPG_ClassBasics
 		$this->setID(array('sID' => 'PGFrameset'));
 		$this->initClassBasics();
 		$this->setGfxSubPath(array('sPath' => 'controls/'));
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_frameset.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_frameset.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_frameset.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*
@@ -67,11 +79,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@description
 	[en]Sets the size of the border for the framesets.[/en]
-	[de]Setzt die Größe vom Rahmen der Framesets.[/de]
+	[de]Setzt die Grï¿½ï¿½e vom Rahmen der Framesets.[/de]
 	
 	@param iSize [needed][type]int[/type]
 	[en]The size in pixels.[/en]
-	[de]Die Größe in Pixeln.[/de]
+	[de]Die Grï¿½ï¿½e in Pixeln.[/de]
 	*/
 	public function setBorderSize($_iSize)
 	{
@@ -85,11 +97,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the size of borders for framesets.[/en]
-	[de]Gibt die Größe des Rahmens von Framesets zurück.[/de]
+	[de]Gibt die Grï¿½ï¿½e des Rahmens von Framesets zurï¿½ck.[/de]
 	
 	@return iSize [type]int[/type]
 	[en]Returns the size of borders for framesets as an integer.[/en]
-	[de]Gibt die Größe des Rahmens von Framesets als Integer zurück.[/de]
+	[de]Gibt die Grï¿½ï¿½e des Rahmens von Framesets als Integer zurï¿½ck.[/de]
 	*/
 	public function getBorderSize() {return $this->iBorderSize;}
 	/* @end method */
@@ -99,11 +111,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@description
 	[en]Sets an image for the border in the horizontal direction of framesets.[/en]
-	[de]Setzt ein Bild für den Rahmen in horizontaler Richtung von Framesets.[/de]
+	[de]Setzt ein Bild fï¿½r den Rahmen in horizontaler Richtung von Framesets.[/de]
 	
 	@param sImage [needed][type]string[/type]
 	[en]The image for the border.[/en]
-	[de]Das Bild für den Rahmen.[/de]
+	[de]Das Bild fï¿½r den Rahmen.[/de]
 	*/
 	public function setImageBorderHorizontal($_sImage)
 	{
@@ -117,11 +129,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the image used for the border in the horizontal direction for framesets.[/en]
-	[de]Gibt das Bild zurück, das für Rahmen in horizontaler Richtung für Framesets verwendet wird.[/de]
+	[de]Gibt das Bild zurï¿½ck, das fï¿½r Rahmen in horizontaler Richtung fï¿½r Framesets verwendet wird.[/de]
 	
 	@return sImage [type]string[/type]
 	[en]Returns the image used for the border in the horizontal direction for framesets as a string.[/en]
-	[de]Gibt das Bild als String zurück, das für Rahmen in horizontaler Richtung für Framesets verwendet wird.[/de]
+	[de]Gibt das Bild als String zurï¿½ck, das fï¿½r Rahmen in horizontaler Richtung fï¿½r Framesets verwendet wird.[/de]
 	*/
 	public function getImageBorderHorizontal() {return $this->sImageBorderHorizontal;}
 	/* @end method */
@@ -131,11 +143,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@description
 	[en]Sets an image for the border in the vertical direction of framesets.[/en]
-	[de]Setzt ein Bild für den Rahmen in vertikaler Richtung von Framesets.[/de]
+	[de]Setzt ein Bild fï¿½r den Rahmen in vertikaler Richtung von Framesets.[/de]
 	
 	@param sImage [needed][type]string[/type]
 	[en]The image for the border.[/en]
-	[de]Das Bild für den Rahmen.[/de]
+	[de]Das Bild fï¿½r den Rahmen.[/de]
 	*/
 	public function setImageBorderVertical($_sImage)
 	{
@@ -149,11 +161,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@description
 	[en]Returns the image used for the border in the vertical direction for framesets.[/en]
-	[de]Gibt das Bild zurück, das für Rahmen in vertikaler Richtung für Framesets verwendet wird.[/de]
+	[de]Gibt das Bild zurï¿½ck, das fï¿½r Rahmen in vertikaler Richtung fï¿½r Framesets verwendet wird.[/de]
 	
 	@return sImage [type]string[/type]
 	[en]Returns the image used for the border in the vertical direction for framesets as a string.[/en]
-	[de]Gibt das Bild als String zurück, das für Rahmen in vertikaler Richtung für Framesets verwendet wird.[/de]
+	[de]Gibt das Bild als String zurï¿½ck, das fï¿½r Rahmen in vertikaler Richtung fï¿½r Framesets verwendet wird.[/de]
 	*/
 	public function getImageBorderVertical() {return $this->sImageBorderVertical;}
 	/* @end method */
@@ -163,11 +175,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@description
 	[en]Builds a frameset with 3 frames and returns it as an HTML string. (not yet implemented)[/en]
-	[de]Erstellt ein Frameset mit 3 Frames und gibt es als HTML-String zurück. (noch nicht implementiert)[/de]
+	[de]Erstellt ein Frameset mit 3 Frames und gibt es als HTML-String zurï¿½ck. (noch nicht implementiert)[/de]
 	
 	@return sFramesetHtml [type]string[/type]
 	[en]Returns the frameset as an HTML string.[/en]
-	[de]Gibt das Frameset als HTML-String zurück.[/de]
+	[de]Gibt das Frameset als HTML-String zurï¿½ck.[/de]
 	
 	@param sFramesetID [type]string[/type]
 	[en]The ID of the frameset.[/en]
@@ -179,11 +191,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@param sFrame1Size [type]string[/type]
 	[en]The size of the first frame.[/en]
-	[de]Die Größe des ersten Frames.[/de]
+	[de]Die Grï¿½ï¿½e des ersten Frames.[/de]
 	
 	@param sFrame3Size [type]string[/type]
 	[en]The size of the third frame.[/en]
-	[de]Die Größe des dritten Frames.[/de]
+	[de]Die Grï¿½ï¿½e des dritten Frames.[/de]
 	
 	@param iFramesetType [type]int[/type]
 	[en]
@@ -193,17 +205,17 @@ class classPG_Frameset extends classPG_ClassBasics
 	[/en]
 	[de]
 		Der Typ des Framesets.
-		Folgende Defines sind möglich:
+		Folgende Defines sind mï¿½glich:
 		%FramesetTypes%
 	[/de]
 	
 	@param sCssClassFrame [type]string[/type]
 	[en]CSS class for the frames.[/en]
-	[de]CSS Klasse für die Frames.[/de]
+	[de]CSS Klasse fï¿½r die Frames.[/de]
 	
 	@param sCssClassBorder [type]string[/type]
 	[en]CSS class for the border.[/en]
-	[de]CSS Klasse für den Rahmen.[/de]
+	[de]CSS Klasse fï¿½r den Rahmen.[/de]
 	*/
 	public function buildPatch3(
 		$_sFramesetID = NULL,
@@ -252,11 +264,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@description
 	[en]Builds 3 framesets each with 3 frames and returns it as an HTML string. (not yet implemented)[/en]
-	[de]Erstellt 3 Framesets mit jeweils 3 frames und gibt es als HTML-String zurück. (noch nicht implementiert)[/de]
+	[de]Erstellt 3 Framesets mit jeweils 3 frames und gibt es als HTML-String zurï¿½ck. (noch nicht implementiert)[/de]
 	
 	@return sFramesetHtml [type]string[/type]
 	[en]Returns the frameset as an HTML string.[/en]
-	[de]Gibt das Frameset als HTML-String zurück.[/de]
+	[de]Gibt das Frameset als HTML-String zurï¿½ck.[/de]
 	
 	@param sFramesetID [type]string[/type]
 	[en]The ID of the frameset.[/en]
@@ -268,11 +280,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@param sTopSize [type]string[/type]
 	[en]The height of the top frames.[/en]
-	[de]Die Höhe der oberen Frames.[/de]
+	[de]Die Hï¿½he der oberen Frames.[/de]
 	
 	@param sBottomSize [type]string[/type]
 	[en]The height of the bottom frames.[/en]
-	[de]Die Höhe der unteren Frames.[/de]
+	[de]Die Hï¿½he der unteren Frames.[/de]
 	
 	@param sLeftSize [type]string[/type]
 	[en]The width of the left frames.[/en]
@@ -284,11 +296,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@param sCssClassFrame [type]string[/type]
 	[en]CSS class for the frames.[/en]
-	[de]CSS Klasse für die Frames.[/de]
+	[de]CSS Klasse fï¿½r die Frames.[/de]
 	
 	@param sCssClassBorder [type]string[/type]
 	[en]CSS class for the border.[/en]
-	[de]CSS Klasse für den Rahmen.[/de]
+	[de]CSS Klasse fï¿½r den Rahmen.[/de]
 	*/
 	public function buildPatch9(
 		$_sFramesetID = NULL,
@@ -346,11 +358,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@description
 	[en]Builds a frameset and returns it as an HTML string.[/en]
-	[de]Erstellt ein Frameset und gibt es als HTML-String zurück.[/de]
+	[de]Erstellt ein Frameset und gibt es als HTML-String zurï¿½ck.[/de]
 	
 	@return sFramesetHtml [type]string[/type]
 	[en]Returns the frameset as an HTML string.[/en]
-	[de]Gibt das Frameset als HTML-String zurück.[/de]
+	[de]Gibt das Frameset als HTML-String zurï¿½ck.[/de]
 	
 	@param sFramesetID [type]string[/type]
 	[en]The ID of the frameset.[/en]
@@ -362,11 +374,11 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@param sSizeY [type]string[/type]
 	[en]The height of the frameset in pixels.[/en]
-	[de]Die Höhe des Framesets in Pixeln.[/de]
+	[de]Die Hï¿½he des Framesets in Pixeln.[/de]
 	
 	@param bResizeWithContainer [type]bool[/type]
 	[en]Specifies whether the size of the frameset should be automatically change with the size of the container element.[/en]
-	[de]Gibt an ob sich die Größe des Framesets mit der Größe des Kontainer-Elements automatisch verändern soll.[/de]
+	[de]Gibt an ob sich die Grï¿½ï¿½e des Framesets mit der Grï¿½ï¿½e des Kontainer-Elements automatisch verï¿½ndern soll.[/de]
 	
 	@param axFrames [type]mixed[][/type]
 	[en]The frames of the frameset.[/en]
@@ -380,29 +392,29 @@ class classPG_Frameset extends classPG_ClassBasics
 	[/en]
 	[de]
 		Der Typ des Framesets.
-		Folgende Defines sind möglich:
+		Folgende Defines sind mï¿½glich:
 		%FramesetTypes%
 	[/de]
 	
 	@param iBorderSize [type]int[/type]
 	[en]The size of border in pixels.[/en]
-	[de]Die Größe der Rahmen in Pixeln.[/de]
+	[de]Die Grï¿½ï¿½e der Rahmen in Pixeln.[/de]
 	
 	@param sCssStyleFrame [type]string[/type]
 	[en]CSS code for the frames.[/en]
-	[de]CSS Code für die Frames.[/de]
+	[de]CSS Code fï¿½r die Frames.[/de]
 	
 	@param sCssClassFrame [type]string[/type]
 	[en]CSS class for the frames.[/en]
-	[de]CSS Klasse für die Frames.[/de]
+	[de]CSS Klasse fï¿½r die Frames.[/de]
 	
 	@param sCssStyleBorder [type]string[/type]
 	[en]CSS Code for the border.[/en]
-	[de]CSS Code für den Rahmen.[/de]
+	[de]CSS Code fï¿½r den Rahmen.[/de]
 	
 	@param sCssClassBorder [type]string[/type]
 	[en]CSS class for the border.[/en]
-	[de]CSS Klasse für den Rahmen.[/de]
+	[de]CSS Klasse fï¿½r den Rahmen.[/de]
 	*/
 	public function build(
 		$_sFramesetID = NULL,
@@ -668,15 +680,15 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@description
 	[en]Builds the structure for a frame and returns it.[/en]
-	[de]Erstellt die Struktur für einen Frame und gibt sie zurück.[/de]
+	[de]Erstellt die Struktur fï¿½r einen Frame und gibt sie zurï¿½ck.[/de]
 	
 	@return axStructure [type]mixed[][/type]
 	[en]Returns the frame structure as an mixed array.[/en]
-	[de]Gibt die Frame Struktur als gemischten Array zurück.[/de]
+	[de]Gibt die Frame Struktur als gemischten Array zurï¿½ck.[/de]
 	
 	@param sSize [needed][type]string[/type]
 	[en]The size of the frame in pixels.[/en]
-	[de]Die Größe des Frames in Pixeln.[/de]
+	[de]Die Grï¿½ï¿½e des Frames in Pixeln.[/de]
 	
 	@param sContent [needed][type]string[/type]
 	[en]The content of the frame.[/en]
@@ -696,7 +708,7 @@ class classPG_Frameset extends classPG_ClassBasics
 	
 	@param iOverlayZIndex [needed][type]int[/type]
 	[en]The level (z-index) on which the overlay (if needed) is placed.[/en]
-	[de]Die Ebene (Z-Index) auf der das Overlay (wenn benötigt) für den Frame gelegt wird.[/de]
+	[de]Die Ebene (Z-Index) auf der das Overlay (wenn benï¿½tigt) fï¿½r den Frame gelegt wird.[/de]
 	
 	*/
 	public function buildFrameStructure($_sSize, $_sContent = NULL, $_iMode = NULL, $_iScrollMode = NULL, $_iBehavior = NULL, $_iOverlayZIndex = NULL, $_sCssStyle = NULL, $_sCssClass = NULL)

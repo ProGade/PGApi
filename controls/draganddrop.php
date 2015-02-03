@@ -75,7 +75,19 @@ class classPG_DragAndDrop extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGDragAndDrop'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_draganddrop.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_draganddrop.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_draganddrop.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*

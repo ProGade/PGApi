@@ -157,7 +157,13 @@ class classPG_VideoPlayer extends classPG_ClassBasics
 		return $_sHtml;
 	}
 
-	public function build($_xUrl, $_sSizeX = NULL, $_sSizeY = NULL)
+	public function build(
+        $_xUrl,
+        $_sSizeX = NULL,
+        $_sSizeY = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		$_sSizeX = $this->getRealParameter(array('oParameters' => $_xUrl, 'sName' => 'sSizeX', 'xParameter' => $_sSizeX));
 		$_sSizeY = $this->getRealParameter(array('oParameters' => $_xUrl, 'sName' => 'sSizeY', 'xParameter' => $_sSizeY));

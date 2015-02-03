@@ -20,7 +20,7 @@ PG_PROGRESSBAR_TYPE_VERTICAL_BAR
 
 @description
 [en]This class has methods to the creating progress bars.[/en]
-[de]Diese Klasse verfügt über Methoden zum erstellen von Fortschrittsanzeigen.[/de]
+[de]Diese Klasse verfï¿½gt ï¿½ber Methoden zum erstellen von Fortschrittsanzeigen.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -33,7 +33,19 @@ class classPG_ProgressBar extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGProgressBar'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_progressbar.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_progressbar.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_progressbar.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*
@@ -45,7 +57,7 @@ class classPG_ProgressBar extends classPG_ClassBasics
 	
 	@return sProgressBarHtml [type]string[/type]
 	[en]Returns the progress bar as an HTML string.[/en]
-	[de]Gibt die Fortschrittsanzeige als HTML String zurück.[/de]
+	[de]Gibt die Fortschrittsanzeige als HTML String zurï¿½ck.[/de]
 	
 	@param sProgressBarID [type]string[/type]
 	[en]The ID of the progress bar.[/en]
@@ -61,7 +73,7 @@ class classPG_ProgressBar extends classPG_ClassBasics
 	[de]
 		Den Typ der Fortschrittsanzeige.
 		Bestimmt das Aussehen und verhalten.
-		Forlgende Defines sind möglich:
+		Forlgende Defines sind mï¿½glich:
 		%ProgressBarTypes%
 	[/de]
 	
@@ -71,23 +83,23 @@ class classPG_ProgressBar extends classPG_ClassBasics
 	
 	@param sSizeY [type]string[/type]
 	[en]The height of the progress bar.[/en]
-	[de]Die Höhe der Fortschrittsanzeige.[/de]
+	[de]Die Hï¿½he der Fortschrittsanzeige.[/de]
 	
 	@param sBackgroundCssClass [type]string[/type]
 	[en]The CSS class for the background of the progress bar.[/en]
-	[de]Die CSS Klasse für den Hintergrund der Fortschrittsanzeige.[/de]
+	[de]Die CSS Klasse fï¿½r den Hintergrund der Fortschrittsanzeige.[/de]
 	
 	@param sBackgroundCssStyle [type]string[/type]
 	[en]The CSS code for the background of the progress bar.[/en]
-	[de]Die CSS Code für den Hintergrund der Fortschrittsanzeige.[/de]
+	[de]Die CSS Code fï¿½r den Hintergrund der Fortschrittsanzeige.[/de]
 	
 	@param sBarCssClass [type]string[/type]
 	[en]The CSS class for the foreground of the progress bar.[/en]
-	[de]Die CSS Klasse für den Vordergrund der Fortschrittsanzeige.[/de]
+	[de]Die CSS Klasse fï¿½r den Vordergrund der Fortschrittsanzeige.[/de]
 	
 	@param sBarCssStyle [type]string[/type]
 	[en]The CSS code for the foreground of the progress bar.[/en]
-	[de]Die CSS Code für den Vordergrund der Fortschrittsanzeige.[/de]
+	[de]Die CSS Code fï¿½r den Vordergrund der Fortschrittsanzeige.[/de]
 	*/
 	public function build(
 		$_sProgressBarID = NULL,
@@ -98,8 +110,10 @@ class classPG_ProgressBar extends classPG_ClassBasics
 		$_sBackgroundCssClass = NULL,
 		$_sBackgroundCssStyle = NULL,
 		$_sBarCssClass = NULL,
-		$_sBarCssStyle = NULL
-	)
+		$_sBarCssStyle = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		global $oPGControls;
 		

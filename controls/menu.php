@@ -33,7 +33,19 @@ class classPG_Menu extends classPG_ClassBasics
 	public function __construct()
 	{
 		$this->setID(array('sID' => 'PGMenu'));
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_menu.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_menu.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_menu.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*

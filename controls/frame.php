@@ -29,7 +29,7 @@ define('PG_FRAME_MODE_SCROLLBAR_BOTTOM', 2048);
 
 @description
 [en]This class has methods to create and manage frames.[/en]
-[de]Diese Klasse verfügt über Methoden zum Erstellen und Verwalten von Frames.[/de]
+[de]Diese Klasse verfï¿½gt ï¿½ber Methoden zum Erstellen und Verwalten von Frames.[/de]
 
 @param extends classPG_ClassBasics
 */
@@ -42,7 +42,19 @@ class classPG_Frame extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGFrame'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_frame.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_frame.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_frame.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*
@@ -50,11 +62,11 @@ class classPG_Frame extends classPG_ClassBasics
 	
 	@description
 	[en]Builds a structure of a frame and returns it.[/en]
-	[de]Erstellt eine Struktur eines Frames und gibt sie zurück.[/de]
+	[de]Erstellt eine Struktur eines Frames und gibt sie zurï¿½ck.[/de]
 	
 	@return axStructure [type]mixed[][/type]
 	[en]Builds a structure of a frame and returns it as an mixed array.[/en]
-	[de]Erstellt eine Struktur eines Frames und gibt sie als mixed Array zurück.[/de]
+	[de]Erstellt eine Struktur eines Frames und gibt sie als mixed Array zurï¿½ck.[/de]
 	
 	@param sFrameID [type]string[/type]
 	[en]The ID of the frame.[/en]
@@ -66,7 +78,7 @@ class classPG_Frame extends classPG_ClassBasics
 	
 	@param sSizeY [type]string[/type]
 	[en]The height of the frame.[/en]
-	[de]Die Höhe des Frames.[/de]
+	[de]Die Hï¿½he des Frames.[/de]
 	
 	@param sContent [type]string[/type]
 	[en]The content of the frame.[/en]
@@ -94,11 +106,11 @@ class classPG_Frame extends classPG_ClassBasics
 	
 	@param sCssStyle [type]string[/type]
 	[en]CSS code for the frame.[/en]
-	[de]CSS Code für den Frame.[/de]
+	[de]CSS Code fï¿½r den Frame.[/de]
 	
 	@param sCssClass [type]string[/type]
 	[en]CSS class for the frame.[/en]
-	[de]CSS Klasse für den Frame.[/de]
+	[de]CSS Klasse fï¿½r den Frame.[/de]
 	*/
 	public function buildStructure(
 		$_sFrameID = NULL, 
@@ -111,8 +123,10 @@ class classPG_Frame extends classPG_ClassBasics
 		$_bUseOverlay = NULL, 
 		$_bVisible = NULL,
 		$_sCssStyle = NULL, 
-		$_sCssClass = NULL
-	)
+		$_sCssClass = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		$_sSizeX = $this->getRealParameter(array('oParameters' => $_sFrameID, 'sName' => 'sSizeX', 'xParameter' => $_sSizeX));
 		$_sSizeY = $this->getRealParameter(array('oParameters' => $_sFrameID, 'sName' => 'sSizeY', 'xParameter' => $_sSizeY));
@@ -147,11 +161,11 @@ class classPG_Frame extends classPG_ClassBasics
 	
 	@description
 	[en]Builds an frame and returns it as an HTML string.[/en]
-	[de]Erstellt einen Frame und gibt ihn als HTML-String zurück.[/de]
+	[de]Erstellt einen Frame und gibt ihn als HTML-String zurï¿½ck.[/de]
 	
 	@return sFrameHtml [type]string[/type]
 	[en]Builds an frame and returns it as an HTML string.[/en]
-	[de]Erstellt einen Frame und gibt ihn als HTML-String zurück.[/de]
+	[de]Erstellt einen Frame und gibt ihn als HTML-String zurï¿½ck.[/de]
 	
 	@param sFrameID [type]string[/type]
 	[en]The ID of the frame.[/en]
@@ -163,7 +177,7 @@ class classPG_Frame extends classPG_ClassBasics
 	
 	@param sSizeY [type]string[/type]
 	[en]The height of the frame.[/en]
-	[de]Die Höhe des Frames.[/de]
+	[de]Die Hï¿½he des Frames.[/de]
 	
 	@param sContent [type]string[/type]
 	[en]The content of the frame.[/en]
@@ -191,11 +205,11 @@ class classPG_Frame extends classPG_ClassBasics
 	
 	@param sCssStyle [type]string[/type]
 	[en]CSS code for the frame.[/en]
-	[de]CSS Code für den Frame.[/de]
+	[de]CSS Code fï¿½r den Frame.[/de]
 	
 	@param sCssClass [type]string[/type]
 	[en]CSS class for the frame.[/en]
-	[de]CSS Klasse für den Frame.[/de]
+	[de]CSS Klasse fï¿½r den Frame.[/de]
 	*/
 	public function build(
 		$_sFrameID = NULL, 
@@ -236,8 +250,10 @@ class classPG_Frame extends classPG_ClassBasics
 		if ($_bVisible === NULL) {$_bVisible = true;}
 		if ($_sCssStyle === NULL) {$_sCssStyle = '';}
 		if ($_sCssClass === NULL) {$_sCssClass = '';}
-		
-		$_sHtml = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHtml = '';
 
 		if ($this->isMode(array('iMode' => PG_FRAME_MODE_CHARACTERSBAR_LEFT, 'iCurrentMode' => $_iScrollMode)))
 		{
@@ -338,11 +354,11 @@ class classPG_Frame extends classPG_ClassBasics
 	
 	@description
 	[en]Builds a scrollbar for an frame and returns it as an HTML string.[/en]
-	[de]Erstellt eine Scrollbar für einen Frame und gibt sie als HTML-String zurück.[/de]
+	[de]Erstellt eine Scrollbar fï¿½r einen Frame und gibt sie als HTML-String zurï¿½ck.[/de]
 	
 	@return sScrollBarHtml [type]string[/type]
 	[en]Builds a scrollbar for an frame and returns it as an HTML string.[/en]
-	[de]Erstellt eine Scrollbar für einen Frame und gibt sie als HTML-String zurück.[/de]
+	[de]Erstellt eine Scrollbar fï¿½r einen Frame und gibt sie als HTML-String zurï¿½ck.[/de]
 	
 	@param sFrameID [needed][type]string[/type]
 	[en]The ID of the frame.[/en]
@@ -427,11 +443,11 @@ class classPG_Frame extends classPG_ClassBasics
 	
 	@description
 	[en]Builds a charactersbar for an frame and returns it as an HTML string.[/en]
-	[de]Erstellt eine Charaktersbar für einen Frame und gibt sie als HTML-String zurück.[/de]
+	[de]Erstellt eine Charaktersbar fï¿½r einen Frame und gibt sie als HTML-String zurï¿½ck.[/de]
 	
 	@return sCharactersBarHtml [type]string[/type]
 	[en]Builds a charactersbar for an frame and returns it as an HTML string.[/en]
-	[de]Erstellt eine Charaktersbar für einen Frame und gibt sie als HTML-String zurück.[/de]
+	[de]Erstellt eine Charaktersbar fï¿½r einen Frame und gibt sie als HTML-String zurï¿½ck.[/de]
 	
 	@param sFrameID [needed][type]string[/type]
 	[en]The ID of the frame.[/en]
@@ -516,11 +532,11 @@ class classPG_Frame extends classPG_ClassBasics
 	
 	@description
 	[en]Creates a characters container for content to a character bar and returns it as an HTML string.[/en]
-	[de]Erstellt einen Characters-Kontainer für Inhalte zu einer Charaktersbar und gibt es als HTML-String zurück.[/de]
+	[de]Erstellt einen Characters-Kontainer fï¿½r Inhalte zu einer Charaktersbar und gibt es als HTML-String zurï¿½ck.[/de]
 	
 	@return sChaktersBarContainerHtml [type]string[/type]
 	[en]Returns the characters container as an HTML string.[/en]
-	[de]Gibt den Ckaracters-Kontainer als HTML-String zurück.[/de]
+	[de]Gibt den Ckaracters-Kontainer als HTML-String zurï¿½ck.[/de]
 	
 	@param sFrameID [needed][type]string[/type]
 	[en]The ID of the frame.[/en]
@@ -532,7 +548,7 @@ class classPG_Frame extends classPG_ClassBasics
 	
 	@param axContents [type]mixed[][/type]
 	[en]The contents for the characters containers.[/en]
-	[de]Die Inhalte für die Characters-Kontainer.[/de]
+	[de]Die Inhalte fï¿½r die Characters-Kontainer.[/de]
 	*/
 	public function buildCharactersContainer($_sFrameID, $_iScrollMode = NULL, $_axContents = NULL)
 	{

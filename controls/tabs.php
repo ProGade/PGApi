@@ -26,7 +26,19 @@ class classPG_Tabs extends classPG_ClassBasics
 	{
 		$this->setID(array('sID' => 'PGTabs'));
 		$this->initClassBasics();
-	}
+
+        // Templates...
+        $_oTemplate = new classPG_Template();
+        $_oTemplate->setTemplateFileExtension(array('sExtension' => 'php'));
+        $_oTemplate->setTemplates(
+            array(
+                'default' => 'gfx/default/templates/controls/default_tabs.php',
+                'bootstrap' => 'gfx/default/templates/controls/bootstrap_tabs.php',
+                'foundation' => 'gfx/default/templates/controls/foundation_tabs.php'
+            )
+        );
+        $this->setTemplate(array('xTemplate' => $_oTemplate));
+    }
 	
 	// Methods...
 	/*
@@ -91,8 +103,10 @@ class classPG_Tabs extends classPG_ClassBasics
 		$_sCssStyleTabs = NULL,
 		$_sCssClassTabs = NULL,
 		$_sCssStyleContents = NULL,
-		$_sCssClassContents = NULL
-	)
+		$_sCssClassContents = NULL,
+
+        $_sTemplateName = NULL
+    )
 	{
 		global $oPGDragElement, $oPGDropArea, $oPGFrame;
 	
@@ -115,8 +129,10 @@ class classPG_Tabs extends classPG_ClassBasics
 		if ($_sCssStyleTabbar === NULL) {$_sCssStyleTabbar = 'background-color:#666666; padding-top:5px;';}
 		if ($_sSizeX === NULL) {$_sSizeX = '100%';}
 		if ($_sSizeY === NULL) {$_sSizeY = '300px';}
-		
-		$_sHtml = '';
+
+        if ($_sTemplateName !== NULL) {return $this->getTemplate()->build(array('sName' => $_sTemplateName));}
+
+        $_sHtml = '';
 		$_sHtml .= $this->getLineBreak();
 		
 		$_sHtml .= '<div id="'.$_sTabsID.'" style="width:'.$_sSizeX.'; height:'.$_sSizeY.'; ';
