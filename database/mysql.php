@@ -783,6 +783,15 @@ class classPG_MySql extends classPG_ClassBasics
                         $_axExpression = NULL;
                         foreach($_xValue as $_sOperator => $_xValue2)
                         {
+							if (is_array($_xValue2))
+							{
+								foreach($_xValue2 as $_xIndex => $_xValue3) {$_xValue2[$_xIndex] = $this->realEscapeString(array('xString' => $_xValue3));}
+							}
+							else
+							{
+								$_xValue2 = $this->realEscapeString(array('xString' => $_xValue2));
+							}
+
                             switch(strtolower($_sOperator))
                             {
                                 // comparsion...
@@ -839,7 +848,7 @@ class classPG_MySql extends classPG_ClassBasics
             else
             {
                 if ($_sStatement != '') {$_sStatement .= ' AND ';}
-                $_sStatement .= $_sName.' = "'.$_xValue.'"';
+				$_sStatement .= $_sName.' = "'.$this->realEscapeString(array('xString' => $_xValue)).'"';
             }
         }
 
