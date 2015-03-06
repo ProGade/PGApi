@@ -787,7 +787,7 @@ class classPG_Mail extends classPG_ClassBasics
             $this->oMailer->initTemplate(array('oTemplate' => $this->getTemplate()));
             return $this->oMailer->send(
                 array(
-                    'sMailFrom' => $_sFromMail,
+                    'sFromMail' => $_sFromMail,
                     'xToMail' => $_xToMail,
                     'sSubject' => $_sSubject,
                     'sMessage' => $_sMessage,
