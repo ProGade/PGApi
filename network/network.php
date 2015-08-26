@@ -44,9 +44,10 @@ class classPG_Network extends classPG_ClassBasics
 	{
 		global $oPGXmlWrite, $oPGWebSockets;
 
-		$_oXmlWrite = $this->getRealParameter(array('oParameters' => $_bUseWebSockets, 'sName' => 'oXmlWrite', 'xParameter' => $_oXmlWrite));
-		$_oWebSockets = $this->getRealParameter(array('oParameters' => $_bUseWebSockets, 'sName' => 'oWebSockets', 'xParameter' => $_oWebSockets));
-		$_bUseWebSockets = $this->getRealParameter(array('oParameters' => $_bUseWebSockets, 'sName' => 'bUseWebSockets', 'xParameter' => $_bUseWebSockets));
+        $this->mps(array('oParameters' => $_bUseWebSockets));
+		$_oXmlWrite = $this->mp(array('sName' => 'oXmlWrite', 'xParameter' => $_oXmlWrite));
+		$_oWebSockets = $this->mp(array('sName' => 'oWebSockets', 'xParameter' => $_oWebSockets));
+		$_bUseWebSockets = $this->mp(array('sName' => 'bUseWebSockets', 'xParameter' => $_bUseWebSockets));
 		
 		if (($_bUseWebSockets === NULL) && (isset($_REQUEST['iPGNetWebSockets']))) {if ($_REQUEST['iPGNetWebSockets'] == 1) {$_bUseWebSockets = true;} $_bUseWebSockets = false;}
 		if (($_oXmlWrite === NULL) && (isset($oPGXmlWrite))) {$_oXmlWrite = $oPGXmlWrite;}
@@ -71,7 +72,8 @@ class classPG_Network extends classPG_ClassBasics
 	*/
 	public function useCheckForWebSockets($_bUse)
 	{
-		$_bUse = $this->getRealParameter(array('oParameters' => $_bUse, 'sName' => 'bUse', 'xParameter' => $_bUse));
+        $this->mps(array('oParameters' => $_bUse));
+		$_bUse = $this->mp(array('sName' => 'bUse', 'xParameter' => $_bUse));
 		$this->bCheckForWebSockets = $_bUse;
 	}
 	/* @end method */
@@ -103,7 +105,8 @@ class classPG_Network extends classPG_ClassBasics
 	*/
 	public function useWebSockets($_bUse)
 	{
-		$_bUse = $this->getRealParameter(array('oParameters' => $_bUse, 'sName' => 'bUse', 'xParameter' => $_bUse));
+        $this->mps(array('oParameters' => $_bUse));
+		$_bUse = $this->mp(array('sName' => 'bUse', 'xParameter' => $_bUse));
 		$this->bUseWebSockets = $_bUse;
 	}
 	/* @end method */
@@ -135,7 +138,8 @@ class classPG_Network extends classPG_ClassBasics
 	*/
 	public function setXmlWriteObject($_oXmlWrite)
 	{
-		$_oXmlWrite = $this->getRealParameter(array('oParameters' => $_oXmlWrite, 'sName' => 'oXmlWrite', 'xParameter' => $_oXmlWrite));
+        $this->mps(array('oParameters' => $_oXmlWrite));
+		$_oXmlWrite = $this->mp(array('sName' => 'oXmlWrite', 'xParameter' => $_oXmlWrite));
 		$this->oXmlWrite = $_oXmlWrite;
 	}
 	/* @end method */
@@ -168,8 +172,9 @@ class classPG_Network extends classPG_ClassBasics
 	*/
 	public function addData($_sName, $_xContent = NULL)
 	{
-		$_xContent = $this->getRealParameter(array('oParameters' => $_sName, 'sName' => 'xContent', 'xParameter' => $_xContent));
-		$_sName = $this->getRealParameter(array('oParameters' => $_sName, 'sName' => 'sName', 'xParameter' => $_sName));
+        $this->mps(array('oParameters' => $_sName));
+		$_xContent = $this->mp(array('sName' => 'xContent', 'xParameter' => $_xContent));
+		$_sName = $this->mp(array('sName' => 'sName', 'xParameter' => $_sName));
 
 		if (($this->bUseWebSockets == false) && ($this->oXmlWrite != NULL))
 		{
@@ -200,8 +205,9 @@ class classPG_Network extends classPG_ClassBasics
 	*/
 	public function send($_sParameters = NULL, $_oNetworkUser = NULL)
 	{
-		$_oNetworkUser = $this->getRealParameter(array('oParameters' => $_sParameters, 'sName' => 'oNetworkUser', 'xParameter' => $_oNetworkUser));
-		$_sParameters = $this->getRealParameter(array('oParameters' => $_sParameters, 'sName' => 'sParameters', 'xParameter' => $_sParameters));
+        $this->mps(array('oParameters' => $_sParameters));
+		$_oNetworkUser = $this->mp(array('sName' => 'oNetworkUser', 'xParameter' => $_oNetworkUser));
+		$_sParameters = $this->mp(array('sName' => 'sParameters', 'xParameter' => $_sParameters));
 		return $this->build(array('sParameters' => $_sParameters, 'oNetworkUser' => $_oNetworkUser));
 	}
 	/* @end method */
@@ -223,8 +229,9 @@ class classPG_Network extends classPG_ClassBasics
 	*/
 	public function build($_sParameters = NULL, $_oNetworkUser = NULL)
 	{
-		$_oNetworkUser = $this->getRealParameter(array('oParameters' => $_sParameters, 'sName' => 'oNetworkUser', 'xParameter' => $_oNetworkUser));
-		$_sParameters = $this->getRealParameter(array('oParameters' => $_sParameters, 'sName' => 'sParameters', 'xParameter' => $_sParameters));
+        $this->mps(array('oParameters' => $_sParameters));
+		$_oNetworkUser = $this->mp(array('sName' => 'oNetworkUser', 'xParameter' => $_oNetworkUser));
+		$_sParameters = $this->mp(array('sName' => 'sParameters', 'xParameter' => $_sParameters));
 
 		if ($_sParameters != NULL)
 		{

@@ -43,7 +43,8 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	*/
 	public function setFilesPath($_sPath)
 	{
-		$_sPath = $this->getRealParameter(array('oParameters' => $_sPath, 'sName' => 'sPath', 'xParameter' => $_sPath));
+        $this->mps(array('oParameters' => $_sPath));
+		$_sPath = $this->mp(array('sName' => 'sPath', 'xParameter' => $_sPath));
 		$this->sFilesPath = $_sPath;
 	}
 	/* @end method */
@@ -79,7 +80,8 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	*/
 	public function setFiles($_asFiles)
 	{
-		$_asFiles = $this->getRealParameter(array('oParameters' => $_asFiles, 'sName' => 'asFiles', 'xParameter' => $_asFiles, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_asFiles));
+		$_asFiles = $this->mp(array('sName' => 'asFiles', 'xParameter' => $_asFiles, 'bNotNull' => true));
 		$this->asFiles = $_asFiles;
 	}
 	/* @end method */
@@ -99,7 +101,8 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	*/
 	public function addFiles($_asFiles)
 	{
-		$_asFiles = $this->getRealParameter(array('oParameters' => $_asFiles, 'sName' => 'asFiles', 'xParameter' => $_asFiles, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_asFiles));
+		$_asFiles = $this->mp(array('sName' => 'asFiles', 'xParameter' => $_asFiles, 'bNotNull' => true));
 		$this->asFiles = array_merge($this->asFiles, $_asFiles);
 	}
 	/* @end method */
@@ -119,7 +122,8 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	*/
 	public function addFile($_sFile)
 	{
-		$_sFile = $this->getRealParameter(array('oParameters' => $_sFile, 'sName' => 'sFile', 'xParameter' => $_sFile));
+        $this->mps(array('oParameters' => $_sFile));
+		$_sFile = $this->mp(array('sName' => 'sFile', 'xParameter' => $_sFile));
 		$this->asFiles[] = $_sFile;
 	}
 	/* @end method */
@@ -155,7 +159,8 @@ class classPG_PhpLoader extends classPG_ClassBasics
 	*/
 	public function useRequire($_bUse)
 	{
-		$_bUse = $this->getRealParameter(array('oParameters' => $_bUse, 'sName' => 'bUse', 'xParameter' => $_bUse));
+        $this->mps(array('oParameters' => $_bUse));
+		$_bUse = $this->mp(array('sName' => 'bUse', 'xParameter' => $_bUse));
 		$this->bRequire = $_bUse;
 	}
 	/* @end method */

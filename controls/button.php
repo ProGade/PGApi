@@ -69,7 +69,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setImageLeft($_sImage)
 	{
-		$_sImage = $this->getRealParameter(array('oParameters' => $_sImage, 'sName' => 'sImage', 'xParameter' => $_sImage));
+        $this->mps(array('oParameters' => $_sImage));
+		$_sImage = $this->mp(array('sName' => 'sImage', 'xParameter' => $_sImage));
 		$this->sImageLeft = $_sImage;
 	}
 	/* @end method */
@@ -87,7 +88,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setImageFiller($_sImage)
 	{
-		$_sImage = $this->getRealParameter(array('oParameters' => $_sImage, 'sName' => 'sImage', 'xParameter' => $_sImage));
+        $this->mps(array('oParameters' => $_sImage));
+		$_sImage = $this->mp(array('sName' => 'sImage', 'xParameter' => $_sImage));
 		$this->sImageFiller = $_sImage;
 	}
 	/* @end method */
@@ -105,7 +107,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setImageRight($_sImage)
 	{
-		$_sImage = $this->getRealParameter(array('oParameters' => $_sImage, 'sName' => 'sImage', 'xParameter' => $_sImage));
+        $this->mps(array('oParameters' => $_sImage));
+		$_sImage = $this->mp(array('sName' => 'sImage', 'xParameter' => $_sImage));
 		$this->sImageRight = $_sImage;
 	}
 	/* @end method */
@@ -123,7 +126,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setImageLeftHover($_sImage)
 	{
-		$_sImage = $this->getRealParameter(array('oParameters' => $_sImage, 'sName' => 'sImage', 'xParameter' => $_sImage));
+        $this->mps(array('oParameters' => $_sImage));
+		$_sImage = $this->mp(array('sName' => 'sImage', 'xParameter' => $_sImage));
 		$this->sImageLeftHover = $_sImage;
 	}
 	/* @end method */
@@ -141,7 +145,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setImageFillerHover($_sImage)
 	{
-		$_sImage = $this->getRealParameter(array('oParameters' => $_sImage, 'sName' => 'sImage', 'xParameter' => $_sImage));
+        $this->mps(array('oParameters' => $_sImage));
+		$_sImage = $this->mp(array('sName' => 'sImage', 'xParameter' => $_sImage));
 		$this->sImageFillerHover = $_sImage;
 	}
 	/* @end method */
@@ -159,7 +164,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setImageRightHover($_sImage)
 	{
-		$_sImage = $this->getRealParameter(array('oParameters' => $_sImage, 'sName' => 'sImage', 'xParameter' => $_sImage));
+        $this->mps(array('oParameters' => $_sImage));
+		$_sImage = $this->mp(array('sName' => 'sImage', 'xParameter' => $_sImage));
 		$this->sImageRightHover = $_sImage;
 	}
 	/* @end method */
@@ -177,7 +183,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setImageLeftDown($_sImage)
 	{
-		$_sImage = $this->getRealParameter(array('oParameters' => $_sImage, 'sName' => 'sImage', 'xParameter' => $_sImage));
+        $this->mps(array('oParameters' => $_sImage));
+		$_sImage = $this->mp(array('sName' => 'sImage', 'xParameter' => $_sImage));
 		$this->sImageLeftDown = $_sImage;
 	}
 	/* @end method */
@@ -195,7 +202,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setImageFillerDown($_sImage)
 	{
-		$_sImage = $this->getRealParameter(array('oParameters' => $_sImage, 'sName' => 'sImage', 'xParameter' => $_sImage));
+        $this->mps(array('oParameters' => $_sImage));
+		$_sImage = $this->mp(array('sName' => 'sImage', 'xParameter' => $_sImage));
 		$this->sImageFillerDown = $_sImage;
 	}
 	/* @end method */
@@ -213,7 +221,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setImageRightDown($_sImage)
 	{
-		$_sImage = $this->getRealParameter(array('oParameters' => $_sImage, 'sName' => 'sImage', 'xParameter' => $_sImage));
+        $this->mps(array('oParameters' => $_sImage));
+		$_sImage = $this->mp(array('sName' => 'sImage', 'xParameter' => $_sImage));
 		$this->sImageRightDown = $_sImage;
 	}
 	/* @end method */
@@ -231,7 +240,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setCssClass($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClass = $_sClass;
 	}
 	/* @end method */
@@ -263,7 +273,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setCssClassLeft($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassLeft = $_sClass;
 	}
 	/* @end method */
@@ -295,7 +306,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setCssClassFiller($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassFiller = $_sClass;
 	}
 	/* @end method */
@@ -327,7 +339,8 @@ class classPG_Button extends classPG_ClassBasics
 	*/
 	public function setCssClassRight($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassRight = $_sClass;
 	}
 	/* @end method */
@@ -487,29 +500,30 @@ class classPG_Button extends classPG_ClassBasics
 	{
 		global $oPGControls;
 
-		$_sText = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sText', 'xParameter' => $_sText));
-		$_sTextHover = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sTextHover', 'xParameter' => $_sTextHover));
-		$_sTextDown = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sTextDown', 'xParameter' => $_sTextDown));
-		$_sTextDownHover = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sTextDownHover', 'xParameter' => $_sTextDownHover));
-		$_iButtonMode = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'iButtonMode', 'xParameter' => $_iButtonMode));
-		$_sOnClick = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sOnClick', 'xParameter' => $_sOnClick));
-		$_sSizeX = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sSizeX', 'xParameter' => $_sSizeX));
-		$_sSizeY = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sSizeY', 'xParameter' => $_sSizeY));
-		$_bDisplay = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'bDisplay', 'xParameter' => $_bDisplay));
-		$_sSendParameters = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sSendParameters', 'xParameter' => $_sSendParameters));
-		$_sOnMouseDown = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sOnMouseDown', 'xParameter' => $_sOnMouseDown));
-		$_sOnMouseUp = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sOnMouseUp', 'xParameter' => $_sOnMouseUp));
-		$_sOnMouseOver = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sOnMouseOver', 'xParameter' => $_sOnMouseOver));
-		$_sOnMouseOut = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sOnMouseOut', 'xParameter' => $_sOnMouseOut));
-		$_sImageButtonNormal = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sImageButtonNormal', 'xParameter' => $_sImageButtonNormal));
-		$_sImageButtonHover = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sImageButtonHover', 'xParameter' => $_sImageButtonHover));
-		$_sImageButtonDown = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sImageButtonDown', 'xParameter' => $_sImageButtonDown));
-		$_sImageButtonDownHover = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sImageButtonDownHover', 'xParameter' => $_sImageButtonDownHover));
-		$_sCssStyle = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sCssStyle', 'xParameter' => $_sCssStyle));
-		$_sCssClass = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sCssClass', 'xParameter' => $_sCssClass));
-		$_sCssClassNormal = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sCssClassNormal', 'xParameter' => $_sCssClassNormal));
-		$_sCssClassDown = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sCssClassDown', 'xParameter' => $_sCssClassDown));
-		$_sButtonID = $this->getRealParameter(array('oParameters' => $_sButtonID, 'sName' => 'sButtonID', 'xParameter' => $_sButtonID));
+        $this->mps(array('oParameters' => $_sButtonID));
+		$_sText = $this->mp(array('sName' => 'sText', 'xParameter' => $_sText));
+		$_sTextHover = $this->mp(array('sName' => 'sTextHover', 'xParameter' => $_sTextHover));
+		$_sTextDown = $this->mp(array('sName' => 'sTextDown', 'xParameter' => $_sTextDown));
+		$_sTextDownHover = $this->mp(array('sName' => 'sTextDownHover', 'xParameter' => $_sTextDownHover));
+		$_iButtonMode = $this->mp(array('sName' => 'iButtonMode', 'xParameter' => $_iButtonMode));
+		$_sOnClick = $this->mp(array('sName' => 'sOnClick', 'xParameter' => $_sOnClick));
+		$_sSizeX = $this->mp(array('sName' => 'sSizeX', 'xParameter' => $_sSizeX));
+		$_sSizeY = $this->mp(array('sName' => 'sSizeY', 'xParameter' => $_sSizeY));
+		$_bDisplay = $this->mp(array('sName' => 'bDisplay', 'xParameter' => $_bDisplay));
+		$_sSendParameters = $this->mp(array('sName' => 'sSendParameters', 'xParameter' => $_sSendParameters));
+		$_sOnMouseDown = $this->mp(array('sName' => 'sOnMouseDown', 'xParameter' => $_sOnMouseDown));
+		$_sOnMouseUp = $this->mp(array('sName' => 'sOnMouseUp', 'xParameter' => $_sOnMouseUp));
+		$_sOnMouseOver = $this->mp(array('sName' => 'sOnMouseOver', 'xParameter' => $_sOnMouseOver));
+		$_sOnMouseOut = $this->mp(array('sName' => 'sOnMouseOut', 'xParameter' => $_sOnMouseOut));
+		$_sImageButtonNormal = $this->mp(array('sName' => 'sImageButtonNormal', 'xParameter' => $_sImageButtonNormal));
+		$_sImageButtonHover = $this->mp(array('sName' => 'sImageButtonHover', 'xParameter' => $_sImageButtonHover));
+		$_sImageButtonDown = $this->mp(array('sName' => 'sImageButtonDown', 'xParameter' => $_sImageButtonDown));
+		$_sImageButtonDownHover = $this->mp(array('sName' => 'sImageButtonDownHover', 'xParameter' => $_sImageButtonDownHover));
+		$_sCssStyle = $this->mp(array('sName' => 'sCssStyle', 'xParameter' => $_sCssStyle));
+		$_sCssClass = $this->mp(array('sName' => 'sCssClass', 'xParameter' => $_sCssClass));
+		$_sCssClassNormal = $this->mp(array('sName' => 'sCssClassNormal', 'xParameter' => $_sCssClassNormal));
+		$_sCssClassDown = $this->mp(array('sName' => 'sCssClassDown', 'xParameter' => $_sCssClassDown));
+		$_sButtonID = $this->mp(array('sName' => 'sButtonID', 'xParameter' => $_sButtonID));
 		
 		if ($_sButtonID === NULL) {$_sButtonID = $this->getNextID();}
 		if ($_sText === NULL) {$_sText = 'ok';}

@@ -18,7 +18,8 @@ define('PG_LOGIN_BUILD_TYPE_LOGIN_BAR_BOTTOM', 2);
 define('PG_LOGIN_BUILD_TYPE_ACCOUNT_REGISTER', 3);
 define('PG_LOGIN_BUILD_TYPE_ACCOUNT_EDIT', 4);
 define('PG_LOGIN_BUILD_TYPE_ACCOUNT_RESET_PASSWORD', 5);
-define('PG_LOGIN_BUILD_TYPE_ACCOUNT_ACCEPT', 6);
+define('PG_LOGIN_BUILD_TYPE_ACCOUNT_RESET_PASSWORD_FINAL', 6);
+define('PG_LOGIN_BUILD_TYPE_ACCOUNT_ACCEPT', 7);
 
 define('PG_LOGIN_BUILD_RANDOM_PASSWORD_TYPE_SERIAL', 'serial');
 define('PG_LOGIN_BUILD_RANDOM_PASSWORD_TYPE_SIMPLE', 'simple');
@@ -187,6 +188,8 @@ class classPG_Login extends classPG_ClassBasics
 
 	private $sMailPasswordResetSubject = '';
 	private $sMailPasswordResetMessage = '';
+
+    private $bPasswordResetInputNewPassword = false;
 	
 	private $sPrivacyPolicyUrl = '';
 	private $sPrivacyTermsUrl = '';
@@ -233,6 +236,7 @@ class classPG_Login extends classPG_ClassBasics
                     'RewriteUrlLogin' => './',
                     'RewriteUrlLogout' => './',
                     'RewriteUrlPasswordReset' => './',
+                    'RewriteUrlPasswordResetInputNewPassword' => './',
 
 					'Username' => 'Benutzername',
 					'FirstName' => 'Vorname',
@@ -289,7 +293,8 @@ class classPG_Login extends classPG_ClassBasics
 					'PasswordResetUpdatePasswordFailed' => 'Ihr Passwort konnte nicht zur&uuml;ckgesetzt werden! Bitte versuchen Sie es sp&auml;ter noch einmal.',
 					'PasswordResetSecureCodeFailed' => 'Der Sicherheitscode passt nicht zur E-Mail-Adresse!',
 					'PasswordResetEmailNotFound' => 'Ihre E-Mail-Adresse wurde nicht in unserer Datenbank gefunden!',
-					'PasswordResetParametersFailed' => 'Es wurden keine Parameter &uuml;bergeben!'
+					'PasswordResetParametersFailed' => 'Es wurden keine Parameter &uuml;bergeben!',
+                    'PasswordResetEmailNotEquals' => 'Das Passwort stimmt nicht mit der wiederholten Eingabe überein!'
 				)
 			)
 		);
@@ -1130,6 +1135,12 @@ class classPG_Login extends classPG_ClassBasics
 	*/
 	public function isLoginWithCaptcha() {return $this->bLoginWithCaptcha;}
 	/* @end method */
+
+    public function usePasswordResetInputNewPassword($_bUse)
+    {
+        $_bUse = $this->getRealParameter(array('oParameters' => $_bUse, 'sName' => 'bUse', 'xParameter' => $_bUse));
+        $this->bPasswordResetInputNewPassword = $_bUse;
+    }
 
 	/*
 	@start method
@@ -4301,7 +4312,7 @@ class classPG_Login extends classPG_ClassBasics
 		if ($_sPassword === NULL) {$_sPassword = '';}
 		if ($_sEmail === NULL) {$_sEmail = '';}
 		if ($_sUsername === NULL) {$_sUsername = '';}
-	
+
 		$_sHtml = '';
 		
 		$this->checkDatabaseConnection();
@@ -4458,10 +4469,11 @@ class classPG_Login extends classPG_ClassBasics
 	[en]The username of the user for the password to be reset.[/en]
 	[de]Der Benutzername des Benutzers, für den das Passwort zurückgesetzt werden soll.[/de]
 	*/
-	public function buildAcceptPasswordReset($_sSecureCode, $_sEmail = NULL, $_sUsername = NULL)
+	public function buildAcceptPasswordReset($_sSecureCode, $_sEmail = NULL, $_sUsername = NULL, $_xFormTemplate = NULL)
 	{
 		$_sEmail = $this->getRealParameter(array('oParameters' => $_sSecureCode, 'sName' => 'sEmail', 'xParameter' => $_sEmail));
 		$_sUsername = $this->getRealParameter(array('oParameters' => $_sSecureCode, 'sName' => 'sUsername', 'xParameter' => $_sUsername));
+        $_xFormTemplate = $this->getRealParameter(array('oParameters' => $_sSecureCode, 'sName' => 'xFormTemplate', 'xParameter' => $_xFormTemplate));
 		$_sSecureCode = $this->getRealParameter(array('oParameters' => $_sSecureCode, 'sName' => 'sSecureCode', 'xParameter' => $_sSecureCode));
 
 		if ($_sEmail === NULL) {$_sEmail = '';}
@@ -4502,8 +4514,15 @@ class classPG_Login extends classPG_ClassBasics
 					{
 						if ($_sSecureCode == $this->buildSecureCode(array('sUsername' => $_axUser['Username'], 'sEmail' => $_sEmail)))
 						{
-							if ($this->resetPasswordByUserID(array('iUserID' => $_axUser['UserID']))) {$_sHtml .= $this->getText(array('sType' => 'PasswordResetUpdatePasswordSuccess'));}
-							else {$_sHtml .= $this->getText(array('sType' => 'PasswordResetUpdatePasswordFailed'));}
+                            if ($this->bPasswordResetInputNewPassword == true)
+                            {
+                                $_sHtml .= $this->buildPasswordResetInputNewPasswordForm(array('sSecureCode' => $_sSecureCode, 'sEmail' => $_axUser['Email'], 'xTemplate' => $_xFormTemplate));
+                            }
+                            else
+                            {
+                                if ($this->resetPasswordByUserID(array('iUserID' => $_axUser['UserID']))) {$_sHtml .= $this->getText(array('sType' => 'PasswordResetUpdatePasswordSuccess'));}
+                                else {$_sHtml .= $this->getText(array('sType' => 'PasswordResetUpdatePasswordFailed'));}
+                            }
 						}
 						else {$_sHtml .= $this->getText(array('sType' => 'PasswordResetSecureCodeFailed'));}
 					}
@@ -4518,7 +4537,159 @@ class classPG_Login extends classPG_ClassBasics
 		return $_sHtml;
 	}
 	/* @end method */
-	
+
+    public function buildPasswordResetInputNewPasswordForm($_sSecureCode, $_sEmail = NULL, $_xTemplate = NULL)
+    {
+        $_sEmail = $this->getRealParameter(array('oParameters' => $_sSecureCode, 'sName' => 'sEmail', 'xParameter' => $_sEmail));
+        $_xTemplate = $this->getRealParameter(array('oParameters' => $_sSecureCode, 'sName' => 'xTemplate', 'xParameter' => $_xTemplate));
+        $_sSecureCode = $this->getRealParameter(array('oParameters' => $_sSecureCode, 'sName' => 'sSecureCode', 'xParameter' => $_sSecureCode));
+
+        $_sHiddenFields = '';
+        $_sHiddenFields .= '<input type="hidden" name="sPGAccount" value="password_reset_final" />';
+        $_sHiddenFields .= '<input type="hidden" name="sEmail" value="'.$_sEmail.'" />';
+        $_sHiddenFields .= '<input type="hidden" name="sSecureCode" value="'.$_sSecureCode.'" />';
+
+        $_sHtml = '';
+
+        if (!empty($_xTemplate))
+        {
+            $_sUrl = $this->getUrl();
+            if ($this->isUrlRewrite()) {$_sUrl = $this->getText(array('sType' => 'RewriteUrlPasswordResetInputNewPassword'));}
+
+            $this->addTemplateReplaceVar(array('sVarname' => 'FormUrl', 'sReplace' => $_sUrl));
+            $this->addTemplateReplaceVar(array('sVarname' => 'FormTarget', 'sReplace' => $this->getUrlTarget()));
+            $this->addTemplateReplaceVar(array('sVarname' => 'FormUrlParameters', 'sReplace' => $this->getUrlParametersForm().$_sHiddenFields));
+
+            $this->addTemplateReplaceVar(array('sVarname' => 'FieldNamePassword', 'sReplace' => 'sPassword'));
+            $this->addTemplateReplaceVar(array('sVarname' => 'FieldNamePasswordRetype', 'sReplace' => 'sPasswordRetype'));
+            $this->addTemplateReplaceVar(array('sVarname' => 'ButtonNameSubmit', 'sReplace' => 'sSubmit'));
+            $this->addTemplateReplaceVar(array('sVarname' => 'ButtonTextSubmit', 'sReplace' => 'absenden'));
+
+            $this->addTemplateReplaceVar(array('sVarname' => 'ErrorMessage', 'sReplace' => ''));
+
+            $_sHtml .= $this->buildTemplate(
+                array(
+                    'xTemplate' => $_xTemplate,
+                    'bReplaceUrlProtocols' => NULL,
+                    'bReplaceBBCode' => NULL,
+                    'bReplaceDates' => NULL,
+                    'bEncodeMails' => NULL
+                )
+            );
+        }
+        else
+        {
+            $_sHtml .= '<b>Bitte geben Sie ein neues Passwort ein</b><br /><br />';
+            $_sHtml .= '<form action="';
+            if ($this->isUrlRewrite()) {$_sHtml .= $this->getText(array('sType' => 'RewriteUrlPasswordResetInputNewPassword'));}
+            else {$_sHtml .= $this->getUrl();}
+            $_sHtml .= '" method="post" target="'.$this->getUrlTarget().'" accept-charset="'.$this->sFormCharset.'">';
+            $_sHtml .= $this->getUrlParametersForm();
+            $_sHtml .= $_sHiddenFields;
+            $_sHtml .= '<table align="center">';
+            $_sHtml .= '<tr>';
+            $_sHtml .= '<td>Passwort</td>';
+            $_sHtml .= '<td><input type="password" name="sPassword" value="" required /></td>';
+            $_sHtml .= '</tr>';
+            $_sHtml .= '<tr>';
+            $_sHtml .= '<td>Passwort erneut eingeben</td>';
+            $_sHtml .= '<td><input type="password" name="sPasswordRetype" value="" required /></td>';
+            $_sHtml .= '</tr>';
+            $_sHtml .= '</table>';
+            $_sHtml .= '<br />';
+            $_sHtml .= '<input type="submit" class="button" name="sSubmit" value="ausf&uuml;hren" />';
+            $_sHtml .= '</form>';
+        }
+
+        return $_sHtml;
+    }
+
+    public function buildPasswordResetFinal($_sSecureCode, $_sEmail = NULL, $_xTemplate = NULL)
+    {
+        $_sEmail = $this->getRealParameter(array('oParameters' => $_sSecureCode, 'sName' => 'sEmail', 'xParameter' => $_sEmail));
+        $_xTemplate = $this->getRealParameter(array('oParameters' => $_sSecureCode, 'sName' => 'xTemplate', 'xParameter' => $_xTemplate));
+        $_sSecureCode = $this->getRealParameter(array('oParameters' => $_sSecureCode, 'sName' => 'sSecureCode', 'xParameter' => $_sSecureCode));
+
+        $_sHtml = '';
+
+        $_sEmail = trim($_sEmail);
+        $_sSecureCode = trim($_sSecureCode);
+        $_sPassword = trim($_POST['sPassword']);
+        $_sPasswordRetype = trim($_POST['sPasswordRetype']);
+
+        if (($_sEmail != '') && ($_sSecureCode != ''))
+        {
+            $_asColumns = array('UserID', 'Username', 'PwdReset');
+            $_axWhere = array('Email' => array('LIKE' => $_sEmail));
+
+            if
+            (
+                $_oResult = $this->selectDatasets(
+                    array(
+                        'sTable' => $this->getDatabaseTablePrefix().'user',
+                        'asColumns' => $_asColumns,
+                        'xWhere' => $_axWhere,
+                        'iStart' => NULL,
+                        'iCount' => 1,
+                        'sOrderBy' => NULL,
+                        'bOrderReverse' => NULL
+                    )
+                )
+            )
+            {
+                if ($_axUser = $this->fetchDatabaseArray(array('xResult' => $_oResult, 'sEngine' => NULL)))
+                {
+                    if ($_axUser['Username'] != '')
+                    {
+                        if ((!empty($_sPassword)) && (!empty($_sPasswordRetype)) && ($_sPassword == $_sPasswordRetype))
+                        {
+                            $_sNewPassword = $this->buildPasswordCryption(array('sPassword' => $_sPassword, 'sUsername' => $_axUser['Username']));
+                            $this->updateDatasets(array(
+                                'sTable' => $this->getDatabaseTablePrefix().'user',
+                                'sIDColumn' => 'UserID',
+                                'xIDValue' => $_axUser['UserID'],
+                                'axColumnsAndValues' => array('PwdReset' => $_sNewPassword),
+                                'bAllowAnonymUpdate' => true
+                            ));
+
+                            if ($_sSecureCode == $this->buildSecureCode(array('sUsername' => $_axUser['Username'], 'sEmail' => $_sEmail)))
+                            {
+                                if ($this->resetPasswordByUserID(array('iUserID' => $_axUser['UserID'])))
+                                {
+                                    $_sHtml .= $this->getText(array('sType' => 'PasswordResetUpdatePasswordSuccess'));
+                                }
+                                else {$_sHtml .= $this->getText(array('sType' => 'PasswordResetUpdatePasswordFailed'));}
+                            }
+                            else {$_sHtml .= $this->getText(array('sType' => 'PasswordResetSecureCodeFailed'));}
+                        }
+                        else {$_sHtml .= $this->getText(array('sType' => 'PasswordResetEmailNotEquals'));}
+                    }
+                    else {$_sHtml .= $this->getText(array('sType' => 'PasswordResetEmailNotFound'));}
+                } // if _axUser
+                else {$_sHtml .= $this->getText(array('sType' => 'PasswordResetEmailNotFound'));}
+            } // if _oResult
+            else {$_sHtml .= $this->getText(array('sType' => 'PasswordResetEmailNotFound'));}
+        }
+        else {$_sHtml .= $this->getText(array('sType' => 'PasswordResetParametersFailed'));}
+
+        if (!empty($_xTemplate))
+        {
+            $this->addTemplateReplaceVar(array('sVarname' => 'PasswordResetFinalText', 'sReplace' => $_sHtml));
+
+            $_sHtml = $this->buildTemplate(
+                array(
+                    'xTemplate' => $_xTemplate,
+                    'bReplaceUrlProtocols' => NULL,
+                    'bReplaceBBCode' => NULL,
+                    'bReplaceDates' => NULL,
+                    'bEncodeMails' => NULL
+                )
+            );
+        }
+
+        return $_sHtml;
+    }
+
 	/*
 	@start method
 	
@@ -4796,17 +4967,17 @@ class classPG_Login extends classPG_ClassBasics
 	[en]The email adress of the user whose password is to be reset.[/en]
 	[de]Die E-Mail-Adresse des Benutzers, dessen Passwort zurückgesetzt werden soll.[/de]
 	*/
-	public function buildMailPasswordResetLinkUrl($_sUsername, $_sSendToMail = NULL)
+	public function buildMailPasswordResetLinkUrl($_sUsername, $_sEmail = NULL)
 	{
-		$_sSendToMail = $this->getRealParameter(array('oParameters' => $_sUsername, 'sName' => 'sSendToMail', 'xParameter' => $_sSendToMail));
+        $_sEmail = $this->getRealParameter(array('oParameters' => $_sUsername, 'sName' => 'sEmail', 'xParameter' => $_sEmail));
 		$_sUsername = $this->getRealParameter(array('oParameters' => $_sUsername, 'sName' => 'sUsername', 'xParameter' => $_sUsername));
 		
-		if ($_sSendToMail === NULL) {$_sSendToMail = '';}
+		if ($_sEmail === NULL) {$_sEmail = '';}
 		
 		$_sUrl = '';
 		$_sUrl .= $this->sLoginGlobalUrl.$this->sPasswordResetAcceptFilePath.'?sPGAccount=password_reset&';
-		if ($_sSendToMail != '') {$_sUrl .= 'sEmail='.$_sSendToMail;} else {$_sUrl .= 'sUsername='.urlencode($_sUsername);}
-		$_sUrl .= '&sSecureCode='.$this->buildSecureCode(array('sUsername' => $_sUsername, 'sEmail' => $_sSendToMail));
+		if ($_sEmail != '') {$_sUrl .= 'sEmail='.$_sEmail;} else {$_sUrl .= 'sUsername='.urlencode($_sUsername);}
+		$_sUrl .= '&sSecureCode='.$this->buildSecureCode(array('sUsername' => $_sUsername, 'sEmail' => $_sEmail));
 		
 		return $_sUrl;
 	}
@@ -7070,6 +7241,7 @@ class classPG_Login extends classPG_ClassBasics
 			if ((($_REQUEST['sPGAccount'] == 'register') || ($_REQUEST['sPGAccount'] == PG_LOGIN_BUILD_TYPE_ACCOUNT_REGISTER)) && ($this->bAllowRegister == true)) {$_iBuildType = PG_LOGIN_BUILD_TYPE_ACCOUNT_REGISTER;}
 			else if ((($_REQUEST['sPGAccount'] == 'edit') || ($_REQUEST['sPGAccount'] == PG_LOGIN_BUILD_TYPE_ACCOUNT_EDIT)) && (!$this->isGuest())) {$_iBuildType = PG_LOGIN_BUILD_TYPE_ACCOUNT_EDIT;}
 			else if ((($_REQUEST['sPGAccount'] == 'password_reset') || ($_REQUEST['sPGAccount'] == PG_LOGIN_BUILD_TYPE_ACCOUNT_RESET_PASSWORD)) && ($this->bAllowPasswordReset == true)) {$_iBuildType = PG_LOGIN_BUILD_TYPE_ACCOUNT_RESET_PASSWORD;}
+            else if ((($_REQUEST['sPGAccount'] == 'password_reset_final') || ($_REQUEST['sPGAccount'] == PG_LOGIN_BUILD_TYPE_ACCOUNT_RESET_PASSWORD_FINAL)) && ($this->bAllowPasswordReset == true)) {$_iBuildType = PG_LOGIN_BUILD_TYPE_ACCOUNT_RESET_PASSWORD_FINAL;}
 			else if (($_REQUEST['sPGAccount'] == 'accept_account') || ($_REQUEST['sPGAccount'] == PG_LOGIN_BUILD_TYPE_ACCOUNT_ACCEPT)) {$_iBuildType = PG_LOGIN_BUILD_TYPE_ACCOUNT_ACCEPT;}
 			else if (($_REQUEST['sPGAccount'] == 'login') || ($_REQUEST['sPGAccount'] == PG_LOGIN_BUILD_TYPE_LOGIN_NORMAL)) {$_iBuildType = PG_LOGIN_BUILD_TYPE_LOGIN_NORMAL;}
             // else if (($_REQUEST['sPGAccount'] == 'resend_accept_email') || ($_REQUEST['sPGAccount'] == PG_LOGIN_BUILD_TYPE_RESEND_ACCEPT_EMAIL)) {$_iBuildType = PG_LOGIN_BUILD_TYPE_RESEND_ACCEPT_EMAIL;}
@@ -7135,6 +7307,8 @@ class classPG_Login extends classPG_ClassBasics
         $_xLoginFormTemplate = NULL,
         $_xAccountFormTemplate = NULL,
         $_xPasswordResetFormTemplate = NULL,
+        $_xPasswordResetInputFormTemplate = NULL,
+        $_xPasswordResetFinalTemplate = NULL,
         $_bSendMailWithPassword = NULL
     )
 	{
@@ -7146,6 +7320,8 @@ class classPG_Login extends classPG_ClassBasics
         $_xLoginFormTemplate = $this->getRealParameter(array('oParameters' => $_iBuildType, 'sName' => 'xLoginFormTemplate', 'xParameter' => $_xLoginFormTemplate));
         $_xAccountFormTemplate = $this->getRealParameter(array('oParameters' => $_iBuildType, 'sName' => 'xAccountFormTemplate', 'xParameter' => $_xAccountFormTemplate));
         $_xPasswordResetFormTemplate = $this->getRealParameter(array('oParameters' => $_iBuildType, 'sName' => 'xPasswordResetFormTemplate', 'xParameter' => $_xPasswordResetFormTemplate));
+        $_xPasswordResetInputFormTemplate = $this->getRealParameter(array('oParameters' => $_iBuildType, 'sName' => 'xPasswordResetInputFormTemplate', 'xParameter' => $_xPasswordResetInputFormTemplate));
+        $_xPasswordResetFinalTemplate = $this->getRealParameter(array('oParameters' => $_iBuildType, 'sName' => 'xPasswordResetFinalTemplate', 'xParameter' => $_xPasswordResetFinalTemplate));
         $_bSendMailWithPassword = $this->getRealParameter(array('oParameters' => $_iBuildType, 'sName' => 'bSendMailWithPassword', 'xParameter' => $_bSendMailWithPassword));
 		$_iBuildType = $this->getRealParameter(array('oParameters' => $_iBuildType, 'sName' => 'iBuildType', 'xParameter' => $_iBuildType));
 		
@@ -7187,10 +7363,11 @@ class classPG_Login extends classPG_ClassBasics
 
 		if (($_iBuildType == PG_LOGIN_BUILD_TYPE_ACCOUNT_RESET_PASSWORD) && ($this->bAllowPasswordReset == true))
 		{
-			if ((($_sEmail != '') || ($_sUsername != '')) && ($_sSecureCode != '')) {$_sHtml .= $this->buildAcceptPasswordReset(array('sEmail' => $_sEmail, 'sUsername' => $_sUsername, 'sSecureCode' => $_sSecureCode));}
+			if ((($_sEmail != '') || ($_sUsername != '')) && ($_sSecureCode != '')) {$_sHtml .= $this->buildAcceptPasswordReset(array('sEmail' => $_sEmail, 'sUsername' => $_sUsername, 'sSecureCode' => $_sSecureCode, 'xFormTemplate' => $_xPasswordResetInputFormTemplate));}
 			else if (($_sEmail != '') || ($_sUsername != '')) {$_sHtml .= $this->buildRequestPasswordReset(array('sEmail' => $_sEmail, 'sUsername' => $_sUsername));}
 			else {$_sHtml .= $this->buildPasswordResetForm(array('xTemplate' => $_xPasswordResetFormTemplate));}
 		}
+        else if ($_iBuildType == PG_LOGIN_BUILD_TYPE_ACCOUNT_RESET_PASSWORD_FINAL) {$_sHtml .= $this->buildPasswordResetFinal(array('sSecureCode' => $_sSecureCode, 'sEmail' => $_sEmail, 'xTemplate' => $_xPasswordResetFinalTemplate));}
 		else if (($_iBuildType == PG_LOGIN_BUILD_TYPE_ACCOUNT_ACCEPT) && ($_sSecureCode != '') && (($_sUsername != '') || ($_sEmail != ''))) {$_sHtml .= $this->buildAcceptUser(array('sSecureCode' => $_sSecureCode, 'sEmail' => $_sEmail, 'sUsername' => $_sUsername));}
 		else if (($_iBuildType == PG_LOGIN_BUILD_TYPE_ACCOUNT_REGISTER) || (!$this->isGuest())) {$_sHtml .= $this->buildAccountForm(array('bRegister' => $bRegister, 'iUserID' => NULL, 'asRequired' => $_asRequired, 'bPasswordRequired' => $_bPasswordRequired, 'xTemplate' => $_xAccountFormTemplate, 'bSendMailWithPassword' => $_bSendMailWithPassword));}
 		else {$_sHtml .= $this->buildLoginForm(array('iBuildType' => $_iBuildType, 'bFixedPosition' => $_bFixedPosition, 'xTemplate' => $_xLoginFormTemplate));}

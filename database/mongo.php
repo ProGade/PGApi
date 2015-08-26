@@ -322,6 +322,12 @@ class classPG_Mongo extends classPG_ClassBasics
                         $_axExpression = array('$not' => $_axNotExpressions);
                     break;
 
+					case 'match all':
+						$_axNotExpressions = array();
+						for ($i=0; $i<count($_xValue); $i++) {$_axNotExpressions[] = $this->buildWhere(array('xWhere' => $_xValue[$i]));}
+						$_axExpression = array('$elemMatch' => $_axNotExpressions);
+					break;
+
                     // TODO: $nor
 
                     default:
@@ -460,7 +466,18 @@ class classPG_Mongo extends classPG_ClassBasics
             {
                 $_iOrderReverse = 1;
                 if ($_bOrderReverse == true) {$_iOrderReverse = -1;}
-                $_oResult = $_oResult->sort(array($_sOrderBy => $_iOrderReverse));
+
+				$_axOrderBy = array();
+				if (is_array($_sOrderBy))
+				{
+					for ($i=0; $i<count($_sOrderBy); $i++)
+					{
+						$_axOrderBy[$_sOrderBy[$i]] = $_iOrderReverse;
+					}
+				}
+				else {$_axOrderBy = array($_sOrderBy => $_iOrderReverse);}
+
+                $_oResult = $_oResult->sort($_axOrderBy);
             }
 
             if ($_iStart !== NULL) {$_oResult->skip($_iStart);}
