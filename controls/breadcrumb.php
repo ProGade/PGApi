@@ -50,9 +50,10 @@ class classPG_BreadCrumb extends classPG_ClassBasics
 	*/
 	public function buildLinkStructure($_sUrl, $_sName = NULL, $_sTarget = NULL)
 	{
-		$_sName = $this->getRealParameter(array('oParameters' => $_sUrl, 'sName' => 'sName', 'xParameter' => $_sName));
-		$_sTarget = $this->getRealParameter(array('oParameters' => $_sUrl, 'sName' => 'sTarget', 'xParameter' => $_sTarget));
-		$_sUrl = $this->getRealParameter(array('oParameters' => $_sUrl, 'sName' => 'sUrl', 'xParameter' => $_sUrl));
+        $this->mps(array('oParameters' => $_sUrl));
+		$_sName = $this->mp(array('sName' => 'sName', 'xParameter' => $_sName));
+		$_sTarget = $this->mp(array('sName' => 'sTarget', 'xParameter' => $_sTarget));
+		$_sUrl = $this->mp(array('sName' => 'sUrl', 'xParameter' => $_sUrl));
 		return array('Url' => $_sUrl, 'Name' => $_sName, 'Target' => $_sTarget);
 	}
 	/* @end method */
@@ -90,11 +91,12 @@ class classPG_BreadCrumb extends classPG_ClassBasics
 	*/
 	public function build($_sBreadCrumbID = NULL, $_axLinkStructures = NULL, $_sSeparator = NULL, $_sPrefixText = NULL, $_sSuffixText = NULL)
 	{
-		$_axLinkStructures = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'axLinkStructures', 'xParameter' => $_axLinkStructures));
-		$_sSeparator = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'sSeparator', 'xParameter' => $_sSeparator));
-		$_sPrefixText = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'sPrefixText', 'xParameter' => $_sPrefixText));
-		$_sSuffixText = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'sSuffixText', 'xParameter' => $_sSuffixText));
-		$_sBreadCrumbID = $this->getRealParameter(array('oParameters' => $_sBreadCrumbID, 'sName' => 'sBreadCrumbID', 'xParameter' => $_sBreadCrumbID));
+        $this->mps(array('oParameters' => $_sBreadCrumbID));
+		$_axLinkStructures = $this->mp(array('sName' => 'axLinkStructures', 'xParameter' => $_axLinkStructures));
+		$_sSeparator = $this->mp(array('sName' => 'sSeparator', 'xParameter' => $_sSeparator));
+		$_sPrefixText = $this->mp(array('sName' => 'sPrefixText', 'xParameter' => $_sPrefixText));
+		$_sSuffixText = $this->mp(array('sName' => 'sSuffixText', 'xParameter' => $_sSuffixText));
+		$_sBreadCrumbID = $this->mp(array('sName' => 'sBreadCrumbID', 'xParameter' => $_sBreadCrumbID));
 
 		if ($_sBreadCrumbID === NULL) {$_sBreadCrumbID = $this->getNextID();}
 		if ($_axLinkStructures === NULL) {$_axLinkStructures = array();}

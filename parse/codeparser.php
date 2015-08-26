@@ -45,6 +45,8 @@ define('PG_CODEPARSER_PARSE_COMMENT_INDEX_TEXT', 1);
 class classPG_CodeParser extends classPG_ClassBasics
 {
 	// Declarations...
+    private $sFilterPrefix = '<';
+    private $sFilterSuffix = '>';
 	private $asParsedVars = array();
 	
 	// Construct...
@@ -79,9 +81,10 @@ class classPG_CodeParser extends classPG_ClassBasics
 		
 		$_sReturn = '';
 		$_asComments = array();
-		$_sSearch = '/\['.$_sLanguage.'\](.*?)\[\/'.$_sLanguage.'\]/is';
+		$_sSearch = '/'.$this->sFilterPrefix.$_sLanguage.$this->sFilterSuffix.'(.*?)'.$this->sFilterPrefix.'\/'.$_sLanguage.$this->sFilterSuffix.'/is';
 		if ($_iSearchCount = preg_match_all($_sSearch, $_sString, $_asComments))
 		{
+            for ($i=0; $i<count($_asComments[1]); $i++) {$_asComments[1][$i] = trim(str_replace('*', '', trim($_asComments[1][$i])));}
 			$_sReturn = trim(implode("\n", $_asComments[1]));
 		}
 		if ($_sReturn == '')
@@ -115,13 +118,13 @@ class classPG_CodeParser extends classPG_ClassBasics
 		$_asReturn = array();
 		$_asTypeComments = array();
 		$_asTypes = array();
-		$_sSearch = '/\[type\](.*?)\[\/type\]/is';
+		$_sSearch = '/'.$this->sFilterPrefix.'type'.$this->sFilterSuffix.'(.*?)'.$this->sFilterPrefix.'\/type'.$this->sFilterSuffix.'/is';
 		$_sSearch2 = '/\s*([A-Za-z0-9\[\]_-]+)\s*/is';
 		if ($_iSearchCount = preg_match_all($_sSearch, $_sString, $_asTypeComments))
 		{
 			for ($i=0; $i<count($_asTypeComments[1]); $i++)
 			{
-				if ($_iSearchCount2 = preg_match_all($_sSearch2, $_asTypeComments[1][$i], $_asTypes))
+				if ($_iSearchCount2 = preg_match_all($_sSearch2, strip_tags($_asTypeComments[1][$i]), $_asTypes))
 				{
 					$_asReturn = array_merge($_asReturn, $_asTypes[1]);
 				}
@@ -150,7 +153,7 @@ class classPG_CodeParser extends classPG_ClassBasics
 	{
 		$_sString = $this->getRealParameter(array('oParameters' => $_sString, 'sName' => 'sString', 'xParameter' => $_sString));
 		
-		if (preg_match('/\[needed\]/is', $_sString) > 0) {return true;}
+		if (preg_match('/'.$this->sFilterPrefix.'needed'.$this->sFilterSuffix.'/is', $_sString) > 0) {return true;}
 		return false;
 	}
 	/* @end method */
@@ -350,8 +353,8 @@ class classPG_CodeParser extends classPG_ClassBasics
 			$_iIndexMethodEndCode = 10;
 			$_iIndexMethodEndComment = 11;
 
-			// $_sSearchMethodStartComments = '(\/\*\s*(\@start\s+method){1}(.(?!\/\*))*?\*\/){1}\s*';
-			$_sSearchMethodStartComments = '(\/\*\s*(\@start\s+method){1}(.*?)\*\/){1}\s*';
+			// $_sSearchMethodStartComments = '(\/(\*|\*\*)\s*(\@start\s+method){1}(.(?!\/\*))*?\*\/){1}\s*';
+			$_sSearchMethodStartComments = '(\/\*+\s*\**\s*(\@start\s+method){1}(.*?)\*\/){1}\s*';
 			$_sSearchMethodPermissions = '(this\.|var\s+)';
 			$_sSearchMethodName = '([0-9a-zA-Z_]+)\s*';
 			$_sSearchMethodType = '=\s*(function)\s*';
@@ -387,7 +390,8 @@ class classPG_CodeParser extends classPG_ClassBasics
 			$_iIndexMethodEndComment = 11;
 
 			// $_sSearchMethodStartComments = '(\/\*\s*(\@start\s+method){1}(.(?!\/\*))*?\*\/){1}\s*';
-			$_sSearchMethodStartComments = '(\/\*\s*(\@start\s+method){1}(.*?)\*\/){1}\s*';
+			// $_sSearchMethodStartComments = '(\/\*+\s*\**\s*(\@start\s+method){1}(.*?)\*\/){1}\s*';
+            $_sSearchMethodStartComments = '(\/\*+\s*.*?\s*\**\s*(\@start\s+method){1}(.*?)\*\/){1}\s*';
 			$_sSearchMethodPermissions = '(public|private)\s+';
 			$_sSearchMethodType = '(function)\s+';
 			$_sSearchMethodName = '([0-9a-zA-Z_]+)\s*';
@@ -496,7 +500,7 @@ class classPG_CodeParser extends classPG_ClassBasics
 			$_iIndexClassExtends = 11;
 
 			// $_sSearchClassStartComments = '(\/\*\s*(\@start\s+class){1}(.(?!\/\*))*?\*\/){1}\s*';
-			$_sSearchClassStartComments = '(\/\*\s*(\@start\s+class){1}(.*?)\*\/){1}\s*';
+			$_sSearchClassStartComments = '(\/\*+\s*\**\s*(\@start\s+class){1}(.*?)\*\/){1}\s*';
 			$_sSearchClassName = '(function\s+([0-9a-zA-Z_]+)\s*\(\s*\)){1}\s*';
 			$_sSearchClassContent = '\{(.*?)\}\s*';
 			// $_sSearchClassEndComments = '(\/\*\s*(\@end\s+class){1}(.(?!\/\*))*?\*\/){1}\s*';
@@ -526,12 +530,13 @@ class classPG_CodeParser extends classPG_ClassBasics
 			$_iIndexClassEndComment = 11;
 
 			// $_sSearchClassStartComments = '(\/\*\s*(\@start\s+class){1}(.(?!\/\*))*?\*\/){1}\s*';
-			$_sSearchClassStartComments = '(\/\*\s*(\@start\s+class){1}(.*?)\*\/){1}\s*';
+			// $_sSearchClassStartComments = '(\/\*+\s*\**\s*(\@start\s+class){1}(.*?)\*\/){1}\s*';
+            $_sSearchClassStartComments = '(\/\*+.*(\@start\s+class){1}(.*?)\*\/){1}\s*';
 			$_sSearchClassName = '(class\s+([0-9a-zA-Z_]+)){1}\s+';
 			$_sSearchClassExtends = '(extends\s+([0-9a-zA-Z_]+))*\s*';
 			$_sSearchClassContent = '\{(.*?)\}\s*';
 			// $_sSearchClassEndComments = '(\/\*\s*(\@end\s+class){1}(.(?!\/\*))*?\*\/){1}\s*';
-			$_sSearchClassEndComments = '(\/\*\s*(\@end\s+class){1}(.*?)\*\/){1}\s*';
+			$_sSearchClassEndComments = '(\/\*+\s*(\@end\s+class){1}(.*?)\*\/){1}\s*';
 			
 			$_sSearch = '/';
 				$_sSearch .= $_sSearchClassStartComments;

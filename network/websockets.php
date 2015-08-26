@@ -42,7 +42,8 @@ class classPG_WebSockets extends classPG_ClassBasics
 	*/
 	public function setWebSocketUrl($_sUrl)
 	{
-		$_sUrl = $this->getRealParameter(array('oParameters' => $_sUrl, 'sName' => 'sUrl', 'xParameter' => $_sUrl));
+        $this->mps(array('oParameters' => $_sUrl));
+		$_sUrl = $this->mp(array('sName' => 'sUrl', 'xParameter' => $_sUrl));
 		$this->sWebSocketUrl = $_sUrl;
 	}
 	/* @end method */
@@ -74,7 +75,8 @@ class classPG_WebSockets extends classPG_ClassBasics
 	*/
 	public function setWebSocketPort($_iPort)
 	{
-		$_iPort = $this->getRealParameter(array('oParameters' => $_iPort, 'sName' => 'iPort', 'xParameter' => $_iPort));
+        $this->mps(array('oParameters' => $_iPort));
+		$_iPort = $this->mp(array('sName' => 'iPort', 'xParameter' => $_iPort));
 		$this->iWebSocketPort = $_iPort;
 	}
 	/* @end method */
@@ -107,8 +109,9 @@ class classPG_WebSockets extends classPG_ClassBasics
 	*/
 	public function start($_sUrl = NULL, $_iPort = NULL)
 	{
-		$_iPort = $this->getRealParameter(array('oParameters' => $_sUrl, 'sName' => 'iPort', 'xParameter' => $_iPort));
-		$_sUrl = $this->getRealParameter(array('oParameters' => $_sUrl, 'sName' => 'sUrl', 'xParameter' => $_sUrl));
+        $this->mps(array('oParameters' => $_sUrl));
+		$_iPort = $this->mp(array('sName' => 'iPort', 'xParameter' => $_iPort));
+		$_sUrl = $this->mp(array('sName' => 'sUrl', 'xParameter' => $_sUrl));
 
 		set_time_limit(0);
 		ob_implicit_flush(true);
@@ -203,8 +206,9 @@ class classPG_WebSockets extends classPG_ClassBasics
 	*/
 	public function process($_oUser, $_sMessage = NULL)
 	{
-		$_sMessage = $this->getRealParameter(array('oParameters' => $_oUser, 'sName' => 'sMessage', 'xParameter' => $_sMessage));
-		$_oUser = $this->getRealParameter(array('oParameters' => $_oUser, 'sName' => 'oUser', 'xParameter' => $_oUser));
+        $this->mps(array('oParameters' => $_oUser));
+		$_sMessage = $this->mp(array('sName' => 'sMessage', 'xParameter' => $_sMessage));
+		$_oUser = $this->mp(array('sName' => 'oUser', 'xParameter' => $_oUser));
 
 		/* Extend and modify this method to suit your needs */
 		/* Basic usage is to echo incoming messages back to client */
@@ -268,8 +272,9 @@ class classPG_WebSockets extends classPG_ClassBasics
 	*/
 	public function send($_oSocket, $_sMessage = NULL)
 	{
-		$_sMessage = $this->getRealParameter(array('oParameters' => $_oSocket, 'sName' => 'sMessage', 'xParameter' => $_sMessage));
-		$_oSocket = $this->getRealParameter(array('oParameters' => $_oSocket, 'sName' => 'oSocket', 'xParameter' => $_oSocket));
+        $this->mps(array('oParameters' => $_oSocket));
+		$_sMessage = $this->mp(array('sName' => 'sMessage', 'xParameter' => $_sMessage));
+		$_oSocket = $this->mp(array('sName' => 'oSocket', 'xParameter' => $_oSocket));
 
 		$_sEncodedMessage = $this->encodeMessage(array('sMessage' => $_sMessage));
 		socket_write($_oSocket, $_sEncodedMessage, strlen($_sEncodedMessage));
@@ -289,7 +294,8 @@ class classPG_WebSockets extends classPG_ClassBasics
 	*/
 	public function connect($_oSocket)
 	{
-		$_oSocket = $this->getRealParameter(array('oParameters' => $_oSocket, 'sName' => 'oSocket', 'xParameter' => $_oSocket));
+        $this->mps(array('oParameters' => $_oSocket));
+		$_oSocket = $this->mp(array('sName' => 'oSocket', 'xParameter' => $_oSocket));
 
 		$_oUser = new classPG_WebSocketsUser();
 		$_oUser->sID = uniqid();
@@ -315,7 +321,8 @@ $_oUser->setUserData(array('sProperty' => 'Username', 'xValue' => 'User '.$_oUse
 	*/
 	public function disconnect($_oSocket)
 	{
-		$_oSocket = $this->getRealParameter(array('oParameters' => $_oSocket, 'sName' => 'oSocket', 'xParameter' => $_oSocket));
+        $this->mps(array('oParameters' => $_oSocket));
+		$_oSocket = $this->mp(array('sName' => 'oSocket', 'xParameter' => $_oSocket));
 
 		$_iUserIndex = NULL;
 		for($i=0; $i<count($this->aoUsers); $i++)
@@ -354,8 +361,9 @@ $_oUser->setUserData(array('sProperty' => 'Username', 'xValue' => 'User '.$_oUse
 	*/
 	public function doHandshake($_oUser, $_sMessage = NULL)
 	{
-		$_sMessage = $this->getRealParameter(array('oParameters' => $_oUser, 'sName' => 'sMessage', 'xParameter' => $_sMessage));
-		$_oUser = $this->getRealParameter(array('oParameters' => $_oUser, 'sName' => 'oUser', 'xParameter' => $_oUser));
+        $this->mps(array('oParameters' => $_oUser));
+		$_sMessage = $this->mp(array('sName' => 'sMessage', 'xParameter' => $_sMessage));
+		$_oUser = $this->mp(array('sName' => 'oUser', 'xParameter' => $_oUser));
 
 		$this->log(array('sMessage' => "\nRequesting handshake..."));
 		$this->log(array('sMessage' => $_sMessage));
@@ -379,7 +387,8 @@ $_oUser->setUserData(array('sProperty' => 'Username', 'xValue' => 'User '.$_oUse
 	
 	public function buildHandshakeAnswer($_axRequest)
 	{
-		$_axRequest = $this->getRealParameter(array('oParameters' => $_axRequest, 'sName' => 'axRequest', 'xParameter' => $_axRequest, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_axRequest));
+		$_axRequest = $this->mp(array('sName' => 'axRequest', 'xParameter' => $_axRequest, 'bNotNull' => true));
 	
 		$_sMessage = '';
 		if ($_axRequest['iSecVersion'] >= 6)
@@ -442,9 +451,10 @@ $_oUser->setUserData(array('sProperty' => 'Username', 'xValue' => 'User '.$_oUse
 	*/
 	function calcKey($_sKey1, $_sKey2 = NULL, $_sLast8Bytes = NULL)
 	{
-		$_sKey2 = $this->getRealParameter(array('oParameters' => $_sKey1, 'sName' => 'sKey2', 'xParameter' => $_sKey2));
-		$_sLast8Bytes = $this->getRealParameter(array('oParameters' => $_sKey1, 'sName' => 'sLast8Bytes', 'xParameter' => $_sLast8Bytes));
-		$_sKey1 = $this->getRealParameter(array('oParameters' => $_sKey1, 'sName' => 'sKey1', 'xParameter' => $_sKey1));
+        $this->mps(array('oParameters' => $_sKey1));
+		$_sKey2 = $this->mp(array('sName' => 'sKey2', 'xParameter' => $_sKey2));
+		$_sLast8Bytes = $this->mp(array('sName' => 'sLast8Bytes', 'xParameter' => $_sLast8Bytes));
+		$_sKey1 = $this->mp(array('sName' => 'sKey1', 'xParameter' => $_sKey1));
 
 		// Get the numbers
 		preg_match_all('/([\d]+)/', $_sKey1, $_asKey1Numbers);
@@ -484,7 +494,8 @@ $_oUser->setUserData(array('sProperty' => 'Username', 'xValue' => 'User '.$_oUse
 	*/
 	function getHeaders($_sRequest)
 	{
-		$_sRequest = $this->getRealParameter(array('oParameters' => $_sRequest, 'sName' => 'sRequest', 'xParameter' => $_sRequest));
+        $this->mps(array('oParameters' => $_sRequest));
+		$_sRequest = $this->mp(array('sName' => 'sRequest', 'xParameter' => $_sRequest));
 		
 		$_axRequest = array();
 
@@ -526,7 +537,8 @@ $_oUser->setUserData(array('sProperty' => 'Username', 'xValue' => 'User '.$_oUse
 	*/
 	function getUserBySocket($_oSocket)
 	{
-		$_oSocket = $this->getRealParameter(array('oParameters' => $_oSocket, 'sName' => 'oSocket', 'xParameter' => $_oSocket));
+        $this->mps(array('oParameters' => $_oSocket));
+		$_oSocket = $this->mp(array('sName' => 'oSocket', 'xParameter' => $_oSocket));
 
 		$_oFoundUser = NULL;
 		foreach($this->aoUsers as $_oUser)
@@ -548,7 +560,8 @@ $_oUser->setUserData(array('sProperty' => 'Username', 'xValue' => 'User '.$_oUse
 	*/
 	function output($_sMessage = '')
 	{
-		$_sMessage = $this->getRealParameter(array('oParameters' => $_sMessage, 'sName' => 'sMessage', 'xParameter' => $_sMessage));
+        $this->mps(array('oParameters' => $_sMessage));
+		$_sMessage = $this->mp(array('sName' => 'sMessage', 'xParameter' => $_sMessage));
 		echo $this->clearLine().$_sMessage.$this->sConsoleLineBreak;
 	}
 	/* @end method */
@@ -564,7 +577,8 @@ $_oUser->setUserData(array('sProperty' => 'Username', 'xValue' => 'User '.$_oUse
 	*/
 	function log($_sMessage = "")
 	{
-		$_sMessage = $this->getRealParameter(array('oParameters' => $_sMessage, 'sName' => 'sMessage', 'xParameter' => $_sMessage));
+        $this->mps(array('oParameters' => $_sMessage));
+		$_sMessage = $this->mp(array('sName' => 'sMessage', 'xParameter' => $_sMessage));
 		if($this->bDebug) {echo $_sMessage.$this->sConsoleLineBreak;}
 	}
 	/* @end method */
@@ -583,8 +597,9 @@ $_oUser->setUserData(array('sProperty' => 'Username', 'xValue' => 'User '.$_oUse
 	*/
 	function encodeMessage($_sMessage, $_bMasked = NULL)
 	{
-		$_bMasked = $this->getRealParameter(array('oParameters' => $_sMessage, 'sName' => 'bMasked', 'xParameter' => $_bMasked));
-		$_sMessage = $this->getRealParameter(array('oParameters' => $_sMessage, 'sName' => 'sMessage', 'xParameter' => $_sMessage));
+        $this->mps(array('oParameters' => $_sMessage));
+		$_bMasked = $this->mp(array('sName' => 'bMasked', 'xParameter' => $_bMasked));
+		$_sMessage = $this->mp(array('sName' => 'sMessage', 'xParameter' => $_sMessage));
 		
 		if ($_sMessage === NULL) {$_sMessage = '';}
 		if ($_bMasked === NULL) {$_bMasked = false;}
@@ -651,7 +666,8 @@ $_oUser->setUserData(array('sProperty' => 'Username', 'xValue' => 'User '.$_oUse
 	*/
 	function decodeMessage($_sMessage)
 	{
-		$_sMessage = $this->getRealParameter(array('oParameters' => $_sMessage, 'sName' => 'sMessage', 'xParameter' => $_sMessage));
+        $this->mps(array('oParameters' => $_sMessage));
+		$_sMessage = $this->mp(array('sName' => 'sMessage', 'xParameter' => $_sMessage));
 		
 		if ($_sMessage === NULL) {$_sMessage = '';}
 
@@ -717,8 +733,9 @@ class classPG_WebSocketsUser extends classPG_ClassBasics
 	*/
 	public function setUserData($_sProperty, $_xValue = NULL)
 	{
-		$_xValue = $this->getRealParameter(array('oParameters' => $_sProperty, 'sName' => 'xValue', 'xParameter' => $_xValue));
-		$_sProperty = $this->getRealParameter(array('oParameters' => $_sProperty, 'sName' => 'sProperty', 'xParameter' => $_sProperty));
+        $this->mps(array('oParameters' => $_sProperty));
+		$_xValue = $this->mp(array('sName' => 'xValue', 'xParameter' => $_xValue));
+		$_sProperty = $this->mp(array('sName' => 'sProperty', 'xParameter' => $_sProperty));
 		$this->axUserData[$_sProperty] = $_xValue;
 	}
 	/* @end method */
@@ -734,7 +751,8 @@ class classPG_WebSocketsUser extends classPG_ClassBasics
 	*/
 	public function getUserData($_sProperty)
 	{
-		$_sProperty = $this->getRealParameter(array('oParameters' => $_sProperty, 'sName' => 'sProperty', 'xParameter' => $_sProperty));
+        $this->mps(array('oParameters' => $_sProperty));
+		$_sProperty = $this->mp(array('sName' => 'sProperty', 'xParameter' => $_sProperty));
 		return $this->axUserData[$_sProperty];
 	}
 	/* @end method */

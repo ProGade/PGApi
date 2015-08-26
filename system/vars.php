@@ -30,8 +30,9 @@ class classPG_Vars extends classPG_ClassBasics
 	*/
 	public function getStructureString($_xVar, $_bUseHtml = NULL)
 	{
-		$_bUseHtml = $this->getRealParameter(array('oParameters' => $_xVar, 'sName' => 'bUseHtml', 'xParameter' => $_bUseHtml));
-		$_xVar = $this->getRealParameter(array('oParameters' => $_xVar, 'sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_xVar));
+		$_bUseHtml = $this->mp(array('sName' => 'bUseHtml', 'xParameter' => $_bUseHtml));
+		$_xVar = $this->mp(array('sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
 
 		if ($_bUseHtml === NULL) {$_bUseHtml = true;}
 		
@@ -101,7 +102,8 @@ class classPG_Vars extends classPG_ClassBasics
 	*/
 	public function getType($_xVar)
 	{
-		$_xVar = $this->getRealParameter(array('oParameters' => $_xVar, 'sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_xVar));
+		$_xVar = $this->mp(array('sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
 		if (!isset($_xVar)) {return 'undefined';}
 		else
 		{
@@ -125,7 +127,8 @@ class classPG_Vars extends classPG_ClassBasics
 	*/
 	public function isObject($_xVar)
 	{
-		$_xVar = $this->getRealParameter(array('oParameters' => $_xVar, 'sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_xVar));
+		$_xVar = $this->mp(array('sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
 		if (isset($_xVar)) {return is_object($_xVar);}
 		return false;
 	}
@@ -142,7 +145,8 @@ class classPG_Vars extends classPG_ClassBasics
 	*/
 	public function isArray($_xVar)
 	{
-		$_xVar = $this->getRealParameter(array('oParameters' => $_xVar, 'sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_xVar));
+		$_xVar = $this->mp(array('sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
 		if (isset($_xVar)) {return is_array($_xVar);}
 		return false;
 	}
@@ -159,7 +163,8 @@ class classPG_Vars extends classPG_ClassBasics
 	*/
 	public function isString($_xVar)
 	{
-		$_xVar = $this->getRealParameter(array('oParameters' => $_xVar, 'sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_xVar));
+		$_xVar = $this->mp(array('sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
 		if (isset($_xVar)) {return is_string($_xVar);}
 		return false;
 	}
@@ -176,7 +181,8 @@ class classPG_Vars extends classPG_ClassBasics
 	*/
 	public function isNumber($_xVar)
 	{
-		$_xVar = $this->getRealParameter(array('oParameters' => $_xVar, 'sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_xVar));
+		$_xVar = $this->mp(array('sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
 		if (isset($_xVar)) {return ((is_int($_xVar)) || (is_float($_xVar)) || (is_double($_xVar)));}
 		return false;
 	}
@@ -193,7 +199,8 @@ class classPG_Vars extends classPG_ClassBasics
 	*/
 	public function cssNumber($_xVar)
 	{
-		$_xVar = $this->getRealParameter(array('oParameters' => $_xVar, 'sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_xVar));
+		$_xVar = $this->mp(array('sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
 		if (isset($_xVar))
 		{
 			if (is_string($_xVar)) {if ((strpos($_xVar, 'px') === false) && (strpos($_xVar, '%') === false)) {$_xVar .= 'px';}}
@@ -214,7 +221,8 @@ class classPG_Vars extends classPG_ClassBasics
 	*/
 	public function cssColor($_xVar)
 	{
-		$_xVar = $this->getRealParameter(array('oParameters' => $_xVar, 'sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
+        $this->mps(array('oParameters' => $_xVar));
+		$_xVar = $this->mp(array('sName' => 'xVar', 'xParameter' => $_xVar, 'bNotNull' => true));
 		if (isset($_xVar))
 		{
 			if (is_string($_xVar)) {if ((strpos($_xVar, '#') === false) && (preg_match("![0-9A-Fa-f]{3,6}!is", $_xVar) > 0) && (strpos($_xVar, 'red') === false)) {$_xVar = '#'.$_xVar;}}

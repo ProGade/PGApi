@@ -414,7 +414,7 @@ class classPG_Template extends classPG_ClassBasics
 				
 				foreach($this->asReplaceVars as $_sSearch => $_sReplace)
 				{
-					$_asTemplates[$_sName] = str_replace($this->sVariablePrefix.$_sSearch.$this->sVariableSuffix, $_sReplace, $_sTemplate);
+					$_asTemplates[$_sName] = str_replace($this->sVariablePrefix.$_sSearch.$this->sVariableSuffix, $_sReplace, $_asTemplates[$_sName]);
 				}
 				
 				if ($_bReplaceDates == true) {$_asTemplates[$_sName] = $oPGStrings->dateReplace(array('sString' => $_asTemplates[$_sName], 'sPrefix' => $this->sVariablePrefix, 'sSuffix' => $this->sVariableSuffix));}

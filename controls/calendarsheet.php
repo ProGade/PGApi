@@ -97,7 +97,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassTableSheet($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassTableSheet = $_sClass;
 	}
 	/* @end method */
@@ -115,7 +116,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassTableControls($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassTableControls = $_sClass;
 	}
 	/* @end method */
@@ -133,7 +135,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassControlsLink($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassControlsLink = $_sClass;
 	}
 	/* @end method */
@@ -151,7 +154,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsWeeks($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsWeeks = $_sClass;
 	}
 	/* @end method */
@@ -169,7 +173,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsWeeksLinkNormal($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsWeeksLinkNormal = $_sClass;
 	}
 	/* @end method */
@@ -187,7 +192,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsWeeksLinkPressed($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsWeeksLinkPressed = $_sClass;
 	}
 	/* @end method */
@@ -205,7 +211,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsDays($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsDays = $_sClass;
 	}
 	/* @end method */
@@ -223,7 +230,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells1($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells1 = $_sClass;
 	}
 	/* @end method */
@@ -241,7 +249,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells2($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells2 = $_sClass;
 	}
 	/* @end method */
@@ -259,7 +268,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells1LinkNormal($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells1LinkNormal = $_sClass;
 	}
 	/* @end method */
@@ -277,7 +287,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells2LinkNormal($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells2LinkNormal = $_sClass;
 	}
 	/* @end method */
@@ -295,7 +306,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells1LinkPressed($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells1LinkPressed = $_sClass;
 	}
 	/* @end method */
@@ -313,7 +325,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells2LinkPressed($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells2LinkPressed = $_sClass;
 	}
 	/* @end method */
@@ -331,7 +344,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells1Today($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells1Today = $_sClass;
 	}
 	/* @end method */
@@ -349,7 +363,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells2Today($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells2Today = $_sClass;
 	}
 	/* @end method */
@@ -367,7 +382,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells1TodayLinkNormal($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells1TodayLinkNormal = $_sClass;
 	}
 	/* @end method */
@@ -385,7 +401,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells2TodayLinkNormal($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells2TodayLinkNormal = $_sClass;
 	}
 	/* @end method */
@@ -403,7 +420,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells1TodayLinkPressed($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells1TodayLinkPressed = $_sClass;
 	}
 	/* @end method */
@@ -421,7 +439,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCells2TodayLinkPressed($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCells2TodayLinkPressed = $_sClass;
 	}
 	/* @end method */
@@ -439,7 +458,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSaturday($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSaturday = $_sClass;
 	}
 	/* @end method */
@@ -457,7 +477,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSaturdayNormal($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSaturdayNormal = $_sClass;
 	}
 	/* @end method */
@@ -475,7 +496,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSaturdayPressed($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSaturdayPressed = $_sClass;
 	}
 	/* @end method */
@@ -493,7 +515,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSaturdayToday($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSaturdayToday = $_sClass;
 	}
 	/* @end method */
@@ -511,7 +534,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSaturdayTodayNormal($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSaturdayTodayNormal = $_sClass;
 	}
 	/* @end method */
@@ -529,7 +553,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSaturdayTodayPressed($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSaturdayTodayPressed = $_sClass;
 	}
 	/* @end method */
@@ -547,7 +572,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSunday($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSunday = $_sClass;
 	}
 	/* @end method */
@@ -565,7 +591,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSundayLinkNormal($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSundayLinkNormal = $_sClass;
 	}
 	/* @end method */
@@ -583,7 +610,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSundayLinkPressed($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSundayLinkPressed = $_sClass;
 	}
 	/* @end method */
@@ -601,7 +629,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSundayToday($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSundayToday = $_sClass;
 	}
 	/* @end method */
@@ -619,7 +648,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSundayTodayLinkNormal($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSundayTodayLinkNormal = $_sClass;
 	}
 	/* @end method */
@@ -637,7 +667,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setCssClassCellsSundayTodayLinkPressed($_sClass)
 	{
-		$_sClass = $this->getRealParameter(array('oParameters' => $_sClass, 'sName' => 'sClass', 'xParameter' => $_sClass));
+        $this->mps(array('oParameters' => $_sClass));
+		$_sClass = $this->mp(array('sName' => 'sClass', 'xParameter' => $_sClass));
 		$this->sCssClassCellsSundayTodayLinkPressed = $_sClass;
 	}
 	/* @end method */
@@ -655,7 +686,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setDay($_iDay)
 	{
-		$_iDay = $this->getRealParameter(array('oParameters' => $_iDay, 'sName' => 'iDay', 'xParameter' => $_iDay));
+        $this->mps(array('oParameters' => $_iDay));
+		$_iDay = $this->mp(array('sName' => 'iDay', 'xParameter' => $_iDay));
 		$this->iDay = $_iDay;
 	}
 	/* @end method */
@@ -673,7 +705,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setWeek($_iWeek)
 	{
-		$_iWeek = $this->getRealParameter(array('oParameters' => $_iWeek, 'sName' => 'iWeek', 'xParameter' => $_iWeek));
+        $this->mps(array('oParameters' => $_iWeek));
+		$_iWeek = $this->mp(array('sName' => 'iWeek', 'xParameter' => $_iWeek));
 		$this->iWeek = $_iWeek;
 	}
 	/* @end method */
@@ -691,7 +724,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setMonth($_iMonth)
 	{
-		$_iMonth = $this->getRealParameter(array('oParameters' => $_iMonth, 'sName' => 'iMonth', 'xParameter' => $_iMonth));
+        $this->mps(array('oParameters' => $_iMonth));
+		$_iMonth = $this->mp(array('sName' => 'iMonth', 'xParameter' => $_iMonth));
 		$this->iMonth = $_iMonth;
 	}
 	/* @end method */
@@ -709,7 +743,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setYear($_iYear)
 	{
-		$_iYear = $this->getRealParameter(array('oParameters' => $_iYear, 'sName' => 'iYear', 'xParameter' => $_iYear));
+        $this->mps(array('oParameters' => $_iYear));
+		$_iYear = $this->mp(array('sName' => 'iYear', 'xParameter' => $_iYear));
 		$this->iYear = $_iYear;
 	}
 	/* @end method */
@@ -731,8 +766,9 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setYearRange($_iStart, $_iEnd = NULL)
 	{
-		$_iEnd = $this->getRealParameter(array('oParameters' => $_iStart, 'sName' => 'iEnd', 'xParameter' => $_iEnd));
-		$_iStart = $this->getRealParameter(array('oParameters' => $_iStart, 'sName' => 'iStart', 'xParameter' => $_iStart));
+        $this->mps(array('oParameters' => $_iStart));
+		$_iEnd = $this->mp(array('sName' => 'iEnd', 'xParameter' => $_iEnd));
+		$_iStart = $this->mp(array('sName' => 'iStart', 'xParameter' => $_iStart));
 
 		if ($_iStart != NULL) {$this->iYearRangeStart = $_iStart;}
 		if ($_iEnd != NULL) {$this->iYearRangeEnd = $_iEnd;}
@@ -752,7 +788,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setYearControlReverse($_bReverse)
 	{
-		$_bReverse = $this->getRealParameter(array('oParameters' => $_bReverse, 'sName' => 'bReverse', 'xParameter' => $_bReverse));
+        $this->mps(array('oParameters' => $_bReverse));
+		$_bReverse = $this->mp(array('sName' => 'bReverse', 'xParameter' => $_bReverse));
 		$this->bYearControlReverse = $_bReverse;
 	}
 	/* @end method */
@@ -770,7 +807,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setJsOnDayClick($_sJavaScript)
 	{
-		$_sJavaScript = $this->getRealParameter(array('oParameters' => $_sJavaScript, 'sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
+        $this->mps(array('oParameters' => $_sJavaScript));
+		$_sJavaScript = $this->mp(array('sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
 		$this->sJsOnDayClick = $_sJavaScript;
 	}
 	/* @end method */
@@ -788,7 +826,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setJsOnWeekClick($_sJavaScript)
 	{
-		$_sJavaScript = $this->getRealParameter(array('oParameters' => $_sJavaScript, 'sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
+        $this->mps(array('oParameters' => $_sJavaScript));
+		$_sJavaScript = $this->mp(array('sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
 		$this->sJsOnWeekClick = $_sJavaScript;
 	}
 	/* @end method */
@@ -806,7 +845,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setJsOnMonthChange($_sJavaScript)
 	{
-		$_sJavaScript = $this->getRealParameter(array('oParameters' => $_sJavaScript, 'sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
+        $this->mps(array('oParameters' => $_sJavaScript));
+		$_sJavaScript = $this->mp(array('sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
 		$this->sJsOnMonthChange = $_sJavaScript;
 	}
 	/* @end method */
@@ -824,7 +864,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setJsOnYearChange($_sJavaScript)
 	{
-		$_sJavaScript = $this->getRealParameter(array('oParameters' => $_sJavaScript, 'sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
+        $this->mps(array('oParameters' => $_sJavaScript));
+		$_sJavaScript = $this->mp(array('sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
 		$this->sJsOnYearChange = $_sJavaScript;
 	}
 	/* @end method */
@@ -842,7 +883,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setJsOnMonthNextClick($_sJavaScript)
 	{
-		$_sJavaScript = $this->getRealParameter(array('oParameters' => $_sJavaScript, 'sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
+        $this->mps(array('oParameters' => $_sJavaScript));
+		$_sJavaScript = $this->mp(array('sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
 		$this->sJsOnMonthNextClick = $_sJavaScript;
 	}
 	/* @end method */
@@ -860,7 +902,8 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function setJsOnMonthPreviousClick($_sJavaScript)
 	{
-		$_sJavaScript = $this->getRealParameter(array('oParameters' => $_sJavaScript, 'sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
+        $this->mps(array('oParameters' => $_sJavaScript));
+		$_sJavaScript = $this->mp(array('sName' => 'sJavaScript', 'xParameter' => $_sJavaScript));
 		$this->sJsOnMonthPreviousClick = $_sJavaScript;
 	}
 	/* @end method */
@@ -902,12 +945,13 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function getCssClassForCellsLink($_bClass2, $_sWeekDayName = NULL, $_iDay = NULL, $_iCalendarDay = NULL, $_iMonth = NULL, $_iYear = NULL)
 	{
-		$_sWeekDayName = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'sWeekDayName', 'xParameter' => $_sWeekDayName));
-		$_iDay = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'iDay', 'xParameter' => $_iDay));
-		$_iCalendarDay = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'iCalendarDay', 'xParameter' => $_iCalendarDay));
-		$_iMonth = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'iMonth', 'xParameter' => $_iMonth));
-		$_iYear = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'iYear', 'xParameter' => $_iYear));
-		$_bClass2 = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'bClass2', 'xParameter' => $_bClass2));
+        $this->mps(array('oParameters' => $_bClass2));
+		$_sWeekDayName = $this->mp(array('sName' => 'sWeekDayName', 'xParameter' => $_sWeekDayName));
+		$_iDay = $this->mp(array('sName' => 'iDay', 'xParameter' => $_iDay));
+		$_iCalendarDay = $this->mp(array('sName' => 'iCalendarDay', 'xParameter' => $_iCalendarDay));
+		$_iMonth = $this->mp(array('sName' => 'iMonth', 'xParameter' => $_iMonth));
+		$_iYear = $this->mp(array('sName' => 'iYear', 'xParameter' => $_iYear));
+		$_bClass2 = $this->mp(array('sName' => 'bClass2', 'xParameter' => $_bClass2));
 
 		if ($_bClass2 === NULL) {$_bClass2 = false;}
 		
@@ -1008,11 +1052,12 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function getCssClassForCells($_bClass2, $_sWeekDayName = NULL, $_iCalendarDay = NULL, $_iMonth = NULL, $_iYear = NULL)
 	{
-		$_sWeekDayName = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'sWeekDayName', 'xParameter' => $_sWeekDayName));
-		$_iCalendarDay = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'iCalendarDay', 'xParameter' => $_iCalendarDay));
-		$_iMonth = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'iMonth', 'xParameter' => $_iMonth));
-		$_iYear = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'iYear', 'xParameter' => $_iYear));
-		$_bClass2 = $this->getRealParameter(array('oParameters' => $_bClass2, 'sName' => 'bClass2', 'xParameter' => $_bClass2));
+        $this->mps(array('oParameters' => $_bClass2));
+		$_sWeekDayName = $this->mp(array('sName' => 'sWeekDayName', 'xParameter' => $_sWeekDayName));
+		$_iCalendarDay = $this->mp(array('sName' => 'iCalendarDay', 'xParameter' => $_iCalendarDay));
+		$_iMonth = $this->mp(array('sName' => 'iMonth', 'xParameter' => $_iMonth));
+		$_iYear = $this->mp(array('sName' => 'iYear', 'xParameter' => $_iYear));
+		$_bClass2 = $this->mp(array('sName' => 'bClass2', 'xParameter' => $_bClass2));
 
 		if ($_bClass2 === NULL) {$_bClass2 = false;}
 		
@@ -1093,10 +1138,11 @@ class classPG_CalendarSheet extends classPG_ClassBasics
 	*/
 	public function buildSheet($_iDay, $_iWeek = NULL, $_iMonth = NULL, $_iYear = NULL)
 	{
-		$_iWeek = $this->getRealParameter(array('oParameters' => $_iDay, 'sName' => 'iWeek', 'xParameter' => $_iWeek));
-		$_iMonth = $this->getRealParameter(array('oParameters' => $_iDay, 'sName' => 'iMonth', 'xParameter' => $_iMonth));
-		$_iYear = $this->getRealParameter(array('oParameters' => $_iDay, 'sName' => 'iYear', 'xParameter' => $_iYear));
-		$_iDay = $this->getRealParameter(array('oParameters' => $_iDay, 'sName' => 'iDay', 'xParameter' => $_iDay));
+        $this->mps(array('oParameters' => $_iDay));
+		$_iWeek = $this->mp(array('sName' => 'iWeek', 'xParameter' => $_iWeek));
+		$_iMonth = $this->mp(array('sName' => 'iMonth', 'xParameter' => $_iMonth));
+		$_iYear = $this->mp(array('sName' => 'iYear', 'xParameter' => $_iYear));
+		$_iDay = $this->mp(array('sName' => 'iDay', 'xParameter' => $_iDay));
 
 		if ($_iYear === NULL) {$_iYear = 0;}
 		if ($_iMonth === NULL) {$_iMonth = 0;}

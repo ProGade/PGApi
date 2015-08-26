@@ -231,11 +231,13 @@ class classPG_Api extends classPG_ClassBasics
 		$_sCall = $this->getRealParameter(array('oParameters' => $_sCall, 'sName' => 'sCall', 'xParameter' => $_sCall));
 		if ($_iContextIndex == NULL)
 		{
-
+            foreach($this->axContext as $_iIndex => $_xContext) {$this->call($_sCall, $_xValue, $_iIndex);}
 		}
-		// if ($_iContextIndex === NULL) {$_iContextIndex = 0;}
-		if (function_exists($this->axContext[$_iContextIndex]->$_sCall)) {return $this->axContext[$_iContextIndex]->$_sCall($_xValue);}
-		if (property_exists($this->axContext[$_iContextIndex], $_sCall))
+		else if (function_exists($this->axContext[$_iContextIndex]->$_sCall))
+        {
+            return $this->axContext[$_iContextIndex]->$_sCall($_xValue);
+        }
+		else if (property_exists($this->axContext[$_iContextIndex], $_sCall))
 		{
 			if ($_xValue !== NULL) {return $this->axContext[$_iContextIndex]->$_sCall = $_xValue;}
 			return $this->axContext[$_iContextIndex]->$_sCall;
